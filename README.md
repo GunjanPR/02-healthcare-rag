@@ -174,6 +174,41 @@ To try it on the toy corpus before ingesting PMC (M3):
 make index-toy && OPENSEARCH_INDEX=toy_chunks make dev
 ```
 
+### Observability
+- **Metrics:** `GET /metrics` (Prometheus). It exposes request latency by endpoint,
+  latency per RAG stage (retrieve / rerank / generate / repair), answer outcomes
+  (answered or the abstention reason), tokens, gateway-reported cost, citations per
+  answer and the best reranker score.
+- **Dashboard:** `docker compose up` also starts Prometheus on **:9091** and Grafana on
+  **:3001**, with the *Healthcare RAG* dashboard provisioned (anonymous view). The ports
+  differ from project 01's Prometheus/Grafana so both stacks can run side by side.
+  Prometheus scrapes the API in compose, the API on the host (`make dev`), and the
+  gateway's `/metrics`. That lets the dashboard put per-query cost and latency next to the
+  gateway's upstream latency.
+- **Traces:** set `OTEL_EXPORTER_OTLP_ENDPOINT=http://127.0.0.1:4318` to export to
+  project 01's Jaeger (UI on :16686). The API creates a span per RAG stage, and its httpx
+  calls carry `traceparent`. One trace therefore covers `/ask`, the embedding call, the
+  rerank, and the generation inside the gateway (guardrails, cache, router, Ollama).
+- **Alerts:** written down in [deploy/prometheus/alerts.yml](deploy/prometheus/alerts.yml)
+  and evaluated by Prometheus:
+
+  | Alert | Fires when |
+  |---|---|
+  | AskLatencyHigh | `/ask` p95 > 10 s for 5 min (measured test p95: 7.6 s) |
+  | AbstentionRateHigh | more than 50% of `/ask` requests abstain over 15 min |
+  | UncitedAnswersHigh | more than 20% of answers are dropped for missing citations over 15 min |
+  | BackendErrors | more than 5 gateway or search failures in 5 min |
+
+![Grafana dashboard during 94 /ask requests](docs/grafana-dashboard.png)
+
+*The dashboard during a live run of 94 `/ask` requests (dev questions, then 40 test
+questions) against the full system.*
+
+![One /ask trace across the RAG API and the LLM gateway](docs/jaeger-trace.png)
+
+*One `/ask` trace in Jaeger, 54 spans over 2 services: retrieve (with the embedding call
+through the gateway), rerank, then generation inside the gateway.*
+
 ### Lint and test
 ```bash
 make lint     # ruff check + ruff format --check
@@ -334,8 +369,8 @@ Milestones follow [SHARED_STANDARDS.md](../SHARED_STANDARDS.md). Each one has a 
 - [x] Unit + integration tests (metrics, graph, endpoints, failure paths; OpenSearch/Qdrant integration)
 
 ### M5: Observability / monitoring
-- [ ] OpenTelemetry traces across API → retriever → gateway
-- [ ] Per-query cost and latency dashboard (using gateway metrics)
+- [x] OpenTelemetry traces across API → retriever → gateway (one trace across both services, verified in Jaeger)
+- [x] Per-query cost and latency dashboard (Prometheus + Grafana, includes gateway metrics) and written alert thresholds
 
 ### M6: Containerization & CI/CD
 - [ ] Dockerfile and `docker compose up` (API, OpenSearch, Qdrant, gateway)

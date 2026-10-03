@@ -1,0 +1,7 @@
+apiVersion: 1
+providers:
+  - name: healthcare-rag
+    folder: Healthcare RAG
+    type: file
+    options:
+      path: /var/lib/grafana/dashboards

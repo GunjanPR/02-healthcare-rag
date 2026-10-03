@@ -1,5 +1,6 @@
 """Hybrid retrieval: reciprocal rank fusion (RRF) of BM25 and dense results."""
 
+import contextvars
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import replace
 from typing import Protocol
@@ -31,6 +32,10 @@ class HybridRetriever:
         self._pool = ThreadPoolExecutor(max_workers=2)
 
     def search(self, query: str, k: int = 5, filters: Filters | None = None) -> list[Hit]:
-        retrievers = (self.sparse, self.dense)
-        futures = [self._pool.submit(r.search, query, k, filters) for r in retrievers]
+        # Each worker runs in a copy of the caller's context, so trace spans (e.g. the
+        # embedding call to the gateway) stay children of the request's trace.
+        futures = [
+            self._pool.submit(contextvars.copy_context().run, r.search, query, k, filters)
+            for r in (self.sparse, self.dense)
+        ]
         return rrf([f.result() for f in futures], k=k, rrf_k=self.rrf_k)

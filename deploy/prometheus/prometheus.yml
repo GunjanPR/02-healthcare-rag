@@ -1,0 +1,22 @@
+global:
+  scrape_interval: 5s
+  evaluation_interval: 15s
+
+rule_files:
+  - /etc/prometheus/alerts.yml
+
+scrape_configs:
+  # API running inside docker compose
+  - job_name: healthcare-rag
+    static_configs:
+      - targets: ["app:8010"]
+        labels: {deployment: compose}
+  # API running on the host (`make dev`)
+  - job_name: healthcare-rag-host
+    static_configs:
+      - targets: ["host.docker.internal:8010"]
+        labels: {deployment: host}
+  # 01-llm-gateway on the host: upstream latency, tokens and cost per model
+  - job_name: llm-gateway-host
+    static_configs:
+      - targets: ["host.docker.internal:8000"]

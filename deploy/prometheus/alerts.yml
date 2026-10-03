@@ -1,0 +1,33 @@
+# Alert thresholds for the RAG service. Evaluated by Prometheus (see the Alerts page on :9091).
+groups:
+  - name: healthcare-rag
+    rules:
+      - alert: AskLatencyHigh
+        # Measured end-to-end p95 on the test set was well under this (see the README),
+        # so 10 s for 5 minutes means the GPU or gateway is degraded.
+        expr: histogram_quantile(0.95, sum by (le) (rate(rag_request_latency_seconds_bucket{endpoint="ask"}[5m]))) > 10
+        for: 5m
+        labels: {severity: warning}
+        annotations:
+          summary: "/ask p95 latency above 10 s"
+      - alert: AbstentionRateHigh
+        # Most real questions should be answerable from the corpus; a jump in abstentions
+        # usually means an empty index, a broken embedder or a drifted reranker threshold.
+        expr: sum(rate(rag_answers_total{reason!="answered"}[15m])) / sum(rate(rag_answers_total[15m])) > 0.5
+        for: 15m
+        labels: {severity: warning}
+        annotations:
+          summary: "More than half of /ask requests abstained over 15 minutes"
+      - alert: BackendErrors
+        expr: sum(increase(rag_requests_total{outcome!="ok"}[5m])) > 5
+        labels: {severity: critical}
+        annotations:
+          summary: "More than 5 /ask or /summarize failures (gateway or search backend) in 5 minutes"
+      - alert: UncitedAnswersHigh
+        # Answers that cite nothing are discarded; a rise means the model stopped following
+        # the citation instruction (e.g. a model swap in the gateway).
+        expr: sum(rate(rag_answers_total{reason="uncited"}[15m])) / sum(rate(rag_answers_total[15m])) > 0.2
+        for: 15m
+        labels: {severity: warning}
+        annotations:
+          summary: "More than 20% of answers were discarded for missing citations"
