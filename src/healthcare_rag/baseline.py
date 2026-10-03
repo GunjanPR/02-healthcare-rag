@@ -35,11 +35,12 @@ class BaselineAnswer:
     chat: ChatResult
 
 
-def build_messages(question: str, hits: list[Hit]) -> list[dict[str, str]]:
+def build_messages(question: str, hits: list[Hit], instruction: str = "") -> list[dict[str, str]]:
     context = "\n\n".join(f"[{i}] {h.title}\n{h.text}" for i, h in enumerate(hits, start=1))
+    asked = f"{question} {instruction}".strip()
     return [
         {"role": "system", "content": SYSTEM_PROMPT},
-        {"role": "user", "content": f"Context:\n{context}\n\nQuestion: {question}"},
+        {"role": "user", "content": f"Context:\n{context}\n\nQuestion: {asked}"},
     ]
 
 
@@ -49,9 +50,10 @@ class BM25Baseline:
         self.chat_client = chat
         self.k = k
 
-    def answer(self, question: str) -> BaselineAnswer:
+    def answer(self, question: str, instruction: str = "") -> BaselineAnswer:
+        """`instruction` is appended to the question for the LLM only, not for retrieval."""
         start = time.perf_counter()
         hits = self.retriever.search(question, k=self.k)
         retrieval_s = time.perf_counter() - start
-        result = self.chat_client.chat(build_messages(question, hits))
+        result = self.chat_client.chat(build_messages(question, hits, instruction))
         return BaselineAnswer(question, result.text, hits, retrieval_s, result)

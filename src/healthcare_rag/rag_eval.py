@@ -21,6 +21,7 @@ import platform
 import random
 import re
 import statistics
+import subprocess
 import time
 from collections.abc import Callable
 from dataclasses import dataclass, replace
@@ -227,9 +228,9 @@ def build_answer_systems(settings: Settings, threshold: float) -> dict[str, Call
     bm25_rag = RAGPipeline(bm25, chat, None, bm25_cfg, scorer)
     full = RAGPipeline(hybrid, chat, reranker, full_cfg, scorer)
 
-    def run_m1(question: str) -> dict[str, Any]:
+    def run_m1(question: str, instruction: str = "") -> dict[str, Any]:
         start = time.perf_counter()
-        r = m1.answer(question)
+        r = m1.answer(question, instruction)
         n = len(r.hits)
         return {
             "answer": r.answer,
@@ -246,8 +247,8 @@ def build_answer_systems(settings: Settings, threshold: float) -> dict[str, Call
         }
 
     def runner(pipe: RAGPipeline) -> Callable[[str], dict[str, Any]]:
-        def run(question: str) -> dict[str, Any]:
-            r = pipe.ask(question)
+        def run(question: str, instruction: str = "") -> dict[str, Any]:
+            r = pipe.ask(question, instruction=instruction)
             return {
                 "answer": r.raw_answer if r.abstained and r.raw_answer else r.answer,
                 "abstained": r.abstained,
@@ -350,8 +351,29 @@ def grade_answers(data: dict, questions: list[Question], split: str) -> dict[str
 # ---- report --------------------------------------------------------------------------------
 
 
+def power_state() -> str:
+    """ "ac", "battery" or "unknown". Latency numbers only count on AC power: on battery
+    this laptop's GPU is throttled. Windows only (Win32_Battery.BatteryStatus 2 = on AC)."""
+    if platform.system() != "Windows":
+        return "unknown"
+    cmd = "(Get-CimInstance Win32_Battery | Select-Object -First 1).BatteryStatus"
+    try:
+        out = subprocess.run(
+            ["powershell", "-NoProfile", "-Command", cmd],
+            capture_output=True,
+            text=True,
+            timeout=20,
+        ).stdout.strip()
+    except (OSError, subprocess.SubprocessError):
+        return "unknown"
+    if not out:
+        return "ac"  # no battery: a desktop
+    return "ac" if out == "2" else "battery"
+
+
 def _meta(settings: Settings) -> dict[str, Any]:
     return {
+        "power": power_state(),
         "date": datetime.now(UTC).strftime("%Y-%m-%d %H:%M UTC"),
         "chat_model": settings.chat_model,
         "embedding_model": settings.embedding_model,

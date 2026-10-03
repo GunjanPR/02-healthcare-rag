@@ -154,6 +154,7 @@ class RAGResult:
 
 class State(TypedDict, total=False):
     question: str
+    instruction: str  # appended to the question in the generation prompt only
     filters: Filters | None
     candidates: list[Hit]
     passages: list[Hit]
@@ -243,9 +244,10 @@ class RAGPipeline:
     def _generate(self, state: State) -> State:
         start = time.perf_counter()
         context = number_passages(state["passages"])
+        asked = f"{state['question']} {state.get('instruction', '')}".strip()
         messages = [
             {"role": "system", "content": PROMPTS[self.config.prompt]},
-            {"role": "user", "content": f"Context:\n{context}\n\nQuestion: {state['question']}"},
+            {"role": "user", "content": f"Context:\n{context}\n\nQuestion: {asked}"},
         ]
         with self._span(state, "generate") as span:
             result = self.chat_client.chat(messages, max_tokens=self.config.max_tokens)
@@ -364,11 +366,21 @@ class RAGPipeline:
 
     # ---- public API --------------------------------------------------------------------
 
-    def ask(self, question: str, filters: Filters | None = None) -> RAGResult:
+    def ask(
+        self, question: str, filters: Filters | None = None, instruction: str = ""
+    ) -> RAGResult:
+        """`instruction` (e.g. an answer format) goes to the LLM only; retrieval and
+        reranking see the plain question, so the abstention scores are unaffected."""
         start = time.perf_counter()
         with get_tracer().start_as_current_span("rag.ask") as span:
             ctx = trace.set_span_in_context(span)
-            state = {"question": question, "filters": filters, "usage": Usage(), "trace_ctx": ctx}
+            state = {
+                "question": question,
+                "instruction": instruction,
+                "filters": filters,
+                "usage": Usage(),
+                "trace_ctx": ctx,
+            }
             out = self.graph.invoke(state)
             abstained = out.get("abstained", True)
             span.set_attribute("rag.abstained", abstained)
