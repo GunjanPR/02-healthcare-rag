@@ -1,0 +1,54 @@
+# Local stack: API + OpenSearch (BM25) + Qdrant (dense vectors).
+# The LLM Gateway (01-llm-gateway) runs separately on the host at :8000 and is reached
+# through host.docker.internal.
+services:
+  app:
+    build: .
+    ports: ["8010:8010"]
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      OPENSEARCH_URL: http://opensearch:9200
+      QDRANT_URL: http://qdrant:6333
+      GATEWAY_BASE_URL: ${GATEWAY_BASE_URL_DOCKER:-http://host.docker.internal:8000/v1}
+    extra_hosts: ["host.docker.internal:host-gateway"]
+    depends_on:
+      opensearch:
+        condition: service_healthy
+      qdrant:
+        condition: service_healthy
+
+  opensearch:
+    image: opensearchproject/opensearch:2.17.1
+    ports: ["9200:9200"]
+    environment:
+      discovery.type: single-node
+      DISABLE_SECURITY_PLUGIN: "true"           # local dev only
+      DISABLE_INSTALL_DEMO_CONFIG: "true"
+      bootstrap.memory_lock: "false"
+      OPENSEARCH_JAVA_OPTS: -Xms512m -Xmx512m   # modest heap for a 16 GB machine
+    ulimits:
+      nofile: { soft: 65536, hard: 65536 }
+    volumes: ["opensearch-data:/usr/share/opensearch/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fs 'http://localhost:9200/_cluster/health?wait_for_status=yellow&timeout=5s' || exit 1"]
+      interval: 10s
+      timeout: 10s
+      retries: 30
+      start_period: 30s
+
+  qdrant:
+    image: qdrant/qdrant:v1.12.4
+    ports: ["6333:6333", "6334:6334"]
+    volumes: ["qdrant-data:/qdrant/storage"]
+    healthcheck:
+      # The image has no curl/wget; use bash's /dev/tcp to hit /readyz
+      test: ["CMD-SHELL", "bash -c 'exec 3<>/dev/tcp/127.0.0.1/6333 && printf \"GET /readyz HTTP/1.0\r\n\r\n\" >&3 && grep -q \"200 OK\" <&3'"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+volumes:
+  opensearch-data:
+  qdrant-data:

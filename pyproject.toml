@@ -19,13 +19,17 @@ dependencies = [
     "langchain-core>=0.3",
     "opensearch-py>=2.6",
     "qdrant-client>=1.10",
-    "sentence-transformers>=3.0",
+    "requests>=2.32",
 ]
 
 [project.optional-dependencies]
 dev = [
     "ruff>=0.6",
     "pytest>=8.0",
+]
+# Local cross-encoder reranker (pulls in torch; not needed in the default image)
+rerank = [
+    "sentence-transformers>=3.0",
 ]
 
 [tool.hatch.build.targets.wheel]
@@ -46,7 +50,7 @@ known-first-party = ["healthcare_rag"]
 minversion = "8.0"
 testpaths = ["tests"]
 pythonpath = ["src"]
-addopts = "-ra -q --strict-markers"
+addopts = "-ra -q --strict-markers -m \"not integration\""
 markers = [
     "integration: tests that need running external services (deselect with '-m \"not integration\"')",
 ]

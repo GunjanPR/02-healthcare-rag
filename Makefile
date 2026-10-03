@@ -1,7 +1,7 @@
 # Windows: install make with `choco install make`, or run from Git Bash.
 PYTHON ?= python
 
-.PHONY: install lint format test run ingest
+.PHONY: install lint format test test-integration run dev up up-all down logs ingest
 
 install:
 	$(PYTHON) -m pip install --upgrade pip
@@ -18,8 +18,30 @@ format:
 test:
 	$(PYTHON) -m pytest
 
+# Needs OpenSearch + Qdrant running (make up)
+test-integration:
+	$(PYTHON) -m pytest -m integration
+
 run:
+	$(PYTHON) -m uvicorn healthcare_rag.main:app --host 0.0.0.0 --port 8010
+
+# API on the host with auto-reload, against OpenSearch + Qdrant from `make up`
+dev:
 	$(PYTHON) -m uvicorn healthcare_rag.main:app --reload --host 0.0.0.0 --port 8010
+
+# OpenSearch + Qdrant in Docker, for use with `make dev`
+up:
+	docker compose up -d opensearch qdrant
+
+# Everything in Docker, including the API
+up-all:
+	docker compose up -d --build
+
+down:
+	docker compose down
+
+logs:
+	docker compose logs -f --tail=100
 
 ingest:
 	$(PYTHON) -m healthcare_rag.ingest --limit 1000

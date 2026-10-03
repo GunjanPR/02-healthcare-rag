@@ -23,7 +23,7 @@ rate limits, and per-query cost and latency come from the gateway.
 | API | FastAPI, Uvicorn |
 | Orchestration | LangGraph (retrieve → rerank → generate → verify / abstain) |
 | Sparse retrieval | OpenSearch (BM25) |
-| Dense retrieval | Qdrant + sentence-transformers / biomedical embeddings |
+| Dense retrieval | Qdrant + biomedical embeddings (via the gateway; optional local reranker with `pip install -e ".[rerank]"`) |
 | LLM inference | 01-llm-gateway (OpenAI-compatible), backed by Ollama/vLLM |
 | Data | PubMed Central Open Access subset (JSONL ingestion) |
 | Observability | OpenTelemetry, gateway Prometheus metrics |
@@ -37,7 +37,7 @@ rate limits, and per-query cost and latency come from the gateway.
 | **Retriever** | Hybrid search (reciprocal rank fusion of BM25 and dense results) with metadata filters |
 | **Reranker** | Cross-encoder or LLM reranking of the top-k chunks |
 | **LangGraph agent** | Retrieve → rerank → generate with citations → verify grounding → answer or abstain |
-| **API** | `/ask`, `/summarize`, and `/health` endpoints |
+| **API** | `/health` (liveness) and `/ready` (OpenSearch + Qdrant reachable) today; `/ask` and `/summarize` from M2 |
 | **Gateway client** | OpenAI-compatible client pointed at `GATEWAY_BASE_URL` for all LLM and embedding calls |
 
 ```
@@ -65,9 +65,9 @@ rate limits, and per-query cost and latency come from the gateway.
 ### Prerequisites
 - Python 3.11
 - **01-llm-gateway running**, on `http://localhost:8000` by default, with a client API key
-- OpenSearch 2.x: `docker run -d -p 9200:9200 -e discovery.type=single-node -e DISABLE_SECURITY_PLUGIN=true opensearchproject/opensearch:2`
-- Qdrant: `docker run -d -p 6333:6333 qdrant/qdrant`
-- Optional: Docker Desktop (full stack via `docker compose up` from M6)
+- Docker Desktop, for OpenSearch 2.17 and Qdrant 1.12 (`docker compose`). OpenSearch runs
+  single-node with the security plugin disabled (local dev only) and a 512 MB heap; the
+  whole stack idles at about 1 GB of RAM.
 - Optional: GNU Make (see the Windows note below)
 
 ### Install
@@ -93,19 +93,26 @@ downloads.
 > targets from **Git Bash**. You can also run the commands in the `Makefile` yourself
 > (for example, `python -m pytest` instead of `make test`).
 
-### Run the service
+### Run everything in Docker
+```bash
+docker compose up -d --build          # API :8010, OpenSearch :9200, Qdrant :6333 (= make up-all)
+curl localhost:8010/health            # liveness
+curl localhost:8010/ready             # 200 when OpenSearch and Qdrant are reachable, else 503
+docker compose down                   # = make down (add -v to drop the indexes)
+```
+The app container reaches the gateway on the host through `host.docker.internal:8000`
+(override with `GATEWAY_BASE_URL_DOCKER`). `/ready` reports the gateway's status but does
+not require it.
+
+### Run the API on the host
 ```bash
 # 1. Start the LLM Gateway (in ../01-llm-gateway): make run
-# 2. Start OpenSearch + Qdrant (see Prerequisites)
-# 3. Ingest a small PMC sample (M3)
-make ingest                           # = python -m healthcare_rag.ingest --limit 1000
-# 4. Start the API on http://localhost:8010
-make run                              # = uvicorn healthcare_rag.main:app --reload --port 8010
+make up                               # 2. OpenSearch + Qdrant in Docker
+make dev                              # 3. API on http://localhost:8010 with auto-reload
+make ingest                           # 4. Ingest a small PMC sample (works from M3)
 ```
-> `make run` starts working at **M2**, once `src/healthcare_rag/main.py` is added.
-> `make ingest` starts working at **M3**.
 
-### Try it
+### Try it (from M2)
 ```bash
 curl -X POST http://localhost:8010/ask -H "Content-Type: application/json" \
   -d '{"question": "What variants in BRCA1 are associated with reduced DNA repair?"}'
@@ -114,7 +121,8 @@ curl -X POST http://localhost:8010/ask -H "Content-Type: application/json" \
 ### Lint and test
 ```bash
 make lint     # ruff check + ruff format --check
-make test     # pytest (unit tests only; integration tests are marked `integration`)
+make test     # pytest (unit tests only; no Docker or network needed)
+make test-integration  # tests marked `integration` (needs `make up`)
 make format   # auto-fix lint and formatting
 ```
 
@@ -125,8 +133,9 @@ make format   # auto-fix lint and formatting
 - **Answer metrics:** grounded-answer rate, citation accuracy, faithfulness (RAGAS-style),
   and abstention precision.
 - **Cost / latency:** per-query cost and p95 latency, taken from gateway metrics.
-- **Results:** *targets until measured*: NDCG@10 lift over BM25-only, and grounded-answer
-  rate above 90%.
+- **Method:** *to be defined in M4* (QA set construction, labeling protocol, N).
+- **Results:** [pending]. No numbers are reported until they are measured.
+- **Targets (not measured):** NDCG@10 lift over BM25-only, and grounded-answer rate above 90%.
 
 ## Milestones
 
@@ -135,6 +144,8 @@ Milestones follow [SHARED_STANDARDS.md](../SHARED_STANDARDS.md). Each one has a 
 ### M1: Scaffold & baseline
 - [x] Repo scaffold: `pyproject.toml`, Makefile, `.gitignore`, `.env.example`
 - [x] Smoke test passes (`make test`)
+- [x] FastAPI app with `/health` and `/ready`; Dockerfile + `docker compose up` (API, OpenSearch, Qdrant)
+- [x] GitHub Actions: lint + test + compose smoke test
 - [ ] Baseline: BM25-only retrieval + single gateway call on a toy corpus
 
 ### M2: Core functionality
@@ -169,10 +180,19 @@ Milestones follow [SHARED_STANDARDS.md](../SHARED_STANDARDS.md). Each one has a 
 ## Project Layout
 ```
 02-healthcare-rag/
-├── src/healthcare_rag/__init__.py
-├── tests/test_smoke.py
+├── .github/workflows/ci.yml   # lint, test, compose smoke test
+├── src/healthcare_rag/
+│   ├── __init__.py
+│   ├── config.py              # pydantic-settings, reads .env
+│   └── main.py                # FastAPI app: /health, /ready
+├── tests/
+│   ├── test_api.py            # TestClient, backends mocked
+│   └── test_smoke.py
+├── .dockerignore
 ├── .env.example
 ├── .gitignore
+├── Dockerfile
+├── docker-compose.yml
 ├── Makefile
 ├── pyproject.toml
 └── README.md
