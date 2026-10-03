@@ -19,6 +19,10 @@ def rag_config(settings: Settings) -> RAGConfig:
         abstain_threshold=settings.abstain_threshold,
         require_citations=settings.require_citations,
         citation_repairs=settings.citation_repairs,
+        prompt=settings.prompt_version,
+        citation_repair=settings.citation_repair,
+        citation_check=settings.citation_check,
+        support_threshold=settings.support_threshold,
     )
 
 
@@ -41,9 +45,27 @@ def build_retriever(settings: Settings, mode: str | None = None) -> Retriever:
 def build_reranker(settings: Settings) -> Reranker | None:
     if not settings.reranker_model:
         return None
-    from healthcare_rag.rerank import CrossEncoderReranker  # needs the [rerank] extra
+    from healthcare_rag.rerank import CrossEncoderReranker, EnsembleReranker  # [rerank] extra
 
-    return CrossEncoderReranker(settings.reranker_model, device=settings.reranker_device)
+    primary = CrossEncoderReranker(settings.reranker_model, device=settings.reranker_device)
+    if not settings.reranker_model_2 and not settings.reranker_retrieval_weight:
+        return primary
+    members = [primary]
+    if settings.reranker_model_2:
+        members.append(
+            CrossEncoderReranker(settings.reranker_model_2, device=settings.reranker_device)
+        )
+    return EnsembleReranker(members, retrieval_weight=settings.reranker_retrieval_weight)
+
+
+def build_scorer(settings: Settings):
+    from healthcare_rag.citations import LexicalScorer
+
+    if not settings.nli_model:
+        return LexicalScorer()
+    from healthcare_rag.nli import NLIScorer  # needs the [rerank] extra
+
+    return NLIScorer(settings.nli_model, device=settings.reranker_device)
 
 
 def build_pipeline(settings: Settings) -> RAGPipeline:
@@ -52,6 +74,7 @@ def build_pipeline(settings: Settings) -> RAGPipeline:
         chat=GatewayClient.from_settings(settings),
         reranker=build_reranker(settings),
         config=rag_config(settings),
+        scorer=build_scorer(settings),
     )
 
 

@@ -44,11 +44,25 @@ class Settings(BaseSettings):
     # Hugging Face cross-encoder id; blank = no reranking
     reranker_model: str = ""
     reranker_device: str = "cpu"
+    # Optional second cross-encoder fused with the first by reciprocal rank fusion
+    # (e.g. BAAI/bge-reranker-v2-m3); the first model's score still drives abstention
+    reranker_model_2: str = ""
+    # Weight of the retriever's own order in that fusion (0 = ignore it)
+    reranker_retrieval_weight: float = 0.0
     retrieval_top_k: int = 20
     rerank_top_k: int = 5
     abstain_threshold: float = 6.43  # MedCPT logit; tuned on the dev split (make eval)
     require_citations: bool = True
     citation_repairs: int = 1
+    # System prompt version (rag.PROMPTS)
+    prompt_version: str = "v1"
+    # llm | attribute | attribute_then_llm (see rag.RAGConfig)
+    citation_repair: str = "llm"
+    # off | relabel | drop
+    citation_check: str = "off"
+    support_threshold: float = 0.6
+    # Blank = lexical support scoring; an NLI cross-encoder id switches to model scoring
+    nli_model: str = ""
 
     # Observability: blank endpoint = tracing off. 01's Jaeger listens on :4318.
     otel_exporter_otlp_endpoint: str = ""
