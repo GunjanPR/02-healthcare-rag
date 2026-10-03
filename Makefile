@@ -1,7 +1,7 @@
 # Windows: install make with `choco install make`, or run from Git Bash.
 PYTHON ?= python
 
-.PHONY: install lint format test test-integration run dev up up-all down logs ingest
+.PHONY: install lint format test test-integration run dev up up-all down logs ingest index-toy eval-baseline
 
 install:
 	$(PYTHON) -m pip install --upgrade pip
@@ -45,3 +45,12 @@ logs:
 
 ingest:
 	$(PYTHON) -m healthcare_rag.ingest --limit 1000
+
+# M1 baseline: BM25-only (OpenSearch) + one gateway call over the toy corpus.
+# Needs `make up` and the gateway on :8000. HARDWARE is a free-text note for the report.
+HARDWARE ?=
+index-toy:
+	$(PYTHON) -m healthcare_rag.evaluation index
+
+eval-baseline: index-toy
+	$(PYTHON) -m healthcare_rag.evaluation run --markdown docs/baseline_results.md --hardware "$(HARDWARE)"

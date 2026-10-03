@@ -20,13 +20,13 @@ class Settings(BaseSettings):
     embedding_model: str = "nomic-embed-text"
 
     # OpenSearch (BM25)
-    opensearch_url: str = "http://localhost:9200"
+    opensearch_url: str = "http://127.0.0.1:9200"
     opensearch_index: str = "pmc_chunks"
     opensearch_user: str = ""
     opensearch_password: str = ""
 
     # Qdrant (dense vectors)
-    qdrant_url: str = "http://localhost:6333"
+    qdrant_url: str = "http://127.0.0.1:6333"
     qdrant_collection: str = "pmc_chunks"
     qdrant_api_key: str = ""
 

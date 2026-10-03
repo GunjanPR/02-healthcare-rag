@@ -112,6 +112,14 @@ make dev                              # 3. API on http://localhost:8010 with aut
 make ingest                           # 4. Ingest a small PMC sample (works from M3)
 ```
 
+### Run the M1 baseline
+```bash
+# Needs `make up` and the gateway on :8000, with GATEWAY_API_KEY set in .env
+make eval-baseline HARDWARE="<your machine and power state>"
+# = index eval/toy/corpus.json into OpenSearch, answer eval/toy/questions.json,
+#   write eval/results/baseline_bm25.json (git-ignored) and docs/baseline_results.md
+```
+
 ### Try it (from M2)
 ```bash
 curl -X POST http://localhost:8010/ask -H "Content-Type: application/json" \
@@ -133,9 +141,55 @@ make format   # auto-fix lint and formatting
 - **Answer metrics:** grounded-answer rate, citation accuracy, faithfulness (RAGAS-style),
   and abstention precision.
 - **Cost / latency:** per-query cost and p95 latency, taken from gateway metrics.
-- **Method:** *to be defined in M4* (QA set construction, labeling protocol, N).
-- **Results:** [pending]. No numbers are reported until they are measured.
+- **Method (full system):** *to be defined in M4* (QA set construction, labeling protocol, N).
+- **Results (full system):** [pending]. No numbers are reported until they are measured.
 - **Targets (not measured):** NDCG@10 lift over BM25-only, and grounded-answer rate above 90%.
+
+### M1 baseline: BM25-only + one gateway call (measured 2026-10-03)
+
+**What it is:** the control that later pipelines are compared against. The question is sent
+as a BM25 query to OpenSearch (English analyzer, `title` + `text`). The top 3 passages go
+into one chat call to `llama3.2` (3B) through the LLM Gateway, at temperature 0 with the
+gateway cache bypassed. There is no reranking, no dense retrieval and no abstention logic.
+
+**Data:** a self-written toy corpus of **24 short passages** on common clinical topics
+(`eval/toy/corpus.json`) and **24 questions** (`eval/toy/questions.json`). Each question
+has one relevant passage and a reference answer, given as keyword groups. An answer counts
+as correct when every keyword group appears as a whole term in it.
+
+**Setup:** Acer Nitro V 15 (i5-13420H, RTX 4050 Laptop GPU 6 GB) on AC power over USB-C,
+so the GPU is held to a **20 W power limit** (60 W default), as in project 01. Ollama 0.35.0
+runs natively on the GPU, the gateway on the host, and OpenSearch 2.17.1 in Docker Desktop
+with a 512 MB heap. Requests are sequential, after one warm-up request. Latency is client-side
+wall-clock time.
+
+| Metric (N = 24) | Run 1 | Run 2 |
+|---|---|---|
+| Recall@1 / Recall@3 / Recall@5 | 1.000 / 1.000 / 1.000 | 1.000 / 1.000 / 1.000 |
+| MRR@10 | 1.000 | 1.000 |
+| Answer accuracy (keyword match) | 1.000 (24/24) | 1.000 (24/24) |
+| Retrieval latency p50 / p95 | 6 ms / 8 ms | 6 ms / 6 ms |
+| Generation latency p50 / p95 | 902 ms / 1439 ms | 942 ms / 1455 ms |
+| End-to-end latency p50 / p95 | 908 ms / 1446 ms | 948 ms / 1461 ms |
+| Mean prompt / completion tokens | 368 / 27 | 368 / 27 |
+| Cost (gateway `x-gateway-cost-usd`) | $0.00 | $0.00 |
+
+Per-question answers and ranks for run 1 are in
+[docs/baseline_results.md](docs/baseline_results.md).
+
+**How to read these numbers:**
+- **The quality numbers are at the ceiling.** Each toy passage covers one topic, and each
+  question shares key terms with its passage, so BM25 ranks the right passage first every
+  time. This set checks that the pipeline works end to end. It cannot show an improvement
+  from reranking or hybrid retrieval. That comparison needs the M4 QA set over real PMC
+  articles, where BM25-only is again the named baseline.
+- **Latency is almost all generation:** retrieval is under 1% of the end-to-end time.
+- **Cost is $0** because the model runs locally and the gateway prices the Ollama backend at
+  zero. Token counts are recorded so cost can be computed for a priced backend.
+- **Use `127.0.0.1` rather than `localhost` for OpenSearch on Windows.** An earlier run with
+  `localhost` measured 48 ms retrieval p50, but OpenSearch itself took about 2.5 ms. The rest
+  was Docker Desktop's IPv6 (`::1`) port forwarding. The defaults now use `127.0.0.1`, which
+  brings retrieval to 6 ms.
 
 ## Milestones
 
@@ -146,7 +200,7 @@ Milestones follow [SHARED_STANDARDS.md](../SHARED_STANDARDS.md). Each one has a 
 - [x] Smoke test passes (`make test`)
 - [x] FastAPI app with `/health` and `/ready`; Dockerfile + `docker compose up` (API, OpenSearch, Qdrant)
 - [x] GitHub Actions: lint + test + compose smoke test
-- [ ] Baseline: BM25-only retrieval + single gateway call on a toy corpus
+- [x] Baseline: BM25-only retrieval + single gateway call on a toy corpus (measured; see Evaluation & Results)
 
 ### M2: Core functionality
 - [ ] Gateway client (OpenAI-compatible, configured via `GATEWAY_BASE_URL`)
@@ -183,10 +237,18 @@ Milestones follow [SHARED_STANDARDS.md](../SHARED_STANDARDS.md). Each one has a 
 ├── .github/workflows/ci.yml   # lint, test, compose smoke test
 ├── src/healthcare_rag/
 │   ├── __init__.py
+│   ├── baseline.py            # M1 baseline: BM25 top-k -> one gateway chat call
+│   ├── bm25.py                # OpenSearch index (idempotent upsert) + BM25 search
 │   ├── config.py              # pydantic-settings, reads .env
+│   ├── evaluation.py          # recall@k, MRR, keyword accuracy, latency; CLI
+│   ├── gateway.py             # OpenAI-compatible client for 01-llm-gateway
 │   └── main.py                # FastAPI app: /health, /ready
+├── eval/toy/                  # self-written toy corpus + questions (small, committed)
+├── docs/baseline_results.md   # generated per-question baseline report
 ├── tests/
+│   ├── integration/           # needs OpenSearch (make test-integration)
 │   ├── test_api.py            # TestClient, backends mocked
+│   ├── test_baseline.py       # metrics, pipeline and gateway client with fakes
 │   └── test_smoke.py
 ├── .dockerignore
 ├── .env.example

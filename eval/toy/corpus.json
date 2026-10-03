@@ -1,0 +1,122 @@
+[
+  {
+    "id": "doc-metformin",
+    "title": "Metformin as first-line therapy for type 2 diabetes",
+    "text": "Metformin is the usual first-line oral medication for type 2 diabetes mellitus. It lowers blood glucose mainly by reducing hepatic glucose production and modestly improving insulin sensitivity. It does not usually cause hypoglycemia when used alone. The most common adverse effects are gastrointestinal, such as diarrhea and nausea. A rare but serious adverse effect is lactic acidosis, so the dose is reduced or the drug is stopped when kidney function is severely impaired."
+  },
+  {
+    "id": "doc-hba1c",
+    "title": "Glycated hemoglobin (HbA1c) in diabetes care",
+    "text": "Glycated hemoglobin, or HbA1c, reflects average blood glucose over roughly the previous two to three months, because red blood cells live for about 120 days. An HbA1c of 6.5 percent or higher on repeat testing is one diagnostic criterion for diabetes. Many adults with diabetes are treated toward an HbA1c target below 7 percent, individualized to the patient."
+  },
+  {
+    "id": "doc-type1",
+    "title": "Type 1 diabetes and insulin deficiency",
+    "text": "Type 1 diabetes is usually caused by autoimmune destruction of the insulin-producing beta cells of the pancreatic islets. Patients have absolute insulin deficiency and require lifelong insulin therapy. Untreated or undertreated type 1 diabetes can lead to diabetic ketoacidosis, a medical emergency marked by high blood glucose, ketones and metabolic acidosis."
+  },
+  {
+    "id": "doc-hypertension",
+    "title": "Hypertension: definition and first-line drugs",
+    "text": "Hypertension is persistently elevated arterial blood pressure. Under the 2017 ACC/AHA guideline, stage 1 hypertension is a systolic pressure of 130 to 139 mmHg or a diastolic pressure of 80 to 89 mmHg. Common first-line drug classes include thiazide diuretics, ACE inhibitors, angiotensin II receptor blockers and calcium channel blockers. Lifestyle measures include reducing sodium intake, regular exercise and weight loss."
+  },
+  {
+    "id": "doc-ace-cough",
+    "title": "ACE inhibitor side effects",
+    "text": "ACE inhibitors such as lisinopril and enalapril block conversion of angiotensin I to angiotensin II. They also reduce breakdown of bradykinin, and accumulated bradykinin is thought to cause the dry, persistent cough seen in some patients. Angioedema is a rarer but potentially life-threatening reaction. When cough is intolerable, an angiotensin II receptor blocker is often substituted. ACE inhibitors are contraindicated in pregnancy."
+  },
+  {
+    "id": "doc-statins",
+    "title": "Statins and LDL cholesterol",
+    "text": "Statins lower LDL cholesterol by inhibiting HMG-CoA reductase, the rate-limiting enzyme of cholesterol synthesis in the liver. Examples include atorvastatin and rosuvastatin. Muscle aches are the most frequently reported side effect; rhabdomyolysis is rare. Statins reduce the risk of heart attack and stroke in people at elevated cardiovascular risk."
+  },
+  {
+    "id": "doc-mi",
+    "title": "Acute myocardial infarction",
+    "text": "An acute myocardial infarction, or heart attack, occurs when blood flow through a coronary artery is blocked, most often by a thrombus on a ruptured atherosclerotic plaque, causing death of heart muscle. Typical symptoms are chest pain or pressure that may spread to the arm, jaw or back, with shortness of breath and sweating. Cardiac troponin in the blood is the preferred biomarker for diagnosis. Aspirin is given early unless contraindicated."
+  },
+  {
+    "id": "doc-afib",
+    "title": "Atrial fibrillation and stroke prevention",
+    "text": "Atrial fibrillation is the most common sustained cardiac arrhythmia. The atria quiver instead of contracting effectively, which allows clots to form, particularly in the left atrial appendage. Stroke risk is commonly estimated with the CHA2DS2-VASc score, and anticoagulants such as warfarin or direct oral anticoagulants like apixaban are used to reduce that risk."
+  },
+  {
+    "id": "doc-asthma",
+    "title": "Asthma treatment",
+    "text": "Asthma is a chronic inflammatory disease of the airways with reversible airflow obstruction, wheeze and shortness of breath. Inhaled corticosteroids are the mainstay of long-term control because they reduce airway inflammation. Short-acting beta-2 agonists such as salbutamol (albuterol) relax airway smooth muscle and give rapid relief of acute symptoms."
+  },
+  {
+    "id": "doc-copd",
+    "title": "Chronic obstructive pulmonary disease",
+    "text": "Chronic obstructive pulmonary disease (COPD) causes persistent, poorly reversible airflow limitation. Cigarette smoking is the leading cause worldwide. Diagnosis is confirmed by spirometry showing a post-bronchodilator FEV1/FVC ratio below 0.70. Smoking cessation is the intervention that most slows decline in lung function."
+  },
+  {
+    "id": "doc-tb",
+    "title": "Tuberculosis",
+    "text": "Tuberculosis is caused by the bacterium Mycobacterium tuberculosis and spreads through airborne droplets when a person with active pulmonary disease coughs. Latent infection produces no symptoms and is not contagious. Standard treatment of drug-susceptible active disease uses a combination of isoniazid, rifampicin, pyrazinamide and ethambutol for an initial phase, followed by a continuation phase, for about six months in total."
+  },
+  {
+    "id": "doc-penicillin",
+    "title": "Penicillin mechanism of action",
+    "text": "Penicillins are beta-lactam antibiotics. They bind penicillin-binding proteins and inhibit the cross-linking of peptidoglycan in the bacterial cell wall, which leads to cell lysis. Bacteria can become resistant by producing beta-lactamase enzymes that break the beta-lactam ring; adding a beta-lactamase inhibitor such as clavulanic acid can restore activity."
+  },
+  {
+    "id": "doc-hypothyroid",
+    "title": "Hypothyroidism",
+    "text": "Hypothyroidism is underproduction of thyroid hormone. In iodine-sufficient regions the most common cause is Hashimoto thyroiditis, an autoimmune disease. Symptoms include fatigue, cold intolerance, weight gain and constipation. Primary hypothyroidism is identified by a raised TSH with a low free T4, and it is treated with oral levothyroxine."
+  },
+  {
+    "id": "doc-iron-anemia",
+    "title": "Iron deficiency anemia",
+    "text": "Iron deficiency is the most common cause of anemia worldwide. It produces a microcytic, hypochromic anemia, with small pale red blood cells. Low serum ferritin is the most specific routine test for depleted iron stores. In adult men and postmenopausal women, unexplained iron deficiency should prompt a search for gastrointestinal blood loss."
+  },
+  {
+    "id": "doc-b12",
+    "title": "Vitamin B12 deficiency",
+    "text": "Vitamin B12 deficiency causes a macrocytic anemia and can damage the nervous system, including the dorsal columns of the spinal cord. Pernicious anemia is an autoimmune cause in which antibodies against intrinsic factor or parietal cells prevent B12 absorption in the terminal ileum. Strict vegan diets and long-term metformin use are other risk factors."
+  },
+  {
+    "id": "doc-ckd",
+    "title": "Chronic kidney disease staging",
+    "text": "Chronic kidney disease is staged by estimated glomerular filtration rate (eGFR) and albuminuria. An eGFR below 60 mL/min/1.73 m2 for more than three months indicates at least stage 3 disease. Diabetes and hypertension are the leading causes. ACE inhibitors or ARBs are used to reduce proteinuria and slow progression."
+  },
+  {
+    "id": "doc-stroke",
+    "title": "Ischemic stroke",
+    "text": "Most strokes are ischemic, caused by blockage of a cerebral artery. Sudden facial droop, arm weakness and speech difficulty are classic warning signs. Intravenous thrombolysis with alteplase can be given to eligible patients within 4.5 hours of symptom onset, after a CT scan has excluded hemorrhage. Mechanical thrombectomy is used for large-vessel occlusions."
+  },
+  {
+    "id": "doc-migraine",
+    "title": "Migraine",
+    "text": "Migraine is a primary headache disorder with recurrent, often one-sided, throbbing headaches lasting 4 to 72 hours, commonly with nausea and sensitivity to light and sound. About a third of patients experience an aura, such as visual zigzag lines, before the headache. Triptans such as sumatriptan are serotonin 5-HT1B/1D receptor agonists used for acute attacks."
+  },
+  {
+    "id": "doc-osteoporosis",
+    "title": "Osteoporosis",
+    "text": "Osteoporosis is reduced bone mass and deterioration of bone microarchitecture, which raises fracture risk, especially of the hip, spine and wrist. It is diagnosed with dual-energy X-ray absorptiometry (DEXA), where a T-score of -2.5 or lower indicates osteoporosis. Bisphosphonates such as alendronate are common first-line treatment and work by inhibiting osteoclast-mediated bone resorption."
+  },
+  {
+    "id": "doc-gerd",
+    "title": "Gastroesophageal reflux disease",
+    "text": "Gastroesophageal reflux disease (GERD) occurs when stomach acid repeatedly flows back into the esophagus, typically causing heartburn and regurgitation. Proton pump inhibitors such as omeprazole are the most effective drugs for healing erosive esophagitis because they block the H+/K+ ATPase in gastric parietal cells. Long-standing reflux can lead to Barrett esophagus, a risk factor for esophageal adenocarcinoma."
+  },
+  {
+    "id": "doc-hpylori",
+    "title": "Helicobacter pylori and peptic ulcers",
+    "text": "Helicobacter pylori is a gram-negative bacterium that colonizes the stomach and is a major cause of peptic ulcer disease, along with NSAID use. It is also linked to gastric adenocarcinoma and MALT lymphoma. Eradication usually combines a proton pump inhibitor with two or more antibiotics, for example clarithromycin and amoxicillin, or a bismuth-based quadruple regimen."
+  },
+  {
+    "id": "doc-sepsis",
+    "title": "Sepsis",
+    "text": "Sepsis is life-threatening organ dysfunction caused by a dysregulated host response to infection. Early recognition matters: initial management includes taking blood cultures, giving broad-spectrum antibiotics promptly, ideally within one hour, and intravenous fluids for hypotension or a raised lactate. Septic shock is sepsis needing vasopressors to keep mean arterial pressure at 65 mmHg or more."
+  },
+  {
+    "id": "doc-depression",
+    "title": "Major depressive disorder",
+    "text": "Major depressive disorder is defined by at least two weeks of depressed mood or loss of interest or pleasure, along with other symptoms such as sleep or appetite change, fatigue, poor concentration and feelings of worthlessness. Selective serotonin reuptake inhibitors (SSRIs) such as sertraline are commonly used first-line medications, and psychotherapy such as cognitive behavioral therapy is also effective."
+  },
+  {
+    "id": "doc-vaccines",
+    "title": "How vaccines work",
+    "text": "Vaccines train the adaptive immune system by exposing it to an antigen, or instructions to make one, without causing disease. This generates memory B and T cells, so a later encounter with the real pathogen produces a faster, stronger response. Live attenuated vaccines, such as measles-mumps-rubella (MMR), are generally avoided in pregnancy and in severely immunocompromised people."
+  }
+]
