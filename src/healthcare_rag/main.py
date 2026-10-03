@@ -4,22 +4,28 @@ from typing import Annotated
 
 import httpx
 from fastapi import Depends, FastAPI, HTTPException, Response, status
-from opensearchpy.exceptions import ConnectionError as OpenSearchConnectionError
+from opensearchpy.exceptions import OpenSearchException
+from prometheus_client import CONTENT_TYPE_LATEST, generate_latest
 from pydantic import BaseModel, Field
+from qdrant_client.http.exceptions import ResponseHandlingException, UnexpectedResponse
 
 from healthcare_rag import __version__
 from healthcare_rag.bm25 import BM25Index
 from healthcare_rag.config import Settings, get_settings
 from healthcare_rag.factory import get_index, get_pipeline
 from healthcare_rag.gateway import GatewayError
+from healthcare_rag.observability import metrics, setup_tracing
 from healthcare_rag.rag import RAGPipeline, RAGResult
 from healthcare_rag.types import Filters
 
 app = FastAPI(title="Healthcare RAG", version=__version__)
+setup_tracing(app, get_settings().otel_exporter_otlp_endpoint, get_settings().otel_service_name)
 
 SettingsDep = Annotated[Settings, Depends(get_settings)]
 PipelineDep = Annotated[RAGPipeline, Depends(get_pipeline)]
 IndexDep = Annotated[BM25Index, Depends(get_index)]
+# Search-side failures: backend down, index/collection missing, bad response
+SEARCH_ERRORS = (OpenSearchException, UnexpectedResponse, ResponseHandlingException)
 
 
 # ---- schemas -----------------------------------------------------------------------------
@@ -112,10 +118,15 @@ def _answer_out(result: RAGResult) -> AnswerOut:
     )
 
 
-def _backend_errors(exc: Exception) -> HTTPException:
+def _backend_errors(exc: Exception, endpoint: str) -> HTTPException:
+    metrics.requests.labels(endpoint, type(exc).__name__).inc()
     if isinstance(exc, GatewayError):
         return HTTPException(status.HTTP_502_BAD_GATEWAY, f"LLM gateway error: {exc}")
-    return HTTPException(status.HTTP_503_SERVICE_UNAVAILABLE, "search backend unavailable")
+    return HTTPException(
+        status.HTTP_503_SERVICE_UNAVAILABLE,
+        f"search backend unavailable or index not built ({type(exc).__name__}); "
+        "check /ready and run `make ingest`",
+    )
 
 
 # ---- endpoints ---------------------------------------------------------------------------
@@ -127,8 +138,9 @@ def ask(body: AskIn, pipeline: PipelineDep) -> AnswerOut:
     filters = body.filters.to_filters() if body.filters else None
     try:
         result = pipeline.ask(body.question, filters=filters)
-    except (GatewayError, OpenSearchConnectionError) as exc:
-        raise _backend_errors(exc) from exc
+    except (GatewayError, *SEARCH_ERRORS) as exc:
+        raise _backend_errors(exc, "ask") from exc
+    metrics.observe_result("ask", result)
     return _answer_out(result)
 
 
@@ -141,8 +153,9 @@ def summarize(body: SummarizeIn, pipeline: PipelineDep, index: IndexDep) -> Answ
         if not chunks:
             raise HTTPException(status.HTTP_404_NOT_FOUND, f"{pmcid} is not indexed")
         result = pipeline.summarize(chunks[0].title, chunks)
-    except (GatewayError, OpenSearchConnectionError) as exc:
-        raise _backend_errors(exc) from exc
+    except (GatewayError, *SEARCH_ERRORS) as exc:
+        raise _backend_errors(exc, "summarize") from exc
+    metrics.observe_result("summarize", result)
     return _answer_out(result)
 
 
@@ -153,6 +166,11 @@ def _probe(url: str, timeout: float, auth: tuple[str, str] | None = None) -> str
     except httpx.HTTPError as exc:
         return f"unreachable: {type(exc).__name__}"
     return "ok" if resp.is_success else f"http {resp.status_code}"
+
+
+@app.get("/metrics", include_in_schema=False)
+def prometheus_metrics() -> Response:
+    return Response(generate_latest(metrics.registry), media_type=CONTENT_TYPE_LATEST)
 
 
 @app.get("/health")

@@ -1,0 +1,2929 @@
+[
+ {
+  "id": "q001",
+  "split": "dev",
+  "answerable": true,
+  "topic": "asthma",
+  "question": "In children aged 12 and older, is the Asthma Control Test more useful for ruling out or for confirming exercise-induced bronchoconstriction?",
+  "relevant_chunks": [
+   "PMC4782564:13"
+  ],
+  "relevant_docs": [
+   "PMC4782564"
+  ],
+  "answer_keywords": [
+   [
+    "excluding",
+    "exclude",
+    "ruling out",
+    "rule out",
+    "excluding EIB"
+   ]
+  ]
+ },
+ {
+  "id": "q002",
+  "split": "test",
+  "answerable": true,
+  "topic": "asthma",
+  "question": "What should be assessed in a child with uncontrolled persistent asthma to tell difficult-to-treat asthma apart from severe therapy-resistant asthma?",
+  "relevant_chunks": [
+   "PMC6018103:23"
+  ],
+  "relevant_docs": [
+   "PMC6018103"
+  ],
+  "answer_keywords": [
+   [
+    "comorbid",
+    "comorbidity",
+    "comorbidities"
+   ],
+   [
+    "psychosocial",
+    "environmental"
+   ]
+  ]
+ },
+ {
+  "id": "q003",
+  "split": "test",
+  "answerable": true,
+  "topic": "asthma",
+  "question": "In the Practice Fusion EHR study of asthma control, what duration of oral corticosteroid use did the authors assume when assigning GINA steps?",
+  "relevant_chunks": [
+   "PMC10140050:19"
+  ],
+  "relevant_docs": [
+   "PMC10140050"
+  ],
+  "answer_keywords": [
+   [
+    "28"
+   ]
+  ]
+ },
+ {
+  "id": "q004",
+  "split": "dev",
+  "answerable": true,
+  "topic": "asthma",
+  "question": "Among Japanese adults with asthma, which blood cell type was elevated in obese patients compared with non-obese patients?",
+  "relevant_chunks": [
+   "PMC9525285:10"
+  ],
+  "relevant_docs": [
+   "PMC9525285"
+  ],
+  "answer_keywords": [
+   [
+    "neutrophil",
+    "neutrophils"
+   ]
+  ]
+ },
+ {
+  "id": "q005",
+  "split": "test",
+  "answerable": true,
+  "topic": "asthma",
+  "question": "In severe eosinophilic asthma, which peripheral blood eosinophil count threshold best predicted sputum eosinophilia above 3%?",
+  "relevant_chunks": [
+   "PMC10381894:9"
+  ],
+  "relevant_docs": [
+   "PMC10381894"
+  ],
+  "answer_keywords": [
+   [
+    "300"
+   ]
+  ]
+ },
+ {
+  "id": "q006",
+  "split": "test",
+  "answerable": true,
+  "topic": "asthma",
+  "question": "Which CC16 polymorphism was associated with higher odds of uncontrolled asthma in the Agricultural Lung Health Study?",
+  "relevant_chunks": [
+   "PMC9644514:14"
+  ],
+  "relevant_docs": [
+   "PMC9644514"
+  ],
+  "answer_keywords": [
+   [
+    "rs12270961"
+   ]
+  ]
+ },
+ {
+  "id": "q007",
+  "split": "dev",
+  "answerable": true,
+  "topic": "asthma",
+  "question": "What level of compliance with controller medication was seen in the kHealth pediatric asthma cohort?",
+  "relevant_chunks": [
+   "PMC6469868:17"
+  ],
+  "relevant_docs": [
+   "PMC6469868"
+  ],
+  "answer_keywords": [
+   [
+    "50%",
+    "50 percent",
+    "half"
+   ]
+  ]
+ },
+ {
+  "id": "q008",
+  "split": "test",
+  "answerable": true,
+  "topic": "asthma",
+  "question": "Which asthma subtypes did the latent class analysis identify among men?",
+  "relevant_chunks": [
+   "PMC5259948:9"
+  ],
+  "relevant_docs": [
+   "PMC5259948"
+  ],
+  "answer_keywords": [
+   [
+    "mild"
+   ],
+   [
+    "unknown severity"
+   ],
+   [
+    "partly controlled"
+   ]
+  ]
+ },
+ {
+  "id": "q009",
+  "split": "test",
+  "answerable": true,
+  "topic": "asthma",
+  "question": "What were the most common triggers of asthma aggravation among adults with self-reported asthma in Karachi?",
+  "relevant_chunks": [
+   "PMC6278017:12"
+  ],
+  "relevant_docs": [
+   "PMC6278017"
+  ],
+  "answer_keywords": [
+   [
+    "smoke"
+   ],
+   [
+    "dust"
+   ]
+  ]
+ },
+ {
+  "id": "q010",
+  "split": "dev",
+  "answerable": true,
+  "topic": "asthma",
+  "question": "What proportion of asthma patients had inadequately controlled asthma in studies from Nigeria?",
+  "relevant_chunks": [
+   "PMC8386086:8"
+  ],
+  "relevant_docs": [
+   "PMC8386086"
+  ],
+  "answer_keywords": [
+   [
+    "82.9"
+   ]
+  ]
+ },
+ {
+  "id": "q011",
+  "split": "test",
+  "answerable": true,
+  "topic": "asthma",
+  "question": "What availability target for essential noncommunicable disease medicines does the WHO NCD Global Action Plan 2013-2020 set?",
+  "relevant_chunks": [
+   "PMC6406388:0"
+  ],
+  "relevant_docs": [
+   "PMC6406388"
+  ],
+  "answer_keywords": [
+   [
+    "80%",
+    "80 percent"
+   ]
+  ]
+ },
+ {
+  "id": "q012",
+  "split": "test",
+  "answerable": true,
+  "topic": "asthma",
+  "question": "Which past infection was strongly associated with work-related asthma in South African health workers?",
+  "relevant_chunks": [
+   "PMC8974710:19"
+  ],
+  "relevant_docs": [
+   "PMC8974710"
+  ],
+  "answer_keywords": [
+   [
+    "tuberculosis",
+    "tb"
+   ]
+  ]
+ },
+ {
+  "id": "q013",
+  "split": "dev",
+  "answerable": true,
+  "topic": "asthma",
+  "question": "In the MOSAR study in Rabat, Morocco, what share of eligible patients had uncontrolled asthma symptoms?",
+  "relevant_chunks": [
+   "PMC5921326:6"
+  ],
+  "relevant_docs": [
+   "PMC5921326"
+  ],
+  "answer_keywords": [
+   [
+    "29%",
+    "113"
+   ]
+  ]
+ },
+ {
+  "id": "q014",
+  "split": "test",
+  "answerable": true,
+  "topic": "asthma",
+  "question": "In pre-school children hospitalized for acute severe asthma, was an ICS plus LABA combination better than ICS alone?",
+  "relevant_chunks": [
+   "PMC7716437:10"
+  ],
+  "relevant_docs": [
+   "PMC7716437"
+  ],
+  "answer_keywords": [
+   [
+    "not superior",
+    "no better",
+    "not better",
+    "not more effective",
+    "was not superior"
+   ]
+  ]
+ },
+ {
+  "id": "q015",
+  "split": "test",
+  "answerable": true,
+  "topic": "atrial_fibrillation",
+  "question": "Which metabolic pathway, whose end product is uric acid, was implicated in atrial fibrillation by combined metabolomic and proteomic analyses?",
+  "relevant_chunks": [
+   "PMC8669813:10"
+  ],
+  "relevant_docs": [
+   "PMC8669813"
+  ],
+  "answer_keywords": [
+   [
+    "purine"
+   ]
+  ]
+ },
+ {
+  "id": "q016",
+  "split": "dev",
+  "answerable": true,
+  "topic": "atrial_fibrillation",
+  "question": "In the NOR-FIB study of cryptogenic stroke, what share of patients with detected atrial fibrillation were on oral anticoagulation at 12 months?",
+  "relevant_chunks": [
+   "PMC10069172:8"
+  ],
+  "relevant_docs": [
+   "PMC10069172"
+  ],
+  "answer_keywords": [
+   [
+    "97.3",
+    "72 of 74"
+   ]
+  ]
+ },
+ {
+  "id": "q017",
+  "split": "test",
+  "answerable": true,
+  "topic": "atrial_fibrillation",
+  "question": "How often was complete conduction block at the left atrial roof achieved with cryoballoon ablation of the left atrial posterior wall?",
+  "relevant_chunks": [
+   "PMC8637091:0"
+  ],
+  "relevant_docs": [
+   "PMC8637091"
+  ],
+  "answer_keywords": [
+   [
+    "95.7"
+   ]
+  ]
+ },
+ {
+  "id": "q018",
+  "split": "test",
+  "answerable": true,
+  "topic": "atrial_fibrillation",
+  "question": "In the Chinese atrial fibrillation registry, what kind of conditions caused most hospitalizations of AF patients?",
+  "relevant_chunks": [
+   "PMC7980549:11"
+  ],
+  "relevant_docs": [
+   "PMC7980549"
+  ],
+  "answer_keywords": [
+   [
+    "non-cvd",
+    "non-cardiovascular",
+    "noncardiovascular"
+   ]
+  ]
+ },
+ {
+  "id": "q019",
+  "split": "dev",
+  "answerable": true,
+  "topic": "atrial_fibrillation",
+  "question": "In the Gulf SAFE registry, adherence to which integrated care pathway was associated with lower all-cause mortality in atrial fibrillation?",
+  "relevant_chunks": [
+   "PMC7287832:9"
+  ],
+  "relevant_docs": [
+   "PMC7287832"
+  ],
+  "answer_keywords": [
+   [
+    "abc",
+    "atrial fibrillation better care"
+   ]
+  ]
+ },
+ {
+  "id": "q020",
+  "split": "test",
+  "answerable": true,
+  "topic": "atrial_fibrillation",
+  "question": "What was the one-year success rate off antiarrhythmic drugs of single-stage hybrid AF ablation in patients with persistent AF or failed catheter ablation?",
+  "relevant_chunks": [
+   "PMC6393682:10"
+  ],
+  "relevant_docs": [
+   "PMC6393682"
+  ],
+  "answer_keywords": [
+   [
+    "76%",
+    "76 percent"
+   ]
+  ]
+ },
+ {
+  "id": "q021",
+  "split": "test",
+  "answerable": true,
+  "topic": "atrial_fibrillation",
+  "question": "In the feasibility study of an atrial fibrillation educational website, what was the mean time per website session?",
+  "relevant_chunks": [
+   "PMC10531022:12"
+  ],
+  "relevant_docs": [
+   "PMC10531022"
+  ],
+  "answer_keywords": [
+   [
+    "8.6"
+   ]
+  ]
+ },
+ {
+  "id": "q022",
+  "split": "dev",
+  "answerable": true,
+  "topic": "atrial_fibrillation",
+  "question": "According to the 2016 ESC atrial fibrillation guidelines, which AF patients should receive vitamin K antagonists rather than NOACs?",
+  "relevant_chunks": [
+   "PMC5529968:4"
+  ],
+  "relevant_docs": [
+   "PMC5529968"
+  ],
+  "answer_keywords": [
+   [
+    "mechanical"
+   ],
+   [
+    "mitral stenosis"
+   ]
+  ]
+ },
+ {
+  "id": "q023",
+  "split": "test",
+  "answerable": true,
+  "topic": "atrial_fibrillation",
+  "question": "What was the area under the ROC curve of postoperative HMGB1 for predicting AF recurrence after cryoballoon ablation?",
+  "relevant_chunks": [
+   "PMC9748753:0"
+  ],
+  "relevant_docs": [
+   "PMC9748753"
+  ],
+  "answer_keywords": [
+   [
+    "0.68"
+   ]
+  ]
+ },
+ {
+  "id": "q024",
+  "split": "test",
+  "answerable": true,
+  "topic": "atrial_fibrillation",
+  "question": "What left atrial effective conducting size did computational modeling show was required for atrial fibrillation to continue?",
+  "relevant_chunks": [
+   "PMC6746623:0"
+  ],
+  "relevant_docs": [
+   "PMC6746623"
+  ],
+  "answer_keywords": [
+   [
+    "4 cm",
+    "4cm"
+   ]
+  ]
+ },
+ {
+  "id": "q025",
+  "split": "dev",
+  "answerable": true,
+  "topic": "atrial_fibrillation",
+  "question": "In the large Swedish cohort of people with chronic kidney disease, how much did an eGFR below 30 raise the risk of incident atrial fibrillation?",
+  "relevant_chunks": [
+   "PMC8707734:23"
+  ],
+  "relevant_docs": [
+   "PMC8707734"
+  ],
+  "answer_keywords": [
+   [
+    "1.6"
+   ]
+  ]
+ },
+ {
+  "id": "q026",
+  "split": "test",
+  "answerable": true,
+  "topic": "atrial_fibrillation",
+  "question": "What has been suggested as the minimally important difference for change in the AFEQT quality-of-life score?",
+  "relevant_chunks": [
+   "PMC7501575:15"
+  ],
+  "relevant_docs": [
+   "PMC7501575"
+  ],
+  "answer_keywords": [
+   [
+    "12"
+   ]
+  ]
+ },
+ {
+  "id": "q027",
+  "split": "test",
+  "answerable": true,
+  "topic": "atrial_fibrillation",
+  "question": "What are the four predictors in the SIC-AF score for successful pharmacological cardioversion of atrial fibrillation?",
+  "relevant_chunks": [
+   "PMC9025522:9"
+  ],
+  "relevant_docs": [
+   "PMC9025522"
+  ],
+  "answer_keywords": [
+   [
+    "flutter"
+   ],
+   [
+    "duration"
+   ],
+   [
+    "electrical cardioversion"
+   ],
+   [
+    "antiarrhythmic"
+   ]
+  ]
+ },
+ {
+  "id": "q028",
+  "split": "dev",
+  "answerable": true,
+  "topic": "atrial_fibrillation",
+  "question": "In the CODE-AF registry analysis of ectopic beats, how many patients without permanent AF underwent Holter monitoring?",
+  "relevant_chunks": [
+   "PMC7156648:9"
+  ],
+  "relevant_docs": [
+   "PMC7156648"
+  ],
+  "answer_keywords": [
+   [
+    "4,861",
+    "4861"
+   ]
+  ]
+ },
+ {
+  "id": "q029",
+  "split": "test",
+  "answerable": true,
+  "topic": "depression",
+  "question": "In rTMS treatment of major depression, how much did the odds of response drop for each additional 13 years of patient age?",
+  "relevant_chunks": [
+   "PMC10669981:21"
+  ],
+  "relevant_docs": [
+   "PMC10669981"
+  ],
+  "answer_keywords": [
+   [
+    "42%",
+    "42 percent"
+   ]
+  ]
+ },
+ {
+  "id": "q030",
+  "split": "test",
+  "answerable": true,
+  "topic": "depression",
+  "question": "How did long-term antidepressant medication affect sleep spindle density in patients with major depressive disorder?",
+  "relevant_chunks": [
+   "PMC9723407:32"
+  ],
+  "relevant_docs": [
+   "PMC9723407"
+  ],
+  "answer_keywords": [
+   [
+    "lower",
+    "lowered",
+    "lowers",
+    "reduced",
+    "reduces",
+    "decrease",
+    "decreased",
+    "reduction"
+   ]
+  ]
+ },
+ {
+  "id": "q031",
+  "split": "dev",
+  "answerable": true,
+  "topic": "depression",
+  "question": "Which patient group had the highest frequency of the minor C allele of BDNF rs962369?",
+  "relevant_chunks": [
+   "PMC10452342:9"
+  ],
+  "relevant_docs": [
+   "PMC10452342"
+  ],
+  "answer_keywords": [
+   [
+    "recurrent"
+   ]
+  ]
+ },
+ {
+  "id": "q032",
+  "split": "test",
+  "answerable": true,
+  "topic": "depression",
+  "question": "In the diffusion MRI study of the thalamus in depression, how many edges and nodes made up the network with increased structural connectivity in MDD?",
+  "relevant_chunks": [
+   "PMC9525011:10"
+  ],
+  "relevant_docs": [
+   "PMC9525011"
+  ],
+  "answer_keywords": [
+   [
+    "215"
+   ],
+   [
+    "76"
+   ]
+  ]
+ },
+ {
+  "id": "q033",
+  "split": "test",
+  "answerable": true,
+  "topic": "depression",
+  "question": "Which variable made the greatest contribution to dysfunctional attitude scores in regression models of patients with major depressive disorder?",
+  "relevant_chunks": [
+   "PMC7057763:12"
+  ],
+  "relevant_docs": [
+   "PMC7057763"
+  ],
+  "answer_keywords": [
+   [
+    "gender",
+    "sex"
+   ]
+  ]
+ },
+ {
+  "id": "q034",
+  "split": "dev",
+  "answerable": true,
+  "topic": "depression",
+  "question": "In the electrodermal activity study for detecting major depression, how many of the top 10 ranked features were differential EDA features?",
+  "relevant_chunks": [
+   "PMC6242826:8"
+  ],
+  "relevant_docs": [
+   "PMC6242826"
+  ],
+  "answer_keywords": [
+   [
+    "six",
+    "6"
+   ]
+  ]
+ },
+ {
+  "id": "q035",
+  "split": "test",
+  "answerable": true,
+  "topic": "depression",
+  "question": "In the emotion differentiation study of current and remitted depression, which kind of terms did participants mostly use to describe neutral experiences?",
+  "relevant_chunks": [
+   "PMC8440990:22"
+  ],
+  "relevant_docs": [
+   "PMC8440990"
+  ],
+  "answer_keywords": [
+   [
+    "general state"
+   ]
+  ]
+ },
+ {
+  "id": "q036",
+  "split": "test",
+  "answerable": true,
+  "topic": "depression",
+  "question": "How much of the model did the multivariate analysis of CRP and pro- and anti-inflammatory nutrients explain in the depression and nutrition study?",
+  "relevant_chunks": [
+   "PMC10420964:24"
+  ],
+  "relevant_docs": [
+   "PMC10420964"
+  ],
+  "answer_keywords": [
+   [
+    "69%",
+    "69 percent"
+   ]
+  ]
+ },
+ {
+  "id": "q037",
+  "split": "dev",
+  "answerable": true,
+  "topic": "depression",
+  "question": "In the Cooper Clinic study of 26,638 healthy adults, what was thought to explain the association between hs-CRP and depression?",
+  "relevant_chunks": [
+   "PMC8836046:8"
+  ],
+  "relevant_docs": [
+   "PMC8836046"
+  ],
+  "answer_keywords": [
+   [
+    "obesity"
+   ]
+  ]
+ },
+ {
+  "id": "q038",
+  "split": "test",
+  "answerable": true,
+  "topic": "depression",
+  "question": "How large were the group differences between depressed and non-depressed people in need satisfaction for autonomy, competence and relatedness?",
+  "relevant_chunks": [
+   "PMC9530199:11"
+  ],
+  "relevant_docs": [
+   "PMC9530199"
+  ],
+  "answer_keywords": [
+   [
+    "4.7"
+   ],
+   [
+    "5.6"
+   ],
+   [
+    "3.4"
+   ]
+  ]
+ },
+ {
+  "id": "q039",
+  "split": "test",
+  "answerable": true,
+  "topic": "depression",
+  "question": "In the ARPNet antidepressant response example, which combination was predicted to be most effective for Patient A at the initial visit?",
+  "relevant_chunks": [
+   "PMC6895829:15"
+  ],
+  "relevant_docs": [
+   "PMC6895829"
+  ],
+  "answer_keywords": [
+   [
+    "mirtazapine"
+   ],
+   [
+    "milnacipran"
+   ]
+  ]
+ },
+ {
+  "id": "q040",
+  "split": "dev",
+  "answerable": true,
+  "topic": "depression",
+  "question": "How was parvalbumin (PVALB) promoter methylation altered at CpG2 and CpG4 in Thai patients with major depression?",
+  "relevant_chunks": [
+   "PMC6775273:9"
+  ],
+  "relevant_docs": [
+   "PMC6775273"
+  ],
+  "answer_keywords": [
+   [
+    "increased",
+    "increase",
+    "higher",
+    "elevated",
+    "hypermethylation"
+   ],
+   [
+    "decreased",
+    "decrease",
+    "lower",
+    "reduced"
+   ]
+  ]
+ },
+ {
+  "id": "q041",
+  "split": "test",
+  "answerable": true,
+  "topic": "depression",
+  "question": "Which exercise-induced myokine is described as important for gut function and preventing depressive behavior?",
+  "relevant_chunks": [
+   "PMC10706777:36"
+  ],
+  "relevant_docs": [
+   "PMC10706777"
+  ],
+  "answer_keywords": [
+   [
+    "irisin"
+   ]
+  ]
+ },
+ {
+  "id": "q042",
+  "split": "test",
+  "answerable": true,
+  "topic": "depression",
+  "question": "How did aperiodic EEG slopes during non-REM sleep differ between unmedicated depressed patients and healthy controls?",
+  "relevant_chunks": [
+   "PMC10593867:11"
+  ],
+  "relevant_docs": [
+   "PMC10593867"
+  ],
+  "answer_keywords": [
+   [
+    "flatter"
+   ]
+  ]
+ },
+ {
+  "id": "q043",
+  "split": "dev",
+  "answerable": true,
+  "topic": "heart_failure",
+  "question": "What was the most frequent comorbidity in both de novo acute heart failure and acutely decompensated chronic heart failure in the biomarker profile study?",
+  "relevant_chunks": [
+   "PMC8615401:6"
+  ],
+  "relevant_docs": [
+   "PMC8615401"
+  ],
+  "answer_keywords": [
+   [
+    "hypertension"
+   ]
+  ]
+ },
+ {
+  "id": "q044",
+  "split": "test",
+  "answerable": true,
+  "topic": "heart_failure",
+  "question": "In the Dutch CHECK-HF registry, across what range did beta-blocker prescription rates vary between heart failure clinics?",
+  "relevant_chunks": [
+   "PMC7270463:7"
+  ],
+  "relevant_docs": [
+   "PMC7270463"
+  ],
+  "answer_keywords": [
+   [
+    "58.9"
+   ],
+   [
+    "97.4"
+   ]
+  ]
+ },
+ {
+  "id": "q045",
+  "split": "test",
+  "answerable": true,
+  "topic": "heart_failure",
+  "question": "What was a main limitation of the HFpEF study that developed a risk score for future heart failure events and death?",
+  "relevant_chunks": [
+   "PMC9634582:16"
+  ],
+  "relevant_docs": [
+   "PMC9634582"
+  ],
+  "answer_keywords": [
+   [
+    "single-center",
+    "single center",
+    "single-centre"
+   ]
+  ]
+ },
+ {
+  "id": "q046",
+  "split": "dev",
+  "answerable": true,
+  "topic": "heart_failure",
+  "question": "According to the Dutch real-world registry of chronic heart failure, how many co-morbid chronic conditions do most patients have?",
+  "relevant_chunks": [
+   "PMC5910310:9"
+  ],
+  "relevant_docs": [
+   "PMC5910310"
+  ],
+  "answer_keywords": [
+   [
+    "5",
+    "five"
+   ]
+  ]
+ },
+ {
+  "id": "q047",
+  "split": "test",
+  "answerable": true,
+  "topic": "heart_failure",
+  "question": "Which group was more responsive to diuretic therapy: patients with de novo heart failure or with acutely decompensated chronic heart failure?",
+  "relevant_chunks": [
+   "PMC10648284:12"
+  ],
+  "relevant_docs": [
+   "PMC10648284"
+  ],
+  "answer_keywords": [
+   [
+    "de novo",
+    "dnhf"
+   ]
+  ]
+ },
+ {
+  "id": "q048",
+  "split": "test",
+  "answerable": true,
+  "topic": "heart_failure",
+  "question": "In type 2 diabetes patients with chronic heart failure, how did serum irisin levels correlate with NT-proBNP?",
+  "relevant_chunks": [
+   "PMC10144964:9"
+  ],
+  "relevant_docs": [
+   "PMC10144964"
+  ],
+  "answer_keywords": [
+   [
+    "inverse",
+    "inversely",
+    "negative",
+    "negatively"
+   ]
+  ]
+ },
+ {
+  "id": "q049",
+  "split": "dev",
+  "answerable": true,
+  "topic": "heart_failure",
+  "question": "What range of adherence to remote patient monitoring has been reported in previous eHealth heart failure studies?",
+  "relevant_chunks": [
+   "PMC9929726:14"
+  ],
+  "relevant_docs": [
+   "PMC9929726"
+  ],
+  "answer_keywords": [
+   [
+    "40%",
+    "40"
+   ],
+   [
+    "90%",
+    "90"
+   ]
+  ]
+ },
+ {
+  "id": "q050",
+  "split": "test",
+  "answerable": true,
+  "topic": "heart_failure",
+  "question": "Did the interaction between atrial fibrillation and HFpEF on progressive heart failure outcomes remain after adjusting for age, sex, heart rate and blood pressure?",
+  "relevant_chunks": [
+   "PMC9715884:7"
+  ],
+  "relevant_docs": [
+   "PMC9715884"
+  ],
+  "answer_keywords": [
+   [
+    "persisted",
+    "persists",
+    "remained",
+    "yes"
+   ]
+  ]
+ },
+ {
+  "id": "q051",
+  "split": "test",
+  "answerable": true,
+  "topic": "heart_failure",
+  "question": "Why were heart failure clinic patients afraid of being referred to palliative care?",
+  "relevant_chunks": [
+   "PMC9195498:18"
+  ],
+  "relevant_docs": [
+   "PMC9195498"
+  ],
+  "answer_keywords": [
+   [
+    "death",
+    "dying",
+    "end of life"
+   ]
+  ]
+ },
+ {
+  "id": "q052",
+  "split": "dev",
+  "answerable": true,
+  "topic": "heart_failure",
+  "question": "How many overarching themes emerged from health professionals' experiences of using a heart failure question prompt list?",
+  "relevant_chunks": [
+   "PMC9025789:0"
+  ],
+  "relevant_docs": [
+   "PMC9025789"
+  ],
+  "answer_keywords": [
+   [
+    "five",
+    "5"
+   ]
+  ]
+ },
+ {
+  "id": "q053",
+  "split": "test",
+  "answerable": true,
+  "topic": "heart_failure",
+  "question": "What percentage of patients in the GENERATOR heart failure DataMart are women?",
+  "relevant_chunks": [
+   "PMC10073733:21"
+  ],
+  "relevant_docs": [
+   "PMC10073733"
+  ],
+  "answer_keywords": [
+   [
+    "37.7"
+   ]
+  ]
+ },
+ {
+  "id": "q054",
+  "split": "test",
+  "answerable": true,
+  "topic": "heart_failure",
+  "question": "In the Mbarara heart failure registry in Uganda, what adjusted hazard ratio for 3-month mortality was associated with a worse overall KCCQ score?",
+  "relevant_chunks": [
+   "PMC6291962:10"
+  ],
+  "relevant_docs": [
+   "PMC6291962"
+  ],
+  "answer_keywords": [
+   [
+    "2.9"
+   ]
+  ]
+ },
+ {
+  "id": "q055",
+  "split": "dev",
+  "answerable": true,
+  "topic": "heart_failure",
+  "question": "In REALITY-AHF, what was the adjusted hazard ratio for sudden cardiac death with a Larissa Heart Failure Risk Score of 2-4 versus 0-1?",
+  "relevant_chunks": [
+   "PMC10253707:5"
+  ],
+  "relevant_docs": [
+   "PMC10253707"
+  ],
+  "answer_keywords": [
+   [
+    "3.15"
+   ]
+  ]
+ },
+ {
+  "id": "q056",
+  "split": "test",
+  "answerable": true,
+  "topic": "heart_failure",
+  "question": "Which regression technique best mapped Minnesota Living with Heart Failure Questionnaire scores to EQ-5D-5L utility?",
+  "relevant_chunks": [
+   "PMC7189529:13"
+  ],
+  "relevant_docs": [
+   "PMC7189529"
+  ],
+  "answer_keywords": [
+   [
+    "mfp",
+    "fractional polynomial"
+   ]
+  ]
+ },
+ {
+  "id": "q057",
+  "split": "test",
+  "answerable": true,
+  "topic": "hypertension",
+  "question": "How did the prevalence of hypertension in rural Yunnan Province change between 2009 and 2016?",
+  "relevant_chunks": [
+   "PMC8157672:0"
+  ],
+  "relevant_docs": [
+   "PMC8157672"
+  ],
+  "answer_keywords": [
+   [
+    "28.4"
+   ],
+   [
+    "39.5"
+   ]
+  ]
+ },
+ {
+  "id": "q058",
+  "split": "dev",
+  "answerable": true,
+  "topic": "hypertension",
+  "question": "What ultrasound optic nerve sheath diameter cutoff supports the diagnosis of intracranial hypertension?",
+  "relevant_chunks": [
+   "PMC4890482:15"
+  ],
+  "relevant_docs": [
+   "PMC4890482"
+  ],
+  "answer_keywords": [
+   [
+    "5.93"
+   ]
+  ]
+ },
+ {
+  "id": "q059",
+  "split": "test",
+  "answerable": true,
+  "topic": "hypertension",
+  "question": "Which histamine-degrading enzyme was among the most strongly downregulated placental proteins in stroke-prone spontaneously hypertensive rats?",
+  "relevant_chunks": [
+   "PMC8616587:10"
+  ],
+  "relevant_docs": [
+   "PMC8616587"
+  ],
+  "answer_keywords": [
+   [
+    "aoc-1",
+    "aoc1",
+    "diamine oxidase",
+    "dao",
+    "amine oxidase copper-containing 1"
+   ]
+  ]
+ },
+ {
+  "id": "q060",
+  "split": "test",
+  "answerable": true,
+  "topic": "hypertension",
+  "question": "How do serum SIRT1 and Klotho levels behave in pre-hypertensive individuals before hypertension sets in?",
+  "relevant_chunks": [
+   "PMC8527754:10"
+  ],
+  "relevant_docs": [
+   "PMC8527754"
+  ],
+  "answer_keywords": [
+   [
+    "increase",
+    "increased",
+    "rise",
+    "higher",
+    "elevated"
+   ]
+  ]
+ },
+ {
+  "id": "q061",
+  "split": "dev",
+  "answerable": true,
+  "topic": "hypertension",
+  "question": "What was the prevalence of pregnancy-induced hypertension in the Polish cohort study on familial hypertension?",
+  "relevant_chunks": [
+   "PMC8296897:15"
+  ],
+  "relevant_docs": [
+   "PMC8296897"
+  ],
+  "answer_keywords": [
+   [
+    "15%",
+    "15 percent"
+   ]
+  ]
+ },
+ {
+  "id": "q062",
+  "split": "test",
+  "answerable": true,
+  "topic": "hypertension",
+  "question": "In the CHARLS cohort, which hypertension subtype accounted for most of the rise in prevalence under the 2017 ACC/AHA guideline?",
+  "relevant_chunks": [
+   "PMC9295617:10"
+  ],
+  "relevant_docs": [
+   "PMC9295617"
+  ],
+  "answer_keywords": [
+   [
+    "sdh",
+    "systolic-diastolic",
+    "systolic and diastolic",
+    "systolic diastolic"
+   ]
+  ]
+ },
+ {
+  "id": "q063",
+  "split": "test",
+  "answerable": true,
+  "topic": "hypertension",
+  "question": "In the China Hypertension Survey, how common was wide pulse pressure in patients with uncontrolled versus controlled blood pressure?",
+  "relevant_chunks": [
+   "PMC9734033:8"
+  ],
+  "relevant_docs": [
+   "PMC9734033"
+  ],
+  "answer_keywords": [
+   [
+    "24.1"
+   ],
+   [
+    "10.8"
+   ]
+  ]
+ },
+ {
+  "id": "q064",
+  "split": "dev",
+  "answerable": true,
+  "topic": "hypertension",
+  "question": "In the post hoc analysis of the VALUE trial, what was the second most important predictor of new-onset diabetes in hypertensive patients?",
+  "relevant_chunks": [
+   "PMC6708242:9"
+  ],
+  "relevant_docs": [
+   "PMC6708242"
+  ],
+  "answer_keywords": [
+   [
+    "body mass index",
+    "bmi"
+   ]
+  ]
+ },
+ {
+  "id": "q065",
+  "split": "test",
+  "answerable": true,
+  "topic": "hypertension",
+  "question": "Which endothelial cells had the highest basal viability: those from PAH, CTEPH or healthy pulmonary arteries?",
+  "relevant_chunks": [
+   "PMC8831561:12"
+  ],
+  "relevant_docs": [
+   "PMC8831561"
+  ],
+  "answer_keywords": [
+   [
+    "pah",
+    "pulmonary arterial hypertension"
+   ]
+  ]
+ },
+ {
+  "id": "q066",
+  "split": "test",
+  "answerable": true,
+  "topic": "hypertension",
+  "question": "Which hematological parameter distinguished each Child-Turcotte-Pugh class of cirrhosis from the other two?",
+  "relevant_chunks": [
+   "PMC6112015:15"
+  ],
+  "relevant_docs": [
+   "PMC6112015"
+  ],
+  "answer_keywords": [
+   [
+    "nlr",
+    "neutrophil-to-lymphocyte",
+    "neutrophil to lymphocyte",
+    "neutrophil-lymphocyte"
+   ]
+  ]
+ },
+ {
+  "id": "q067",
+  "split": "dev",
+  "answerable": true,
+  "topic": "hypertension",
+  "question": "In the SHEP trial analysis, how many years after randomization was mortality assessed when linking orthostatic hypertension to death?",
+  "relevant_chunks": [
+   "PMC6892410:8"
+  ],
+  "relevant_docs": [
+   "PMC6892410"
+  ],
+  "answer_keywords": [
+   [
+    "17"
+   ]
+  ]
+ },
+ {
+  "id": "q068",
+  "split": "test",
+  "answerable": true,
+  "topic": "hypertension",
+  "question": "In the national survey comparing hypertension subtypes, which subtype had the youngest patients and the highest BMI?",
+  "relevant_chunks": [
+   "PMC8442452:5"
+  ],
+  "relevant_docs": [
+   "PMC8442452"
+  ],
+  "answer_keywords": [
+   [
+    "idh",
+    "isolated diastolic"
+   ]
+  ]
+ },
+ {
+  "id": "q069",
+  "split": "test",
+  "answerable": true,
+  "topic": "hypertension",
+  "question": "How did plasma aldosterone and renin activity differ between patients with primary aldosteronism and those with essential hypertension?",
+  "relevant_chunks": [
+   "PMC5453943:3"
+  ],
+  "relevant_docs": [
+   "PMC5453943"
+  ],
+  "answer_keywords": [
+   [
+    "higher"
+   ],
+   [
+    "lower"
+   ]
+  ]
+ },
+ {
+  "id": "q070",
+  "split": "dev",
+  "answerable": true,
+  "topic": "osteoporosis",
+  "question": "With a joint BMD T-score threshold and a correlation of 0.8 between sites, how many more patients would be diagnosed with osteopenia?",
+  "relevant_chunks": [
+   "PMC7872343:13"
+  ],
+  "relevant_docs": [
+   "PMC7872343"
+  ],
+  "answer_keywords": [
+   [
+    "98",
+    "40%"
+   ]
+  ]
+ },
+ {
+  "id": "q071",
+  "split": "test",
+  "answerable": true,
+  "topic": "osteoporosis",
+  "question": "What are the first-line treatments for osteoporosis in people living with HIV?",
+  "relevant_chunks": [
+   "PMC9013331:14"
+  ],
+  "relevant_docs": [
+   "PMC9013331"
+  ],
+  "answer_keywords": [
+   [
+    "bisphosphonate",
+    "bisphosphonates"
+   ]
+  ]
+ },
+ {
+  "id": "q072",
+  "split": "test",
+  "answerable": true,
+  "topic": "osteoporosis",
+  "question": "Where did people with osteoporosis get much of their knowledge about the disease, according to the interpretive descriptive interview study?",
+  "relevant_chunks": [
+   "PMC9067972:12"
+  ],
+  "relevant_docs": [
+   "PMC9067972"
+  ],
+  "answer_keywords": [
+   [
+    "experience",
+    "family",
+    "parental",
+    "parents",
+    "close to them"
+   ]
+  ]
+ },
+ {
+  "id": "q073",
+  "split": "dev",
+  "answerable": true,
+  "topic": "osteoporosis",
+  "question": "Which classic hypothesis about metastatic patterns did the study of bone metastasis in breast cancer and osteoporosis appear to contradict?",
+  "relevant_chunks": [
+   "PMC6484629:11"
+  ],
+  "relevant_docs": [
+   "PMC6484629"
+  ],
+  "answer_keywords": [
+   [
+    "seed-and-soil",
+    "seed and soil"
+   ]
+  ]
+ },
+ {
+  "id": "q074",
+  "split": "test",
+  "answerable": true,
+  "topic": "osteoporosis",
+  "question": "How many Asia Pacific clinical practice guidelines did APCO analyze to build its harmonized osteoporosis Framework?",
+  "relevant_chunks": [
+   "PMC9324065:0"
+  ],
+  "relevant_docs": [
+   "PMC9324065"
+  ],
+  "answer_keywords": [
+   [
+    "18"
+   ]
+  ]
+ },
+ {
+  "id": "q075",
+  "split": "test",
+  "answerable": true,
+  "topic": "osteoporosis",
+  "question": "In Australian general practice, what share of patients who stopped denosumab received no subsequent bisphosphonate prescription?",
+  "relevant_chunks": [
+   "PMC7014771:23"
+  ],
+  "relevant_docs": [
+   "PMC7014771"
+  ],
+  "answer_keywords": [
+   [
+    "80%",
+    "80 percent"
+   ]
+  ]
+ },
+ {
+  "id": "q076",
+  "split": "dev",
+  "answerable": true,
+  "topic": "osteoporosis",
+  "question": "In the French retrospective analysis of women diagnosed with osteoporosis, what share initiated osteoporosis treatment?",
+  "relevant_chunks": [
+   "PMC4852421:8"
+  ],
+  "relevant_docs": [
+   "PMC4852421"
+  ],
+  "answer_keywords": [
+   [
+    "25.3"
+   ]
+  ]
+ },
+ {
+  "id": "q077",
+  "split": "test",
+  "answerable": true,
+  "topic": "osteoporosis",
+  "question": "What were the main lifestyle-related osteoporosis risk factors among caregivers working in disability institutions?",
+  "relevant_chunks": [
+   "PMC7246724:6"
+  ],
+  "relevant_docs": [
+   "PMC7246724"
+  ],
+  "answer_keywords": [
+   [
+    "exercise",
+    "exercising"
+   ],
+   [
+    "dairy",
+    "calcium"
+   ]
+  ]
+ },
+ {
+  "id": "q078",
+  "split": "test",
+  "answerable": true,
+  "topic": "osteoporosis",
+  "question": "How did yeast hydrolysate supplementation affect serum testosterone in ovariectomized rats?",
+  "relevant_chunks": [
+   "PMC9958730:5"
+  ],
+  "relevant_docs": [
+   "PMC9958730"
+  ],
+  "answer_keywords": [
+   [
+    "increase",
+    "increased",
+    "restored",
+    "higher",
+    "raised"
+   ]
+  ]
+ },
+ {
+  "id": "q079",
+  "split": "dev",
+  "answerable": true,
+  "topic": "osteoporosis",
+  "question": "What Cronbach's alpha did the Hungarian version of the Osteoporosis Knowledge Assessment Tool reach?",
+  "relevant_chunks": [
+   "PMC8063278:0"
+  ],
+  "relevant_docs": [
+   "PMC8063278"
+  ],
+  "answer_keywords": [
+   [
+    "0.81"
+   ]
+  ]
+ },
+ {
+  "id": "q080",
+  "split": "test",
+  "answerable": true,
+  "topic": "osteoporosis",
+  "question": "Why did female osteoporosis patients in Taiwan decline bone mineral density testing?",
+  "relevant_chunks": [
+   "PMC10094534:11"
+  ],
+  "relevant_docs": [
+   "PMC10094534"
+  ],
+  "answer_keywords": [
+   [
+    "cost",
+    "costs"
+   ]
+  ]
+ },
+ {
+  "id": "q081",
+  "split": "test",
+  "answerable": true,
+  "topic": "osteoporosis",
+  "question": "What daily vitamin D maintenance dose does the Saudi Osteoporosis Society recommend for the general population once the target level is reached?",
+  "relevant_chunks": [
+   "PMC10202978:11"
+  ],
+  "relevant_docs": [
+   "PMC10202978"
+  ],
+  "answer_keywords": [
+   [
+    "1000"
+   ],
+   [
+    "2000"
+   ]
+  ]
+ },
+ {
+  "id": "q082",
+  "split": "dev",
+  "answerable": true,
+  "topic": "osteoporosis",
+  "question": "After introducing the admission screening form and educational appointment, what was the osteoporosis treatment initiation rate in fiscal year 2022?",
+  "relevant_chunks": [
+   "PMC10497696:9"
+  ],
+  "relevant_docs": [
+   "PMC10497696"
+  ],
+  "answer_keywords": [
+   [
+    "97.8"
+   ]
+  ]
+ },
+ {
+  "id": "q083",
+  "split": "test",
+  "answerable": true,
+  "topic": "osteoporosis",
+  "question": "By how much was tibial bone mineral density reduced in ovariectomized rats compared with sham-operated rats in the vibration study?",
+  "relevant_chunks": [
+   "PMC6722487:10"
+  ],
+  "relevant_docs": [
+   "PMC6722487"
+  ],
+  "answer_keywords": [
+   [
+    "26.7"
+   ]
+  ]
+ },
+ {
+  "id": "q084",
+  "split": "test",
+  "answerable": true,
+  "topic": "sepsis",
+  "question": "In infants with congenital syphilis presenting as sepsis, what share had hepatomegaly?",
+  "relevant_chunks": [
+   "PMC6946349:4"
+  ],
+  "relevant_docs": [
+   "PMC6946349"
+  ],
+  "answer_keywords": [
+   [
+    "72.4"
+   ]
+  ]
+ },
+ {
+  "id": "q085",
+  "split": "dev",
+  "answerable": true,
+  "topic": "sepsis",
+  "question": "In the emergency department study of procalcitonin under SEPSIS-3, which pathogen was identified most often?",
+  "relevant_chunks": [
+   "PMC6868407:8"
+  ],
+  "relevant_docs": [
+   "PMC6868407"
+  ],
+  "answer_keywords": [
+   [
+    "escherichia coli",
+    "e. coli",
+    "e coli"
+   ]
+  ]
+ },
+ {
+  "id": "q086",
+  "split": "test",
+  "answerable": true,
+  "topic": "sepsis",
+  "question": "In the Scottish maternity hospital study, what proportion of women had a Sepsis Six sticker in their medical notes?",
+  "relevant_chunks": [
+   "PMC8305522:8"
+  ],
+  "relevant_docs": [
+   "PMC8305522"
+  ],
+  "answer_keywords": [
+   [
+    "37.1",
+    "33"
+   ]
+  ]
+ },
+ {
+  "id": "q087",
+  "split": "test",
+  "answerable": true,
+  "topic": "sepsis",
+  "question": "How many of 20 mice given benzoylpaeoniflorin at 0.44 mg/kg survived 96 hours after cecal ligation and puncture?",
+  "relevant_chunks": [
+   "PMC9656632:6"
+  ],
+  "relevant_docs": [
+   "PMC9656632"
+  ],
+  "answer_keywords": [
+   [
+    "13"
+   ]
+  ]
+ },
+ {
+  "id": "q088",
+  "split": "dev",
+  "answerable": true,
+  "topic": "sepsis",
+  "question": "How long before the clinical diagnosis of neonatal late-onset sepsis were clinical changes observed in an earlier study?",
+  "relevant_chunks": [
+   "PMC9964338:10"
+  ],
+  "relevant_docs": [
+   "PMC9964338"
+  ],
+  "answer_keywords": [
+   [
+    "12"
+   ],
+   [
+    "24"
+   ]
+  ]
+ },
+ {
+  "id": "q089",
+  "split": "test",
+  "answerable": true,
+  "topic": "sepsis",
+  "question": "What were the AUCs of miR-7110-5p and miR-223-3p for predicting sepsis secondary to pneumonia?",
+  "relevant_chunks": [
+   "PMC6518454:9"
+  ],
+  "relevant_docs": [
+   "PMC6518454"
+  ],
+  "answer_keywords": [
+   [
+    "0.883"
+   ],
+   [
+    "0.964"
+   ]
+  ]
+ },
+ {
+  "id": "q090",
+  "split": "test",
+  "answerable": true,
+  "topic": "sepsis",
+  "question": "What was combined with a sepsis response team in the multifaceted intervention that reduced hospital mortality from sepsis?",
+  "relevant_chunks": [
+   "PMC5449351:12"
+  ],
+  "relevant_docs": [
+   "PMC5449351"
+  ],
+  "answer_keywords": [
+   [
+    "e-alert",
+    "electronic alert",
+    "alert"
+   ]
+  ]
+ },
+ {
+  "id": "q091",
+  "split": "dev",
+  "answerable": true,
+  "topic": "sepsis",
+  "question": "In severe sepsis, neutropenia at ICU presentation was independently associated with a higher risk of which complication?",
+  "relevant_chunks": [
+   "PMC4950810:11"
+  ],
+  "relevant_docs": [
+   "PMC4950810"
+  ],
+  "answer_keywords": [
+   [
+    "aki",
+    "acute kidney injury"
+   ]
+  ]
+ },
+ {
+  "id": "q092",
+  "split": "test",
+  "answerable": true,
+  "topic": "sepsis",
+  "question": "Which marker had the highest AUC for predicting the development of sepsis in ICU patients in the monocyte HLA-DR study?",
+  "relevant_chunks": [
+   "PMC10377223:9"
+  ],
+  "relevant_docs": [
+   "PMC10377223"
+  ],
+  "answer_keywords": [
+   [
+    "crp",
+    "c-reactive protein"
+   ]
+  ]
+ },
+ {
+  "id": "q093",
+  "split": "test",
+  "answerable": true,
+  "topic": "sepsis",
+  "question": "Six months after mechanical ventilation in the ICU, what share of patients with sepsis reported a new disability?",
+  "relevant_chunks": [
+   "PMC9189265:10"
+  ],
+  "relevant_docs": [
+   "PMC9189265"
+  ],
+  "answer_keywords": [
+   [
+    "39.6"
+   ]
+  ]
+ },
+ {
+  "id": "q094",
+  "split": "dev",
+  "answerable": true,
+  "topic": "sepsis",
+  "question": "Which gene had the highest accuracy for diagnosing sepsis in the bioinformatics analysis of gene expression profiles?",
+  "relevant_chunks": [
+   "PMC10253396:5"
+  ],
+  "relevant_docs": [
+   "PMC10253396"
+  ],
+  "answer_keywords": [
+   [
+    "s100a8"
+   ]
+  ]
+ },
+ {
+  "id": "q095",
+  "split": "test",
+  "answerable": true,
+  "topic": "sepsis",
+  "question": "What two broad objectives were identified for Canada's National Preclinical Sepsis Platform?",
+  "relevant_chunks": [
+   "PMC7973346:11"
+  ],
+  "relevant_docs": [
+   "PMC7973346"
+  ],
+  "answer_keywords": [
+   [
+    "mechanism",
+    "mechanisms",
+    "pathophysiology"
+   ],
+   [
+    "therapeutic",
+    "therapeutics",
+    "therapies"
+   ]
+  ]
+ },
+ {
+  "id": "q096",
+  "split": "test",
+  "answerable": true,
+  "topic": "sepsis",
+  "question": "What was the in-hospital mortality of surgical ICU patients with postoperative sepsis who had sepsis-associated coagulopathy?",
+  "relevant_chunks": [
+   "PMC8885730:8"
+  ],
+  "relevant_docs": [
+   "PMC8885730"
+  ],
+  "answer_keywords": [
+   [
+    "37.5"
+   ]
+  ]
+ },
+ {
+  "id": "q097",
+  "split": "dev",
+  "answerable": true,
+  "topic": "sepsis",
+  "question": "What area under the curve did the NeoSeD score achieve for diagnosing sepsis in neonates with suspected sepsis?",
+  "relevant_chunks": [
+   "PMC9582514:0"
+  ],
+  "relevant_docs": [
+   "PMC9582514"
+  ],
+  "answer_keywords": [
+   [
+    "0.918"
+   ]
+  ]
+ },
+ {
+  "id": "q098",
+  "split": "test",
+  "answerable": true,
+  "topic": "stroke",
+  "question": "Which inflammatory cytokine has shown promise as a target for preventing cardiovascular comorbidities after stroke, as in the CANTOS study?",
+  "relevant_chunks": [
+   "PMC9449596:40"
+  ],
+  "relevant_docs": [
+   "PMC9449596"
+  ],
+  "answer_keywords": [
+   [
+    "il-1β",
+    "il-1b",
+    "il-1 beta",
+    "il‐1β",
+    "interleukin-1β",
+    "interleukin-1 beta",
+    "interleukin 1"
+   ]
+  ]
+ },
+ {
+  "id": "q099",
+  "split": "test",
+  "answerable": true,
+  "topic": "stroke",
+  "question": "What was the five-year mortality after acute stroke or TIA in the Polish PROPOLIS study?",
+  "relevant_chunks": [
+   "PMC10858086:10"
+  ],
+  "relevant_docs": [
+   "PMC10858086"
+  ],
+  "answer_keywords": [
+   [
+    "51.65",
+    "51.7"
+   ]
+  ]
+ },
+ {
+  "id": "q100",
+  "split": "dev",
+  "answerable": true,
+  "topic": "stroke",
+  "question": "In the Florida Stroke Registry, how common was hospital readmission within 30 days after stroke?",
+  "relevant_chunks": [
+   "PMC12263112:9"
+  ],
+  "relevant_docs": [
+   "PMC12263112"
+  ],
+  "answer_keywords": [
+   [
+    "12%",
+    "12 percent"
+   ]
+  ]
+ },
+ {
+  "id": "q101",
+  "split": "test",
+  "answerable": true,
+  "topic": "stroke",
+  "question": "How many telemedical stroke networks are active in Germany?",
+  "relevant_chunks": [
+   "PMC8184549:0"
+  ],
+  "relevant_docs": [
+   "PMC8184549"
+  ],
+  "answer_keywords": [
+   [
+    "22"
+   ]
+  ]
+ },
+ {
+  "id": "q102",
+  "split": "test",
+  "answerable": true,
+  "topic": "stroke",
+  "question": "Which pre-stroke lifestyle factor predicted poor one-year functional outcome after a first-ever ischemic stroke in the population-based register?",
+  "relevant_chunks": [
+   "PMC6215339:11"
+  ],
+  "relevant_docs": [
+   "PMC6215339"
+  ],
+  "answer_keywords": [
+   [
+    "sports",
+    "physical activity",
+    "sport"
+   ]
+  ]
+ },
+ {
+  "id": "q103",
+  "split": "dev",
+  "answerable": true,
+  "topic": "stroke",
+  "question": "In the TRANSIT-Stroke registry, what share of family caregivers were women?",
+  "relevant_chunks": [
+   "PMC8934512:7"
+  ],
+  "relevant_docs": [
+   "PMC8934512"
+  ],
+  "answer_keywords": [
+   [
+    "70.1"
+   ]
+  ]
+ },
+ {
+  "id": "q104",
+  "split": "test",
+  "answerable": true,
+  "topic": "stroke",
+  "question": "Under the TOAST criteria, what minimum lesion diameter is needed for an isolated parent artery territory infarct to count as large artery atherosclerosis?",
+  "relevant_chunks": [
+   "PMC5011990:11"
+  ],
+  "relevant_docs": [
+   "PMC5011990"
+  ],
+  "answer_keywords": [
+   [
+    "1.5"
+   ]
+  ]
+ },
+ {
+  "id": "q105",
+  "split": "test",
+  "answerable": true,
+  "topic": "stroke",
+  "question": "What AUROCs did the SPI-II and ESRS scores achieve in the Chinese cohort of 11,384 ischemic stroke patients?",
+  "relevant_chunks": [
+   "PMC10391888:9"
+  ],
+  "relevant_docs": [
+   "PMC10391888"
+  ],
+  "answer_keywords": [
+   [
+    "0.59"
+   ]
+  ]
+ },
+ {
+  "id": "q106",
+  "split": "dev",
+  "answerable": true,
+  "topic": "stroke",
+  "question": "Which day of the week is considered a risk factor for stroke onset?",
+  "relevant_chunks": [
+   "PMC8119813:8"
+  ],
+  "relevant_docs": [
+   "PMC8119813"
+  ],
+  "answer_keywords": [
+   [
+    "monday"
+   ]
+  ]
+ },
+ {
+  "id": "q107",
+  "split": "test",
+  "answerable": true,
+  "topic": "stroke",
+  "question": "What proportion of stroke survivors have clinical levels of depression?",
+  "relevant_chunks": [
+   "PMC5976765:13"
+  ],
+  "relevant_docs": [
+   "PMC5976765"
+  ],
+  "answer_keywords": [
+   [
+    "29%",
+    "29 percent"
+   ]
+  ]
+ },
+ {
+  "id": "q108",
+  "split": "test",
+  "answerable": true,
+  "topic": "stroke",
+  "question": "By 12 months after stroke in the DOSE trial, how much higher was the risk of hypertension compared with baseline?",
+  "relevant_chunks": [
+   "PMC10546336:8"
+  ],
+  "relevant_docs": [
+   "PMC10546336"
+  ],
+  "answer_keywords": [
+   [
+    "3.86",
+    "4-fold",
+    "fourfold",
+    "four-fold",
+    "almost 4"
+   ]
+  ]
+ },
+ {
+  "id": "q109",
+  "split": "dev",
+  "answerable": true,
+  "topic": "stroke",
+  "question": "How many people in the United States have a stroke each year?",
+  "relevant_chunks": [
+   "PMC10648022:20"
+  ],
+  "relevant_docs": [
+   "PMC10648022"
+  ],
+  "answer_keywords": [
+   [
+    "795,000",
+    "795000"
+   ]
+  ]
+ },
+ {
+  "id": "q110",
+  "split": "test",
+  "answerable": true,
+  "topic": "stroke",
+  "question": "Under the new pediatric acute stroke protocol, how many of the 40 children needed sedation for MRI?",
+  "relevant_chunks": [
+   "PMC10232855:17"
+  ],
+  "relevant_docs": [
+   "PMC10232855"
+  ],
+  "answer_keywords": [
+   [
+    "7",
+    "seven"
+   ]
+  ]
+ },
+ {
+  "id": "q111",
+  "split": "test",
+  "answerable": true,
+  "topic": "stroke",
+  "question": "In the cost-utility analysis of hypothetical real-time stroke detection devices, what was the range of achievable DALY reduction?",
+  "relevant_chunks": [
+   "PMC6174318:11"
+  ],
+  "relevant_docs": [
+   "PMC6174318"
+  ],
+  "answer_keywords": [
+   [
+    "0.10",
+    "0.1"
+   ]
+  ]
+ },
+ {
+  "id": "q112",
+  "split": "dev",
+  "answerable": true,
+  "topic": "tuberculosis",
+  "question": "What is the national prevalence of isoniazid resistance among rifampicin-sensitive tuberculosis cases in Pakistan?",
+  "relevant_chunks": [
+   "PMC6822412:13"
+  ],
+  "relevant_docs": [
+   "PMC6822412"
+  ],
+  "answer_keywords": [
+   [
+    "7%",
+    "7 percent"
+   ]
+  ]
+ },
+ {
+  "id": "q113",
+  "split": "test",
+  "answerable": true,
+  "topic": "tuberculosis",
+  "question": "In the Korean cPMTb tuberculosis cohort, what proportion of TB patients were slow or ultra-slow NAT2 acetylators?",
+  "relevant_chunks": [
+   "PMC10675857:10"
+  ],
+  "relevant_docs": [
+   "PMC10675857"
+  ],
+  "answer_keywords": [
+   [
+    "12.7"
+   ]
+  ]
+ },
+ {
+  "id": "q114",
+  "split": "test",
+  "answerable": true,
+  "topic": "tuberculosis",
+  "question": "Which gyrA mutation was most common among ofloxacin-resistant multidrug-resistant TB strains in Morocco?",
+  "relevant_chunks": [
+   "PMC5830342:12"
+  ],
+  "relevant_docs": [
+   "PMC5830342"
+  ],
+  "answer_keywords": [
+   [
+    "d94a"
+   ]
+  ]
+ },
+ {
+  "id": "q115",
+  "split": "dev",
+  "answerable": true,
+  "topic": "tuberculosis",
+  "question": "What prevalence of hearing impairment was found in Ghanaian tuberculosis patients treated with aminoglycosides?",
+  "relevant_chunks": [
+   "PMC8883910:13"
+  ],
+  "relevant_docs": [
+   "PMC8883910"
+  ],
+  "answer_keywords": [
+   [
+    "20%",
+    "20 percent"
+   ]
+  ]
+ },
+ {
+  "id": "q116",
+  "split": "test",
+  "answerable": true,
+  "topic": "tuberculosis",
+  "question": "What molecular weight did the purified recombinant LppZ protein of M. tuberculosis show on SDS-PAGE?",
+  "relevant_chunks": [
+   "PMC5715530:13"
+  ],
+  "relevant_docs": [
+   "PMC5715530"
+  ],
+  "answer_keywords": [
+   [
+    "38"
+   ]
+  ]
+ },
+ {
+  "id": "q117",
+  "split": "test",
+  "answerable": true,
+  "topic": "tuberculosis",
+  "question": "For how long did subjects breathe to collect exhaled breath condensate in the study detecting a M. tuberculosis fingerprint in breath?",
+  "relevant_chunks": [
+   "PMC9751131:4"
+  ],
+  "relevant_docs": [
+   "PMC9751131"
+  ],
+  "answer_keywords": [
+   [
+    "15"
+   ]
+  ]
+ },
+ {
+  "id": "q118",
+  "split": "dev",
+  "answerable": true,
+  "topic": "tuberculosis",
+  "question": "IgG against which novel antigen was an independent marker for diagnosing latent tuberculosis infection?",
+  "relevant_chunks": [
+   "PMC7409123:16"
+  ],
+  "relevant_docs": [
+   "PMC7409123"
+  ],
+  "answer_keywords": [
+   [
+    "tbcm"
+   ]
+  ]
+ },
+ {
+  "id": "q119",
+  "split": "test",
+  "answerable": true,
+  "topic": "tuberculosis",
+  "question": "In South Korea's national TB surveillance data for 2019-2020, what was the median survival time of patients whose death was TB-related?",
+  "relevant_chunks": [
+   "PMC10502314:0"
+  ],
+  "relevant_docs": [
+   "PMC10502314"
+  ],
+  "answer_keywords": [
+   [
+    "22"
+   ]
+  ]
+ },
+ {
+  "id": "q120",
+  "split": "test",
+  "answerable": true,
+  "topic": "tuberculosis",
+  "question": "Which T-cell exhaustion molecule was significantly increased in patients with active tuberculosis in the ImmunoScore study?",
+  "relevant_chunks": [
+   "PMC5670161:13"
+  ],
+  "relevant_docs": [
+   "PMC5670161"
+  ],
+  "answer_keywords": [
+   [
+    "pd-1",
+    "pd1"
+   ]
+  ]
+ },
+ {
+  "id": "q121",
+  "split": "dev",
+  "answerable": true,
+  "topic": "tuberculosis",
+  "question": "What is the WHO position on using serological tests to diagnose active tuberculosis?",
+  "relevant_chunks": [
+   "PMC10403504:12"
+  ],
+  "relevant_docs": [
+   "PMC10403504"
+  ],
+  "answer_keywords": [
+   [
+    "discourage",
+    "discourages",
+    "discouraged",
+    "not recommend",
+    "does not recommend",
+    "against"
+   ]
+  ]
+ },
+ {
+  "id": "q122",
+  "split": "test",
+  "answerable": true,
+  "topic": "tuberculosis",
+  "question": "How many plasma proteins were increased and decreased in abundance in active TB compared with latent TB infection?",
+  "relevant_chunks": [
+   "PMC7603755:12"
+  ],
+  "relevant_docs": [
+   "PMC7603755"
+  ],
+  "answer_keywords": [
+   [
+    "37"
+   ],
+   [
+    "four",
+    "4"
+   ]
+  ]
+ },
+ {
+  "id": "q123",
+  "split": "test",
+  "answerable": true,
+  "topic": "tuberculosis",
+  "question": "What was the prevalence of pulmonary tuberculosis among presumptive patients in the hospital-based study in northwestern Ethiopia?",
+  "relevant_chunks": [
+   "PMC10751920:10"
+  ],
+  "relevant_docs": [
+   "PMC10751920"
+  ],
+  "answer_keywords": [
+   [
+    "12.7"
+   ]
+  ]
+ },
+ {
+  "id": "q124",
+  "split": "dev",
+  "answerable": true,
+  "topic": "tuberculosis",
+  "question": "Which antibody subclass against M. tuberculosis antigens was lower in HIV-infected people who developed recurrent tuberculosis?",
+  "relevant_chunks": [
+   "PMC8493041:0"
+  ],
+  "relevant_docs": [
+   "PMC8493041"
+  ],
+  "answer_keywords": [
+   [
+    "igg3"
+   ]
+  ]
+ },
+ {
+  "id": "q125",
+  "split": "test",
+  "answerable": true,
+  "topic": "tuberculosis",
+  "question": "Why might patients infected with Mycobacterium bovis receive ineffective first-line TB treatment?",
+  "relevant_chunks": [
+   "PMC10525399:20"
+  ],
+  "relevant_docs": [
+   "PMC10525399"
+  ],
+  "answer_keywords": [
+   [
+    "pyrazinamide"
+   ]
+  ]
+ },
+ {
+  "id": "q126",
+  "split": "test",
+  "answerable": true,
+  "topic": "type2_diabetes",
+  "question": "How did in-hospital mortality of infectious inpatients with type 2 diabetes compare with that of non-diabetic inpatients?",
+  "relevant_chunks": [
+   "PMC6587657:8"
+  ],
+  "relevant_docs": [
+   "PMC6587657"
+  ],
+  "answer_keywords": [
+   [
+    "4.3"
+   ],
+   [
+    "1.7"
+   ]
+  ]
+ },
+ {
+  "id": "q127",
+  "split": "dev",
+  "answerable": true,
+  "topic": "type2_diabetes",
+  "question": "What happens to plasma branched-chain amino acid levels in people with insulin resistance and type 2 diabetes?",
+  "relevant_chunks": [
+   "PMC9356071:0"
+  ],
+  "relevant_docs": [
+   "PMC9356071"
+  ],
+  "answer_keywords": [
+   [
+    "elevated",
+    "higher",
+    "increased",
+    "raised"
+   ]
+  ]
+ },
+ {
+  "id": "q128",
+  "split": "test",
+  "answerable": true,
+  "topic": "type2_diabetes",
+  "question": "In Chinese Hans, how much did each additional risk allele in a nine-variant genetic risk score raise the risk of type 2 diabetes?",
+  "relevant_chunks": [
+   "PMC5409715:7"
+  ],
+  "relevant_docs": [
+   "PMC5409715"
+  ],
+  "answer_keywords": [
+   [
+    "12%",
+    "1.12"
+   ]
+  ]
+ },
+ {
+  "id": "q129",
+  "split": "test",
+  "answerable": true,
+  "topic": "type2_diabetes",
+  "question": "What reduction in proteinuria did the Kumamoto study report in young type 2 diabetes patients who reached an HbA1c of 7.0%?",
+  "relevant_chunks": [
+   "PMC5673743:8"
+  ],
+  "relevant_docs": [
+   "PMC5673743"
+  ],
+  "answer_keywords": [
+   [
+    "60%",
+    "60 percent"
+   ]
+  ]
+ },
+ {
+  "id": "q130",
+  "split": "dev",
+  "answerable": true,
+  "topic": "type2_diabetes",
+  "question": "What hazard ratio for colorectal cancer was associated with diabetes in the mostly African American, low-income cohort?",
+  "relevant_chunks": [
+   "PMC10646729:1"
+  ],
+  "relevant_docs": [
+   "PMC10646729"
+  ],
+  "answer_keywords": [
+   [
+    "1.47"
+   ]
+  ]
+ },
+ {
+  "id": "q131",
+  "split": "test",
+  "answerable": true,
+  "topic": "type2_diabetes",
+  "question": "How did type 2 diabetes affect collagen fibril stretching in the intervertebral disc annulus fibrosus of UCD-T2DM rats under compression?",
+  "relevant_chunks": [
+   "PMC10718642:8"
+  ],
+  "relevant_docs": [
+   "PMC10718642"
+  ],
+  "answer_keywords": [
+   [
+    "less",
+    "lower",
+    "reduced",
+    "impaired",
+    "decreased",
+    "impairs"
+   ]
+  ]
+ },
+ {
+  "id": "q132",
+  "split": "test",
+  "answerable": true,
+  "topic": "type2_diabetes",
+  "question": "How many items did the DIABA adolescent health beliefs questionnaire on type 2 diabetes have when it went to construct validity testing?",
+  "relevant_chunks": [
+   "PMC10463709:8"
+  ],
+  "relevant_docs": [
+   "PMC10463709"
+  ],
+  "answer_keywords": [
+   [
+    "20",
+    "twenty"
+   ]
+  ]
+ },
+ {
+  "id": "q133",
+  "split": "dev",
+  "answerable": true,
+  "topic": "type2_diabetes",
+  "question": "On abdominal CT, how did pancreas density in patients with type 2 diabetes compare with matched controls?",
+  "relevant_chunks": [
+   "PMC7410152:23"
+  ],
+  "relevant_docs": [
+   "PMC7410152"
+  ],
+  "answer_keywords": [
+   [
+    "lower"
+   ]
+  ]
+ },
+ {
+  "id": "q134",
+  "split": "test",
+  "answerable": true,
+  "topic": "type2_diabetes",
+  "question": "In the nationwide gradient boosting model of type 2 diabetes comorbidities, what incidence risk ratio for chronic kidney disease did people at the 95th risk percentile have?",
+  "relevant_chunks": [
+   "PMC7000818:14"
+  ],
+  "relevant_docs": [
+   "PMC7000818"
+  ],
+  "answer_keywords": [
+   [
+    "4.18"
+   ]
+  ]
+ },
+ {
+  "id": "q135",
+  "split": "test",
+  "answerable": true,
+  "topic": "type2_diabetes",
+  "question": "Were obesity, older age or modest hyperglycemia associated with beta-cell dedifferentiation (abnormal NKX6.1 expression) in non-diabetic subjects?",
+  "relevant_chunks": [
+   "PMC7955633:8"
+  ],
+  "relevant_docs": [
+   "PMC7955633"
+  ],
+  "answer_keywords": [
+   [
+    "no association",
+    "not associated",
+    "did not",
+    "no significant",
+    "not affect"
+   ]
+  ]
+ },
+ {
+  "id": "q136",
+  "split": "dev",
+  "answerable": true,
+  "topic": "type2_diabetes",
+  "question": "Which clearly defined form of diabetes should clinicians get better at identifying among patients labeled as having type 2 diabetes?",
+  "relevant_chunks": [
+   "PMC6560016:0"
+  ],
+  "relevant_docs": [
+   "PMC6560016"
+  ],
+  "answer_keywords": [
+   [
+    "monogenic"
+   ]
+  ]
+ },
+ {
+  "id": "q137",
+  "split": "test",
+  "answerable": true,
+  "topic": "type2_diabetes",
+  "question": "In observational studies, what pooled odds ratio for type 2 diabetes was found for the highest versus the lowest selenium levels?",
+  "relevant_chunks": [
+   "PMC6316380:8"
+  ],
+  "relevant_docs": [
+   "PMC6316380"
+  ],
+  "answer_keywords": [
+   [
+    "2.03"
+   ]
+  ]
+ },
+ {
+  "id": "q138",
+  "split": "test",
+  "answerable": true,
+  "topic": "type2_diabetes",
+  "question": "In the Rio de Janeiro Type 2 Diabetes Cohort, which glycemic variability measure more strongly predicted all-cause and cardiovascular mortality?",
+  "relevant_chunks": [
+   "PMC6389075:10"
+  ],
+  "relevant_docs": [
+   "PMC6389075"
+  ],
+  "answer_keywords": [
+   [
+    "fasting glucose",
+    "fg"
+   ]
+  ]
+ },
+ {
+  "id": "q139",
+  "split": "dev",
+  "answerable": true,
+  "topic": "type2_diabetes",
+  "question": "Which risk categories were used for net reclassification in the Edinburgh Type 2 Diabetes Study of vascular risk biomarkers?",
+  "relevant_chunks": [
+   "PMC5603967:19"
+  ],
+  "relevant_docs": [
+   "PMC5603967"
+  ],
+  "answer_keywords": [
+   [
+    "10%",
+    "10"
+   ],
+   [
+    "20%",
+    "20"
+   ]
+  ]
+ },
+ {
+  "id": "q140",
+  "split": "test",
+  "answerable": false,
+  "topic": "out_of_scope",
+  "question": "What dose of nirsevimab is recommended for RSV prophylaxis in infants weighing less than 5 kg?",
+  "relevant_chunks": [],
+  "relevant_docs": [],
+  "answer_keywords": []
+ },
+ {
+  "id": "q141",
+  "split": "test",
+  "answerable": false,
+  "topic": "out_of_scope",
+  "question": "What objective response rate did axicabtagene ciloleucel achieve in the ZUMA-1 trial of large B-cell lymphoma?",
+  "relevant_chunks": [],
+  "relevant_docs": [],
+  "answer_keywords": []
+ },
+ {
+  "id": "q142",
+  "split": "dev",
+  "answerable": false,
+  "topic": "out_of_scope",
+  "question": "Which KRAS mutation does the inhibitor sotorasib target?",
+  "relevant_chunks": [],
+  "relevant_docs": [],
+  "answer_keywords": []
+ },
+ {
+  "id": "q143",
+  "split": "test",
+  "answerable": false,
+  "topic": "out_of_scope",
+  "question": "What is the usual incubation period of mpox?",
+  "relevant_chunks": [],
+  "relevant_docs": [],
+  "answer_keywords": []
+ },
+ {
+  "id": "q144",
+  "split": "test",
+  "answerable": false,
+  "topic": "out_of_scope",
+  "question": "Which enzyme deficiency causes Gaucher disease?",
+  "relevant_chunks": [],
+  "relevant_docs": [],
+  "answer_keywords": []
+ },
+ {
+  "id": "q145",
+  "split": "dev",
+  "answerable": false,
+  "topic": "out_of_scope",
+  "question": "What is the first-line emergency treatment for acute angle-closure glaucoma?",
+  "relevant_chunks": [],
+  "relevant_docs": [],
+  "answer_keywords": []
+ },
+ {
+  "id": "q146",
+  "split": "test",
+  "answerable": false,
+  "topic": "out_of_scope",
+  "question": "How effective was the RTS,S/AS01 malaria vaccine in young children in its phase 3 trial?",
+  "relevant_chunks": [],
+  "relevant_docs": [],
+  "answer_keywords": []
+ },
+ {
+  "id": "q147",
+  "split": "test",
+  "answerable": false,
+  "topic": "out_of_scope",
+  "question": "At what age is the first HPV vaccine dose routinely recommended?",
+  "relevant_chunks": [],
+  "relevant_docs": [],
+  "answer_keywords": []
+ },
+ {
+  "id": "q148",
+  "split": "dev",
+  "answerable": false,
+  "topic": "out_of_scope",
+  "question": "What is the standard topical treatment for scabies?",
+  "relevant_chunks": [],
+  "relevant_docs": [],
+  "answer_keywords": []
+ },
+ {
+  "id": "q149",
+  "split": "test",
+  "answerable": false,
+  "topic": "out_of_scope",
+  "question": "Which virus most often causes hand, foot and mouth disease?",
+  "relevant_chunks": [],
+  "relevant_docs": [],
+  "answer_keywords": []
+ },
+ {
+  "id": "q150",
+  "split": "test",
+  "answerable": false,
+  "topic": "out_of_scope",
+  "question": "By how much did low-dose CT screening reduce lung cancer mortality in the National Lung Screening Trial?",
+  "relevant_chunks": [],
+  "relevant_docs": [],
+  "answer_keywords": []
+ },
+ {
+  "id": "q151",
+  "split": "dev",
+  "answerable": false,
+  "topic": "out_of_scope",
+  "question": "What proportion of cutaneous melanomas carry a BRAF V600E mutation?",
+  "relevant_chunks": [],
+  "relevant_docs": [],
+  "answer_keywords": []
+ },
+ {
+  "id": "q152",
+  "split": "test",
+  "answerable": false,
+  "topic": "out_of_scope",
+  "question": "How is acute Kawasaki disease treated to prevent coronary artery aneurysms?",
+  "relevant_chunks": [],
+  "relevant_docs": [],
+  "answer_keywords": []
+ },
+ {
+  "id": "q153",
+  "split": "test",
+  "answerable": false,
+  "topic": "out_of_scope",
+  "question": "What type of infectious agent causes Creutzfeldt-Jakob disease?",
+  "relevant_chunks": [],
+  "relevant_docs": [],
+  "answer_keywords": []
+ },
+ {
+  "id": "q154",
+  "split": "dev",
+  "answerable": false,
+  "topic": "out_of_scope",
+  "question": "What is the recommended treatment for uncomplicated Plasmodium falciparum malaria?",
+  "relevant_chunks": [],
+  "relevant_docs": [],
+  "answer_keywords": []
+ },
+ {
+  "id": "q155",
+  "split": "test",
+  "answerable": false,
+  "topic": "out_of_scope",
+  "question": "What is the elimination half-life of adalimumab?",
+  "relevant_chunks": [],
+  "relevant_docs": [],
+  "answer_keywords": []
+ },
+ {
+  "id": "q156",
+  "split": "test",
+  "answerable": false,
+  "topic": "out_of_scope",
+  "question": "Which bacterium causes Lyme disease?",
+  "relevant_chunks": [],
+  "relevant_docs": [],
+  "answer_keywords": []
+ },
+ {
+  "id": "q157",
+  "split": "dev",
+  "answerable": false,
+  "topic": "out_of_scope",
+  "question": "What is the most common cause of bronchiolitis in infants?",
+  "relevant_chunks": [],
+  "relevant_docs": [],
+  "answer_keywords": []
+ },
+ {
+  "id": "q158",
+  "split": "test",
+  "answerable": false,
+  "topic": "out_of_scope",
+  "question": "Which chromosome abnormality causes Turner syndrome?",
+  "relevant_chunks": [],
+  "relevant_docs": [],
+  "answer_keywords": []
+ },
+ {
+  "id": "q159",
+  "split": "test",
+  "answerable": false,
+  "topic": "out_of_scope",
+  "question": "What is the mechanism of action of the antiviral drug oseltamivir?",
+  "relevant_chunks": [],
+  "relevant_docs": [],
+  "answer_keywords": []
+ }
+]

@@ -14,7 +14,7 @@ class Settings(BaseSettings):
     log_level: str = "info"
 
     # LLM Gateway (01-llm-gateway): all chat and embedding calls go through it
-    gateway_base_url: str = "http://localhost:8000/v1"
+    gateway_base_url: str = "http://127.0.0.1:8000/v1"
     gateway_api_key: str = ""
     chat_model: str = "llama3.2"
     embedding_model: str = "nomic-embed-text"
@@ -44,10 +44,15 @@ class Settings(BaseSettings):
     # Hugging Face cross-encoder id; blank = no reranking
     reranker_model: str = ""
     reranker_device: str = "cpu"
-    retrieval_top_k: int = 50
+    retrieval_top_k: int = 20
     rerank_top_k: int = 5
-    abstain_threshold: float = 0.35
+    abstain_threshold: float = 6.43  # MedCPT logit; tuned on the dev split (make eval)
     require_citations: bool = True
+    citation_repairs: int = 1
+
+    # Observability: blank endpoint = tracing off. 01's Jaeger listens on :4318.
+    otel_exporter_otlp_endpoint: str = ""
+    otel_service_name: str = "healthcare-rag"
 
     # Data / NCBI
     data_dir: str = "./data"

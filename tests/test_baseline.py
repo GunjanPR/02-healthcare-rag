@@ -80,6 +80,9 @@ def test_recall_and_rr() -> None:
         ("FEV1/FVC below 0.70", [["fev1/fvc"], ["0.70", "0.7"]], True),
         ("FEV1/FVC is low", [["fev1/fvc"], ["0.70", "0.7"]], False),
         ("T-score of -2.5 or lower", [["-2.5"]], True),
+        ("T-score of −2.5 or lower", [["-2.5"]], True),  # Unicode minus sign
+        ("The median score was 3 [2].", [["2"]], False),  # citation is not an answer
+        ("Targeting IL‐1β helped.", [["il-1β"]], True),
     ],
 )
 def test_keywords_match(answer: str, groups: list[list[str]], expected: bool) -> None:

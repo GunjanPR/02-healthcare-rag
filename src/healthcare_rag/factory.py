@@ -18,6 +18,7 @@ def rag_config(settings: Settings) -> RAGConfig:
         rerank_top_k=settings.rerank_top_k,
         abstain_threshold=settings.abstain_threshold,
         require_citations=settings.require_citations,
+        citation_repairs=settings.citation_repairs,
     )
 
 

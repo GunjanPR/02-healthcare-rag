@@ -1,7 +1,7 @@
 # Windows: install make with `choco install make`, or run from Git Bash.
 PYTHON ?= python
 
-.PHONY: install lint format test test-integration run dev up up-all down logs ingest index-toy eval-baseline
+.PHONY: install lint format test test-integration run dev up up-all up-stack down logs ingest index-toy eval-baseline eval
 
 install:
 	$(PYTHON) -m pip install --upgrade pip
@@ -37,6 +37,13 @@ up:
 up-all:
 	docker compose up -d --build
 
+# Everything, including 01-llm-gateway's own compose stack (gateway, Redis, Postgres,
+# Jaeger, Prometheus, Grafana) from a sibling checkout. Ollama runs natively on the host.
+GATEWAY_DIR ?= ../01-llm-gateway
+up-stack:
+	docker compose --project-directory $(GATEWAY_DIR) -f $(GATEWAY_DIR)/docker-compose.yml up -d --build
+	docker compose up -d --build
+
 down:
 	docker compose down
 
@@ -51,6 +58,11 @@ ingest:
 # M1 baseline: BM25-only (OpenSearch) + one gateway call over the toy corpus.
 # Needs `make up` and the gateway on :8000. HARDWARE is a free-text note for the report.
 HARDWARE ?=
+# M4 evaluation on the PMC corpus (needs make up, the gateway and the [rerank] extra):
+# retrieval systems, dev-tuned abstention threshold, answers + LLM judge, report.
+eval:
+	$(PYTHON) -m healthcare_rag.rag_eval all --hardware "$(HARDWARE)"
+
 index-toy:
 	$(PYTHON) -m healthcare_rag.evaluation index
 

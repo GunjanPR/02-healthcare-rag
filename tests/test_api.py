@@ -158,3 +158,17 @@ def test_summarize_404_when_not_indexed() -> None:
         assert resp.status_code == 404
     finally:
         main.app.dependency_overrides.clear()
+
+
+def test_ask_maps_missing_index_to_503(rag_client) -> None:
+    from opensearchpy.exceptions import NotFoundError
+
+    client, _, retriever = rag_client
+
+    def missing(*_, **__):
+        raise NotFoundError(404, "index_not_found_exception", {})
+
+    retriever.search = missing
+    resp = client.post("/ask", json={"question": "What do statins inhibit?"})
+    assert resp.status_code == 503
+    assert "make ingest" in resp.json()["detail"]

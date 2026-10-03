@@ -7,6 +7,9 @@
 - generate: one chat call through the LLM Gateway, with numbered passages to cite.
 - verify:   the answer must cite at least one passage that was actually provided, and must
             not be the model's "insufficient evidence" sentinel; otherwise abstain.
+- repair:   an answer with no citations gets one follow-up turn asking for them, then goes
+            through verify again (on the dev split, every uncited answer dropped by verify
+            was otherwise correct).
 """
 
 import re
@@ -15,8 +18,10 @@ from dataclasses import dataclass, field
 from typing import Any, Protocol, TypedDict
 
 from langgraph.graph import END, START, StateGraph
+from opentelemetry import trace
 
 from healthcare_rag.gateway import ChatResult
+from healthcare_rag.observability import get_tracer
 from healthcare_rag.types import Filters, Hit
 
 INSUFFICIENT = "INSUFFICIENT_EVIDENCE"
@@ -33,6 +38,12 @@ SUMMARY_PROMPT = (
     "You are a biomedical research assistant. Summarize the article from the numbered "
     "passages in 4-6 sentences covering objective, methods, main findings and conclusion. "
     "Cite passages as [1], [2], etc. after each sentence. Use only the passages."
+)
+
+REPAIR_PROMPT = (
+    "Your answer did not cite the passages. Rewrite the same answer and put the number of "
+    "the supporting passage in square brackets, e.g. [1], after each sentence. If the "
+    f"passages do not support the answer, reply with exactly {INSUFFICIENT}."
 )
 
 ABSTAIN_MESSAGE = "I can't answer this from the indexed literature with enough confidence."
@@ -56,11 +67,13 @@ class ChatClient(Protocol):
 
 @dataclass(frozen=True)
 class RAGConfig:
-    retrieval_top_k: int = 50
+    retrieval_top_k: int = 20
     rerank_top_k: int = 5
     # Compared with the best reranker score (MedCPT: logit units); ignored without a reranker.
     abstain_threshold: float = 0.35
     require_citations: bool = True
+    # Follow-up turns that ask the model to add citations to an uncited answer
+    citation_repairs: int = 1
     max_tokens: int = 256
 
 
@@ -90,6 +103,7 @@ class RAGResult:
     timings: dict[str, float] = field(default_factory=dict)  # seconds per stage
     usage: Usage = field(default_factory=Usage)
     raw_answer: str = ""
+    top_score: float | None = None  # best reranker score, when a reranker ran
 
     @property
     def cited_passages(self) -> list[Hit]:
@@ -108,6 +122,9 @@ class State(TypedDict, total=False):
     reason: str
     timings: dict[str, float]
     usage: Usage
+    messages: list[dict[str, str]]
+    repairs: int
+    trace_ctx: Any  # OpenTelemetry context of the request's "rag.ask" span
 
 
 def number_passages(hits: list[Hit]) -> str:
@@ -146,18 +163,27 @@ class RAGPipeline:
 
     # ---- nodes -------------------------------------------------------------------------
 
+    def _span(self, state: State, name: str):
+        return get_tracer().start_as_current_span(f"rag.{name}", context=state.get("trace_ctx"))
+
     def _retrieve(self, state: State) -> State:
         start = time.perf_counter()
-        hits = self.retriever.search(
-            state["question"], k=self.config.retrieval_top_k, filters=state.get("filters")
-        )
+        with self._span(state, "retrieve") as span:
+            hits = self.retriever.search(
+                state["question"], k=self.config.retrieval_top_k, filters=state.get("filters")
+            )
+            span.set_attribute("rag.retriever", type(self.retriever).__name__)
+            span.set_attribute("rag.candidates", len(hits))
         return {"candidates": hits, "timings": {"retrieve": time.perf_counter() - start}}
 
     def _rerank(self, state: State) -> State:
         start = time.perf_counter()
         hits = state["candidates"]
-        if self.reranker is not None and hits:
-            hits = self.reranker.rerank(state["question"], hits)
+        with self._span(state, "rerank") as span:
+            if self.reranker is not None and hits:
+                hits = self.reranker.rerank(state["question"], hits)
+                span.set_attribute("rag.rerank.top_score", hits[0].score)
+            span.set_attribute("rag.passages", min(len(hits), self.config.rerank_top_k))
         timings = {**state["timings"], "rerank": time.perf_counter() - start}
         return {"passages": hits[: self.config.rerank_top_k], "timings": timings}
 
@@ -176,11 +202,46 @@ class RAGPipeline:
             {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user", "content": f"Context:\n{context}\n\nQuestion: {state['question']}"},
         ]
-        result = self.chat_client.chat(messages, max_tokens=self.config.max_tokens)
+        with self._span(state, "generate") as span:
+            result = self.chat_client.chat(messages, max_tokens=self.config.max_tokens)
+            span.set_attribute("gen_ai.usage.input_tokens", result.prompt_tokens)
+            span.set_attribute("gen_ai.usage.output_tokens", result.completion_tokens)
+            span.set_attribute("rag.cost_usd", result.cost_usd)
         usage = state.get("usage") or Usage()
         usage.add(result)
         timings = {**state["timings"], "generate": time.perf_counter() - start}
-        return {"raw_answer": result.text.strip(), "usage": usage, "timings": timings}
+        messages = [*messages, {"role": "assistant", "content": result.text}]
+        return {
+            "raw_answer": result.text.strip(),
+            "usage": usage,
+            "timings": timings,
+            "messages": messages,
+            "repairs": 0,
+        }
+
+    def _repair(self, state: State) -> State:
+        """One more turn asking for citations; the answer then goes through verify again."""
+        start = time.perf_counter()
+        messages = [*state["messages"], {"role": "user", "content": REPAIR_PROMPT}]
+        with self._span(state, "repair") as span:
+            result = self.chat_client.chat(messages, max_tokens=self.config.max_tokens)
+            span.set_attribute("gen_ai.usage.input_tokens", result.prompt_tokens)
+            span.set_attribute("gen_ai.usage.output_tokens", result.completion_tokens)
+        usage = state["usage"]
+        usage.add(result)
+        timings = {**state["timings"], "repair": time.perf_counter() - start}
+        return {
+            "raw_answer": result.text.strip(),
+            "usage": usage,
+            "timings": timings,
+            "messages": [*messages, {"role": "assistant", "content": result.text}],
+            "repairs": state["repairs"] + 1,
+        }
+
+    def _after_verify(self, state: State) -> str:
+        if state["reason"] == "uncited" and state["repairs"] < self.config.citation_repairs:
+            return "repair"
+        return "done"
 
     def _verify(self, state: State) -> State:
         raw = state["raw_answer"]
@@ -216,8 +277,10 @@ class RAGPipeline:
                 "generate": "generate",
             },
         )
+        g.add_node("repair", self._repair)
         g.add_edge("generate", "verify")
-        g.add_edge("verify", END)
+        g.add_conditional_edges("verify", self._after_verify, {"repair": "repair", "done": END})
+        g.add_edge("repair", "verify")
         g.add_edge("abstain_no_hits", END)
         g.add_edge("abstain_low_score", END)
         return g.compile()
@@ -226,10 +289,17 @@ class RAGPipeline:
 
     def ask(self, question: str, filters: Filters | None = None) -> RAGResult:
         start = time.perf_counter()
-        out = self.graph.invoke({"question": question, "filters": filters, "usage": Usage()})
+        with get_tracer().start_as_current_span("rag.ask") as span:
+            ctx = trace.set_span_in_context(span)
+            state = {"question": question, "filters": filters, "usage": Usage(), "trace_ctx": ctx}
+            out = self.graph.invoke(state)
+            abstained = out.get("abstained", True)
+            span.set_attribute("rag.abstained", abstained)
+            span.set_attribute("rag.reason", out.get("reason", "no_hits"))
+            span.set_attribute("rag.cited", len(out.get("cited", [])))
         timings = dict(out.get("timings", {}))
         timings["total"] = time.perf_counter() - start
-        abstained = out.get("abstained", True)
+        passages = out.get("passages", [])
         return RAGResult(
             question=question,
             answer=ABSTAIN_MESSAGE if abstained else out["answer"],
@@ -241,6 +311,7 @@ class RAGPipeline:
             timings=timings,
             usage=out.get("usage") or Usage(),
             raw_answer=out.get("raw_answer", ""),
+            top_score=passages[0].score if self.reranker and passages else None,
         )
 
     def summarize(self, title: str, chunks: list[Hit], max_passages: int = 8) -> RAGResult:

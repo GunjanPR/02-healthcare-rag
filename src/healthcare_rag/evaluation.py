@@ -19,6 +19,7 @@ from healthcare_rag.baseline import BM25Baseline, Retriever
 from healthcare_rag.bm25 import BM25Index, Document, client_from_settings
 from healthcare_rag.config import get_settings
 from healthcare_rag.gateway import GatewayClient
+from healthcare_rag.rag import _CITATION
 
 TOY_DIR = Path("eval/toy")
 TOY_INDEX = "toy_chunks"  # kept apart from the PMC index
@@ -54,16 +55,27 @@ def reciprocal_rank(ranked: list[str], relevant: list[str]) -> float:
     return 0.0
 
 
+# Unicode hyphen, non-breaking hyphen, en dash, minus sign -> "-"; no-break space -> " "
+_DASHES = str.maketrans({"\u2010": "-", "\u2011": "-", "\u2013": "-", "\u2212": "-", "\u00a0": " "})
+
+
+def _normalize(text: str) -> str:
+    return text.translate(_DASHES).lower()
+
+
 def keywords_match(answer: str, groups: list[list[str]]) -> bool:
     """True if every keyword group has an alternative that appears as a whole term.
 
     A plural suffix is allowed ("corticosteroid" matches "corticosteroids", "ssri" matches
-    "SSRIs"), but substrings are not ("ics" does not match "antibiotics").
+    "SSRIs"), but substrings are not ("ics" does not match "antibiotics"). Citation markers
+    such as [2] are removed first so they can't satisfy numeric keywords, and Unicode
+    hyphens and minus signs are folded to "-".
     """
-    text = answer.lower()
+    text = _normalize(_CITATION.sub(" ", answer))
 
     def found(term: str) -> bool:
-        return re.search(rf"(?<!\w){re.escape(term.lower())}(?:e?s)?(?!\w)", text) is not None
+        pattern = rf"(?<!\w){re.escape(_normalize(term))}(?:e?s)?(?!\w)"
+        return re.search(pattern, text) is not None
 
     return all(any(found(alt) for alt in group) for group in groups)
 
@@ -167,6 +179,28 @@ def to_markdown(summary: dict, rows: list[dict], meta: dict) -> str:
     return "\n".join(lines) + "\n"
 
 
+def run_gate(index: BM25Index, args: argparse.Namespace) -> int:
+    """Re-index the toy corpus twice (must stay idempotent) and check BM25 retrieval quality
+    against fixed floors. Exercises indexing, analysis and search without the gateway."""
+    docs = load_corpus(args.corpus)
+    index.ensure_index(recreate=True)
+    index.index_documents(docs)
+    index.index_documents(docs)
+    questions = load_questions(args.questions)
+    ranked = [[h.id for h in index.search(q.question, k=MRR_DEPTH)] for q in questions]
+    pairs = list(zip(ranked, questions, strict=True))
+    recall3 = statistics.mean(recall_at_k(r, q.relevant, 3) for r, q in pairs)
+    mrr = statistics.mean(reciprocal_rank(r, q.relevant) for r, q in pairs)
+    checks = {
+        "indexed count == corpus size": index.count() == len(docs),
+        f"recall@3 {recall3:.3f} >= {args.min_recall_at_3}": recall3 >= args.min_recall_at_3,
+        f"MRR@10 {mrr:.3f} >= {args.min_mrr}": mrr >= args.min_mrr,
+    }
+    for name, ok in checks.items():
+        print(f"{'PASS' if ok else 'FAIL'}  {name}")
+    return 0 if all(checks.values()) else 1
+
+
 def main(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--index", default=TOY_INDEX, help="OpenSearch index name")
@@ -179,6 +213,11 @@ def main(argv: list[str] | None = None) -> None:
     run.add_argument("--out", type=Path, default=Path("eval/results/baseline_bm25.json"))
     run.add_argument("--markdown", type=Path)
     run.add_argument("--hardware", default="", help="free-text hardware/power note")
+    gate = sub.add_parser("gate", help="CI regression gate: index + BM25 recall, no LLM")
+    gate.add_argument("--corpus", type=Path, default=TOY_DIR / "corpus.json")
+    gate.add_argument("--questions", type=Path, default=TOY_DIR / "questions.json")
+    gate.add_argument("--min-recall-at-3", type=float, default=0.95)
+    gate.add_argument("--min-mrr", type=float, default=0.90)
     args = parser.parse_args(argv)
 
     settings = get_settings()
@@ -190,6 +229,9 @@ def main(argv: list[str] | None = None) -> None:
         index.index_documents(docs)
         print(f"indexed {index.count()} documents into {args.index!r}")
         return
+
+    if args.cmd == "gate":
+        raise SystemExit(run_gate(index, args))
 
     gateway = GatewayClient.from_settings(settings, bypass_cache=True)
     pipeline = BM25Baseline(index, gateway, k=args.k)

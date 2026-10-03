@@ -1,0 +1,27 @@
+{
+ "description": "Manual check of the LLM faithfulness judge (llama3.2 3B) on 20 answers from the full system, run v1, test split: 10 sampled from judge=YES and 10 from judge=NO (random.Random(11)). manual = whether every claim in the answer is supported by the passages it cites, read by the reviewer (Claude).",
+ "reviewer": "Claude (AI), not a clinician",
+ "items": [
+  {"id": "q033", "judge": false, "manual": true, "note": "verbatim from cited passage"},
+  {"id": "q068", "judge": true, "manual": true},
+  {"id": "q014", "judge": false, "manual": false, "note": "misstates 27.8% ICS+LABA as 43.9%; does not answer the question"},
+  {"id": "q077", "judge": true, "manual": true},
+  {"id": "q108", "judge": true, "manual": true},
+  {"id": "q020", "judge": true, "manual": true},
+  {"id": "q018", "judge": false, "manual": true, "note": "each sentence is in one of the cited passages"},
+  {"id": "q080", "judge": false, "manual": true, "note": "verbatim from cited passage"},
+  {"id": "q066", "judge": true, "manual": true},
+  {"id": "q060", "judge": false, "manual": false, "note": "says the passage has no Klotho information; it does"},
+  {"id": "q075", "judge": true, "manual": true},
+  {"id": "q089", "judge": false, "manual": true, "note": "all numbers match the cited passage"},
+  {"id": "q056", "judge": true, "manual": true},
+  {"id": "q024", "judge": false, "manual": true, "note": "verbatim from cited passage"},
+  {"id": "q006", "judge": false, "manual": true, "note": "matches the cited passage"},
+  {"id": "q119", "judge": true, "manual": true},
+  {"id": "q105", "judge": false, "manual": false, "note": "numbers are right for the corpus but not in the cited passage"},
+  {"id": "q107", "judge": true, "manual": true},
+  {"id": "q101", "judge": true, "manual": true, "note": "faithful to the passage but does not answer the question"},
+  {"id": "q135", "judge": false, "manual": true, "note": "matches the cited passage"}
+ ],
+ "summary": {"judge_yes_confirmed": "10/10", "judge_no_confirmed": "3/10", "agreement": "13/20"}
+}

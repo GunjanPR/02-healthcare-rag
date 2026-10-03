@@ -98,3 +98,26 @@ def test_summarize_uses_chunks_in_order() -> None:
     assert "Article: An article" in chat.calls[0][1]["content"]
     assert "[3]" not in chat.calls[0][1]["content"]
     assert pipe.summarize("Empty", []).abstained
+
+
+def test_uncited_answer_is_repaired_once() -> None:
+    chat = FakeChat("An answer with no citation.", "An answer with a citation [1].")
+    result = RAGPipeline(FakeRetriever([hit(1)]), chat).ask("q?")
+    assert not result.abstained
+    assert result.answer == "An answer with a citation [1]."
+    assert result.usage.llm_calls == 2
+    assert "repair" in result.timings
+    assert chat.calls[1][-1]["content"].startswith("Your answer did not cite")
+    assert chat.calls[1][-2] == {"role": "assistant", "content": "An answer with no citation."}
+
+
+def test_repair_gives_up_after_configured_attempts() -> None:
+    chat = FakeChat("No citation.", "Still no citation.")
+    result = RAGPipeline(FakeRetriever([hit(1)]), chat).ask("q?")
+    assert result.abstained and result.reason == "uncited"
+    assert result.usage.llm_calls == 2
+
+    none = RAGPipeline(
+        FakeRetriever([hit(1)]), FakeChat("No citation."), config=RAGConfig(citation_repairs=0)
+    ).ask("q?")
+    assert none.abstained and none.usage.llm_calls == 1

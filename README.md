@@ -184,14 +184,81 @@ make format   # auto-fix lint and formatting
 
 ## Evaluation & Results
 
-- **Baseline:** BM25-only retrieval (OpenSearch), with no reranking.
-- **Retrieval metrics:** recall@k, NDCG@10, MRR on a 100–200-question hand-labeled QA set.
-- **Answer metrics:** grounded-answer rate, citation accuracy, faithfulness (RAGAS-style),
-  and abstention precision.
-- **Cost / latency:** per-query cost and p95 latency, taken from gateway metrics.
-- **Method (full system):** *to be defined in M4* (QA set construction, labeling protocol, N).
-- **Results (full system):** [pending]. No numbers are reported until they are measured.
-- **Targets (not measured):** NDCG@10 lift over BM25-only, and grounded-answer rate above 90%.
+**Headline (measured 2026-10-03, test split):** Against the BM25-only baseline, the full
+system raised **NDCG@10 from 0.592 to 0.734 (+24%)** and **answer accuracy from 77.2% to
+87.0% (+9.8 points)** on 92 held-out PubMed Central questions. Over the same test set it
+declined **14 of 14** out-of-scope questions. End-to-end p95 latency was 7.6 s on a laptop
+GPU held to 20 W.
+
+### Method
+- **Corpus:** 500 CC BY/CC0 PMC OA articles, 8,369 chunks (see *Data* above).
+- **Questions:** 159 in [eval/qa/questions.json](eval/qa/questions.json).
+  - 139 are answerable: one passage per article, sampled with a fixed seed from results,
+    abstract, discussion and conclusion sections
+    ([scripts/sample_qa_passages.py](scripts/sample_qa_passages.py)). Claude wrote each
+    question and its reference answer keywords from that passage, paraphrasing rather
+    than copying wording. That source chunk is the relevant chunk.
+  - 20 are out of scope: medical questions the corpus does not cover.
+  - The questions and labels were written by Claude (an AI), not by clinicians.
+- **Split:** dev = every third question (53). Dev was used only to pick the abstention
+  threshold and rerank depth, and to decide on citation repair. Test = 106 questions (92
+  answerable, 14 out of scope); all numbers below are on test.
+- **Baseline:** the M1 control: BM25-only retrieval (OpenSearch), top 3 passages, one
+  gateway call, no reranking, no abstention logic.
+- **Full system:**
+  1. hybrid retrieval (BM25 + `nomic-embed-text` dense, RRF), top 20
+  2. MedCPT cross-encoder rerank, keep top 5
+  3. abstain if the best rerank score is below 6.43 (tuned on dev)
+  4. `llama3.2` (3B) via the gateway, with numbered citations
+  5. verify: drop uncited answers, after one citation-repair turn
+- **Reproduce:** `make eval HARDWARE="..."` writes
+  [docs/evaluation_report.md](docs/evaluation_report.md).
+
+### Retrieval (test, 92 answerable questions; relevance = the source chunk)
+
+| System | Recall@1 | Recall@5 | Recall@10 | MRR@10 | NDCG@10 | p50 / p95 latency |
+|---|---|---|---|---|---|---|
+| **BM25 (baseline)** | 0.380 | 0.717 | 0.848 | 0.512 | 0.592 | 12 / 21 ms |
+| Dense (nomic-embed-text) | 0.293 | 0.739 | 0.870 | 0.484 | 0.577 | 47 / 59 ms |
+| Hybrid (RRF) | 0.380 | 0.728 | 0.913 | 0.530 | 0.620 | 44 / 61 ms |
+| **Hybrid + MedCPT rerank (top 20)** | **0.489** | **0.891** | **0.978** | **0.656** | **0.734** | 302 / 346 ms |
+
+NDCG@10 gain over BM25: +0.143 (95% paired bootstrap CI +0.082 to +0.211). Reranking the
+top 50 instead of 20 gave no gain on dev at 2.4× the rerank latency.
+
+### Answers (test)
+
+| Metric | BM25 baseline (M1) | Full system |
+|---|---|---|
+| Answer accuracy, answerable (keyword match; abstain counts as wrong) | 77.2% | **87.0%** |
+| Answered rate, answerable | 85.9% | 95.7% |
+| Cites the source chunk (when answered) | 53.2% | 63.6% |
+| Cites the source article (when answered) | 96.2% | 98.9% |
+| Answers with at least one valid citation | 96.2% | 100% |
+| Out-of-scope questions declined | 14/14 | 14/14 |
+| Abstention precision | 51.9% | 77.8% |
+| End-to-end latency p50 / p95 | 2.7 s / 3.7 s | 4.1 s / 7.6 s |
+| Mean prompt / completion tokens | 1,175 / 31 | 1,689 / 50 |
+| Cost per query (gateway-reported) | $0 | $0 |
+
+- **Statistical strength:** answer accuracy +9.8 points, 95% paired bootstrap CI +0.0 to
+  +19.6. The gain is real on this set but at the edge of significance with N = 92.
+- **How out-of-scope questions are declined:** the full system declines them **without
+  calling the LLM** (rerank score gate). The baseline needs a generation call to say it
+  doesn't know.
+- **Citation repair:** the first measured run (v1) discarded uncited answers, which gave
+  81.5% accuracy for the full system. Dev showed that every discarded answer was
+  otherwise correct, so v2 adds one follow-up turn asking for citations. Both runs are in
+  the report.
+- **Faithfulness:** an LLM judge (the same 3B model) rated 43% of answers faithful.
+  I checked 20 of its verdicts by hand: all 10 YES verdicts held up, but 7 of 10 NO
+  verdicts were wrong. So **no faithfulness rate is claimed**, and the >90% grounded-answer
+  target remains **unmeasured**. A stronger judge is future work.
+- **Cost:** $0, because the gateway prices the local Ollama backend at zero. Token counts
+  are logged for pricing a hosted backend.
+- **Hardware:** Acer Nitro V 15 (i5-13420H, RTX 4050 Laptop 6 GB) on AC power over
+  USB-C, with the GPU held to **20 W**. Ollama, the embedder and the reranker share that
+  GPU, and requests run one at a time.
 
 ### M1 baseline: BM25-only + one gateway call (measured 2026-10-03)
 
@@ -261,10 +328,10 @@ Milestones follow [SHARED_STANDARDS.md](../SHARED_STANDARDS.md). Each one has a 
 - [x] Hybrid retrieval (RRF) + metadata filters (section, topic, PMCID, year) + reranking (MedCPT cross-encoder)
 
 ### M4: Evaluation & testing
-- [ ] Hand-labeled QA set (100–200 questions)
-- [ ] Retrieval eval: recall@k, NDCG@10, MRR vs BM25-only baseline
-- [ ] Answer eval: groundedness, citation accuracy, faithfulness
-- [ ] Unit + integration tests
+- [x] QA set: 159 questions (139 answerable from sampled passages + 20 out of scope), dev/test split; written by Claude, not clinician-labeled
+- [x] Retrieval eval: recall@k, NDCG@10, MRR vs the BM25-only baseline (`make eval`)
+- [x] Answer eval: accuracy, citation accuracy, abstention; LLM-judge faithfulness with a manual audit (judge too unreliable to report a rate)
+- [x] Unit + integration tests (metrics, graph, endpoints, failure paths; OpenSearch/Qdrant integration)
 
 ### M5: Observability / monitoring
 - [ ] OpenTelemetry traces across API → retriever → gateway
