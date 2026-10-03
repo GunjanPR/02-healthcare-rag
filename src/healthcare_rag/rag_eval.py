@@ -23,7 +23,7 @@ import re
 import statistics
 import time
 from collections.abc import Callable
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
@@ -31,9 +31,9 @@ from typing import Any
 from healthcare_rag.baseline import BM25Baseline
 from healthcare_rag.config import Settings, get_settings
 from healthcare_rag.evaluation import keywords_match, percentile
-from healthcare_rag.factory import build_bm25, build_retriever, rag_config
+from healthcare_rag.factory import build_bm25, build_retriever, build_scorer, rag_config
 from healthcare_rag.gateway import GatewayClient
-from healthcare_rag.rag import RAGConfig, RAGPipeline, number_passages, parse_citations
+from healthcare_rag.rag import RAGPipeline, number_passages, parse_citations
 from healthcare_rag.types import Hit
 
 QUESTIONS = Path("eval/qa/questions.json")
@@ -219,23 +219,13 @@ def build_answer_systems(settings: Settings, threshold: float) -> dict[str, Call
     bm25 = build_bm25(settings)
     hybrid = build_retriever(settings, "hybrid")
     reranker = build_reranker(settings)
+    scorer = build_scorer(settings)
     base_cfg = rag_config(settings)
-    bm25_cfg = RAGConfig(
-        retrieval_top_k=base_cfg.rerank_top_k,
-        rerank_top_k=base_cfg.rerank_top_k,
-        require_citations=base_cfg.require_citations,
-        citation_repairs=base_cfg.citation_repairs,
-    )
-    full_cfg = RAGConfig(
-        retrieval_top_k=base_cfg.retrieval_top_k,
-        rerank_top_k=base_cfg.rerank_top_k,
-        abstain_threshold=threshold,
-        require_citations=base_cfg.require_citations,
-        citation_repairs=base_cfg.citation_repairs,
-    )
+    bm25_cfg = replace(base_cfg, retrieval_top_k=base_cfg.rerank_top_k)
+    full_cfg = replace(base_cfg, abstain_threshold=threshold)
     m1 = BM25Baseline(bm25, chat, k=3)
-    bm25_rag = RAGPipeline(bm25, chat, None, bm25_cfg)
-    full = RAGPipeline(hybrid, chat, reranker, full_cfg)
+    bm25_rag = RAGPipeline(bm25, chat, None, bm25_cfg, scorer)
+    full = RAGPipeline(hybrid, chat, reranker, full_cfg, scorer)
 
     def run_m1(question: str) -> dict[str, Any]:
         start = time.perf_counter()
@@ -272,6 +262,10 @@ def build_answer_systems(settings: Settings, threshold: float) -> dict[str, Call
                 "prompt_tokens": r.usage.prompt_tokens,
                 "completion_tokens": r.usage.completion_tokens,
                 "cost_usd": r.usage.cost_usd,
+                "llm_calls": r.usage.llm_calls,
+                "attributed": r.attributed,
+                "relabeled": r.relabeled,
+                "support_rate": r.support_rate,
             }
 
         return run
