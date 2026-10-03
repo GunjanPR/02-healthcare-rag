@@ -373,8 +373,8 @@ Milestones follow [SHARED_STANDARDS.md](../SHARED_STANDARDS.md). Each one has a 
 - [x] Per-query cost and latency dashboard (Prometheus + Grafana, includes gateway metrics) and written alert thresholds
 
 ### M6: Containerization & CI/CD
-- [ ] Dockerfile and `docker compose up` (API, OpenSearch, Qdrant, gateway)
-- [ ] GitHub Actions: lint + test (+ eval regression gate)
+- [x] Dockerfile and `docker compose up` (API, OpenSearch, Qdrant, Prometheus, Grafana, all with healthchecks); `make up-stack` also starts 01-llm-gateway's stack from a sibling checkout
+- [x] GitHub Actions: lint + unit tests; compose smoke test (health, readiness, metrics, monitoring, clean 502/503 without a gateway); OpenSearch/Qdrant integration tests; retrieval regression gate (BM25 recall@3 and MRR floors on the toy corpus). The full PMC eval needs a GPU and the gateway, so it runs locally with `make eval`.
 
 ### M7: Docs, benchmarks & demo
 - [ ] README with measured results against the BM25-only baseline
