@@ -24,8 +24,10 @@ class CrossEncoderReranker:
         model_name: str = "ncbi/MedCPT-Cross-Encoder",
         device: str = "cpu",
         max_length: int = 512,
-        # 32 covers the default 20 candidates in one forward pass (16 needed two)
-        batch_size: int = 32,
+        # Measured on the RTX 4050 (fp16, 20 candidates, 477 reranks each, interleaved):
+        # batch 16 p50 301 ms vs batch 32 p50 324 ms, same p95 (343 ms); padding a single
+        # 20-pair batch to the longest pair costs more than the second forward pass.
+        batch_size: int = 16,
     ) -> None:
         import torch
         from transformers import AutoModelForSequenceClassification, AutoTokenizer
