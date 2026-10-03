@@ -16,58 +16,67 @@ The service never calls a model provider directly. All chat and embedding calls 
 the **LLM Gateway (project 01)** through its OpenAI-compatible API, so routing, caching,
 rate limits, and per-query cost and latency come from the gateway.
 
+**Result:** on 92 held-out questions over 500 PMC articles, the system **improved answer
+accuracy by 9.8 points (77.2% → 87.0%) and NDCG@10 by 24% (0.592 → 0.734) against the
+BM25-only baseline**. It also declined all 14 out-of-scope test questions without an LLM
+call, while keeping p95 latency at 7.6 s on a 20 W laptop GPU at $0 per query. Details,
+caveats and confidence intervals are in [Evaluation & Results](#evaluation--results).
+
 ## Tech Stack
 
 | Layer | Tools |
 |---|---|
 | API | FastAPI, Uvicorn |
-| Orchestration | LangGraph (retrieve → rerank → generate → verify / abstain) |
-| Sparse retrieval | OpenSearch (BM25) |
-| Dense retrieval | Qdrant + biomedical embeddings (via the gateway; optional local reranker with `pip install -e ".[rerank]"`) |
-| LLM inference | 01-llm-gateway (OpenAI-compatible), backed by Ollama/vLLM |
-| Data | PubMed Central Open Access subset (JSONL ingestion) |
-| Observability | OpenTelemetry, gateway Prometheus metrics |
+| Orchestration | LangGraph (retrieve → rerank → gate → generate → verify → repair / abstain) |
+| Sparse retrieval | OpenSearch 2.17 (BM25, English analyzer) |
+| Dense retrieval | Qdrant 1.19 + `nomic-embed-text` embeddings via the gateway; RRF fusion |
+| Reranking | `ncbi/MedCPT-Cross-Encoder` (PubMed-trained), fp16 on the GPU (`[rerank]` extra) |
+| LLM inference | 01-llm-gateway (OpenAI-compatible) → Ollama `llama3.2` (3B) |
+| Data | PubMed Central Open Access (CC BY/CC0) via NCBI E-utilities + BioC API |
+| Observability | Prometheus, Grafana, OpenTelemetry → Jaeger (shared with the gateway) |
+| CI | GitHub Actions: lint, tests, compose smoke test, integration tests, retrieval gate |
 
 ## Architecture
 
 | Component | Responsibility |
 |---|---|
-| **Ingestion** | Download the PMC OA subset, normalize PMCIDs, dedupe, chunk by section, tag entities for metadata filters |
-| **Indexers** | Write chunks to OpenSearch (BM25) and their embeddings to Qdrant |
-| **Retriever** | Hybrid search (reciprocal rank fusion of BM25 and dense results) with metadata filters |
-| **Reranker** | Cross-encoder or LLM reranking of the top-k chunks |
-| **LangGraph agent** | Retrieve → rerank → generate with citations → verify grounding → answer or abstain |
-| **API** | `/health` (liveness) and `/ready` (OpenSearch + Qdrant reachable) today; `/ask` and `/summarize` from M2 |
-| **Gateway client** | OpenAI-compatible client pointed at `GATEWAY_BASE_URL` for all LLM and embedding calls |
+| **Ingestion** (`ingest.py`) | Search PMC per topic, fetch BioC full text, keep CC BY/CC0, normalize PMCIDs, dedupe, chunk by section |
+| **Indexers** (`bm25.py`, `dense.py`, `indexing.py`) | Idempotent upserts to OpenSearch and Qdrant, with payload/keyword fields for metadata filters |
+| **Retriever** (`hybrid.py`) | BM25 and dense in parallel, fused with reciprocal rank fusion; filters on section, topic, PMCID, year |
+| **Reranker** (`rerank.py`) | MedCPT cross-encoder over the top 20 candidates; its best score drives abstention |
+| **LangGraph flow** (`rag.py`) | retrieve → rerank → gate (abstain if weak) → generate with numbered citations → verify → one citation-repair turn |
+| **API** (`main.py`) | `/ask`, `/summarize`, `/health`, `/ready`, `/metrics` |
+| **Gateway client** (`gateway.py`) | OpenAI-compatible client for all chat and embedding calls; reads token usage and `x-gateway-cost-usd` |
+| **Evaluation** (`rag_eval.py`) | Retrieval and answer metrics vs the BM25 baseline, dev-tuned threshold, bootstrap CIs, report |
 
 ```
-  PMC OA bulk files ──► ingestion (normalize, dedupe, chunk)
-                             │                 │
-                             ▼                 ▼
-                     OpenSearch (BM25)   Qdrant (dense vectors)
-                             ▲                 ▲
-                             └──── hybrid ─────┘
-                                  retriever
-                                     │
-  client ──► FastAPI /ask ──► LangGraph: retrieve → rerank → generate → verify
-                                                     │            │
-                                                     ▼            ▼
-                                       ┌───────────────────────────────┐
-                                       │   01-llm-gateway  /v1/...     │
-                                       │   (routing, cache, metrics)   │
-                                       └──────────────┬────────────────┘
-                                                      ▼
-                                               Ollama / vLLM
+  NCBI E-utilities + BioC ──► ingest (CC BY/CC0, PMCID normalize, dedupe, section chunks)
+                                     │                         │
+                                     ▼                         ▼
+                             OpenSearch (BM25)        Qdrant (nomic-embed-text)
+                                     └────── RRF hybrid ───────┘
+                                                 │ top 20
+  client ──► FastAPI /ask ──► LangGraph: retrieve ─► MedCPT rerank ─► gate ──(weak)──► abstain
+                 │                                                     │ top 5
+                 │                                              generate ─► verify ─► answer + citations
+                 │                                                     ▲        │ uncited: repair once
+                 ▼                                                     │        ▼
+       /metrics ─► Prometheus ─► Grafana      embeddings + chat ──► 01-llm-gateway ─► Ollama (GPU)
+       OTel spans ─────────────────────────────► Jaeger ◄────────── (same trace)
 ```
 
 ## Setup
 
 ### Prerequisites
 - Python 3.11
-- **01-llm-gateway running**, on `http://localhost:8000` by default, with a client API key
-- Docker Desktop, for OpenSearch 2.17 and Qdrant 1.12 (`docker compose`). OpenSearch runs
-  single-node with the security plugin disabled (local dev only) and a 512 MB heap; the
-  whole stack idles at about 1 GB of RAM.
+- **01-llm-gateway running**, on `http://127.0.0.1:8000` by default, with a client API
+  key. Ollama needs `llama3.2` and `nomic-embed-text` pulled.
+- Docker Desktop, for OpenSearch 2.17 and Qdrant 1.19 (`docker compose`). OpenSearch runs
+  single-node with the security plugin disabled (local dev only) and a 512 MB heap. The
+  search backends idle at about 1 GB of RAM.
+- For reranking: `pip install -e ".[rerank]"`. On an NVIDIA GPU, install the CUDA build of
+  torch first (see `pyproject.toml`). MedCPT used about 0.5 GB of VRAM next to `llama3.2`
+  on a 6 GB card.
 - Optional: GNU Make (see the Windows note below)
 
 ### Install
@@ -126,22 +135,32 @@ duplicate chunks dropped. Indexing measured on the laptop described below, on AC
 
 ### Run everything in Docker
 ```bash
-docker compose up -d --build          # API :8010, OpenSearch :9200, Qdrant :6333 (= make up-all)
-curl localhost:8010/health            # liveness
-curl localhost:8010/ready             # 200 when OpenSearch and Qdrant are reachable, else 503
+docker compose up -d --build          # API :8010, OpenSearch :9200, Qdrant :6333, Prometheus :9091, Grafana :3001
+curl 127.0.0.1:8010/health            # liveness
+curl 127.0.0.1:8010/ready             # 200 when OpenSearch and Qdrant are reachable, else 503
 docker compose down                   # = make down (add -v to drop the indexes)
 ```
 The app container reaches the gateway on the host through `host.docker.internal:8000`
 (override with `GATEWAY_BASE_URL_DOCKER`). `/ready` reports the gateway's status but does
-not require it.
+not require it. The image has no torch, so the container runs hybrid retrieval without the
+reranker; run the API on the host for the full system. `make up-stack` also starts
+01-llm-gateway's compose stack from `../01-llm-gateway`.
 
 ### Run the API on the host
 ```bash
 # 1. Start the LLM Gateway (in ../01-llm-gateway): make run
 make up                               # 2. OpenSearch + Qdrant in Docker
-make dev                              # 3. API on http://localhost:8010 with auto-reload
-make ingest                           # 4. Ingest a small PMC sample (works from M3)
+make ingest                           # 3. Download, chunk, embed and index 500 PMC articles
+make dev                              # 4. API on http://127.0.0.1:8010 with auto-reload
 ```
+
+### Reproduce the evaluation and the demo
+```bash
+make eval HARDWARE="<machine, GPU, power state>"   # retrieval + tuning + answers + docs/evaluation_report.md
+python scripts/demo.py --markdown docs/demo.md     # scripted walkthrough of every endpoint
+```
+Check that a laptop is on AC power before measuring. `make eval` took about 1 hour on the
+20 W laptop GPU.
 
 ### Run the M1 baseline
 ```bash
@@ -286,7 +305,7 @@ top 50 instead of 20 gave no gain on dev at 2.4× the rerank latency.
   otherwise correct, so v2 adds one follow-up turn asking for citations. Both runs are in
   the report.
 - **Faithfulness:** an LLM judge (the same 3B model) rated 43% of answers faithful.
-  I checked 20 of its verdicts by hand: all 10 YES verdicts held up, but 7 of 10 NO
+  Claude checked 20 of its verdicts by hand: all 10 YES verdicts held up, but 7 of 10 NO
   verdicts were wrong. So **no faithfulness rate is claimed**, and the >90% grounded-answer
   target remains **unmeasured**. A stronger judge is future work.
 - **Cost:** $0, because the gateway prices the local Ollama backend at zero. Token counts
@@ -377,35 +396,40 @@ Milestones follow [SHARED_STANDARDS.md](../SHARED_STANDARDS.md). Each one has a 
 - [x] GitHub Actions: lint + unit tests; compose smoke test (health, readiness, metrics, monitoring, clean 502/503 without a gateway); OpenSearch/Qdrant integration tests; retrieval regression gate (BM25 recall@3 and MRR floors on the toy corpus). The full PMC eval needs a GPU and the gateway, so it runs locally with `make eval`.
 
 ### M7: Docs, benchmarks & demo
-- [ ] README with measured results against the BM25-only baseline
-- [ ] Evaluation report
-- [ ] Demo (Hugging Face Spaces / Streamlit or recording)
+- [x] README with measured results against the BM25-only baseline
+- [x] Evaluation report ([docs/evaluation_report.md](docs/evaluation_report.md))
+- [x] Demo: scripted live transcript of every endpoint ([docs/demo.md](docs/demo.md)) plus dashboard and trace screenshots
+- [ ] Hosted demo (Hugging Face Spaces) or screen recording: not done; the full system needs a GPU and the gateway
 
 ## Project Layout
 ```
 02-healthcare-rag/
-├── .github/workflows/ci.yml   # lint, test, compose smoke test
+├── .github/workflows/ci.yml        # lint, tests, compose smoke, integration tests, retrieval gate
 ├── src/healthcare_rag/
-│   ├── __init__.py
-│   ├── baseline.py            # M1 baseline: BM25 top-k -> one gateway chat call
-│   ├── bm25.py                # OpenSearch index (idempotent upsert) + BM25 search
-│   ├── config.py              # pydantic-settings, reads .env
-│   ├── evaluation.py          # recall@k, MRR, keyword accuracy, latency; CLI
-│   ├── gateway.py             # OpenAI-compatible client for 01-llm-gateway
-│   └── main.py                # FastAPI app: /health, /ready
-├── eval/toy/                  # self-written toy corpus + questions (small, committed)
-├── docs/baseline_results.md   # generated per-question baseline report
-├── tests/
-│   ├── integration/           # needs OpenSearch (make test-integration)
-│   ├── test_api.py            # TestClient, backends mocked
-│   ├── test_baseline.py       # metrics, pipeline and gateway client with fakes
-│   └── test_smoke.py
-├── .dockerignore
-├── .env.example
-├── .gitignore
-├── Dockerfile
-├── docker-compose.yml
-├── Makefile
-├── pyproject.toml
+│   ├── main.py                     # FastAPI: /ask, /summarize, /health, /ready, /metrics
+│   ├── rag.py                      # LangGraph flow: retrieve, rerank, gate, generate, verify, repair
+│   ├── factory.py                  # builds retriever / reranker / pipeline from settings
+│   ├── bm25.py                     # OpenSearch index + BM25 search + filters
+│   ├── dense.py                    # Qdrant index + dense search + filters
+│   ├── hybrid.py                   # reciprocal rank fusion
+│   ├── rerank.py                   # MedCPT cross-encoder
+│   ├── gateway.py                  # client for 01-llm-gateway (chat, embeddings, usage, cost)
+│   ├── ingest.py                   # PMC OA download, PMCID normalization, chunking
+│   ├── indexing.py                 # idempotent writes to OpenSearch and Qdrant
+│   ├── observability.py            # Prometheus metrics, OpenTelemetry setup
+│   ├── baseline.py                 # M1 BM25 baseline
+│   ├── evaluation.py               # toy-corpus baseline eval + CI retrieval gate
+│   ├── rag_eval.py                 # PMC evaluation harness and report
+│   ├── config.py, types.py
+├── deploy/                         # Prometheus config + alert rules, Grafana dashboard
+├── docs/                           # evaluation report, demo transcript, screenshots, resume bullets
+├── eval/
+│   ├── pmc_manifest.json           # PMCIDs, topics, licenses of the corpus
+│   ├── qa/questions.json           # 159 evaluation questions (dev/test)
+│   ├── qa/judge_audit.json         # manual check of the LLM judge
+│   └── toy/                        # M1 toy corpus + questions
+├── scripts/                        # QA passage sampler, demo
+├── tests/                          # unit tests (fakes) + integration/ (OpenSearch, Qdrant)
+├── Dockerfile, docker-compose.yml, Makefile, pyproject.toml, .env.example
 └── README.md
 ```
