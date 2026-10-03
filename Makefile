@@ -43,8 +43,10 @@ down:
 logs:
 	docker compose logs -f --tail=100
 
+# Download 50 CC BY/CC0 PMC OA articles per topic, chunk, embed via the gateway, index.
+# Idempotent: re-running skips downloaded articles and chunks already in Qdrant.
 ingest:
-	$(PYTHON) -m healthcare_rag.ingest --limit 1000
+	$(PYTHON) -m healthcare_rag.ingest all --per-topic 50
 
 # M1 baseline: BM25-only (OpenSearch) + one gateway call over the toy corpus.
 # Needs `make up` and the gateway on :8000. HARDWARE is a free-text note for the report.

@@ -46,7 +46,7 @@ class Retriever(Protocol):
 
 class Reranker(Protocol):
     def rerank(self, query: str, hits: list[Hit]) -> list[Hit]:
-        """Return hits sorted best-first, with `score` set to a 0-1 relevance score."""
+        """Return hits sorted best-first, with `score` set to the reranker's relevance score."""
         ...
 
 
@@ -58,7 +58,7 @@ class ChatClient(Protocol):
 class RAGConfig:
     retrieval_top_k: int = 50
     rerank_top_k: int = 5
-    # Applied to the reranker's 0-1 score; ignored when there is no reranker.
+    # Compared with the best reranker score (MedCPT: logit units); ignored without a reranker.
     abstain_threshold: float = 0.35
     require_citations: bool = True
     max_tokens: int = 256

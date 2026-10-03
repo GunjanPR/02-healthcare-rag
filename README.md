@@ -87,6 +87,37 @@ must be one of the gateway's `GATEWAY_API_KEYS`. Set `OPENSEARCH_URL` and `QDRAN
 to your local services. NCBI settings are optional but are good etiquette for bulk
 downloads.
 
+### Data: PubMed Central Open Access
+`make ingest` (= `python -m healthcare_rag.ingest all --per-topic 50`) builds the corpus:
+
+1. **Search:** NCBI E-utilities searches PMC for each of 10 clinical topics: type 2
+   diabetes, hypertension, heart failure, atrial fibrillation, stroke, asthma, sepsis,
+   tuberculosis, major depressive disorder and osteoporosis. Searches are by title,
+   limited to the `"open access"[filter]`, published 2016–2023.
+2. **Download:** full text comes from the NCBI BioC API, which labels each passage with
+   its section. Only **CC BY / CC0** articles are kept (NC/ND licenses are skipped).
+   PMCIDs are normalized (`123`, `pmc123` and `PMC0123` all become `PMC123`) and
+   deduplicated across topics.
+3. **Chunk:** chunks are section-aware (abstract, introduction, methods, results,
+   discussion, conclusion). Paragraphs are packed to about 220 words (max 320) and never
+   cross a section boundary. References, tables, figures and front matter are dropped,
+   and passages that are exact duplicates anywhere in the corpus are removed.
+4. **Index:** chunks are upserted into OpenSearch (BM25, English analyzer) keyed by
+   `PMCID:position`. They are embedded with `nomic-embed-text` **through the gateway**
+   and upserted into Qdrant under a deterministic UUID. Re-running embeds only chunks
+   Qdrant doesn't have yet.
+
+Raw files and chunks live under `DATA_DIR` (git-ignored). The PMCIDs, topics, years,
+journals and licenses are recorded in [eval/pmc_manifest.json](eval/pmc_manifest.json),
+so the exact corpus can be rebuilt.
+
+**Current corpus (built 2026-10-03):** 500 articles (50 per topic), 8,369 chunks, and 3
+duplicate chunks dropped. Indexing measured on the laptop described below, on AC power:
+- BM25 upsert: 17 s.
+- Embedding: 163 s (51 chunks/s, 2.95 M tokens, $0 on the local backend).
+- A second run embedded 0 chunks and left both counts unchanged. The counts also
+  survived a container restart.
+
 ## How to Run
 
 > **Windows note:** `make` isn't installed on Windows by default. Install it with `choco install make`, or run the
@@ -225,9 +256,9 @@ Milestones follow [SHARED_STANDARDS.md](../SHARED_STANDARDS.md). Each one has a 
 - [x] FastAPI `/ask` and `/summarize` endpoints (verified live against the gateway on the toy corpus)
 
 ### M3: Data / storage layer
-- [ ] PMC OA ingestion: PMCID normalization, dedupe, section-aware chunking
-- [ ] OpenSearch BM25 index and Qdrant dense index (idempotent re-ingest)
-- [ ] Hybrid retrieval (RRF) + metadata filters + reranking
+- [x] PMC OA ingestion: PMCID normalization, dedupe, section-aware chunking (500 CC BY/CC0 articles, 8,369 chunks)
+- [x] OpenSearch BM25 index and Qdrant dense index (idempotent re-ingest; survives restarts)
+- [x] Hybrid retrieval (RRF) + metadata filters (section, topic, PMCID, year) + reranking (MedCPT cross-encoder)
 
 ### M4: Evaluation & testing
 - [ ] Hand-labeled QA set (100–200 questions)

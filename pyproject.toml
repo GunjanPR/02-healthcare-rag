@@ -18,7 +18,7 @@ dependencies = [
     "langgraph>=0.2",
     "langchain-core>=0.3",
     "opensearch-py>=2.6",
-    "qdrant-client>=1.10",
+    "qdrant-client>=1.15",
     "requests>=2.32",
 ]
 
@@ -27,9 +27,12 @@ dev = [
     "ruff>=0.6",
     "pytest>=8.0",
 ]
-# Local cross-encoder reranker (pulls in torch; not needed in the default image)
+# Local cross-encoder reranker (MedCPT). Pulls in torch, so it is not in the Docker image.
+# For a GPU, install the CUDA build of torch first:
+#   pip install torch --index-url https://download.pytorch.org/whl/cu128
 rerank = [
-    "sentence-transformers>=3.0",
+    "torch>=2.2",
+    "transformers>=4.40",
 ]
 
 [tool.hatch.build.targets.wheel]

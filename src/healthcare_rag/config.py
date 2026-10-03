@@ -33,11 +33,26 @@ class Settings(BaseSettings):
     qdrant_collection: str = "pmc_chunks"
     qdrant_api_key: str = ""
 
+    # nomic-embed-text expects task prefixes; set both blank for other embedding models
+    embedding_query_prefix: str = "search_query: "
+    embedding_doc_prefix: str = "search_document: "
+
     # Retrieval / RAG flow
+    # bm25 | dense | hybrid
+    retrieval_mode: str = "hybrid"
+    rrf_k: int = 60
+    # Hugging Face cross-encoder id; blank = no reranking
+    reranker_model: str = ""
+    reranker_device: str = "cpu"
     retrieval_top_k: int = 50
     rerank_top_k: int = 5
     abstain_threshold: float = 0.35
     require_citations: bool = True
+
+    # Data / NCBI
+    data_dir: str = "./data"
+    ncbi_email: str = ""
+    ncbi_api_key: str = ""
 
     # Timeout for readiness probes against backing services
     probe_timeout_seconds: float = 2.0

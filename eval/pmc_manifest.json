@@ -1,0 +1,3517 @@
+{
+ "articles": {
+  "PMC10018076": {
+   "doi": "10.1002/clc.23973",
+   "journal": "Clinical cardiology",
+   "license": "CC BY 4.0",
+   "topic": "heart_failure",
+   "year": 2023
+  },
+  "PMC10023880": {
+   "doi": "10.1111/anec.13020",
+   "journal": "Annals of noninvasive electrocardiology : the official journal of the International Society for Holter and Noninvasive Electrocardiology, Inc",
+   "license": "CC BY 4.0",
+   "topic": "atrial_fibrillation",
+   "year": 2023
+  },
+  "PMC10033661": {
+   "doi": "10.3389/fpsyt.2023.1138110",
+   "journal": "Frontiers in psychiatry",
+   "license": "CC BY",
+   "topic": "depression",
+   "year": 2023
+  },
+  "PMC10059837": {
+   "doi": "10.3390/nu15061427",
+   "journal": "Nutrients",
+   "license": "CC BY 4.0",
+   "topic": "type2_diabetes",
+   "year": 2023
+  },
+  "PMC10060624": {
+   "doi": "10.3389/fcvm.2023.1089304",
+   "journal": "Frontiers in cardiovascular medicine",
+   "license": "CC BY",
+   "topic": "heart_failure",
+   "year": 2023
+  },
+  "PMC10069172": {
+   "doi": "10.1177/23969873221123122",
+   "journal": "European stroke journal",
+   "license": "CC BY 4.0",
+   "topic": "atrial_fibrillation",
+   "year": 2022
+  },
+  "PMC10073733": {
+   "doi": "10.3389/fcvm.2023.1104699",
+   "journal": "Frontiers in cardiovascular medicine",
+   "license": "CC BY",
+   "topic": "heart_failure",
+   "year": 2023
+  },
+  "PMC10093057": {
+   "doi": "10.3390/cells12071003",
+   "journal": "Cells",
+   "license": "CC BY 4.0",
+   "topic": "sepsis",
+   "year": 2023
+  },
+  "PMC10094534": {
+   "doi": "10.3390/healthcare11071023",
+   "journal": "Healthcare (Basel, Switzerland)",
+   "license": "CC BY 4.0",
+   "topic": "osteoporosis",
+   "year": 2023
+  },
+  "PMC10105686": {
+   "doi": "10.1007/s11914-023-00773-y",
+   "journal": "Current osteoporosis reports",
+   "license": "CC BY 4.0",
+   "topic": "osteoporosis",
+   "year": 2023
+  },
+  "PMC10114118": {
+   "doi": "10.1093/ije/dyac173",
+   "journal": "International journal of epidemiology",
+   "license": "CC BY 4.0",
+   "topic": "asthma",
+   "year": 2022
+  },
+  "PMC10119226": {
+   "doi": "10.1002/clt2.12239",
+   "journal": "Clinical and translational allergy",
+   "license": "CC BY 4.0",
+   "topic": "asthma",
+   "year": 2023
+  },
+  "PMC10133053": {
+   "doi": "10.1007/s00508-023-02184-6",
+   "journal": "Wiener klinische Wochenschrift",
+   "license": "CC BY 4.0",
+   "topic": "type2_diabetes",
+   "year": 2023
+  },
+  "PMC10140050": {
+   "doi": "10.1038/s41533-023-00338-7",
+   "journal": "NPJ primary care respiratory medicine",
+   "license": "CC BY 4.0",
+   "topic": "asthma",
+   "year": 2023
+  },
+  "PMC10140137": {
+   "doi": "10.1007/s10741-022-10238-6",
+   "journal": "Heart failure reviews",
+   "license": "CC BY 4.0",
+   "topic": "heart_failure",
+   "year": 2023
+  },
+  "PMC10144964": {
+   "doi": "10.3390/jcdd10040136",
+   "journal": "Journal of cardiovascular development and disease",
+   "license": "CC BY 4.0",
+   "topic": "heart_failure",
+   "year": 2023
+  },
+  "PMC10150583": {
+   "doi": "10.1016/j.bpsc.2022.10.009",
+   "journal": "Biological psychiatry. Cognitive neuroscience and neuroimaging",
+   "license": "CC BY 4.0",
+   "topic": "depression",
+   "year": 2023
+  },
+  "PMC10163122": {
+   "doi": "10.1007/s00125-023-05913-8",
+   "journal": "Diabetologia",
+   "license": "CC BY 4.0",
+   "topic": "type2_diabetes",
+   "year": 2023
+  },
+  "PMC10163139": {
+   "doi": "10.1007/s00125-023-05891-x",
+   "journal": "Diabetologia",
+   "license": "CC BY 4.0",
+   "topic": "type2_diabetes",
+   "year": 2023
+  },
+  "PMC10169890": {
+   "doi": "10.1007/s11914-023-00786-7",
+   "journal": "Current osteoporosis reports",
+   "license": "CC BY 4.0",
+   "topic": "osteoporosis",
+   "year": 2023
+  },
+  "PMC10175743": {
+   "doi": "10.1002/mco2.244",
+   "journal": "MedComm",
+   "license": "CC BY 4.0",
+   "topic": "osteoporosis",
+   "year": 2023
+  },
+  "PMC10196446": {
+   "doi": "10.3389/fcvm.2023.1133988",
+   "journal": "Frontiers in cardiovascular medicine",
+   "license": "CC BY",
+   "topic": "heart_failure",
+   "year": 2023
+  },
+  "PMC10202978": {
+   "doi": "10.1007/s11657-023-01242-w",
+   "journal": "Archives of osteoporosis",
+   "license": "CC BY 4.0",
+   "topic": "osteoporosis",
+   "year": 2023
+  },
+  "PMC10216298": {
+   "doi": "10.3390/biomedicines11051452",
+   "journal": "Biomedicines",
+   "license": "CC BY 4.0",
+   "topic": "atrial_fibrillation",
+   "year": 2023
+  },
+  "PMC10219491": {
+   "doi": "10.3390/jcm12103425",
+   "journal": "Journal of clinical medicine",
+   "license": "CC BY 4.0",
+   "topic": "hypertension",
+   "year": 2023
+  },
+  "PMC10230547": {
+   "doi": "10.3389/fmicb.2023.1165916",
+   "journal": "Frontiers in microbiology",
+   "license": "CC BY",
+   "topic": "tuberculosis",
+   "year": 2023
+  },
+  "PMC10232855": {
+   "doi": "10.3389/fneur.2023.1194990",
+   "journal": "Frontiers in neurology",
+   "license": "CC BY",
+   "topic": "stroke",
+   "year": 2023
+  },
+  "PMC10245321": {
+   "doi": "10.3389/fimmu.2023.1151728",
+   "journal": "Frontiers in immunology",
+   "license": "CC BY",
+   "topic": "sepsis",
+   "year": 2023
+  },
+  "PMC10253396": {
+   "doi": "10.3390/ijms24119362",
+   "journal": "International journal of molecular sciences",
+   "license": "CC BY 4.0",
+   "topic": "sepsis",
+   "year": 2023
+  },
+  "PMC10253707": {
+   "doi": "10.3390/jcm12113722",
+   "journal": "Journal of clinical medicine",
+   "license": "CC BY 4.0",
+   "topic": "heart_failure",
+   "year": 2023
+  },
+  "PMC10255656": {
+   "doi": "10.3390/nu15112517",
+   "journal": "Nutrients",
+   "license": "CC BY 4.0",
+   "topic": "type2_diabetes",
+   "year": 2023
+  },
+  "PMC10273881": {
+   "doi": "10.1159/000529043",
+   "journal": "Cardiology",
+   "license": "CC BY",
+   "topic": "atrial_fibrillation",
+   "year": 2023
+  },
+  "PMC10284830": {
+   "doi": "10.1038/s41598-023-36783-0",
+   "journal": "Scientific reports",
+   "license": "CC BY 4.0",
+   "topic": "depression",
+   "year": 2023
+  },
+  "PMC10299169": {
+   "doi": "10.3389/fpsyg.2023.1123079",
+   "journal": "Frontiers in psychology",
+   "license": "CC BY",
+   "topic": "depression",
+   "year": 2023
+  },
+  "PMC10312086": {
+   "doi": "10.3389/fpsyt.2023.1190415",
+   "journal": "Frontiers in psychiatry",
+   "license": "CC BY",
+   "topic": "depression",
+   "year": 2023
+  },
+  "PMC10321709": {
+   "doi": "10.3389/fphar.2023.1148524",
+   "journal": "Frontiers in pharmacology",
+   "license": "CC BY",
+   "topic": "atrial_fibrillation",
+   "year": 2023
+  },
+  "PMC10326950": {
+   "doi": "10.1186/s13018-023-03883-6",
+   "journal": "Journal of orthopaedic surgery and research",
+   "license": "CC0",
+   "topic": "osteoporosis",
+   "year": 2023
+  },
+  "PMC10336063": {
+   "doi": "10.1038/s41419-023-05935-5",
+   "journal": "Cell death & disease",
+   "license": "CC BY 4.0",
+   "topic": "type2_diabetes",
+   "year": 2023
+  },
+  "PMC10344354": {
+   "doi": "10.3389/fcimb.2023.1225259",
+   "journal": "Frontiers in cellular and infection microbiology",
+   "license": "CC BY",
+   "topic": "tuberculosis",
+   "year": 2023
+  },
+  "PMC10363816": {
+   "doi": "10.1002/ccr3.7728",
+   "journal": "Clinical case reports",
+   "license": "CC BY 4.0",
+   "topic": "tuberculosis",
+   "year": 2023
+  },
+  "PMC10377223": {
+   "doi": "10.3390/biomedicines11071836",
+   "journal": "Biomedicines",
+   "license": "CC BY 4.0",
+   "topic": "sepsis",
+   "year": 2023
+  },
+  "PMC10381894": {
+   "doi": "10.3390/jpm13071173",
+   "journal": "Journal of personalized medicine",
+   "license": "CC BY 4.0",
+   "topic": "asthma",
+   "year": 2023
+  },
+  "PMC10385226": {
+   "doi": "10.3390/metabo13070831",
+   "journal": "Metabolites",
+   "license": "CC BY 4.0",
+   "topic": "type2_diabetes",
+   "year": 2023
+  },
+  "PMC10391888": {
+   "doi": "10.1186/s12883-023-03329-w",
+   "journal": "BMC neurology",
+   "license": "CC0",
+   "topic": "stroke",
+   "year": 2023
+  },
+  "PMC10403504": {
+   "doi": "10.1038/s41598-023-39436-4",
+   "journal": "Scientific reports",
+   "license": "CC BY 4.0",
+   "topic": "tuberculosis",
+   "year": 2023
+  },
+  "PMC10407107": {
+   "doi": "10.3389/fcimb.2023.1218583",
+   "journal": "Frontiers in cellular and infection microbiology",
+   "license": "CC BY",
+   "topic": "tuberculosis",
+   "year": 2023
+  },
+  "PMC10420964": {
+   "doi": "10.3390/nu15153438",
+   "journal": "Nutrients",
+   "license": "CC BY 4.0",
+   "topic": "depression",
+   "year": 2023
+  },
+  "PMC10436517": {
+   "doi": "10.3389/fpsyt.2023.1230246",
+   "journal": "Frontiers in psychiatry",
+   "license": "CC BY",
+   "topic": "depression",
+   "year": 2023
+  },
+  "PMC10452342": {
+   "doi": "10.3390/biomedicines11082243",
+   "journal": "Biomedicines",
+   "license": "CC BY 4.0",
+   "topic": "depression",
+   "year": 2023
+  },
+  "PMC10452812": {
+   "doi": "10.3390/biomedicines11082233",
+   "journal": "Biomedicines",
+   "license": "CC BY 4.0",
+   "topic": "sepsis",
+   "year": 2023
+  },
+  "PMC10454258": {
+   "doi": "10.1002/brb3.3171",
+   "journal": "Brain and behavior",
+   "license": "CC BY 4.0",
+   "topic": "depression",
+   "year": 2023
+  },
+  "PMC10456278": {
+   "doi": "10.3390/medicina59081433",
+   "journal": "Medicina (Kaunas, Lithuania)",
+   "license": "CC BY 4.0",
+   "topic": "stroke",
+   "year": 2023
+  },
+  "PMC10457723": {
+   "doi": "10.1001/jamanetworkopen.2023.29729",
+   "journal": "JAMA network open",
+   "license": "CC BY",
+   "topic": "sepsis",
+   "year": 2023
+  },
+  "PMC10463709": {
+   "doi": "10.1186/s12887-023-04251-3",
+   "journal": "BMC pediatrics",
+   "license": "CC0",
+   "topic": "type2_diabetes",
+   "year": 2023
+  },
+  "PMC10472721": {
+   "doi": "10.1186/s40885-023-00249-2",
+   "journal": "Clinical hypertension",
+   "license": "CC0",
+   "topic": "hypertension",
+   "year": 2023
+  },
+  "PMC10474001": {
+   "doi": "10.1007/s00125-023-05956-x",
+   "journal": "Diabetologia",
+   "license": "CC BY 4.0",
+   "topic": "type2_diabetes",
+   "year": 2023
+  },
+  "PMC10497696": {
+   "doi": "10.1007/s11657-023-01326-7",
+   "journal": "Archives of osteoporosis",
+   "license": "CC BY 4.0",
+   "topic": "osteoporosis",
+   "year": 2023
+  },
+  "PMC10498074": {
+   "doi": "10.1002/brb3.3134",
+   "journal": "Brain and behavior",
+   "license": "CC BY 4.0",
+   "topic": "depression",
+   "year": 2023
+  },
+  "PMC10500553": {
+   "doi": "10.1002/jbm4.10815",
+   "journal": "JBMR Plus",
+   "license": "CC BY 4.0",
+   "topic": "osteoporosis",
+   "year": 2023
+  },
+  "PMC10502314": {
+   "doi": "10.3389/fpubh.2023.1207284",
+   "journal": "Frontiers in public health",
+   "license": "CC BY",
+   "topic": "tuberculosis",
+   "year": 2023
+  },
+  "PMC10525399": {
+   "doi": "10.3389/fpubh.2023.1204525",
+   "journal": "Frontiers in public health",
+   "license": "CC BY",
+   "topic": "tuberculosis",
+   "year": 2023
+  },
+  "PMC10531022": {
+   "doi": "10.3390/ijerph20186792",
+   "journal": "International journal of environmental research and public health",
+   "license": "CC BY 4.0",
+   "topic": "atrial_fibrillation",
+   "year": 2023
+  },
+  "PMC10537529": {
+   "doi": "10.3390/microorganisms11092277",
+   "journal": "Microorganisms",
+   "license": "CC BY 4.0",
+   "topic": "tuberculosis",
+   "year": 2023
+  },
+  "PMC10543802": {
+   "doi": "10.1007/s11739-023-03376-8",
+   "journal": "Internal and emergency medicine",
+   "license": "CC BY 4.0",
+   "topic": "hypertension",
+   "year": 2023
+  },
+  "PMC10545870": {
+   "doi": "10.3389/fcvm.2023.1254933",
+   "journal": "Frontiers in cardiovascular medicine",
+   "license": "CC BY",
+   "topic": "hypertension",
+   "year": 2023
+  },
+  "PMC10546336": {
+   "doi": "10.3389/fneur.2023.1245881",
+   "journal": "Frontiers in neurology",
+   "license": "CC BY",
+   "topic": "stroke",
+   "year": 2023
+  },
+  "PMC10568916": {
+   "doi": "10.1186/s13018-023-04266-7",
+   "journal": "Journal of orthopaedic surgery and research",
+   "license": "CC0",
+   "topic": "osteoporosis",
+   "year": 2023
+  },
+  "PMC10573914": {
+   "doi": "10.3390/jcm12196157",
+   "journal": "Journal of clinical medicine",
+   "license": "CC BY 4.0",
+   "topic": "osteoporosis",
+   "year": 2023
+  },
+  "PMC10589163": {
+   "doi": "10.1186/s41687-023-00639-y",
+   "journal": "Journal of patient-reported outcomes",
+   "license": "CC BY 4.0",
+   "topic": "asthma",
+   "year": 2023
+  },
+  "PMC10593867": {
+   "doi": "10.1016/j.bpsgos.2022.10.001",
+   "journal": "Biological psychiatry global open science",
+   "license": "CC BY 4.0",
+   "topic": "depression",
+   "year": 2022
+  },
+  "PMC10604152": {
+   "doi": "10.3390/biomedicines11102815",
+   "journal": "Biomedicines",
+   "license": "CC BY 4.0",
+   "topic": "heart_failure",
+   "year": 2023
+  },
+  "PMC10605134": {
+   "doi": "10.3390/clinpract13050105",
+   "journal": "Clinics and practice",
+   "license": "CC BY 4.0",
+   "topic": "atrial_fibrillation",
+   "year": 2023
+  },
+  "PMC10611584": {
+   "doi": "10.1038/s41380-023-01957-9",
+   "journal": "Molecular psychiatry",
+   "license": "CC BY 4.0",
+   "topic": "depression",
+   "year": 2023
+  },
+  "PMC10614476": {
+   "doi": "10.1159/000531315",
+   "journal": "Neuropsychobiology",
+   "license": "CC BY",
+   "topic": "depression",
+   "year": 2023
+  },
+  "PMC10619268": {
+   "doi": "10.1186/s40885-023-00255-4",
+   "journal": "Clinical hypertension",
+   "license": "CC0",
+   "topic": "hypertension",
+   "year": 2023
+  },
+  "PMC10623417": {
+   "doi": "10.3389/fendo.2023.1301244",
+   "journal": "Frontiers in endocrinology",
+   "license": "CC BY",
+   "topic": "osteoporosis",
+   "year": 2023
+  },
+  "PMC10642815": {
+   "doi": "10.1371/journal.pone.0293603",
+   "journal": "PloS one",
+   "license": "CC0",
+   "topic": "asthma",
+   "year": 2023
+  },
+  "PMC10646729": {
+   "doi": "10.1001/jamanetworkopen.2023.43333",
+   "journal": "JAMA network open",
+   "license": "CC BY",
+   "topic": "type2_diabetes",
+   "year": 2023
+  },
+  "PMC10648022": {
+   "doi": "10.3390/healthcare11212842",
+   "journal": "Healthcare (Basel, Switzerland)",
+   "license": "CC BY 4.0",
+   "topic": "stroke",
+   "year": 2023
+  },
+  "PMC10648284": {
+   "doi": "10.3390/jcm12216768",
+   "journal": "Journal of clinical medicine",
+   "license": "CC BY 4.0",
+   "topic": "heart_failure",
+   "year": 2023
+  },
+  "PMC10648345": {
+   "doi": "10.1186/s13018-023-04276-5",
+   "journal": "Journal of orthopaedic surgery and research",
+   "license": "CC0",
+   "topic": "osteoporosis",
+   "year": 2023
+  },
+  "PMC10669981": {
+   "doi": "10.3390/brainsci13111570",
+   "journal": "Brain sciences",
+   "license": "CC BY 4.0",
+   "topic": "depression",
+   "year": 2023
+  },
+  "PMC10675857": {
+   "doi": "10.1186/s12890-023-02646-7",
+   "journal": "BMC pulmonary medicine",
+   "license": "CC0",
+   "topic": "tuberculosis",
+   "year": 2023
+  },
+  "PMC10679058": {
+   "doi": "10.1093/ofid/ofad500.1260",
+   "journal": "Open Forum Infectious Diseases",
+   "license": "CC BY 4.0",
+   "topic": "sepsis",
+   "year": 2023
+  },
+  "PMC10680257": {
+   "doi": "10.1186/s40780-023-00320-y",
+   "journal": "Journal of pharmaceutical health care and sciences",
+   "license": "CC0",
+   "topic": "heart_failure",
+   "year": 2023
+  },
+  "PMC10691669": {
+   "doi": "10.3389/fnut.2023.1325517",
+   "journal": "Frontiers in nutrition",
+   "license": "CC BY",
+   "topic": "type2_diabetes",
+   "year": 2023
+  },
+  "PMC10695267": {
+   "doi": "10.1016/j.jhlto.2023.100007",
+   "journal": "JHLT open",
+   "license": "CC BY 4.0",
+   "topic": "hypertension",
+   "year": 2023
+  },
+  "PMC10699677": {
+   "doi": "10.1016/j.imj.2023.04.006",
+   "journal": "Infectious medicine",
+   "license": "CC BY 4.0",
+   "topic": "sepsis",
+   "year": 2023
+  },
+  "PMC10706777": {
+   "doi": "10.3390/ijms242316870",
+   "journal": "International journal of molecular sciences",
+   "license": "CC BY 4.0",
+   "topic": "depression",
+   "year": 2023
+  },
+  "PMC10718642": {
+   "doi": "10.1093/pnasnexus/pgad363",
+   "journal": "PNAS nexus",
+   "license": "CC BY 4.0",
+   "topic": "type2_diabetes",
+   "year": 2023
+  },
+  "PMC10724099": {
+   "doi": "10.1186/s41687-023-00672-x",
+   "journal": "Journal of patient-reported outcomes",
+   "license": "CC BY 4.0",
+   "topic": "atrial_fibrillation",
+   "year": 2023
+  },
+  "PMC10734186": {
+   "doi": "10.1186/s42466-023-00287-z",
+   "journal": "Neurological research and practice",
+   "license": "CC BY 4.0",
+   "topic": "stroke",
+   "year": 2023
+  },
+  "PMC10745871": {
+   "doi": "10.3390/pathogens12121413",
+   "journal": "Pathogens (Basel, Switzerland)",
+   "license": "CC BY 4.0",
+   "topic": "tuberculosis",
+   "year": 2023
+  },
+  "PMC10749739": {
+   "doi": "10.1093/icvts/ivad203",
+   "journal": "Interdisciplinary cardiovascular and thoracic surgery",
+   "license": "CC BY 4.0",
+   "topic": "atrial_fibrillation",
+   "year": 2023
+  },
+  "PMC10751920": {
+   "doi": "10.3389/fmed.2023.1266780",
+   "journal": "Frontiers in medicine",
+   "license": "CC BY",
+   "topic": "tuberculosis",
+   "year": 2023
+  },
+  "PMC10787899": {
+   "doi": "10.7759/cureus.50550",
+   "journal": "Cureus",
+   "license": "CC BY",
+   "topic": "tuberculosis",
+   "year": 2023
+  },
+  "PMC10828526": {
+   "doi": "10.7759/cureus.51418",
+   "journal": "Cureus",
+   "license": "CC BY",
+   "topic": "tuberculosis",
+   "year": 2023
+  },
+  "PMC10858086": {
+   "doi": "10.1007/s10072-023-07129-5",
+   "journal": "Neurological sciences : official journal of the Italian Neurological Society and of the Italian Society of Clinical Neurophysiology",
+   "license": "CC BY 4.0",
+   "topic": "stroke",
+   "year": 2024
+  },
+  "PMC10939343": {
+   "doi": "10.1093/psyrad/kkad014",
+   "journal": "Psychoradiology",
+   "license": "CC BY 4.0",
+   "topic": "depression",
+   "year": 2023
+  },
+  "PMC10947035": {
+   "doi": "10.1111/dme.15063",
+   "journal": "Diabetic medicine : a journal of the British Diabetic Association",
+   "license": "CC BY 4.0",
+   "topic": "type2_diabetes",
+   "year": 2023
+  },
+  "PMC10961279": {
+   "doi": "10.1007/s11239-023-02923-6",
+   "journal": "Journal of thrombosis and thrombolysis",
+   "license": "CC BY 4.0",
+   "topic": "atrial_fibrillation",
+   "year": 2024
+  },
+  "PMC11927026": {
+   "doi": "10.1177/1747493020923472",
+   "journal": "International journal of stroke : official journal of the International Stroke Society",
+   "license": "CC BY 4.0",
+   "topic": "stroke",
+   "year": 2020
+  },
+  "PMC12263112": {
+   "doi": "10.3389/fstro.2023.1238442",
+   "journal": "Frontiers in stroke",
+   "license": "CC BY",
+   "topic": "stroke",
+   "year": 2023
+  },
+  "PMC4720623": {
+   "doi": "10.1186/s40635-016-0075-4",
+   "journal": "Intensive care medicine experimental",
+   "license": "CC BY 4.0",
+   "topic": "sepsis",
+   "year": 2016
+  },
+  "PMC4764600": {
+   "doi": "10.1186/s12245-016-0106-7",
+   "journal": "International journal of emergency medicine",
+   "license": "CC BY 4.0",
+   "topic": "sepsis",
+   "year": 2016
+  },
+  "PMC4770535": {
+   "doi": "10.1186/s12931-016-0336-5",
+   "journal": "Respiratory research",
+   "license": "CC0",
+   "topic": "hypertension",
+   "year": 2016
+  },
+  "PMC4782564": {
+   "doi": "10.3389/fped.2016.00016",
+   "journal": "Frontiers in pediatrics",
+   "license": "CC BY",
+   "topic": "asthma",
+   "year": 2016
+  },
+  "PMC4789194": {
+   "doi": "10.1007/s10557-016-6638-5",
+   "journal": "Cardiovascular drugs and therapy",
+   "license": "CC BY 4.0",
+   "topic": "type2_diabetes",
+   "year": 2016
+  },
+  "PMC4814508": {
+   "doi": "10.3389/fmicb.2016.00418",
+   "journal": "Frontiers in microbiology",
+   "license": "CC BY",
+   "topic": "tuberculosis",
+   "year": 2016
+  },
+  "PMC4852421": {
+   "doi": "10.1186/s12891-016-1041-8",
+   "journal": "BMC musculoskeletal disorders",
+   "license": "CC0",
+   "topic": "osteoporosis",
+   "year": 2016
+  },
+  "PMC4873985": {
+   "doi": "10.1186/s12916-016-0618-2",
+   "journal": "BMC medicine",
+   "license": "CC0",
+   "topic": "stroke",
+   "year": 2016
+  },
+  "PMC4890482": {
+   "doi": "10.1186/s12883-016-0594-3",
+   "journal": "BMC neurology",
+   "license": "CC0",
+   "topic": "hypertension",
+   "year": 2016
+  },
+  "PMC4907676": {
+   "doi": "10.1097/MD.0000000000003859",
+   "journal": "Medicine",
+   "license": "CC BY 4.0",
+   "topic": "hypertension",
+   "year": 2016
+  },
+  "PMC4930568": {
+   "doi": "10.1186/s12883-016-0615-2",
+   "journal": "BMC neurology",
+   "license": "CC0",
+   "topic": "hypertension",
+   "year": 2016
+  },
+  "PMC4950810": {
+   "doi": "10.1186/s13054-016-1398-y",
+   "journal": "Critical care (London, England)",
+   "license": "CC0",
+   "topic": "sepsis",
+   "year": 2016
+  },
+  "PMC4968454": {
+   "doi": "10.1186/s12263-016-0524-4",
+   "journal": "Genes & nutrition",
+   "license": "CC0",
+   "topic": "type2_diabetes",
+   "year": 2016
+  },
+  "PMC4997334": {
+   "doi": "10.1038/srep31755",
+   "journal": "Scientific reports",
+   "license": "CC BY 4.0",
+   "topic": "atrial_fibrillation",
+   "year": 2016
+  },
+  "PMC5000676": {
+   "doi": "10.3390/ijms17081279",
+   "journal": "International journal of molecular sciences",
+   "license": "CC BY 4.0",
+   "topic": "depression",
+   "year": 2016
+  },
+  "PMC5006423": {
+   "doi": "10.1186/s13756-016-0129-0",
+   "journal": "Antimicrobial resistance and infection control",
+   "license": "CC0",
+   "topic": "tuberculosis",
+   "year": 2016
+  },
+  "PMC5011990": {
+   "doi": "10.1186/s12883-016-0688-y",
+   "journal": "BMC neurology",
+   "license": "CC0",
+   "topic": "stroke",
+   "year": 2016
+  },
+  "PMC5048451": {
+   "doi": "10.1186/s12933-016-0457-7",
+   "journal": "Cardiovascular diabetology",
+   "license": "CC0",
+   "topic": "type2_diabetes",
+   "year": 2016
+  },
+  "PMC5109668": {
+   "doi": "10.1186/s12890-016-0306-1",
+   "journal": "BMC pulmonary medicine",
+   "license": "CC0",
+   "topic": "asthma",
+   "year": 2016
+  },
+  "PMC5164918": {
+   "doi": "10.1186/s12888-016-1053-9",
+   "journal": "BMC psychiatry",
+   "license": "CC0",
+   "topic": "depression",
+   "year": 2016
+  },
+  "PMC5259948": {
+   "doi": "10.1186/s12931-017-0508-y",
+   "journal": "Respiratory research",
+   "license": "CC0",
+   "topic": "asthma",
+   "year": 2017
+  },
+  "PMC5307347": {
+   "doi": "10.1038/srep42613",
+   "journal": "Scientific reports",
+   "license": "CC BY 4.0",
+   "topic": "atrial_fibrillation",
+   "year": 2017
+  },
+  "PMC5335779": {
+   "doi": "10.1186/s40560-017-0215-2",
+   "journal": "Journal of intensive care",
+   "license": "CC0",
+   "topic": "sepsis",
+   "year": 2017
+  },
+  "PMC5343107": {
+   "doi": "10.4178/epih.e2017002",
+   "journal": "Epidemiology and health",
+   "license": "CC BY 4.0",
+   "topic": "tuberculosis",
+   "year": 2016
+  },
+  "PMC5353964": {
+   "doi": "10.1186/s12947-017-0098-3",
+   "journal": "Cardiovascular ultrasound",
+   "license": "CC0",
+   "topic": "heart_failure",
+   "year": 2017
+  },
+  "PMC5372669": {
+   "doi": "10.3390/ijms18030657",
+   "journal": "International journal of molecular sciences",
+   "license": "CC BY 4.0",
+   "topic": "sepsis",
+   "year": 2017
+  },
+  "PMC5381139": {
+   "doi": "10.1186/s12967-017-1170-3",
+   "journal": "Journal of translational medicine",
+   "license": "CC0",
+   "topic": "atrial_fibrillation",
+   "year": 2017
+  },
+  "PMC5385599": {
+   "doi": "10.1186/s12948-017-0065-4",
+   "journal": "Clinical and molecular allergy : CMA",
+   "license": "CC0",
+   "topic": "asthma",
+   "year": 2017
+  },
+  "PMC5387291": {
+   "doi": "10.1186/s13049-017-0377-x",
+   "journal": "Scandinavian journal of trauma, resuscitation and emergency medicine",
+   "license": "CC0",
+   "topic": "stroke",
+   "year": 2017
+  },
+  "PMC5402614": {
+   "doi": "10.1097/MD.0000000000004929",
+   "journal": "Medicine",
+   "license": "CC BY 4.0",
+   "topic": "stroke",
+   "year": 2016
+  },
+  "PMC5409715": {
+   "doi": "10.3390/nu9040376",
+   "journal": "Nutrients",
+   "license": "CC BY 4.0",
+   "topic": "type2_diabetes",
+   "year": 2017
+  },
+  "PMC5430606": {
+   "doi": "10.1186/s40885-017-0066-0",
+   "journal": "Clinical hypertension",
+   "license": "CC0",
+   "topic": "hypertension",
+   "year": 2017
+  },
+  "PMC5434564": {
+   "doi": "10.1080/17571472.2017.1302872",
+   "journal": "London journal of primary care",
+   "license": "CC BY 4.0",
+   "topic": "type2_diabetes",
+   "year": 2017
+  },
+  "PMC5437107": {
+   "doi": "10.3389/fneur.2017.00192",
+   "journal": "Frontiers in neurology",
+   "license": "CC BY",
+   "topic": "stroke",
+   "year": 2017
+  },
+  "PMC5438419": {
+   "doi": "10.1007/s10741-017-9614-7",
+   "journal": "Heart failure reviews",
+   "license": "CC BY 4.0",
+   "topic": "heart_failure",
+   "year": 2017
+  },
+  "PMC5449351": {
+   "doi": "10.1186/s13613-017-0280-7",
+   "journal": "Annals of intensive care",
+   "license": "CC BY 4.0",
+   "topic": "sepsis",
+   "year": 2017
+  },
+  "PMC5452398": {
+   "doi": "10.1186/s13054-017-1715-0",
+   "journal": "Critical care (London, England)",
+   "license": "CC0",
+   "topic": "sepsis",
+   "year": 2017
+  },
+  "PMC5453943": {
+   "doi": "10.1038/s41598-017-02622-2",
+   "journal": "Scientific reports",
+   "license": "CC BY 4.0",
+   "topic": "hypertension",
+   "year": 2017
+  },
+  "PMC5465580": {
+   "doi": "10.1186/s13018-017-0585-0",
+   "journal": "Journal of orthopaedic surgery and research",
+   "license": "CC0",
+   "topic": "osteoporosis",
+   "year": 2017
+  },
+  "PMC5471710": {
+   "doi": "10.1186/s41479-016-0019-5",
+   "journal": "Pneumonia (Nathan Qld.)",
+   "license": "CC0",
+   "topic": "tuberculosis",
+   "year": 2016
+  },
+  "PMC5529968": {
+   "doi": "10.1136/heartjnl-2016-310843",
+   "journal": "Heart (British Cardiac Society)",
+   "license": "CC BY 4.0",
+   "topic": "atrial_fibrillation",
+   "year": 2017
+  },
+  "PMC5532546": {
+   "doi": "10.3390/children4070054",
+   "journal": "Children (Basel, Switzerland)",
+   "license": "CC BY 4.0",
+   "topic": "asthma",
+   "year": 2017
+  },
+  "PMC5541606": {
+   "doi": "10.1136/bmjopen-2017-016814",
+   "journal": "BMJ open",
+   "license": "CC BY 4.0",
+   "topic": "stroke",
+   "year": 2017
+  },
+  "PMC5547526": {
+   "doi": "10.1186/s41038-017-0089-5",
+   "journal": "Burns & trauma",
+   "license": "CC0",
+   "topic": "sepsis",
+   "year": 2017
+  },
+  "PMC5596193": {
+   "doi": "10.22088/cjim.8.3.213",
+   "journal": "Caspian journal of internal medicine",
+   "license": "CC BY 3.0",
+   "topic": "stroke",
+   "year": 2017
+  },
+  "PMC5603967": {
+   "doi": "10.1016/j.atherosclerosis.2017.07.009",
+   "journal": "Atherosclerosis",
+   "license": "CC BY 4.0",
+   "topic": "type2_diabetes",
+   "year": 2017
+  },
+  "PMC5622943": {
+   "doi": "10.3389/fmed.2017.00158",
+   "journal": "Frontiers in medicine",
+   "license": "CC BY",
+   "topic": "asthma",
+   "year": 2017
+  },
+  "PMC5654880": {
+   "doi": "10.5811/westjem.2017.7.34770",
+   "journal": "The western journal of emergency medicine",
+   "license": "CC BY 4.0",
+   "topic": "sepsis",
+   "year": 2017
+  },
+  "PMC5670161": {
+   "doi": "10.3389/fcimb.2017.00457",
+   "journal": "Frontiers in cellular and infection microbiology",
+   "license": "CC BY",
+   "topic": "tuberculosis",
+   "year": 2017
+  },
+  "PMC5673743": {
+   "doi": "10.12669/pjms.335.12974",
+   "journal": "Pakistan journal of medical sciences",
+   "license": "CC BY 3.0",
+   "topic": "type2_diabetes",
+   "year": 2017
+  },
+  "PMC5708019": {
+   "doi": "10.3390/ijerph14111380",
+   "journal": "International journal of environmental research and public health",
+   "license": "CC BY 4.0",
+   "topic": "osteoporosis",
+   "year": 2017
+  },
+  "PMC5715530": {
+   "doi": "10.3389/fcimb.2017.00495",
+   "journal": "Frontiers in cellular and infection microbiology",
+   "license": "CC BY",
+   "topic": "tuberculosis",
+   "year": 2017
+  },
+  "PMC5759254": {
+   "doi": "10.1186/s12879-017-2929-0",
+   "journal": "BMC infectious diseases",
+   "license": "CC0",
+   "topic": "tuberculosis",
+   "year": 2018
+  },
+  "PMC5828410": {
+   "doi": "10.1186/s40249-018-0396-5",
+   "journal": "Infectious diseases of poverty",
+   "license": "CC0",
+   "topic": "tuberculosis",
+   "year": 2018
+  },
+  "PMC5830342": {
+   "doi": "10.1186/s12879-018-3009-9",
+   "journal": "BMC infectious diseases",
+   "license": "CC0",
+   "topic": "tuberculosis",
+   "year": 2018
+  },
+  "PMC5832871": {
+   "doi": "10.1038/s41598-018-22095-1",
+   "journal": "Scientific reports",
+   "license": "CC BY 4.0",
+   "topic": "osteoporosis",
+   "year": 2018
+  },
+  "PMC5910310": {
+   "doi": "10.1007/s12471-018-1103-7",
+   "journal": "Netherlands heart journal : monthly journal of the Netherlands Society of Cardiology and the Netherlands Heart Foundation",
+   "license": "CC BY 4.0",
+   "topic": "heart_failure",
+   "year": 2018
+  },
+  "PMC5921326": {
+   "doi": "10.1186/s12890-018-0624-6",
+   "journal": "BMC pulmonary medicine",
+   "license": "CC0",
+   "topic": "asthma",
+   "year": 2018
+  },
+  "PMC5964880": {
+   "doi": "10.1186/s12879-018-3131-8",
+   "journal": "BMC infectious diseases",
+   "license": "CC0",
+   "topic": "tuberculosis",
+   "year": 2018
+  },
+  "PMC5968984": {
+   "doi": "10.3390/sports5020029",
+   "journal": "Sports (Basel, Switzerland)",
+   "license": "CC BY 4.0",
+   "topic": "osteoporosis",
+   "year": 2017
+  },
+  "PMC5970176": {
+   "doi": "10.1038/s41598-018-26500-7",
+   "journal": "Scientific reports",
+   "license": "CC BY 4.0",
+   "topic": "sepsis",
+   "year": 2018
+  },
+  "PMC5973057": {
+   "doi": "10.3779/j.issn.1009-3419.2016.05.07",
+   "journal": "Zhongguo fei ai za zhi = Chinese journal of lung cancer",
+   "license": "CC BY 3.0",
+   "topic": "hypertension",
+   "year": 2016
+  },
+  "PMC5976765": {
+   "doi": "10.1038/s41598-018-26630-y",
+   "journal": "Scientific reports",
+   "license": "CC BY 4.0",
+   "topic": "stroke",
+   "year": 2018
+  },
+  "PMC5994136": {
+   "doi": "10.1186/s13104-018-3473-8",
+   "journal": "BMC research notes",
+   "license": "CC0",
+   "topic": "tuberculosis",
+   "year": 2018
+  },
+  "PMC5997116": {
+   "doi": "10.1007/s12020-018-1588-2",
+   "journal": "Endocrine",
+   "license": "CC BY 4.0",
+   "topic": "osteoporosis",
+   "year": 2018
+  },
+  "PMC6018103": {
+   "doi": "10.3389/fped.2018.00170",
+   "journal": "Frontiers in pediatrics",
+   "license": "CC BY",
+   "topic": "asthma",
+   "year": 2018
+  },
+  "PMC6020199": {
+   "doi": "10.1186/s12931-018-0828-6",
+   "journal": "Respiratory research",
+   "license": "CC0",
+   "topic": "asthma",
+   "year": 2018
+  },
+  "PMC6023496": {
+   "doi": "10.3390/diseases6020048",
+   "journal": "Diseases (Basel, Switzerland)",
+   "license": "CC BY 4.0",
+   "topic": "depression",
+   "year": 2018
+  },
+  "PMC6030736": {
+   "doi": "10.1186/s12974-018-1239-9",
+   "journal": "Journal of neuroinflammation",
+   "license": "CC0",
+   "topic": "stroke",
+   "year": 2018
+  },
+  "PMC6068473": {
+   "doi": "10.3390/ijerph15071445",
+   "journal": "International journal of environmental research and public health",
+   "license": "CC BY 4.0",
+   "topic": "osteoporosis",
+   "year": 2018
+  },
+  "PMC6111061": {
+   "doi": "10.1016/j.ibror.2018.04.001",
+   "journal": "IBRO reports",
+   "license": "CC BY 4.0",
+   "topic": "depression",
+   "year": 2018
+  },
+  "PMC6112015": {
+   "doi": "10.3390/jcm7080196",
+   "journal": "Journal of clinical medicine",
+   "license": "CC BY 4.0",
+   "topic": "hypertension",
+   "year": 2018
+  },
+  "PMC6123087": {
+   "doi": "10.5811/westjem.2018.7.37651",
+   "journal": "The western journal of emergency medicine",
+   "license": "CC BY 4.0",
+   "topic": "sepsis",
+   "year": 2018
+  },
+  "PMC6139715": {
+   "doi": "10.1002/ags3.12194",
+   "journal": "Annals of gastroenterological surgery",
+   "license": "CC BY 4.0",
+   "topic": "sepsis",
+   "year": 2018
+  },
+  "PMC6163644": {
+   "doi": "10.3390/nu10091325",
+   "journal": "Nutrients",
+   "license": "CC BY 4.0",
+   "topic": "osteoporosis",
+   "year": 2018
+  },
+  "PMC6174318": {
+   "doi": "10.3389/fneur.2018.00814",
+   "journal": "Frontiers in neurology",
+   "license": "CC BY",
+   "topic": "stroke",
+   "year": 2018
+  },
+  "PMC6196281": {
+   "doi": "10.3389/fpsyt.2018.00459",
+   "journal": "Frontiers in psychiatry",
+   "license": "CC BY",
+   "topic": "depression",
+   "year": 2018
+  },
+  "PMC6215339": {
+   "doi": "10.1186/s12883-018-1189-y",
+   "journal": "BMC neurology",
+   "license": "CC0",
+   "topic": "stroke",
+   "year": 2018
+  },
+  "PMC6234696": {
+   "doi": "10.1186/s40413-018-0207-2",
+   "journal": "The World Allergy Organization journal",
+   "license": "CC0",
+   "topic": "asthma",
+   "year": 2018
+  },
+  "PMC6242826": {
+   "doi": "10.1038/s41598-018-35147-3",
+   "journal": "Scientific reports",
+   "license": "CC BY 4.0",
+   "topic": "depression",
+   "year": 2018
+  },
+  "PMC6263098": {
+   "doi": "10.1080/16549716.2018.1548006",
+   "journal": "Global health action",
+   "license": "CC BY 4.0",
+   "topic": "hypertension",
+   "year": 2018
+  },
+  "PMC6278017": {
+   "doi": "10.1186/s12890-018-0753-y",
+   "journal": "BMC pulmonary medicine",
+   "license": "CC0",
+   "topic": "asthma",
+   "year": 2018
+  },
+  "PMC6291962": {
+   "doi": "10.1186/s12872-018-0959-1",
+   "journal": "BMC cardiovascular disorders",
+   "license": "CC0",
+   "topic": "heart_failure",
+   "year": 2018
+  },
+  "PMC6292991": {
+   "doi": "10.3389/fnsyn.2018.00046",
+   "journal": "Frontiers in synaptic neuroscience",
+   "license": "CC BY",
+   "topic": "depression",
+   "year": 2018
+  },
+  "PMC6316380": {
+   "doi": "10.3390/nu10121924",
+   "journal": "Nutrients",
+   "license": "CC BY 4.0",
+   "topic": "type2_diabetes",
+   "year": 2018
+  },
+  "PMC6349775": {
+   "doi": "10.3389/fphys.2019.00001",
+   "journal": "Frontiers in physiology",
+   "license": "CC BY",
+   "topic": "heart_failure",
+   "year": 2019
+  },
+  "PMC6361825": {
+   "doi": "10.3389/fneur.2019.00016",
+   "journal": "Frontiers in neurology",
+   "license": "CC BY",
+   "topic": "stroke",
+   "year": 2019
+  },
+  "PMC6376907": {
+   "doi": "10.1093/infdis/jiy579",
+   "journal": "The Journal of infectious diseases",
+   "license": "CC BY 4.0",
+   "topic": "tuberculosis",
+   "year": 2018
+  },
+  "PMC6389075": {
+   "doi": "10.1186/s12933-018-0677-0",
+   "journal": "Cardiovascular diabetology",
+   "license": "CC0",
+   "topic": "type2_diabetes",
+   "year": 2018
+  },
+  "PMC6393682": {
+   "doi": "10.1007/s12471-019-1228-3",
+   "journal": "Netherlands heart journal : monthly journal of the Netherlands Society of Cardiology and the Netherlands Heart Foundation",
+   "license": "CC BY 4.0",
+   "topic": "atrial_fibrillation",
+   "year": 2019
+  },
+  "PMC6406388": {
+   "doi": "10.3390/ijerph16040605",
+   "journal": "International journal of environmental research and public health",
+   "license": "CC BY 4.0",
+   "topic": "asthma",
+   "year": 2019
+  },
+  "PMC6406932": {
+   "doi": "10.3390/brainsci9020031",
+   "journal": "Brain sciences",
+   "license": "CC BY 4.0",
+   "topic": "depression",
+   "year": 2019
+  },
+  "PMC6418209": {
+   "doi": "10.1038/s41598-018-36813-2",
+   "journal": "Scientific reports",
+   "license": "CC BY 4.0",
+   "topic": "stroke",
+   "year": 2019
+  },
+  "PMC6447699": {
+   "doi": "10.3389/fpsyt.2019.00130",
+   "journal": "Frontiers in psychiatry",
+   "license": "CC BY",
+   "topic": "depression",
+   "year": 2019
+  },
+  "PMC6458257": {
+   "doi": "10.3389/fneur.2019.00331",
+   "journal": "Frontiers in neurology",
+   "license": "CC BY",
+   "topic": "stroke",
+   "year": 2019
+  },
+  "PMC6469868": {
+   "doi": "10.2196/11988",
+   "journal": "JMIR pediatrics and parenting",
+   "license": "CC BY 4.0",
+   "topic": "asthma",
+   "year": 2018
+  },
+  "PMC6484629": {
+   "doi": "10.1001/jamanetworkopen.2019.0429",
+   "journal": "JAMA network open",
+   "license": "CC BY",
+   "topic": "osteoporosis",
+   "year": 2019
+  },
+  "PMC6504832": {
+   "doi": "10.3389/fneur.2019.00414",
+   "journal": "Frontiers in neurology",
+   "license": "CC BY",
+   "topic": "stroke",
+   "year": 2019
+  },
+  "PMC6509772": {
+   "doi": "10.1186/s13601-019-0264-9",
+   "journal": "Clinical and translational allergy",
+   "license": "CC0",
+   "topic": "asthma",
+   "year": 2019
+  },
+  "PMC6518454": {
+   "doi": "10.1186/s12890-019-0836-4",
+   "journal": "BMC pulmonary medicine",
+   "license": "CC0",
+   "topic": "sepsis",
+   "year": 2019
+  },
+  "PMC6534885": {
+   "doi": "10.1186/s12890-019-0862-2",
+   "journal": "BMC pulmonary medicine",
+   "license": "CC0",
+   "topic": "asthma",
+   "year": 2019
+  },
+  "PMC6538576": {
+   "doi": "10.1007/s10557-019-06873-1",
+   "journal": "Cardiovascular drugs and therapy",
+   "license": "CC BY 4.0",
+   "topic": "heart_failure",
+   "year": 2019
+  },
+  "PMC6560016": {
+   "doi": "10.1007/s00125-019-4909-y",
+   "journal": "Diabetologia",
+   "license": "CC BY 4.0",
+   "topic": "type2_diabetes",
+   "year": 2019
+  },
+  "PMC6587657": {
+   "doi": "10.1097/MD.0000000000016025",
+   "journal": "Medicine",
+   "license": "CC BY 4.0",
+   "topic": "type2_diabetes",
+   "year": 2019
+  },
+  "PMC6592966": {
+   "doi": "10.1007/s00281-019-00745-4",
+   "journal": "Seminars in immunopathology",
+   "license": "CC BY 4.0",
+   "topic": "type2_diabetes",
+   "year": 2019
+  },
+  "PMC6620259": {
+   "doi": "10.1007/s11892-019-1169-7",
+   "journal": "Current diabetes reports",
+   "license": "CC BY 4.0",
+   "topic": "type2_diabetes",
+   "year": 2019
+  },
+  "PMC6642575": {
+   "doi": "10.1186/s12879-019-4241-7",
+   "journal": "BMC infectious diseases",
+   "license": "CC0",
+   "topic": "tuberculosis",
+   "year": 2019
+  },
+  "PMC6647508": {
+   "doi": "10.1007/s00508-019-1480-y",
+   "journal": "Wiener klinische Wochenschrift",
+   "license": "CC BY 4.0",
+   "topic": "heart_failure",
+   "year": 2019
+  },
+  "PMC6670135": {
+   "doi": "10.1186/s40885-019-0124-x",
+   "journal": "Clinical hypertension",
+   "license": "CC0",
+   "topic": "hypertension",
+   "year": 2019
+  },
+  "PMC6670160": {
+   "doi": "10.1186/s40885-019-0123-y",
+   "journal": "Clinical hypertension",
+   "license": "CC0",
+   "topic": "hypertension",
+   "year": 2019
+  },
+  "PMC6670210": {
+   "doi": "10.1186/s40885-019-0121-0",
+   "journal": "Clinical hypertension",
+   "license": "CC0",
+   "topic": "hypertension",
+   "year": 2019
+  },
+  "PMC6681215": {
+   "doi": "10.3390/medicina55070358",
+   "journal": "Medicina (Kaunas, Lithuania)",
+   "license": "CC BY 4.0",
+   "topic": "atrial_fibrillation",
+   "year": 2019
+  },
+  "PMC6682911": {
+   "doi": "10.3390/nu11071620",
+   "journal": "Nutrients",
+   "license": "CC BY 4.0",
+   "topic": "type2_diabetes",
+   "year": 2019
+  },
+  "PMC6683030": {
+   "doi": "10.3390/nu11071644",
+   "journal": "Nutrients",
+   "license": "CC BY 4.0",
+   "topic": "type2_diabetes",
+   "year": 2019
+  },
+  "PMC6704101": {
+   "doi": "10.1038/s41746-019-0159-0",
+   "journal": "NPJ digital medicine",
+   "license": "CC BY 4.0",
+   "topic": "heart_failure",
+   "year": 2019
+  },
+  "PMC6708242": {
+   "doi": "10.1186/s13098-019-0465-3",
+   "journal": "Diabetology & metabolic syndrome",
+   "license": "CC0",
+   "topic": "hypertension",
+   "year": 2019
+  },
+  "PMC6720410": {
+   "doi": "10.1186/s13054-019-2579-2",
+   "journal": "Critical care (London, England)",
+   "license": "CC0",
+   "topic": "sepsis",
+   "year": 2019
+  },
+  "PMC6722487": {
+   "doi": "10.1042/BSR20191011",
+   "journal": "Bioscience reports",
+   "license": "CC BY",
+   "topic": "osteoporosis",
+   "year": 2019
+  },
+  "PMC6746623": {
+   "doi": "10.1111/jce.13990",
+   "journal": "Journal of cardiovascular electrophysiology",
+   "license": "CC BY 4.0",
+   "topic": "atrial_fibrillation",
+   "year": 2019
+  },
+  "PMC6755852": {
+   "doi": "10.1161/JAHA.119.012884",
+   "journal": "Journal of the American Heart Association",
+   "license": "CC BY 4.0",
+   "topic": "heart_failure",
+   "year": 2019
+  },
+  "PMC6769664": {
+   "doi": "10.3390/nu11092177",
+   "journal": "Nutrients",
+   "license": "CC BY 4.0",
+   "topic": "type2_diabetes",
+   "year": 2019
+  },
+  "PMC6775273": {
+   "doi": "10.7150/ijms.36131",
+   "journal": "International journal of medical sciences",
+   "license": "CC BY 4.0",
+   "topic": "depression",
+   "year": 2019
+  },
+  "PMC6776920": {
+   "doi": "10.3389/fendo.2019.00649",
+   "journal": "Frontiers in endocrinology",
+   "license": "CC BY",
+   "topic": "type2_diabetes",
+   "year": 2019
+  },
+  "PMC6805810": {
+   "doi": "10.1007/s00392-019-01463-5",
+   "journal": "Clinical research in cardiology : official journal of the German Cardiac Society",
+   "license": "CC BY 4.0",
+   "topic": "heart_failure",
+   "year": 2019
+  },
+  "PMC6822412": {
+   "doi": "10.1186/s12879-019-4561-7",
+   "journal": "BMC infectious diseases",
+   "license": "CC0",
+   "topic": "tuberculosis",
+   "year": 2019
+  },
+  "PMC6862478": {
+   "doi": "10.3390/ijms20215275",
+   "journal": "International journal of molecular sciences",
+   "license": "CC BY 4.0",
+   "topic": "osteoporosis",
+   "year": 2019
+  },
+  "PMC6868407": {
+   "doi": "10.1002/jcla.22996",
+   "journal": "Journal of clinical laboratory analysis",
+   "license": "CC BY 4.0",
+   "topic": "sepsis",
+   "year": 2019
+  },
+  "PMC6892410": {
+   "doi": "10.1038/s41371-019-0180-4",
+   "journal": "Journal of human hypertension",
+   "license": "CC BY 4.0",
+   "topic": "hypertension",
+   "year": 2019
+  },
+  "PMC6895829": {
+   "doi": "10.3390/genes10110907",
+   "journal": "Genes",
+   "license": "CC BY 4.0",
+   "topic": "depression",
+   "year": 2019
+  },
+  "PMC6898943": {
+   "doi": "10.1186/s12872-019-1260-7",
+   "journal": "BMC cardiovascular disorders",
+   "license": "CC0",
+   "topic": "atrial_fibrillation",
+   "year": 2019
+  },
+  "PMC6912745": {
+   "doi": "10.3390/jcm8111800",
+   "journal": "Journal of clinical medicine",
+   "license": "CC BY 4.0",
+   "topic": "sepsis",
+   "year": 2019
+  },
+  "PMC6914431": {
+   "doi": "10.18632/aging.102502",
+   "journal": "Aging",
+   "license": "CC BY",
+   "topic": "type2_diabetes",
+   "year": 2019
+  },
+  "PMC6925875": {
+   "doi": "10.1186/s12888-019-2399-6",
+   "journal": "BMC psychiatry",
+   "license": "CC0",
+   "topic": "depression",
+   "year": 2019
+  },
+  "PMC6928928": {
+   "doi": "10.3390/ijms20235867",
+   "journal": "International journal of molecular sciences",
+   "license": "CC BY 4.0",
+   "topic": "osteoporosis",
+   "year": 2019
+  },
+  "PMC6935674": {
+   "doi": "10.1002/ccr3.2486",
+   "journal": "Clinical case reports",
+   "license": "CC BY 4.0",
+   "topic": "tuberculosis",
+   "year": 2019
+  },
+  "PMC6936506": {
+   "doi": "10.1136/bmjdrc-2019-000700",
+   "journal": "BMJ open diabetes research & care",
+   "license": "CC BY 4.0",
+   "topic": "type2_diabetes",
+   "year": 2019
+  },
+  "PMC6938630": {
+   "doi": "10.1186/s10020-019-0132-z",
+   "journal": "Molecular medicine (Cambridge, Mass.)",
+   "license": "CC0",
+   "topic": "sepsis",
+   "year": 2020
+  },
+  "PMC6946349": {
+   "doi": "10.1097/MD.0000000000017744",
+   "journal": "Medicine",
+   "license": "CC BY 4.0",
+   "topic": "sepsis",
+   "year": 2019
+  },
+  "PMC6963179": {
+   "doi": "10.3390/diagnostics9040170",
+   "journal": "Diagnostics (Basel, Switzerland)",
+   "license": "CC BY 4.0",
+   "topic": "heart_failure",
+   "year": 2019
+  },
+  "PMC6966996": {
+   "doi": "10.1007/s41030-018-0052-z",
+   "journal": "Pulmonary therapy",
+   "license": "CC BY 4.0",
+   "topic": "hypertension",
+   "year": 2018
+  },
+  "PMC6974503": {
+   "doi": "10.1007/s12098-019-03106-z",
+   "journal": "Indian journal of pediatrics",
+   "license": "CC BY 4.0",
+   "topic": "sepsis",
+   "year": 2020
+  },
+  "PMC7000818": {
+   "doi": "10.1038/s41598-020-58601-7",
+   "journal": "Scientific reports",
+   "license": "CC BY 4.0",
+   "topic": "type2_diabetes",
+   "year": 2020
+  },
+  "PMC7014771": {
+   "doi": "10.1186/s12875-020-01103-2",
+   "journal": "BMC family practice",
+   "license": "CC0",
+   "topic": "osteoporosis",
+   "year": 2020
+  },
+  "PMC7026048": {
+   "doi": "10.1038/s41598-020-59539-6",
+   "journal": "Scientific reports",
+   "license": "CC BY 4.0",
+   "topic": "atrial_fibrillation",
+   "year": 2020
+  },
+  "PMC7057763": {
+   "doi": "10.3389/fpsyt.2020.00086",
+   "journal": "Frontiers in psychiatry",
+   "license": "CC BY",
+   "topic": "depression",
+   "year": 2020
+  },
+  "PMC7062758": {
+   "doi": "10.1038/s12276-020-0376-2",
+   "journal": "Experimental & molecular medicine",
+   "license": "CC BY 4.0",
+   "topic": "asthma",
+   "year": 2020
+  },
+  "PMC7069880": {
+   "doi": "10.1002/ccr3.2675",
+   "journal": "Clinical case reports",
+   "license": "CC BY 4.0",
+   "topic": "hypertension",
+   "year": 2020
+  },
+  "PMC7074374": {
+   "doi": "10.3390/jcm9020561",
+   "journal": "Journal of clinical medicine",
+   "license": "CC BY 4.0",
+   "topic": "hypertension",
+   "year": 2020
+  },
+  "PMC7081707": {
+   "doi": "10.1186/s12883-020-01676-6",
+   "journal": "BMC neurology",
+   "license": "CC0",
+   "topic": "stroke",
+   "year": 2020
+  },
+  "PMC7156648": {
+   "doi": "10.1038/s41598-020-63370-4",
+   "journal": "Scientific reports",
+   "license": "CC BY 4.0",
+   "topic": "atrial_fibrillation",
+   "year": 2020
+  },
+  "PMC7168336": {
+   "doi": "10.3390/pathogens9020131",
+   "journal": "Pathogens (Basel, Switzerland)",
+   "license": "CC BY 4.0",
+   "topic": "tuberculosis",
+   "year": 2020
+  },
+  "PMC7189529": {
+   "doi": "10.1186/s12955-020-01368-2",
+   "journal": "Health and quality of life outcomes",
+   "license": "CC0",
+   "topic": "heart_failure",
+   "year": 2020
+  },
+  "PMC7196231": {
+   "doi": "10.1186/s12933-020-01030-7",
+   "journal": "Cardiovascular diabetology",
+   "license": "CC0",
+   "topic": "type2_diabetes",
+   "year": 2020
+  },
+  "PMC7230461": {
+   "doi": "10.3390/jcm9041034",
+   "journal": "Journal of clinical medicine",
+   "license": "CC BY 4.0",
+   "topic": "osteoporosis",
+   "year": 2020
+  },
+  "PMC7246724": {
+   "doi": "10.3390/ijerph17093319",
+   "journal": "International journal of environmental research and public health",
+   "license": "CC BY 4.0",
+   "topic": "osteoporosis",
+   "year": 2020
+  },
+  "PMC7249428": {
+   "doi": "10.1186/s13019-020-01150-x",
+   "journal": "Journal of cardiothoracic surgery",
+   "license": "CC0",
+   "topic": "heart_failure",
+   "year": 2020
+  },
+  "PMC7270463": {
+   "doi": "10.1007/s12471-020-01421-1",
+   "journal": "Netherlands heart journal : monthly journal of the Netherlands Society of Cardiology and the Netherlands Heart Foundation",
+   "license": "CC BY 4.0",
+   "topic": "heart_failure",
+   "year": 2020
+  },
+  "PMC7279036": {
+   "doi": "10.3390/ijms21103538",
+   "journal": "International journal of molecular sciences",
+   "license": "CC BY 4.0",
+   "topic": "osteoporosis",
+   "year": 2020
+  },
+  "PMC7287832": {
+   "doi": "10.3390/jcm9051286",
+   "journal": "Journal of clinical medicine",
+   "license": "CC BY 4.0",
+   "topic": "atrial_fibrillation",
+   "year": 2020
+  },
+  "PMC7293818": {
+   "doi": "10.1093/emph/eoaa010",
+   "journal": "Evolution, medicine, and public health",
+   "license": "CC BY 4.0",
+   "topic": "type2_diabetes",
+   "year": 2020
+  },
+  "PMC7301284": {
+   "doi": "10.1002/rcr2.600",
+   "journal": "Respirology case reports",
+   "license": "CC BY 4.0",
+   "topic": "tuberculosis",
+   "year": 2020
+  },
+  "PMC7312590": {
+   "doi": "10.3390/ijerph17114052",
+   "journal": "International journal of environmental research and public health",
+   "license": "CC BY 4.0",
+   "topic": "hypertension",
+   "year": 2020
+  },
+  "PMC7324770": {
+   "doi": "10.1186/s40560-020-00465-0",
+   "journal": "Journal of intensive care",
+   "license": "CC0",
+   "topic": "sepsis",
+   "year": 2020
+  },
+  "PMC7356808": {
+   "doi": "10.3390/jcm9061951",
+   "journal": "Journal of clinical medicine",
+   "license": "CC BY 4.0",
+   "topic": "depression",
+   "year": 2020
+  },
+  "PMC7370296": {
+   "doi": "10.3390/ijms21134749",
+   "journal": "International journal of molecular sciences",
+   "license": "CC BY 4.0",
+   "topic": "osteoporosis",
+   "year": 2020
+  },
+  "PMC7399032": {
+   "doi": "10.1186/s40779-020-00267-3",
+   "journal": "Military Medical Research",
+   "license": "CC0",
+   "topic": "sepsis",
+   "year": 2020
+  },
+  "PMC7408713": {
+   "doi": "10.3390/jcm9072300",
+   "journal": "Journal of clinical medicine",
+   "license": "CC BY 4.0",
+   "topic": "heart_failure",
+   "year": 2020
+  },
+  "PMC7409123": {
+   "doi": "10.3390/microorganisms8070979",
+   "journal": "Microorganisms",
+   "license": "CC BY 4.0",
+   "topic": "tuberculosis",
+   "year": 2020
+  },
+  "PMC7410152": {
+   "doi": "10.1186/s12933-020-01098-1",
+   "journal": "Cardiovascular diabetology",
+   "license": "CC0",
+   "topic": "type2_diabetes",
+   "year": 2020
+  },
+  "PMC7415937": {
+   "doi": "10.17179/excli2020-2591",
+   "journal": "EXCLI journal",
+   "license": "CC BY 4.0",
+   "topic": "osteoporosis",
+   "year": 2020
+  },
+  "PMC7450779": {
+   "doi": "10.18773/austprescr.2020.046",
+   "journal": "Australian prescriber",
+   "license": "CC BY",
+   "topic": "type2_diabetes",
+   "year": 2020
+  },
+  "PMC7463751": {
+   "doi": "10.3390/antiox9080672",
+   "journal": "Antioxidants (Basel, Switzerland)",
+   "license": "CC BY 4.0",
+   "topic": "stroke",
+   "year": 2020
+  },
+  "PMC7481147": {
+   "doi": "10.1007/s11892-020-01336-6",
+   "journal": "Current diabetes reports",
+   "license": "CC BY 4.0",
+   "topic": "type2_diabetes",
+   "year": 2020
+  },
+  "PMC7491342": {
+   "doi": "10.1186/s13223-020-00472-8",
+   "journal": "Allergy, asthma, and clinical immunology : official journal of the Canadian Society of Allergy and Clinical Immunology",
+   "license": "CC0",
+   "topic": "asthma",
+   "year": 2020
+  },
+  "PMC7497423": {
+   "doi": "10.1007/s12529-020-09886-5",
+   "journal": "International journal of behavioral medicine",
+   "license": "CC BY 4.0",
+   "topic": "hypertension",
+   "year": 2020
+  },
+  "PMC7501575": {
+   "doi": "10.2196/17162",
+   "journal": "JMIR cardio",
+   "license": "CC BY 4.0",
+   "topic": "atrial_fibrillation",
+   "year": 2020
+  },
+  "PMC7503727": {
+   "doi": "10.3390/ijms21176275",
+   "journal": "International journal of molecular sciences",
+   "license": "CC BY 4.0",
+   "topic": "type2_diabetes",
+   "year": 2020
+  },
+  "PMC7560451": {
+   "doi": "10.5808/GI.2020.18.3.e27",
+   "journal": "Genomics & informatics",
+   "license": "CC BY 4.0",
+   "topic": "type2_diabetes",
+   "year": 2020
+  },
+  "PMC7568695": {
+   "doi": "10.1007/s11657-020-00828-y",
+   "journal": "Archives of osteoporosis",
+   "license": "CC BY 4.0",
+   "topic": "osteoporosis",
+   "year": 2020
+  },
+  "PMC7575834": {
+   "doi": "10.1016/j.amsu.2020.10.019",
+   "journal": "Annals of medicine and surgery (2012)",
+   "license": "CC BY 4.0",
+   "topic": "asthma",
+   "year": 2020
+  },
+  "PMC7603755": {
+   "doi": "10.1186/s12953-020-00165-5",
+   "journal": "Proteome science",
+   "license": "CC0",
+   "topic": "tuberculosis",
+   "year": 2020
+  },
+  "PMC7680229": {
+   "doi": "10.11604/pamj.2020.37.87.21102",
+   "journal": "The Pan African medical journal",
+   "license": "CC BY 4.0",
+   "topic": "tuberculosis",
+   "year": 2020
+  },
+  "PMC7716437": {
+   "doi": "10.3389/fped.2020.562843",
+   "journal": "Frontiers in pediatrics",
+   "license": "CC BY",
+   "topic": "asthma",
+   "year": 2020
+  },
+  "PMC7729164": {
+   "doi": "10.3389/fphar.2020.600421",
+   "journal": "Frontiers in pharmacology",
+   "license": "CC BY",
+   "topic": "sepsis",
+   "year": 2020
+  },
+  "PMC7734205": {
+   "doi": "10.3389/fimmu.2020.598404",
+   "journal": "Frontiers in immunology",
+   "license": "CC BY",
+   "topic": "sepsis",
+   "year": 2020
+  },
+  "PMC7749555": {
+   "doi": "10.1002/brb3.1716",
+   "journal": "Brain and behavior",
+   "license": "CC BY 4.0",
+   "topic": "stroke",
+   "year": 2020
+  },
+  "PMC7760385": {
+   "doi": "10.3390/nu12123625",
+   "journal": "Nutrients",
+   "license": "CC BY 4.0",
+   "topic": "osteoporosis",
+   "year": 2020
+  },
+  "PMC7775927": {
+   "doi": "10.5005/jp-journals-10071-23670",
+   "journal": "Indian journal of critical care medicine : peer-reviewed, official publication of Indian Society of Critical Care Medicine",
+   "license": "CC0",
+   "topic": "sepsis",
+   "year": 2020
+  },
+  "PMC7801054": {
+   "doi": "10.1080/0886022X.2020.1858100",
+   "journal": "Renal failure",
+   "license": "CC BY 4.0",
+   "topic": "heart_failure",
+   "year": 2021
+  },
+  "PMC7830209": {
+   "doi": "10.3390/jcm10020332",
+   "journal": "Journal of clinical medicine",
+   "license": "CC BY 4.0",
+   "topic": "stroke",
+   "year": 2021
+  },
+  "PMC7835164": {
+   "doi": "10.1007/s00391-020-01816-0",
+   "journal": "Zeitschrift fur Gerontologie und Geriatrie",
+   "license": "CC BY 4.0",
+   "topic": "stroke",
+   "year": 2021
+  },
+  "PMC7870485": {
+   "doi": "10.3389/fphys.2020.620736",
+   "journal": "Frontiers in physiology",
+   "license": "CC BY",
+   "topic": "asthma",
+   "year": 2020
+  },
+  "PMC7872343": {
+   "doi": "10.1002/jbm4.10444",
+   "journal": "JBMR plus",
+   "license": "CC BY 4.0",
+   "topic": "osteoporosis",
+   "year": 2021
+  },
+  "PMC7884814": {
+   "doi": "10.3389/fonc.2020.615375",
+   "journal": "Frontiers in oncology",
+   "license": "CC BY",
+   "topic": "type2_diabetes",
+   "year": 2020
+  },
+  "PMC7912919": {
+   "doi": "10.1186/s12933-021-01249-y",
+   "journal": "Cardiovascular diabetology",
+   "license": "CC0",
+   "topic": "type2_diabetes",
+   "year": 2021
+  },
+  "PMC7917291": {
+   "doi": "10.3389/fendo.2020.630875",
+   "journal": "Frontiers in endocrinology",
+   "license": "CC BY",
+   "topic": "osteoporosis",
+   "year": 2021
+  },
+  "PMC7929859": {
+   "doi": "10.1136/openhrt-2021-001585",
+   "journal": "Open heart",
+   "license": "CC BY 4.0",
+   "topic": "heart_failure",
+   "year": 2021
+  },
+  "PMC7935825": {
+   "doi": "10.1007/s11914-020-00644-w",
+   "journal": "Current osteoporosis reports",
+   "license": "CC BY 4.0",
+   "topic": "osteoporosis",
+   "year": 2021
+  },
+  "PMC7955633": {
+   "doi": "10.1186/s12902-021-00708-7",
+   "journal": "BMC endocrine disorders",
+   "license": "CC0",
+   "topic": "type2_diabetes",
+   "year": 2021
+  },
+  "PMC7973346": {
+   "doi": "10.1186/s40635-020-00366-4",
+   "journal": "Intensive care medicine experimental",
+   "license": "CC BY 4.0",
+   "topic": "sepsis",
+   "year": 2021
+  },
+  "PMC7975583": {
+   "doi": "10.17179/excli2020-3317",
+   "journal": "EXCLI journal",
+   "license": "CC BY 4.0",
+   "topic": "type2_diabetes",
+   "year": 2021
+  },
+  "PMC7980549": {
+   "doi": "10.1186/s12872-021-01951-5",
+   "journal": "BMC cardiovascular disorders",
+   "license": "CC0",
+   "topic": "atrial_fibrillation",
+   "year": 2021
+  },
+  "PMC8010653": {
+   "doi": "10.3389/fcimb.2021.653228",
+   "journal": "Frontiers in cellular and infection microbiology",
+   "license": "CC BY",
+   "topic": "sepsis",
+   "year": 2021
+  },
+  "PMC8011096": {
+   "doi": "10.1186/s12959-021-00276-9",
+   "journal": "Thrombosis journal",
+   "license": "CC0",
+   "topic": "atrial_fibrillation",
+   "year": 2021
+  },
+  "PMC8027580": {
+   "doi": "10.1002/clc.23558",
+   "journal": "Clinical cardiology",
+   "license": "CC BY 4.0",
+   "topic": "atrial_fibrillation",
+   "year": 2021
+  },
+  "PMC8029505": {
+   "doi": "10.1111/jch.14172",
+   "journal": "Journal of clinical hypertension (Greenwich, Conn.)",
+   "license": "CC BY 4.0",
+   "topic": "hypertension",
+   "year": 2021
+  },
+  "PMC8063278": {
+   "doi": "10.1186/s12889-020-09565-w",
+   "journal": "BMC public health",
+   "license": "CC0",
+   "topic": "osteoporosis",
+   "year": 2021
+  },
+  "PMC8064298": {
+   "doi": "10.5334/gh.973",
+   "journal": "Global heart",
+   "license": "CC BY",
+   "topic": "hypertension",
+   "year": 2021
+  },
+  "PMC8067385": {
+   "doi": "10.3390/cells10040817",
+   "journal": "Cells",
+   "license": "CC BY 4.0",
+   "topic": "asthma",
+   "year": 2021
+  },
+  "PMC8076012": {
+   "doi": "10.1038/s41440-019-0266-y",
+   "journal": "Hypertension research : official journal of the Japanese Society of Hypertension",
+   "license": "CC BY 4.0",
+   "topic": "hypertension",
+   "year": 2019
+  },
+  "PMC8102860": {
+   "doi": "10.1136/bmjresp-2020-000758",
+   "journal": "BMJ open respiratory research",
+   "license": "CC BY 4.0",
+   "topic": "asthma",
+   "year": 2021
+  },
+  "PMC8119813": {
+   "doi": "10.1002/brb3.2104",
+   "journal": "Brain and behavior",
+   "license": "CC BY 4.0",
+   "topic": "stroke",
+   "year": 2021
+  },
+  "PMC8131617": {
+   "doi": "10.1038/s41598-021-89871-4",
+   "journal": "Scientific reports",
+   "license": "CC BY 4.0",
+   "topic": "stroke",
+   "year": 2021
+  },
+  "PMC8141653": {
+   "doi": "10.1016/j.amsu.2021.102387",
+   "journal": "Annals of medicine and surgery (2012)",
+   "license": "CC BY 4.0",
+   "topic": "heart_failure",
+   "year": 2021
+  },
+  "PMC8151026": {
+   "doi": "10.3390/nu13051609",
+   "journal": "Nutrients",
+   "license": "CC BY 4.0",
+   "topic": "osteoporosis",
+   "year": 2021
+  },
+  "PMC8157672": {
+   "doi": "10.1186/s12872-021-02062-x",
+   "journal": "BMC cardiovascular disorders",
+   "license": "CC0",
+   "topic": "hypertension",
+   "year": 2021
+  },
+  "PMC8184549": {
+   "doi": "10.1007/s00115-021-01137-6",
+   "journal": "Der Nervenarzt",
+   "license": "CC BY 4.0",
+   "topic": "stroke",
+   "year": 2021
+  },
+  "PMC8207972": {
+   "doi": "10.1002/clc.23619",
+   "journal": "Clinical cardiology",
+   "license": "CC BY 4.0",
+   "topic": "heart_failure",
+   "year": 2021
+  },
+  "PMC8222987": {
+   "doi": "10.3389/fcell.2021.672424",
+   "journal": "Frontiers in cell and developmental biology",
+   "license": "CC BY",
+   "topic": "osteoporosis",
+   "year": 2021
+  },
+  "PMC8226485": {
+   "doi": "10.3390/diagnostics11061027",
+   "journal": "Diagnostics (Basel, Switzerland)",
+   "license": "CC BY 4.0",
+   "topic": "hypertension",
+   "year": 2021
+  },
+  "PMC8227267": {
+   "doi": "10.3390/life11060508",
+   "journal": "Life (Basel, Switzerland)",
+   "license": "CC BY 4.0",
+   "topic": "hypertension",
+   "year": 2021
+  },
+  "PMC8240300": {
+   "doi": "10.1186/s12931-021-01774-0",
+   "journal": "Respiratory research",
+   "license": "CC0",
+   "topic": "asthma",
+   "year": 2021
+  },
+  "PMC8249046": {
+   "doi": "10.1186/s40635-021-00400-z",
+   "journal": "Intensive care medicine experimental",
+   "license": "CC BY 4.0",
+   "topic": "sepsis",
+   "year": 2021
+  },
+  "PMC8257984": {
+   "doi": "10.1016/j.eclinm.2021.100933",
+   "journal": "EClinicalMedicine",
+   "license": "CC BY 4.0",
+   "topic": "heart_failure",
+   "year": 2021
+  },
+  "PMC8261940": {
+   "doi": "10.1186/s12933-021-01324-4",
+   "journal": "Cardiovascular diabetology",
+   "license": "CC0",
+   "topic": "type2_diabetes",
+   "year": 2021
+  },
+  "PMC8268346": {
+   "doi": "10.3390/jcm10133002",
+   "journal": "Journal of clinical medicine",
+   "license": "CC BY 4.0",
+   "topic": "osteoporosis",
+   "year": 2021
+  },
+  "PMC8296302": {
+   "doi": "10.3389/fneur.2021.666632",
+   "journal": "Frontiers in neurology",
+   "license": "CC BY",
+   "topic": "hypertension",
+   "year": 2021
+  },
+  "PMC8296897": {
+   "doi": "10.3390/ijerph18137045",
+   "journal": "International journal of environmental research and public health",
+   "license": "CC BY 4.0",
+   "topic": "hypertension",
+   "year": 2021
+  },
+  "PMC8305522": {
+   "doi": "10.1186/s12884-021-03921-3",
+   "journal": "BMC pregnancy and childbirth",
+   "license": "CC0",
+   "topic": "sepsis",
+   "year": 2021
+  },
+  "PMC8306244": {
+   "doi": "10.3390/diagnostics11071292",
+   "journal": "Diagnostics (Basel, Switzerland)",
+   "license": "CC BY 4.0",
+   "topic": "sepsis",
+   "year": 2021
+  },
+  "PMC8361319": {
+   "doi": "10.1016/j.nicl.2021.102781",
+   "journal": "NeuroImage. Clinical",
+   "license": "CC BY 4.0",
+   "topic": "depression",
+   "year": 2021
+  },
+  "PMC8369359": {
+   "doi": "10.1001/jamanetworkopen.2021.21106",
+   "journal": "JAMA network open",
+   "license": "CC BY",
+   "topic": "osteoporosis",
+   "year": 2021
+  },
+  "PMC8373183": {
+   "doi": "10.5811/cpcem.2021.4.51206",
+   "journal": "Clinical practice and cases in emergency medicine",
+   "license": "CC BY 4.0",
+   "topic": "stroke",
+   "year": 2021
+  },
+  "PMC8382715": {
+   "doi": "10.3389/fcvm.2021.713560",
+   "journal": "Frontiers in cardiovascular medicine",
+   "license": "CC BY",
+   "topic": "heart_failure",
+   "year": 2021
+  },
+  "PMC8382962": {
+   "doi": "10.3389/fpsyt.2021.673443",
+   "journal": "Frontiers in psychiatry",
+   "license": "CC BY",
+   "topic": "depression",
+   "year": 2021
+  },
+  "PMC8384107": {
+   "doi": "10.3389/fnut.2021.707371",
+   "journal": "Frontiers in nutrition",
+   "license": "CC BY",
+   "topic": "type2_diabetes",
+   "year": 2021
+  },
+  "PMC8386086": {
+   "doi": "10.2174/1874306402115010035",
+   "journal": "The open respiratory medicine journal",
+   "license": "CC BY",
+   "topic": "asthma",
+   "year": 2021
+  },
+  "PMC8426432": {
+   "doi": "10.3389/fimmu.2021.721013",
+   "journal": "Frontiers in immunology",
+   "license": "CC BY",
+   "topic": "tuberculosis",
+   "year": 2021
+  },
+  "PMC8440990": {
+   "doi": "10.3389/fpsyg.2021.685851",
+   "journal": "Frontiers in psychology",
+   "license": "CC BY",
+   "topic": "depression",
+   "year": 2021
+  },
+  "PMC8442452": {
+   "doi": "10.1186/s12889-021-11686-9",
+   "journal": "BMC public health",
+   "license": "CC0",
+   "topic": "hypertension",
+   "year": 2021
+  },
+  "PMC8453059": {
+   "doi": "10.3389/fneur.2021.712060",
+   "journal": "Frontiers in neurology",
+   "license": "CC BY",
+   "topic": "stroke",
+   "year": 2021
+  },
+  "PMC8475904": {
+   "doi": "10.3389/fnagi.2021.707732",
+   "journal": "Frontiers in aging neuroscience",
+   "license": "CC BY",
+   "topic": "stroke",
+   "year": 2021
+  },
+  "PMC8488456": {
+   "doi": "10.1002/osp4.484",
+   "journal": "Obesity science & practice",
+   "license": "CC BY 4.0",
+   "topic": "type2_diabetes",
+   "year": 2021
+  },
+  "PMC8493041": {
+   "doi": "10.3389/fimmu.2021.729186",
+   "journal": "Frontiers in immunology",
+   "license": "CC BY",
+   "topic": "tuberculosis",
+   "year": 2021
+  },
+  "PMC8502499": {
+   "doi": "10.1093/europace/euab092",
+   "journal": "Europace : European pacing, arrhythmias, and cardiac electrophysiology : journal of the working groups on cardiac pacing, arrhythmias, and cardiac cellular electrophysiology of the European Society of Cardiology",
+   "license": "CC BY 4.0",
+   "topic": "atrial_fibrillation",
+   "year": 2021
+  },
+  "PMC8520066": {
+   "doi": "10.1002/jbm4.10504",
+   "journal": "JBMR plus",
+   "license": "CC BY 4.0",
+   "topic": "osteoporosis",
+   "year": 2021
+  },
+  "PMC8527754": {
+   "doi": "10.1186/s13098-021-00736-2",
+   "journal": "Diabetology & metabolic syndrome",
+   "license": "CC0",
+   "topic": "hypertension",
+   "year": 2021
+  },
+  "PMC8555067": {
+   "doi": "10.1186/s12888-021-03548-w",
+   "journal": "BMC psychiatry",
+   "license": "CC0",
+   "topic": "depression",
+   "year": 2021
+  },
+  "PMC8566747": {
+   "doi": "10.3389/fneur.2021.744607",
+   "journal": "Frontiers in neurology",
+   "license": "CC BY",
+   "topic": "atrial_fibrillation",
+   "year": 2021
+  },
+  "PMC8570039": {
+   "doi": "10.3389/fmicb.2021.745592",
+   "journal": "Frontiers in microbiology",
+   "license": "CC BY",
+   "topic": "tuberculosis",
+   "year": 2021
+  },
+  "PMC8589647": {
+   "doi": "10.1038/s41380-020-0754-0",
+   "journal": "Molecular psychiatry",
+   "license": "CC BY 4.0",
+   "topic": "depression",
+   "year": 2021
+  },
+  "PMC8589651": {
+   "doi": "10.1038/s41380-020-0808-3",
+   "journal": "Molecular psychiatry",
+   "license": "CC BY 4.0",
+   "topic": "depression",
+   "year": 2021
+  },
+  "PMC8615134": {
+   "doi": "10.3390/antibiotics10111355",
+   "journal": "Antibiotics (Basel, Switzerland)",
+   "license": "CC BY 4.0",
+   "topic": "tuberculosis",
+   "year": 2021
+  },
+  "PMC8615401": {
+   "doi": "10.3390/biom11111701",
+   "journal": "Biomolecules",
+   "license": "CC BY 4.0",
+   "topic": "heart_failure",
+   "year": 2021
+  },
+  "PMC8616587": {
+   "doi": "10.1152/physiolgenomics.00160.2020",
+   "journal": "Physiological genomics",
+   "license": "CC BY",
+   "topic": "hypertension",
+   "year": 2021
+  },
+  "PMC8624368": {
+   "doi": "10.3390/ijerph182211894",
+   "journal": "International journal of environmental research and public health",
+   "license": "CC BY 4.0",
+   "topic": "depression",
+   "year": 2021
+  },
+  "PMC8632229": {
+   "doi": "10.3389/fimmu.2021.761209",
+   "journal": "Frontiers in immunology",
+   "license": "CC BY",
+   "topic": "tuberculosis",
+   "year": 2021
+  },
+  "PMC8636900": {
+   "doi": "10.3389/fped.2021.759234",
+   "journal": "Frontiers in pediatrics",
+   "license": "CC BY",
+   "topic": "sepsis",
+   "year": 2021
+  },
+  "PMC8636991": {
+   "doi": "10.3389/fcvm.2021.762245",
+   "journal": "Frontiers in cardiovascular medicine",
+   "license": "CC BY",
+   "topic": "atrial_fibrillation",
+   "year": 2021
+  },
+  "PMC8637091": {
+   "doi": "10.1002/joa3.12654",
+   "journal": "Journal of arrhythmia",
+   "license": "CC BY 4.0",
+   "topic": "atrial_fibrillation",
+   "year": 2021
+  },
+  "PMC8639874": {
+   "doi": "10.3389/fcvm.2021.778306",
+   "journal": "Frontiers in cardiovascular medicine",
+   "license": "CC BY",
+   "topic": "hypertension",
+   "year": 2021
+  },
+  "PMC8643943": {
+   "doi": "10.1093/ofid/ofab466.1590",
+   "journal": "Open Forum Infectious Diseases",
+   "license": "CC BY 4.0",
+   "topic": "tuberculosis",
+   "year": 2021
+  },
+  "PMC8643999": {
+   "doi": "10.1093/ofid/ofab466.1349",
+   "journal": "Open Forum Infectious Diseases",
+   "license": "CC BY 4.0",
+   "topic": "asthma",
+   "year": 2021
+  },
+  "PMC8669788": {
+   "doi": "10.3389/fphys.2021.763478",
+   "journal": "Frontiers in physiology",
+   "license": "CC BY",
+   "topic": "atrial_fibrillation",
+   "year": 2021
+  },
+  "PMC8669813": {
+   "doi": "10.3389/fgene.2021.789485",
+   "journal": "Frontiers in genetics",
+   "license": "CC BY",
+   "topic": "atrial_fibrillation",
+   "year": 2021
+  },
+  "PMC8680333": {
+   "doi": "10.1186/s12890-021-01797-9",
+   "journal": "BMC pulmonary medicine",
+   "license": "CC0",
+   "topic": "asthma",
+   "year": 2021
+  },
+  "PMC8681719": {
+   "doi": "10.1093/geroni/igab046.3480",
+   "journal": "Innovation in Aging",
+   "license": "CC BY 4.0",
+   "topic": "osteoporosis",
+   "year": 2021
+  },
+  "PMC8707734": {
+   "doi": "10.1093/cvr/cvab147",
+   "journal": "Cardiovascular research",
+   "license": "CC BY 4.0",
+   "topic": "atrial_fibrillation",
+   "year": 2021
+  },
+  "PMC8776114": {
+   "doi": "10.3390/ijms23020821",
+   "journal": "International journal of molecular sciences",
+   "license": "CC BY 4.0",
+   "topic": "sepsis",
+   "year": 2022
+  },
+  "PMC8778721": {
+   "doi": "10.3390/tropicalmed7010012",
+   "journal": "Tropical medicine and infectious disease",
+   "license": "CC BY 4.0",
+   "topic": "tuberculosis",
+   "year": 2022
+  },
+  "PMC8789924": {
+   "doi": "10.1038/s41598-022-05328-2",
+   "journal": "Scientific reports",
+   "license": "CC BY 4.0",
+   "topic": "heart_failure",
+   "year": 2022
+  },
+  "PMC8803673": {
+   "doi": "10.1007/s00125-021-05634-w",
+   "journal": "Diabetologia",
+   "license": "CC BY 4.0",
+   "topic": "type2_diabetes",
+   "year": 2022
+  },
+  "PMC8810767": {
+   "doi": "10.1038/s41598-022-05790-y",
+   "journal": "Scientific reports",
+   "license": "CC BY 4.0",
+   "topic": "heart_failure",
+   "year": 2022
+  },
+  "PMC8825489": {
+   "doi": "10.3389/fpsyt.2022.777422",
+   "journal": "Frontiers in psychiatry",
+   "license": "CC BY",
+   "topic": "depression",
+   "year": 2022
+  },
+  "PMC8831561": {
+   "doi": "10.1038/s41598-022-06238-z",
+   "journal": "Scientific reports",
+   "license": "CC BY 4.0",
+   "topic": "hypertension",
+   "year": 2022
+  },
+  "PMC8831699": {
+   "doi": "10.3389/fcvm.2021.805399",
+   "journal": "Frontiers in cardiovascular medicine",
+   "license": "CC BY",
+   "topic": "atrial_fibrillation",
+   "year": 2021
+  },
+  "PMC8836046": {
+   "doi": "10.3390/ijms23031616",
+   "journal": "International journal of molecular sciences",
+   "license": "CC BY 4.0",
+   "topic": "depression",
+   "year": 2022
+  },
+  "PMC8837084": {
+   "doi": "10.3390/jcm11030575",
+   "journal": "Journal of clinical medicine",
+   "license": "CC BY 4.0",
+   "topic": "atrial_fibrillation",
+   "year": 2022
+  },
+  "PMC8858615": {
+   "doi": "10.1002/ctm2.710",
+   "journal": "Clinical and translational medicine",
+   "license": "CC BY 4.0",
+   "topic": "asthma",
+   "year": 2022
+  },
+  "PMC8883910": {
+   "doi": "10.3390/diseases10010010",
+   "journal": "Diseases (Basel, Switzerland)",
+   "license": "CC BY 4.0",
+   "topic": "tuberculosis",
+   "year": 2022
+  },
+  "PMC8885730": {
+   "doi": "10.3389/fmed.2022.783234",
+   "journal": "Frontiers in medicine",
+   "license": "CC BY",
+   "topic": "sepsis",
+   "year": 2022
+  },
+  "PMC8907417": {
+   "doi": "10.3389/fneur.2022.866166",
+   "journal": "Frontiers in neurology",
+   "license": "CC BY",
+   "topic": "stroke",
+   "year": 2022
+  },
+  "PMC8922535": {
+   "doi": "10.1002/clc.23748",
+   "journal": "Clinical cardiology",
+   "license": "CC BY 4.0",
+   "topic": "atrial_fibrillation",
+   "year": 2022
+  },
+  "PMC8934512": {
+   "doi": "10.1186/s12877-022-02919-6",
+   "journal": "BMC geriatrics",
+   "license": "CC0",
+   "topic": "stroke",
+   "year": 2022
+  },
+  "PMC8953451": {
+   "doi": "10.1093/cvr/cvab361",
+   "journal": "Cardiovascular research",
+   "license": "CC BY 4.0",
+   "topic": "atrial_fibrillation",
+   "year": 2022
+  },
+  "PMC8964439": {
+   "doi": "10.3389/fcimb.2022.857035",
+   "journal": "Frontiers in cellular and infection microbiology",
+   "license": "CC BY",
+   "topic": "sepsis",
+   "year": 2022
+  },
+  "PMC8968408": {
+   "doi": "10.1093/geroni/igab046.2328",
+   "journal": "Innovation in Aging",
+   "license": "CC BY 4.0",
+   "topic": "hypertension",
+   "year": 2021
+  },
+  "PMC8973988": {
+   "doi": "10.1186/s40885-021-00191-1",
+   "journal": "Clinical hypertension",
+   "license": "CC0",
+   "topic": "hypertension",
+   "year": 2022
+  },
+  "PMC8974710": {
+   "doi": "10.3389/falgy.2021.747566",
+   "journal": "Frontiers in allergy",
+   "license": "CC BY",
+   "topic": "asthma",
+   "year": 2021
+  },
+  "PMC8988419": {
+   "doi": "10.1186/s12883-022-02653-x",
+   "journal": "BMC neurology",
+   "license": "CC0",
+   "topic": "stroke",
+   "year": 2022
+  },
+  "PMC8993913": {
+   "doi": "10.1016/j.jacbts.2022.02.011",
+   "journal": "JACC. Basic to translational science",
+   "license": "CC BY 4.0",
+   "topic": "heart_failure",
+   "year": 2022
+  },
+  "PMC9006509": {
+   "doi": "10.3389/fphar.2022.790031",
+   "journal": "Frontiers in pharmacology",
+   "license": "CC BY",
+   "topic": "asthma",
+   "year": 2022
+  },
+  "PMC9010332": {
+   "doi": "10.1007/s00115-021-01232-8",
+   "journal": "Der Nervenarzt",
+   "license": "CC BY 4.0",
+   "topic": "stroke",
+   "year": 2022
+  },
+  "PMC9010383": {
+   "doi": "10.1007/s00115-021-01230-w",
+   "journal": "Der Nervenarzt",
+   "license": "CC BY 4.0",
+   "topic": "stroke",
+   "year": 2022
+  },
+  "PMC9013319": {
+   "doi": "10.1007/s00223-021-00885-6",
+   "journal": "Calcified tissue international",
+   "license": "CC BY 4.0",
+   "topic": "osteoporosis",
+   "year": 2022
+  },
+  "PMC9013331": {
+   "doi": "10.1007/s00223-022-00946-4",
+   "journal": "Calcified tissue international",
+   "license": "CC BY 4.0",
+   "topic": "osteoporosis",
+   "year": 2022
+  },
+  "PMC9019588": {
+   "doi": "10.3389/fcimb.2022.780272",
+   "journal": "Frontiers in cellular and infection microbiology",
+   "license": "CC BY",
+   "topic": "tuberculosis",
+   "year": 2022
+  },
+  "PMC9021370": {
+   "doi": "10.3389/fcvm.2022.835465",
+   "journal": "Frontiers in cardiovascular medicine",
+   "license": "CC BY",
+   "topic": "heart_failure",
+   "year": 2022
+  },
+  "PMC9024976": {
+   "doi": "10.3390/sports10040046",
+   "journal": "Sports (Basel, Switzerland)",
+   "license": "CC BY 4.0",
+   "topic": "stroke",
+   "year": 2022
+  },
+  "PMC9025522": {
+   "doi": "10.3390/jpm12040544",
+   "journal": "Journal of personalized medicine",
+   "license": "CC BY 4.0",
+   "topic": "atrial_fibrillation",
+   "year": 2022
+  },
+  "PMC9025789": {
+   "doi": "10.3390/ijerph19084841",
+   "journal": "International journal of environmental research and public health",
+   "license": "CC BY 4.0",
+   "topic": "heart_failure",
+   "year": 2022
+  },
+  "PMC9030787": {
+   "doi": "10.3390/ncrna8020027",
+   "journal": "Non-coding RNA",
+   "license": "CC BY 4.0",
+   "topic": "asthma",
+   "year": 2022
+  },
+  "PMC9035562": {
+   "doi": "10.3389/fcvm.2022.836237",
+   "journal": "Frontiers in cardiovascular medicine",
+   "license": "CC BY",
+   "topic": "heart_failure",
+   "year": 2022
+  },
+  "PMC9042869": {
+   "doi": "10.1038/s41598-022-10949-8",
+   "journal": "Scientific reports",
+   "license": "CC BY 4.0",
+   "topic": "depression",
+   "year": 2022
+  },
+  "PMC9067972": {
+   "doi": "10.1080/17482631.2022.2070976",
+   "journal": "International journal of qualitative studies on health and well-being",
+   "license": "CC BY 4.0",
+   "topic": "osteoporosis",
+   "year": 2022
+  },
+  "PMC9158469": {
+   "doi": "10.3389/fnut.2022.867150",
+   "journal": "Frontiers in nutrition",
+   "license": "CC BY",
+   "topic": "depression",
+   "year": 2022
+  },
+  "PMC9189265": {
+   "doi": "10.1186/s13054-022-04041-w",
+   "journal": "Critical care (London, England)",
+   "license": "CC0",
+   "topic": "sepsis",
+   "year": 2022
+  },
+  "PMC9195498": {
+   "doi": "10.3389/fcvm.2022.866794",
+   "journal": "Frontiers in cardiovascular medicine",
+   "license": "CC BY",
+   "topic": "heart_failure",
+   "year": 2022
+  },
+  "PMC9208129": {
+   "doi": "10.1186/s12955-022-02004-x",
+   "journal": "Health and quality of life outcomes",
+   "license": "CC0",
+   "topic": "heart_failure",
+   "year": 2022
+  },
+  "PMC9256910": {
+   "doi": "10.3389/fped.2022.772704",
+   "journal": "Frontiers in pediatrics",
+   "license": "CC BY",
+   "topic": "asthma",
+   "year": 2022
+  },
+  "PMC9258205": {
+   "doi": "10.1186/s13052-022-01304-8",
+   "journal": "Italian journal of pediatrics",
+   "license": "CC0",
+   "topic": "asthma",
+   "year": 2022
+  },
+  "PMC9274122": {
+   "doi": "10.3389/fneur.2022.900582",
+   "journal": "Frontiers in neurology",
+   "license": "CC BY",
+   "topic": "atrial_fibrillation",
+   "year": 2022
+  },
+  "PMC9289241": {
+   "doi": "10.3389/fpsyt.2022.915327",
+   "journal": "Frontiers in psychiatry",
+   "license": "CC BY",
+   "topic": "atrial_fibrillation",
+   "year": 2022
+  },
+  "PMC9294984": {
+   "doi": "10.1016/j.cjco.2022.04.005",
+   "journal": "CJC open",
+   "license": "CC BY 4.0",
+   "topic": "heart_failure",
+   "year": 2022
+  },
+  "PMC9295617": {
+   "doi": "10.3389/fmed.2022.814215",
+   "journal": "Frontiers in medicine",
+   "license": "CC BY",
+   "topic": "hypertension",
+   "year": 2022
+  },
+  "PMC9310481": {
+   "doi": "10.1186/s12872-022-02773-9",
+   "journal": "BMC cardiovascular disorders",
+   "license": "CC0",
+   "topic": "atrial_fibrillation",
+   "year": 2022
+  },
+  "PMC9316168": {
+   "doi": "10.3390/ijms23148023",
+   "journal": "International journal of molecular sciences",
+   "license": "CC BY 4.0",
+   "topic": "depression",
+   "year": 2022
+  },
+  "PMC9324065": {
+   "doi": "10.1002/jbmr.4544",
+   "journal": "Journal of bone and mineral research : the official journal of the American Society for Bone and Mineral Research",
+   "license": "CC BY 4.0",
+   "topic": "osteoporosis",
+   "year": 2022
+  },
+  "PMC9356071": {
+   "doi": "10.1038/s41387-022-00213-3",
+   "journal": "Nutrition & diabetes",
+   "license": "CC BY 4.0",
+   "topic": "type2_diabetes",
+   "year": 2022
+  },
+  "PMC9372372": {
+   "doi": "10.3389/fcimb.2022.962139",
+   "journal": "Frontiers in cellular and infection microbiology",
+   "license": "CC BY",
+   "topic": "sepsis",
+   "year": 2022
+  },
+  "PMC9372496": {
+   "doi": "10.3389/fped.2022.932366",
+   "journal": "Frontiers in pediatrics",
+   "license": "CC BY",
+   "topic": "asthma",
+   "year": 2022
+  },
+  "PMC9380439": {
+   "doi": "10.3389/fimmu.2022.940935",
+   "journal": "Frontiers in immunology",
+   "license": "CC BY",
+   "topic": "sepsis",
+   "year": 2022
+  },
+  "PMC9395980": {
+   "doi": "10.3389/fphar.2022.927506",
+   "journal": "Frontiers in pharmacology",
+   "license": "CC BY",
+   "topic": "stroke",
+   "year": 2022
+  },
+  "PMC9402862": {
+   "doi": "10.1007/s12471-022-01661-3",
+   "journal": "Netherlands heart journal : monthly journal of the Netherlands Society of Cardiology and the Netherlands Heart Foundation",
+   "license": "CC BY 4.0",
+   "topic": "heart_failure",
+   "year": 2022
+  },
+  "PMC9402963": {
+   "doi": "10.1016/j.cjco.2022.04.004",
+   "journal": "CJC open",
+   "license": "CC BY 4.0",
+   "topic": "atrial_fibrillation",
+   "year": 2022
+  },
+  "PMC9407909": {
+   "doi": "10.3390/healthcare10081561",
+   "journal": "Healthcare (Basel, Switzerland)",
+   "license": "CC BY 4.0",
+   "topic": "asthma",
+   "year": 2022
+  },
+  "PMC9424932": {
+   "doi": "10.1016/j.clinsp.2022.100095",
+   "journal": "Clinics (Sao Paulo, Brazil)",
+   "license": "CC BY 4.0",
+   "topic": "stroke",
+   "year": 2022
+  },
+  "PMC9433744": {
+   "doi": "10.3389/fneur.2022.939618",
+   "journal": "Frontiers in neurology",
+   "license": "CC BY",
+   "topic": "stroke",
+   "year": 2022
+  },
+  "PMC9449596": {
+   "doi": "10.15252/emmm.202216269",
+   "journal": "EMBO molecular medicine",
+   "license": "CC BY 4.0",
+   "topic": "stroke",
+   "year": 2022
+  },
+  "PMC9456070": {
+   "doi": "10.3390/ijms23179967",
+   "journal": "International journal of molecular sciences",
+   "license": "CC BY 4.0",
+   "topic": "stroke",
+   "year": 2022
+  },
+  "PMC9457103": {
+   "doi": "10.3390/jcm11175027",
+   "journal": "Journal of clinical medicine",
+   "license": "CC BY 4.0",
+   "topic": "heart_failure",
+   "year": 2022
+  },
+  "PMC9463721": {
+   "doi": "10.1186/s12883-022-02869-x",
+   "journal": "BMC neurology",
+   "license": "CC0",
+   "topic": "depression",
+   "year": 2022
+  },
+  "PMC9467912": {
+   "doi": "10.1038/s41371-021-00577-6",
+   "journal": "Journal of human hypertension",
+   "license": "CC BY 4.0",
+   "topic": "hypertension",
+   "year": 2022
+  },
+  "PMC9468447": {
+   "doi": "10.3389/fped.2022.925189",
+   "journal": "Frontiers in pediatrics",
+   "license": "CC BY",
+   "topic": "asthma",
+   "year": 2022
+  },
+  "PMC9485537": {
+   "doi": "10.3389/fcvm.2022.988799",
+   "journal": "Frontiers in cardiovascular medicine",
+   "license": "CC BY",
+   "topic": "atrial_fibrillation",
+   "year": 2022
+  },
+  "PMC9514121": {
+   "doi": "10.3389/fnut.2022.995838",
+   "journal": "Frontiers in nutrition",
+   "license": "CC BY",
+   "topic": "atrial_fibrillation",
+   "year": 2022
+  },
+  "PMC9515802": {
+   "doi": "10.1093/rap/rkac067.041",
+   "journal": "Rheumatology Advances in Practice",
+   "license": "CC BY 4.0",
+   "topic": "asthma",
+   "year": 2022
+  },
+  "PMC9522721": {
+   "doi": "10.1007/s00125-022-05774-7",
+   "journal": "Diabetologia",
+   "license": "CC BY 4.0",
+   "topic": "type2_diabetes",
+   "year": 2022
+  },
+  "PMC9525011": {
+   "doi": "10.1093/braincomms/fcac236",
+   "journal": "Brain communications",
+   "license": "CC BY 4.0",
+   "topic": "depression",
+   "year": 2022
+  },
+  "PMC9525285": {
+   "doi": "10.1038/s41598-022-20924-y",
+   "journal": "Scientific reports",
+   "license": "CC BY 4.0",
+   "topic": "asthma",
+   "year": 2022
+  },
+  "PMC9530199": {
+   "doi": "10.3389/fpsyt.2022.962501",
+   "journal": "Frontiers in psychiatry",
+   "license": "CC BY",
+   "topic": "depression",
+   "year": 2022
+  },
+  "PMC9532909": {
+   "doi": "10.1111/jch.14553",
+   "journal": "Journal of clinical hypertension (Greenwich, Conn.)",
+   "license": "CC BY 4.0",
+   "topic": "heart_failure",
+   "year": 2022
+  },
+  "PMC9537353": {
+   "doi": "10.3389/fpsyt.2022.825591",
+   "journal": "Frontiers in psychiatry",
+   "license": "CC BY",
+   "topic": "depression",
+   "year": 2022
+  },
+  "PMC9549726": {
+   "doi": "10.1002/jbm4.10673",
+   "journal": "JBMR plus",
+   "license": "CC BY 4.0",
+   "topic": "osteoporosis",
+   "year": 2022
+  },
+  "PMC9551046": {
+   "doi": "10.1038/s41598-022-21244-x",
+   "journal": "Scientific reports",
+   "license": "CC BY 4.0",
+   "topic": "tuberculosis",
+   "year": 2022
+  },
+  "PMC9554822": {
+   "doi": "10.1016/j.waojou.2022.100699",
+   "journal": "The World Allergy Organization journal",
+   "license": "CC BY 4.0",
+   "topic": "asthma",
+   "year": 2022
+  },
+  "PMC9562220": {
+   "doi": "10.1038/s41598-022-22090-7",
+   "journal": "Scientific reports",
+   "license": "CC BY 4.0",
+   "topic": "stroke",
+   "year": 2022
+  },
+  "PMC9571838": {
+   "doi": "10.3390/jcm11195782",
+   "journal": "Journal of clinical medicine",
+   "license": "CC BY 4.0",
+   "topic": "sepsis",
+   "year": 2022
+  },
+  "PMC9577655": {
+   "doi": "10.1016/j.amsu.2022.104629",
+   "journal": "Annals of medicine and surgery (2012)",
+   "license": "CC BY 4.0",
+   "topic": "depression",
+   "year": 2022
+  },
+  "PMC9582241": {
+   "doi": "10.3389/fcvm.2022.992284",
+   "journal": "Frontiers in cardiovascular medicine",
+   "license": "CC BY",
+   "topic": "hypertension",
+   "year": 2022
+  },
+  "PMC9582250": {
+   "doi": "10.3389/fneur.2022.1019671",
+   "journal": "Frontiers in neurology",
+   "license": "CC BY",
+   "topic": "stroke",
+   "year": 2022
+  },
+  "PMC9582514": {
+   "doi": "10.3389/fped.2022.1004727",
+   "journal": "Frontiers in pediatrics",
+   "license": "CC BY",
+   "topic": "sepsis",
+   "year": 2022
+  },
+  "PMC9582877": {
+   "doi": "10.1016/j.abd.2021.11.004",
+   "journal": "Anais brasileiros de dermatologia",
+   "license": "CC BY 4.0",
+   "topic": "tuberculosis",
+   "year": 2022
+  },
+  "PMC9601358": {
+   "doi": "10.3390/diagnostics12102564",
+   "journal": "Diagnostics (Basel, Switzerland)",
+   "license": "CC BY 4.0",
+   "topic": "hypertension",
+   "year": 2022
+  },
+  "PMC9615143": {
+   "doi": "10.3389/fped.2022.1012136",
+   "journal": "Frontiers in pediatrics",
+   "license": "CC BY",
+   "topic": "hypertension",
+   "year": 2022
+  },
+  "PMC9634582": {
+   "doi": "10.3389/fcvm.2022.921132",
+   "journal": "Frontiers in cardiovascular medicine",
+   "license": "CC BY",
+   "topic": "heart_failure",
+   "year": 2022
+  },
+  "PMC9635327": {
+   "doi": "10.5334/jbsr.2935",
+   "journal": "Journal of the Belgian Society of Radiology",
+   "license": "CC BY",
+   "topic": "stroke",
+   "year": 2022
+  },
+  "PMC9637554": {
+   "doi": "10.1038/s41440-022-01011-1",
+   "journal": "Hypertension research : official journal of the Japanese Society of Hypertension",
+   "license": "CC BY 4.0",
+   "topic": "hypertension",
+   "year": 2022
+  },
+  "PMC9644514": {
+   "doi": "10.1186/s12931-022-02211-6",
+   "journal": "Respiratory research",
+   "license": "CC0",
+   "topic": "asthma",
+   "year": 2022
+  },
+  "PMC9650132": {
+   "doi": "10.3389/fped.2022.941570",
+   "journal": "Frontiers in pediatrics",
+   "license": "CC BY",
+   "topic": "tuberculosis",
+   "year": 2022
+  },
+  "PMC9656632": {
+   "doi": "10.3390/ijms232113130",
+   "journal": "International journal of molecular sciences",
+   "license": "CC BY 4.0",
+   "topic": "sepsis",
+   "year": 2022
+  },
+  "PMC9664146": {
+   "doi": "10.3389/fcvm.2022.1012361",
+   "journal": "Frontiers in cardiovascular medicine",
+   "license": "CC BY",
+   "topic": "heart_failure",
+   "year": 2022
+  },
+  "PMC9684007": {
+   "doi": "10.4178/epih.e2022045",
+   "journal": "Epidemiology and health",
+   "license": "CC BY 4.0",
+   "topic": "tuberculosis",
+   "year": 2022
+  },
+  "PMC9713074": {
+   "doi": "10.1186/s12891-022-06014-0",
+   "journal": "BMC musculoskeletal disorders",
+   "license": "CC0",
+   "topic": "osteoporosis",
+   "year": 2022
+  },
+  "PMC9714673": {
+   "doi": "10.3389/fmed.2022.1045503",
+   "journal": "Frontiers in medicine",
+   "license": "CC BY",
+   "topic": "asthma",
+   "year": 2022
+  },
+  "PMC9715884": {
+   "doi": "10.1002/ehf2.14004",
+   "journal": "ESC heart failure",
+   "license": "CC BY 4.0",
+   "topic": "heart_failure",
+   "year": 2022
+  },
+  "PMC9717483": {
+   "doi": "10.1186/s13052-022-01378-4",
+   "journal": "Italian journal of pediatrics",
+   "license": "CC0",
+   "topic": "hypertension",
+   "year": 2022
+  },
+  "PMC9723407": {
+   "doi": "10.1016/j.nicl.2022.103275",
+   "journal": "NeuroImage. Clinical",
+   "license": "CC BY 4.0",
+   "topic": "depression",
+   "year": 2022
+  },
+  "PMC9734033": {
+   "doi": "10.1038/s41371-021-00635-z",
+   "journal": "Journal of human hypertension",
+   "license": "CC BY 4.0",
+   "topic": "hypertension",
+   "year": 2022
+  },
+  "PMC9740887": {
+   "doi": "10.3390/ijerph192315508",
+   "journal": "International journal of environmental research and public health",
+   "license": "CC BY 4.0",
+   "topic": "atrial_fibrillation",
+   "year": 2022
+  },
+  "PMC9748753": {
+   "doi": "10.1002/clc.23904",
+   "journal": "Clinical cardiology",
+   "license": "CC BY 4.0",
+   "topic": "atrial_fibrillation",
+   "year": 2022
+  },
+  "PMC9751131": {
+   "doi": "10.1038/s41467-022-35453-5",
+   "journal": "Nature communications",
+   "license": "CC BY 4.0",
+   "topic": "tuberculosis",
+   "year": 2022
+  },
+  "PMC9756779": {
+   "doi": "10.1186/s12931-022-02261-w",
+   "journal": "Respiratory research",
+   "license": "CC0",
+   "topic": "asthma",
+   "year": 2022
+  },
+  "PMC9773752": {
+   "doi": "10.1002/ehf2.14096",
+   "journal": "ESC heart failure",
+   "license": "CC BY 4.0",
+   "topic": "heart_failure",
+   "year": 2022
+  },
+  "PMC9780452": {
+   "doi": "10.3389/fgene.2022.1003366",
+   "journal": "Frontiers in genetics",
+   "license": "CC BY",
+   "topic": "atrial_fibrillation",
+   "year": 2022
+  },
+  "PMC9780679": {
+   "doi": "10.3389/fimmu.2022.1026173",
+   "journal": "Frontiers in immunology",
+   "license": "CC BY",
+   "topic": "sepsis",
+   "year": 2022
+  },
+  "PMC9785292": {
+   "doi": "10.3390/jcm11247466",
+   "journal": "Journal of clinical medicine",
+   "license": "CC BY 4.0",
+   "topic": "asthma",
+   "year": 2022
+  },
+  "PMC9800348": {
+   "doi": "10.1007/s10916-022-01900-5",
+   "journal": "Journal of medical systems",
+   "license": "CC BY 4.0",
+   "topic": "hypertension",
+   "year": 2023
+  },
+  "PMC9810820": {
+   "doi": "10.3389/fmicb.2022.1056608",
+   "journal": "Frontiers in microbiology",
+   "license": "CC BY",
+   "topic": "tuberculosis",
+   "year": 2022
+  },
+  "PMC9813417": {
+   "doi": "10.3389/fcimb.2022.1079569",
+   "journal": "Frontiers in cellular and infection microbiology",
+   "license": "CC BY",
+   "topic": "tuberculosis",
+   "year": 2022
+  },
+  "PMC9827017": {
+   "doi": "10.1186/s12872-023-03039-8",
+   "journal": "BMC cardiovascular disorders",
+   "license": "CC0",
+   "topic": "heart_failure",
+   "year": 2023
+  },
+  "PMC9850656": {
+   "doi": "10.1093/ijnp/pyac070",
+   "journal": "The international journal of neuropsychopharmacology",
+   "license": "CC BY 4.0",
+   "topic": "depression",
+   "year": 2022
+  },
+  "PMC9856300": {
+   "doi": "10.3390/children10010033",
+   "journal": "Children (Basel, Switzerland)",
+   "license": "CC BY 4.0",
+   "topic": "asthma",
+   "year": 2023
+  },
+  "PMC9861713": {
+   "doi": "10.3390/pathogens12010084",
+   "journal": "Pathogens (Basel, Switzerland)",
+   "license": "CC BY 4.0",
+   "topic": "tuberculosis",
+   "year": 2023
+  },
+  "PMC9872250": {
+   "doi": "10.1136/heartjnl-2022-321027",
+   "journal": "Heart (British Cardiac Society)",
+   "license": "CC BY 4.0",
+   "topic": "atrial_fibrillation",
+   "year": 2022
+  },
+  "PMC9905231": {
+   "doi": "10.3389/fcvm.2023.1100425",
+   "journal": "Frontiers in cardiovascular medicine",
+   "license": "CC BY",
+   "topic": "atrial_fibrillation",
+   "year": 2023
+  },
+  "PMC9921812": {
+   "doi": "10.3390/nu15030486",
+   "journal": "Nutrients",
+   "license": "CC BY 4.0",
+   "topic": "asthma",
+   "year": 2023
+  },
+  "PMC9926793": {
+   "doi": "10.1186/s12875-023-02004-w",
+   "journal": "BMC primary care",
+   "license": "CC0",
+   "topic": "atrial_fibrillation",
+   "year": 2023
+  },
+  "PMC9929726": {
+   "doi": "10.2196/41248",
+   "journal": "JMIR cardio",
+   "license": "CC BY 4.0",
+   "topic": "heart_failure",
+   "year": 2023
+  },
+  "PMC9947135": {
+   "doi": "10.1038/s41398-023-02362-0",
+   "journal": "Translational psychiatry",
+   "license": "CC BY 4.0",
+   "topic": "depression",
+   "year": 2023
+  },
+  "PMC9958730": {
+   "doi": "10.3390/jpm13020322",
+   "journal": "Journal of personalized medicine",
+   "license": "CC BY 4.0",
+   "topic": "osteoporosis",
+   "year": 2023
+  },
+  "PMC9964338": {
+   "doi": "10.3390/microorganisms11020235",
+   "journal": "Microorganisms",
+   "license": "CC BY 4.0",
+   "topic": "sepsis",
+   "year": 2023
+  },
+  "PMC9972809": {
+   "doi": "10.1093/ehjqcco/qcac024",
+   "journal": "European heart journal. Quality of care & clinical outcomes",
+   "license": "CC BY 4.0",
+   "topic": "atrial_fibrillation",
+   "year": 2022
+  },
+  "PMC9977700": {
+   "doi": "10.1007/s11897-023-00590-5",
+   "journal": "Current heart failure reports",
+   "license": "CC BY 4.0",
+   "topic": "hypertension",
+   "year": 2023
+  },
+  "PMC9978786": {
+   "doi": "10.3389/fpubh.2023.1084005",
+   "journal": "Frontiers in public health",
+   "license": "CC BY",
+   "topic": "osteoporosis",
+   "year": 2023
+  },
+  "PMC9986258": {
+   "doi": "10.3389/fmed.2023.1114546",
+   "journal": "Frontiers in medicine",
+   "license": "CC BY",
+   "topic": "sepsis",
+   "year": 2023
+  },
+  "PMC9995446": {
+   "doi": "10.3389/fmed.2023.1090829",
+   "journal": "Frontiers in medicine",
+   "license": "CC BY",
+   "topic": "stroke",
+   "year": 2023
+  }
+ },
+ "date_range": "2016:2023[pdat]",
+ "topics": {
+  "asthma": "asthma[Title]",
+  "atrial_fibrillation": "\"atrial fibrillation\"[Title]",
+  "depression": "\"major depressive disorder\"[Title]",
+  "heart_failure": "\"heart failure\"[Title]",
+  "hypertension": "hypertension[Title]",
+  "osteoporosis": "osteoporosis[Title]",
+  "sepsis": "sepsis[Title]",
+  "stroke": "stroke[Title]",
+  "tuberculosis": "tuberculosis[Title]",
+  "type2_diabetes": "\"type 2 diabetes\"[Title]"
+ }
+}
