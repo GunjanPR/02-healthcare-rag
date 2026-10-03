@@ -55,6 +55,14 @@ SYSTEM_PROMPT_V2 = (
 )
 
 PROMPTS = {"v1": SYSTEM_PROMPT, "v2": SYSTEM_PROMPT_V2}
+ABSTAIN_MODES = ("both", "threshold", "model")
+
+
+def system_prompt(version: str, abstain_mode: str = "both") -> str:
+    """The prompt's last rule lets the model decline; "threshold" mode drops it."""
+    prompt = PROMPTS[version]
+    return prompt.rsplit("\n", 1)[0] if abstain_mode == "threshold" else prompt
+
 
 SUMMARY_PROMPT = (
     "You are a biomedical research assistant. Summarize the article from the numbered "
@@ -105,6 +113,9 @@ class RAGConfig:
     # (also remove sentences no passage supports)
     citation_check: str = "off"
     support_threshold: float = 0.6
+    # Who may decline: "both" (reranker threshold, then the model's INSUFFICIENT_EVIDENCE),
+    # "threshold" (the prompt has no decline rule) or "model" (no reranker threshold)
+    abstain_mode: str = "both"
 
     def __post_init__(self) -> None:
         if self.prompt not in PROMPTS:
@@ -113,6 +124,8 @@ class RAGConfig:
             raise ValueError(f"unknown citation_repair {self.citation_repair!r}")
         if self.citation_check not in ("off", "relabel", "drop"):
             raise ValueError(f"unknown citation_check {self.citation_check!r}")
+        if self.abstain_mode not in ABSTAIN_MODES:
+            raise ValueError(f"abstain_mode must be one of {ABSTAIN_MODES}")
 
 
 @dataclass
@@ -237,7 +250,9 @@ class RAGPipeline:
         passages = state["passages"]
         if not passages:
             return "no_hits"
-        if self.reranker is not None and passages[0].score < self.config.abstain_threshold:
+        cfg = self.config
+        gated = self.reranker is not None and cfg.abstain_mode != "model"
+        if gated and passages[0].score < cfg.abstain_threshold:
             return "low_score"
         return "generate"
 
@@ -246,7 +261,10 @@ class RAGPipeline:
         context = number_passages(state["passages"])
         asked = f"{state['question']} {state.get('instruction', '')}".strip()
         messages = [
-            {"role": "system", "content": PROMPTS[self.config.prompt]},
+            {
+                "role": "system",
+                "content": system_prompt(self.config.prompt, self.config.abstain_mode),
+            },
             {"role": "user", "content": f"Context:\n{context}\n\nQuestion: {asked}"},
         ]
         with self._span(state, "generate") as span:

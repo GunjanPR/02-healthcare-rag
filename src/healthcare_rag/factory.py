@@ -23,6 +23,7 @@ def rag_config(settings: Settings) -> RAGConfig:
         citation_repair=settings.citation_repair,
         citation_check=settings.citation_check,
         support_threshold=settings.support_threshold,
+        abstain_mode=settings.abstain_mode,
     )
 
 

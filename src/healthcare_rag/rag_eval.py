@@ -332,7 +332,7 @@ def grade_answers(data: dict, questions: list[Question], split: str) -> dict[str
                 ]
             ),
             "cited_rate": mean([float(bool(r["cited"])) for r in all_answered]),
-            "faithful_rate": mean([float(r["faithful"]) for r in all_answered]),
+            "faithful_rate": mean([float(r["faithful"]) for r in all_answered if "faithful" in r]),
             "unanswerable_abstained": mean([float(r["abstained"]) for r in una]),
             "abstention_precision": (
                 mean([float(not qs[r["id"]].answerable) for r in abstentions])

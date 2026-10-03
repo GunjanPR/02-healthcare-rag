@@ -61,6 +61,8 @@ class Settings(BaseSettings):
     # off | relabel | drop
     citation_check: str = "off"
     support_threshold: float = 0.6
+    # both | threshold | model (see rag.RAGConfig.abstain_mode)
+    abstain_mode: str = "both"
     # Blank = lexical support scoring; an NLI cross-encoder id switches to model scoring
     nli_model: str = ""
 
