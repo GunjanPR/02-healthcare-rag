@@ -21,6 +21,7 @@ from healthcare_rag.config import get_settings
 from healthcare_rag.gateway import GatewayClient
 
 TOY_DIR = Path("eval/toy")
+TOY_INDEX = "toy_chunks"  # kept apart from the PMC index
 RECALL_KS = (1, 3, 5)
 MRR_DEPTH = 10
 
@@ -168,6 +169,7 @@ def to_markdown(summary: dict, rows: list[dict], meta: dict) -> str:
 
 def main(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    parser.add_argument("--index", default=TOY_INDEX, help="OpenSearch index name")
     sub = parser.add_subparsers(dest="cmd", required=True)
     idx = sub.add_parser("index", help="(re)build the toy BM25 index")
     idx.add_argument("--corpus", type=Path, default=TOY_DIR / "corpus.json")
@@ -180,16 +182,16 @@ def main(argv: list[str] | None = None) -> None:
     args = parser.parse_args(argv)
 
     settings = get_settings()
-    index = BM25Index(client_from_settings(settings), settings.opensearch_index)
+    index = BM25Index(client_from_settings(settings), args.index)
 
     if args.cmd == "index":
         docs = load_corpus(args.corpus)
         index.ensure_index(recreate=True)
         index.index_documents(docs)
-        print(f"indexed {index.count()} documents into {settings.opensearch_index!r}")
+        print(f"indexed {index.count()} documents into {args.index!r}")
         return
 
-    gateway = GatewayClient.from_settings(settings)
+    gateway = GatewayClient.from_settings(settings, bypass_cache=True)
     pipeline = BM25Baseline(index, gateway, k=args.k)
     questions = load_questions(args.questions)
     pipeline.answer("warm-up: what is metformin?")  # load the model; not measured
@@ -197,7 +199,7 @@ def main(argv: list[str] | None = None) -> None:
 
     meta = {
         "date": datetime.now(UTC).strftime("%Y-%m-%d %H:%M UTC"),
-        "Retrieval": f"OpenSearch BM25 (english analyzer), index `{settings.opensearch_index}`, "
+        "Retrieval": f"OpenSearch BM25 (english analyzer), index `{args.index}`, "
         f"{index.count()} documents",
         "Generation": f"`{settings.chat_model}` via the LLM Gateway at "
         f"`{settings.gateway_base_url}` (cache bypassed, temperature 0, max 256 tokens), "

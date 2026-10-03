@@ -120,10 +120,27 @@ make eval-baseline HARDWARE="<your machine and power state>"
 #   write eval/results/baseline_bm25.json (git-ignored) and docs/baseline_results.md
 ```
 
-### Try it (from M2)
+### Try it
 ```bash
-curl -X POST http://localhost:8010/ask -H "Content-Type: application/json" \
-  -d '{"question": "What variants in BRCA1 are associated with reduced DNA repair?"}'
+# Ask a question. Optional filters: sections, topics, pmcids, year_min, year_max
+curl -X POST http://127.0.0.1:8010/ask -H "Content-Type: application/json" \
+  -d '{"question": "Why do some patients on lisinopril get a dry cough?"}'
+
+# Summarize one indexed article
+curl -X POST http://127.0.0.1:8010/summarize -H "Content-Type: application/json" \
+  -d '{"pmcid": "PMC1234567"}'
+```
+`/ask` returns the answer, numbered citations (PMCID, section, link and snippet), per-stage
+timings and token usage and cost. If the evidence is weak, it abstains with a fixed message
+and a `reason`:
+- `no_hits`: nothing was retrieved.
+- `low_score`: the best reranker score is below `ABSTAIN_THRESHOLD`.
+- `model_insufficient`: the model replied that the passages don't contain the answer.
+- `uncited`: the answer cited none of the passages it was given.
+
+To try it on the toy corpus before ingesting PMC (M3):
+```bash
+make index-toy && OPENSEARCH_INDEX=toy_chunks make dev
 ```
 
 ### Lint and test
@@ -203,9 +220,9 @@ Milestones follow [SHARED_STANDARDS.md](../SHARED_STANDARDS.md). Each one has a 
 - [x] Baseline: BM25-only retrieval + single gateway call on a toy corpus (measured; see Evaluation & Results)
 
 ### M2: Core functionality
-- [ ] Gateway client (OpenAI-compatible, configured via `GATEWAY_BASE_URL`)
-- [ ] LangGraph flow: retrieve → generate with citations → abstain on weak evidence
-- [ ] FastAPI `/ask` and `/summarize` endpoints
+- [x] Gateway client (OpenAI-compatible, configured via `GATEWAY_BASE_URL`): chat + embeddings, token usage and cost from gateway headers
+- [x] LangGraph flow: retrieve → rerank → generate with citations → verify, abstaining on weak evidence
+- [x] FastAPI `/ask` and `/summarize` endpoints (verified live against the gateway on the toy corpus)
 
 ### M3: Data / storage layer
 - [ ] PMC OA ingestion: PMCID normalization, dedupe, section-aware chunking

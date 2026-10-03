@@ -131,7 +131,7 @@ def test_evaluate_and_markdown() -> None:
 
 def _gateway(handler) -> GatewayClient:
     http = httpx.Client(transport=httpx.MockTransport(handler))
-    return GatewayClient("http://gw.test/v1", "k", "llama3.2", http=http)
+    return GatewayClient("http://gw.test/v1", "k", "llama3.2", bypass_cache=True, http=http)
 
 
 def test_gateway_client_parses_usage_and_headers() -> None:

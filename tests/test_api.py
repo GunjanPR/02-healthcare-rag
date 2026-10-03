@@ -4,8 +4,12 @@ import httpx
 import pytest
 from fastapi.testclient import TestClient
 
+from fakes import FakeChat, FakeRetriever, hit
 from healthcare_rag import main
 from healthcare_rag.config import Settings, get_settings
+from healthcare_rag.factory import get_index, get_pipeline
+from healthcare_rag.gateway import GatewayError
+from healthcare_rag.rag import RAGPipeline
 
 
 @pytest.fixture
@@ -82,3 +86,75 @@ def test_gateway_down_does_not_block_readiness(
     resp = client.get("/ready")
     assert resp.status_code == 200
     assert resp.json()["gateway"] == "http 502"
+
+
+class FakeIndex:
+    def __init__(self, chunks: list) -> None:
+        self.chunks = chunks
+        self.asked: list[str] = []
+
+    def chunks_for_doc(self, doc_id: str, limit: int = 200) -> list:
+        self.asked.append(doc_id)
+        return self.chunks
+
+
+@pytest.fixture
+def rag_client() -> Iterator[tuple[TestClient, FakeChat, FakeRetriever]]:
+    chat = FakeChat("Statins inhibit HMG-CoA reductase [2].")
+    retriever = FakeRetriever([hit(1), hit(2, "Statins inhibit HMG-CoA reductase.")])
+    main.app.dependency_overrides[get_pipeline] = lambda: RAGPipeline(retriever, chat)
+    main.app.dependency_overrides[get_index] = lambda: FakeIndex([hit(1), hit(2)])
+    yield TestClient(main.app), chat, retriever
+    main.app.dependency_overrides.clear()
+
+
+def test_ask_returns_answer_with_citations(rag_client) -> None:
+    client, _, retriever = rag_client
+    resp = client.post(
+        "/ask",
+        json={"question": "What do statins inhibit?", "filters": {"year_min": 2015}},
+    )
+    assert resp.status_code == 200
+    body = resp.json()
+    assert body["abstained"] is False
+    assert body["answer"].endswith("[2].")
+    assert [c["chunk_id"] for c in body["citations"]] == ["c2"]
+    assert body["citations"][0]["url"] == "https://pmc.ncbi.nlm.nih.gov/articles/PMC2/"
+    assert body["usage"]["llm_calls"] == 1
+    assert retriever.calls[0][2].year_min == 2015
+
+
+def test_ask_validates_input(rag_client) -> None:
+    client, _, _ = rag_client
+    assert client.post("/ask", json={"question": ""}).status_code == 422
+
+
+def test_ask_maps_gateway_errors_to_502(rag_client) -> None:
+    client, chat, _ = rag_client
+
+    def boom(*_, **__):
+        raise GatewayError("gateway returned 500")
+
+    chat.chat = boom
+    resp = client.post("/ask", json={"question": "What do statins inhibit?"})
+    assert resp.status_code == 502
+
+
+def test_summarize_normalizes_pmcid(rag_client) -> None:
+    client, _, _ = rag_client
+    resp = client.post("/summarize", json={"pmcid": "1234"})
+    assert resp.status_code == 200
+    assert resp.json()["citations"][0]["pmcid"] == "PMC2"
+    assert client.post("/summarize", json={"pmcid": "not-an-id"}).status_code == 422
+
+
+def test_summarize_404_when_not_indexed() -> None:
+    main.app.dependency_overrides[get_pipeline] = lambda: RAGPipeline(
+        FakeRetriever([]), FakeChat("x")
+    )
+    main.app.dependency_overrides[get_index] = lambda: FakeIndex([])
+    try:
+        resp = TestClient(main.app).post("/summarize", json={"pmcid": "PMC9"})
+        assert resp.status_code == 404
+    finally:
+        main.app.dependency_overrides.clear()

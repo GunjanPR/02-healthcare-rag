@@ -49,7 +49,7 @@ known-first-party = ["healthcare_rag"]
 [tool.pytest.ini_options]
 minversion = "8.0"
 testpaths = ["tests"]
-pythonpath = ["src"]
+pythonpath = ["src", "tests"]
 addopts = "-ra -q --strict-markers -m \"not integration\""
 markers = [
     "integration: tests that need running external services (deselect with '-m \"not integration\"')",
