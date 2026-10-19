@@ -19,8 +19,10 @@ rate limits, and per-query cost and latency come from the gateway.
 **Result:** on 92 held-out questions over 500 PMC articles, the system **improved answer
 accuracy by 9.8 points (77.2% → 87.0%) and NDCG@10 by 24% (0.592 → 0.734) against the
 BM25-only baseline**. It also declined all 14 out-of-scope test questions without an LLM
-call, while keeping p95 latency at 7.6 s on a 20 W laptop GPU at $0 per query. Details,
-caveats and confidence intervals are in [Evaluation & Results](#evaluation--results).
+call, while keeping p95 latency at 7.6 s on a 20 W laptop GPU at $0 per query. A
+cross-family LLM judge (kappa 0.83 against hand labels) rates 86.4% of its answers as
+supported by the cited passages. Details, caveats and confidence intervals are in
+[Evaluation & Results](#evaluation--results).
 
 ## Tech Stack
 
@@ -231,7 +233,8 @@ through the gateway), rerank, then generation inside the gateway.*
 ### Lint and test
 ```bash
 make lint     # ruff check + ruff format --check
-make test     # pytest (unit tests only; no Docker or network needed)
+make test     # pytest: 122 unit tests, no Docker or network needed
+make coverage # the same with line coverage (63%; fails below 60%)
 make test-integration  # tests marked `integration` (needs `make up`)
 make format   # auto-fix lint and formatting
 ```
@@ -304,15 +307,42 @@ top 50 instead of 20 gave no gain on dev at 2.4× the rerank latency.
   81.5% accuracy for the full system. Dev showed that every discarded answer was
   otherwise correct, so v2 adds one follow-up turn asking for citations. Both runs are in
   the report.
-- **Faithfulness:** an LLM judge (the same 3B model) rated 43% of answers faithful.
-  Claude checked 20 of its verdicts by hand: all 10 YES verdicts held up, but 7 of 10 NO
-  verdicts were wrong. So **no faithfulness rate is claimed**, and the >90% grounded-answer
-  target remains **unmeasured**. A stronger judge is future work.
+- **Faithfulness (measured 2026-10-19):** a second-pass judge from another model family,
+  `qwen2.5:7b-instruct`, agreed with 20 hand labels 95% of the time (Cohen's kappa 0.83).
+  The 3B generator judging itself managed only 0.65 (kappa 0.30), and an NLI cross-encoder
+  0.30. By that judge, **86.4%** of the full system's answers are supported by their
+  passages (95% CI 77.7-92.0, n = 88), against 81.0% for the BM25 baseline. That is short
+  of the >90% target, so the target is **not met**. Details and raw outputs:
+  [docs/benchmarks/2026-10-19-faithfulness](docs/benchmarks/2026-10-19-faithfulness/README.md).
+- **Keyword grading, checked:** the same judge graded correctness, and the 27 answers where
+  it and the keywords disagree were read by hand. Keywords were right in 17 and the judge in
+  6 (4 unclear). Corrected accuracy is **82.6%** for the full system and 75.0% for the
+  baseline (+7.6 points), so the keyword figure above overstates the full system by about
+  4 points.
 - **Cost:** $0, because the gateway prices the local Ollama backend at zero. Token counts
   are logged for pricing a hosted backend.
 - **Hardware:** Acer Nitro V 15 (i5-13420H, RTX 4050 Laptop 6 GB) on AC power over
   USB-C, with the GPU held to **20 W**. Ollama, the embedder and the reranker share that
   GPU, and requests run one at a time.
+
+### PubMedQA (external benchmark, measured 2026-10-03)
+
+The same pipeline on the 500 expert-labelled PQA-L test questions (`make pubmedqa`), with
+the 1,000 PQA-L abstracts, minus their conclusions, indexed separately. Answers must start
+with yes, no or maybe.
+
+| | Oracle abstract only | M1 baseline | Full system |
+|---|---|---|---|
+| Accuracy | 61.4% | 61.8% | 61.8% |
+| Macro-F1 | 0.410 | 0.424 | 0.419 |
+| Gold abstract in the passages shown | 100% | 98.6% | 99.6% |
+| Latency p50 / p95 | 2.6 s / 3.8 s | 3.2 s / 4.6 s | 4.3 s / 7.5 s |
+
+Retrieval is not the bottleneck here: the gold abstract is almost always shown, and even
+the oracle that is handed it scores 61.4%. The limit is the 3B generator's yes/no/maybe
+reasoning (it never says "maybe" in the full system), so the full system's +0.0 points
+over the baseline (95% CI -3.2 to +3.2) is expected. Full table:
+[docs/pubmedqa_results.md](docs/pubmedqa_results.md).
 
 ### M1 baseline: BM25-only + one gateway call (measured 2026-10-03)
 
@@ -384,7 +414,7 @@ Milestones follow [SHARED_STANDARDS.md](../SHARED_STANDARDS.md). Each one has a 
 ### M4: Evaluation & testing
 - [x] QA set: 159 questions (139 answerable from sampled passages + 20 out of scope), dev/test split; written by Claude, not clinician-labeled
 - [x] Retrieval eval: recall@k, NDCG@10, MRR vs the BM25-only baseline (`make eval`)
-- [x] Answer eval: accuracy, citation accuracy, abstention; LLM-judge faithfulness with a manual audit (judge too unreliable to report a rate)
+- [x] Answer eval: accuracy, citation accuracy, abstention; faithfulness by a cross-family judge (qwen2.5 7B, kappa 0.83 against hand labels), with every judge/keyword disagreement read by hand
 - [x] Unit + integration tests (metrics, graph, endpoints, failure paths; OpenSearch/Qdrant integration)
 
 ### M5: Observability / monitoring

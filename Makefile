@@ -1,7 +1,7 @@
 # Windows: install make with `choco install make`, or run from Git Bash.
 PYTHON ?= python
 
-.PHONY: install lint format test test-integration run dev up up-all up-stack down logs ingest index-toy eval-baseline eval pubmedqa
+.PHONY: install lint format test coverage test-integration run dev up up-all up-stack down logs ingest index-toy eval-baseline eval pubmedqa
 
 install:
 	$(PYTHON) -m pip install --upgrade pip
@@ -17,6 +17,11 @@ format:
 
 test:
 	$(PYTHON) -m pytest
+
+# Unit tests with line coverage. The floor covers unit tests only: OpenSearch, Qdrant and
+# GPU code paths are exercised by `make test-integration` and the eval, not counted here.
+coverage:
+	$(PYTHON) -m pytest --cov=healthcare_rag --cov-report=term-missing:skip-covered --cov-fail-under=60
 
 # Needs OpenSearch + Qdrant running (make up)
 test-integration:

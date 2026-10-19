@@ -8,7 +8,7 @@ mid-run. Two jobs:
     # faithfulness scorers vs the 20 manual labels in eval/qa/judge_audit.json
     python -m healthcare_rag.judge audit
     # faithfulness rate of answered rows with one scorer
-    python -m healthcare_rag.judge faithfulness eval/results/answers.json --scorer nli
+    python -m healthcare_rag.judge faithfulness eval/results/answers.json --scorer judge
 
 Keyword grading misses right answers phrased in other words; the correctness judge is a
 multi-reference check of that. Agreement is reported with Cohen's kappa and every
@@ -17,6 +17,7 @@ disagreement is listed, so the two can be read side by side.
 
 import argparse
 import json
+import math
 from pathlib import Path
 from typing import Any
 
@@ -48,6 +49,16 @@ def cohen_kappa(a: list[bool], b: list[bool]) -> float:
     pa, pb = sum(a) / n, sum(b) / n
     expected = pa * pb + (1 - pa) * (1 - pb)
     return 1.0 if expected == 1 else (observed - expected) / (1 - expected)
+
+
+def wilson_interval(k: int, n: int, z: float = 1.96) -> tuple[float, float]:
+    """95% Wilson score interval for k successes in n (sound at small n and rates near 1)."""
+    if not n:
+        return (float("nan"), float("nan"))
+    p = k / n
+    centre = (p + z * z / (2 * n)) / (1 + z * z / n)
+    half = z * math.sqrt(p * (1 - p) / n + z * z / (4 * n * n)) / (1 + z * z / n)
+    return (centre - half, centre + half)
 
 
 def agreement(reference: list[bool], other: list[bool]) -> dict[str, Any]:
@@ -231,13 +242,22 @@ def cmd_faithfulness(args: argparse.Namespace, settings: Settings) -> None:
         def faithful(r: dict) -> bool:
             return scorer_faithful(r["answer"], [hits[p] for p in r["passages"]], scorer, thr)
 
-    by_system: dict[str, list[float]] = {}
-    for r in rows:
-        by_system.setdefault(r["system"], []).append(float(faithful(r)))
-    summary = {s: {"n_answered": len(v), "faithful_rate": mean(v)} for s, v in by_system.items()}
+    verdicts = [{"id": r["id"], "system": r["system"], "faithful": faithful(r)} for r in rows]
+    summary = {}
+    for name in dict.fromkeys(v["system"] for v in verdicts):
+        sub = [v["faithful"] for v in verdicts if v["system"] == name]
+        summary[name] = {
+            "n_answered": len(sub),
+            "faithful_rate": mean([float(x) for x in sub]),
+            "ci95": list(wilson_interval(sum(sub), len(sub))),
+        }
     print(json.dumps({"scorer": args.scorer, "split": args.split, "summary": summary}, indent=1))
-    path = RESULTS / f"{Path(args.answers).stem}__faithfulness_{args.scorer}_{args.split}.json"
-    path.write_text(json.dumps({"scorer": args.scorer, "summary": summary}, indent=1), "utf-8")
+    path = Path(
+        args.out
+        or RESULTS / f"{Path(args.answers).stem}__faithfulness_{args.scorer}_{args.split}.json"
+    )
+    result = {"scorer": args.scorer, "split": args.split, "summary": summary, "rows": verdicts}
+    path.write_text(json.dumps(result, indent=1), "utf-8")
 
 
 def main(argv: list[str] | None = None) -> None:
@@ -247,7 +267,7 @@ def main(argv: list[str] | None = None) -> None:
     parser.add_argument("--split", choices=["dev", "test", "all"], default="test")
     parser.add_argument("--systems", default="")
     parser.add_argument("--model", default=JUDGE_MODEL)
-    parser.add_argument("--scorer", choices=["lexical", "nli", "judge"], default="nli")
+    parser.add_argument("--scorer", choices=["lexical", "nli", "judge"], default="judge")
     parser.add_argument("--nli-model", default="cross-encoder/nli-deberta-v3-base")
     parser.add_argument("--nli-threshold", type=float, default=0.5)
     parser.add_argument("--lexical-threshold", type=float, default=0.6)

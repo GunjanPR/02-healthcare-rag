@@ -1,0 +1,17 @@
+{
+ "scorer": "lexical",
+ "summary": {
+  "m1_baseline": {
+   "n_answered": 79,
+   "faithful_rate": 0.3291139240506329
+  },
+  "bm25_rag": {
+   "n_answered": 86,
+   "faithful_rate": 0.6511627906976745
+  },
+  "full": {
+   "n_answered": 88,
+   "faithful_rate": 0.625
+  }
+ }
+}

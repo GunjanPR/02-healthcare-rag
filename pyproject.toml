@@ -31,6 +31,7 @@ dependencies = [
 dev = [
     "ruff>=0.6",
     "pytest>=8.0",
+    "pytest-cov>=5.0",
 ]
 # Local cross-encoder reranker (MedCPT). Pulls in torch, so it is not in the Docker image.
 # For a GPU, install the CUDA build of torch first:

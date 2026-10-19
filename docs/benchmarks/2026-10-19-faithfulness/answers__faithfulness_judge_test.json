@@ -1,0 +1,17 @@
+{
+ "scorer": "judge",
+ "summary": {
+  "m1_baseline": {
+   "n_answered": 79,
+   "faithful_rate": 0.810126582278481
+  },
+  "bm25_rag": {
+   "n_answered": 86,
+   "faithful_rate": 0.9069767441860465
+  },
+  "full": {
+   "n_answered": 88,
+   "faithful_rate": 0.8636363636363636
+  }
+ }
+}
