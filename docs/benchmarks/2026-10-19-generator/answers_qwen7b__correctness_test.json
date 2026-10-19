@@ -1,0 +1,1884 @@
+{
+ "judge_model": "qwen2.5:7b-instruct",
+ "answers": "eval/results/experiments/qwen7b__pmc__all.json",
+ "split": "test",
+ "summary": {
+  "m1_baseline": {
+   "keyword_accuracy": 0.7717391304347826,
+   "judge_accuracy": 0.7391304347826086,
+   "n": 92,
+   "agreement": 0.967391304347826,
+   "kappa": 0.9118773946360152,
+   "reference_true_matched": "68/71",
+   "reference_false_matched": "21/21"
+  },
+  "bm25_rag": {
+   "keyword_accuracy": 0.8260869565217391,
+   "judge_accuracy": 0.8152173913043478,
+   "n": 92,
+   "agreement": 0.967391304347826,
+   "kappa": 0.8892455858747993,
+   "reference_true_matched": "74/76",
+   "reference_false_matched": "15/16"
+  },
+  "full": {
+   "keyword_accuracy": 0.8804347826086957,
+   "judge_accuracy": 0.8260869565217391,
+   "n": 92,
+   "agreement": 0.9456521739130435,
+   "kappa": 0.7842401500938085,
+   "reference_true_matched": "76/81",
+   "reference_false_matched": "11/11"
+  }
+ },
+ "rows": [
+  {
+   "id": "q002",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q003",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q005",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q006",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q008",
+   "system": "m1_baseline",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q009",
+   "system": "m1_baseline",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q011",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q012",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q014",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q015",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q017",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q018",
+   "system": "m1_baseline",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q020",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q021",
+   "system": "m1_baseline",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q023",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q024",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q026",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q027",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": false
+  },
+  {
+   "id": "q029",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q030",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q032",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q033",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q035",
+   "system": "m1_baseline",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q036",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q038",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q039",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q041",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q042",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q044",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q045",
+   "system": "m1_baseline",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q047",
+   "system": "m1_baseline",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q048",
+   "system": "m1_baseline",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q050",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q051",
+   "system": "m1_baseline",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q053",
+   "system": "m1_baseline",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q054",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q056",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q057",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q059",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q060",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q062",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q063",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q065",
+   "system": "m1_baseline",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q066",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q068",
+   "system": "m1_baseline",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q069",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q071",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q072",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": false
+  },
+  {
+   "id": "q074",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q075",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q077",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q078",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q080",
+   "system": "m1_baseline",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q081",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q083",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q084",
+   "system": "m1_baseline",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q086",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q087",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q089",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q090",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q092",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q093",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": false
+  },
+  {
+   "id": "q095",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q096",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q098",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q099",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q101",
+   "system": "m1_baseline",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q102",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q104",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q105",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q107",
+   "system": "m1_baseline",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q108",
+   "system": "m1_baseline",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q110",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q111",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q113",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q114",
+   "system": "m1_baseline",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q116",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q117",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q119",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q120",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q122",
+   "system": "m1_baseline",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q123",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q125",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q126",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q128",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q129",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q131",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q132",
+   "system": "m1_baseline",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q134",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q135",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q137",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q138",
+   "system": "m1_baseline",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q002",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q003",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q005",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q006",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q008",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": false
+  },
+  {
+   "id": "q009",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q011",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q012",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q014",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q015",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q017",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q018",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q020",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q021",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q023",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q024",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q026",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q027",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q029",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q030",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q032",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q033",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q035",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q036",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q038",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q039",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q041",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q042",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q044",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q045",
+   "system": "bm25_rag",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q047",
+   "system": "bm25_rag",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q048",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q050",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q051",
+   "system": "bm25_rag",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q053",
+   "system": "bm25_rag",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q054",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q056",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q057",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q059",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q060",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q062",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q063",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q065",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q066",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q068",
+   "system": "bm25_rag",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q069",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q071",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q072",
+   "system": "bm25_rag",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q074",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q075",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q077",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q078",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q080",
+   "system": "bm25_rag",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q081",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q083",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q084",
+   "system": "bm25_rag",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q086",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q087",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q089",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q090",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q092",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q093",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": false
+  },
+  {
+   "id": "q095",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q096",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q098",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q099",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q101",
+   "system": "bm25_rag",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q102",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q104",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q105",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q107",
+   "system": "bm25_rag",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q108",
+   "system": "bm25_rag",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q110",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q111",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q113",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q114",
+   "system": "bm25_rag",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q116",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q117",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q119",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q120",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q122",
+   "system": "bm25_rag",
+   "keyword": false,
+   "judge": true
+  },
+  {
+   "id": "q123",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q125",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q126",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q128",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q129",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q131",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q132",
+   "system": "bm25_rag",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q134",
+   "system": "bm25_rag",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q135",
+   "system": "bm25_rag",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q137",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q138",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q002",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q003",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q005",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q006",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q008",
+   "system": "full",
+   "keyword": true,
+   "judge": false
+  },
+  {
+   "id": "q009",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q011",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q012",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q014",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q015",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q017",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q018",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q020",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q021",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q023",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q024",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q026",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q027",
+   "system": "full",
+   "keyword": true,
+   "judge": false
+  },
+  {
+   "id": "q029",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q030",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q032",
+   "system": "full",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q033",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q035",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q036",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q038",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q039",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q041",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q042",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q044",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q045",
+   "system": "full",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q047",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q048",
+   "system": "full",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q050",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q051",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q053",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q054",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q056",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q057",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q059",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q060",
+   "system": "full",
+   "keyword": true,
+   "judge": false
+  },
+  {
+   "id": "q062",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q063",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q065",
+   "system": "full",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q066",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q068",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q069",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q071",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q072",
+   "system": "full",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q074",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q075",
+   "system": "full",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q077",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q078",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q080",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q081",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q083",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q084",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q086",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q087",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q089",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q090",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q092",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q093",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q095",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q096",
+   "system": "full",
+   "keyword": true,
+   "judge": false
+  },
+  {
+   "id": "q098",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q099",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q101",
+   "system": "full",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q102",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q104",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q105",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q107",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q108",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q110",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q111",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q113",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q114",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q116",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q117",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q119",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q120",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q122",
+   "system": "full",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q123",
+   "system": "full",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q125",
+   "system": "full",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q126",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q128",
+   "system": "full",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q129",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q131",
+   "system": "full",
+   "keyword": true,
+   "judge": false
+  },
+  {
+   "id": "q132",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q134",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q135",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q137",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q138",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  }
+ ],
+ "disagreements": [
+  {
+   "id": "q027",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": false,
+   "question": "What are the four predictors in the SIC-AF score for successful pharmacological cardioversion of atrial fibrillation?",
+   "keywords": [
+    [
+     "flutter"
+    ],
+    [
+     "duration"
+    ],
+    [
+     "electrical cardioversion"
+    ],
+    [
+     "antiarrhythmic"
+    ]
+   ],
+   "answer": "The four predictors in the SIC-AF score for successful pharmacological cardioversion of atrial fibrillation are: atrial flutter, duration of AF-related symptoms, history of previous electrical cardioversion, and the specific intravenous antiarrhythmic drug. [1], [3]"
+  },
+  {
+   "id": "q072",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": false,
+   "question": "Where did people with osteoporosis get much of their knowledge about the disease, according to the interpretive descriptive interview study?",
+   "keywords": [
+    [
+     "experience",
+     "family",
+     "parental",
+     "parents",
+     "close to them"
+    ]
+   ],
+   "answer": "According to the study, participants acquired knowledge about osteoporosis through personal and vicarious experiences over their lifespan [2]."
+  },
+  {
+   "id": "q093",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": false,
+   "question": "Six months after mechanical ventilation in the ICU, what share of patients with sepsis reported a new disability?",
+   "keywords": [
+    [
+     "39.6"
+    ]
+   ],
+   "answer": "Among survivors, there was no difference in the incidence of new disability at 6 months with or without sepsis, with 39.6% of sepsis patients and 35.3% of non-sepsis patients experiencing new disability [1]."
+  },
+  {
+   "id": "q008",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": false,
+   "question": "Which asthma subtypes did the latent class analysis identify among men?",
+   "keywords": [
+    [
+     "mild"
+    ],
+    [
+     "unknown severity"
+    ],
+    [
+     "partly controlled"
+    ]
+   ],
+   "answer": "For men, the latent class analysis identified three subtypes: Controlled, mild asthma (31%); Poorly controlled asthma, unknown severity (53%); and Partly controlled, severe asthma (17%) [5]."
+  },
+  {
+   "id": "q093",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": false,
+   "question": "Six months after mechanical ventilation in the ICU, what share of patients with sepsis reported a new disability?",
+   "keywords": [
+    [
+     "39.6"
+    ]
+   ],
+   "answer": "Among survivors, there was no difference for the incidence of new disability at 6 months with or without sepsis, 42/106 (39.6%) and 106/300 (35.3%) (RD, 0.00 (\u221210.29 to 10.40), P = 0.995), respectively. [1] [2]"
+  },
+  {
+   "id": "q122",
+   "system": "bm25_rag",
+   "keyword": false,
+   "judge": true,
+   "question": "How many plasma proteins were increased and decreased in abundance in active TB compared with latent TB infection?",
+   "keywords": [
+    [
+     "37"
+    ],
+    [
+     "four",
+     "4"
+    ]
+   ],
+   "answer": "Thirty-seven proteins were increased in abundance and four proteins were decreased in abundance in active TB as compared to LTBI [4]."
+  },
+  {
+   "id": "q008",
+   "system": "full",
+   "keyword": true,
+   "judge": false,
+   "question": "Which asthma subtypes did the latent class analysis identify among men?",
+   "keywords": [
+    [
+     "mild"
+    ],
+    [
+     "unknown severity"
+    ],
+    [
+     "partly controlled"
+    ]
+   ],
+   "answer": "Among men, the latent class analysis identified five subtypes of asthma: 1) Fully controlled, mild asthma, 2) Partly controlled, mild asthma, 3) Partly controlled, moderate asthma, 4) Uncontrolled, unknown severity, and 5) Uncontrolled, severe asthma [3]."
+  },
+  {
+   "id": "q027",
+   "system": "full",
+   "keyword": true,
+   "judge": false,
+   "question": "What are the four predictors in the SIC-AF score for successful pharmacological cardioversion of atrial fibrillation?",
+   "keywords": [
+    [
+     "flutter"
+    ],
+    [
+     "duration"
+    ],
+    [
+     "electrical cardioversion"
+    ],
+    [
+     "antiarrhythmic"
+    ]
+   ],
+   "answer": "The four independent predictors of successful pharmacological cardioversion in the SIC-AF score are:\n1. Atrial flutter [3]\n2. Duration of AF-related symptoms [3]\n3. Absence of previous electrical cardioversion history [3]\n4. Specific intravenous antiarrhythmic drug [3]"
+  },
+  {
+   "id": "q060",
+   "system": "full",
+   "keyword": true,
+   "judge": false,
+   "question": "How do serum SIRT1 and Klotho levels behave in pre-hypertensive individuals before hypertension sets in?",
+   "keywords": [
+    [
+     "increase",
+     "increased",
+     "rise",
+     "higher",
+     "elevated"
+    ]
+   ],
+   "answer": "Serum SIRT1 levels were significantly higher in pre-hypertensive individuals compared to the control group [3]."
+  },
+  {
+   "id": "q096",
+   "system": "full",
+   "keyword": true,
+   "judge": false,
+   "question": "What was the in-hospital mortality of surgical ICU patients with postoperative sepsis who had sepsis-associated coagulopathy?",
+   "keywords": [
+    [
+     "37.5"
+    ]
+   ],
+   "answer": "According to the study, 37.5% (27/72) patients in the SAC group died during hospitalization [2]."
+  },
+  {
+   "id": "q131",
+   "system": "full",
+   "keyword": true,
+   "judge": false,
+   "question": "How did type 2 diabetes affect collagen fibril stretching in the intervertebral disc annulus fibrosus of UCD-T2DM rats under compression?",
+   "keywords": [
+    [
+     "less",
+     "lower",
+     "reduced",
+     "impaired",
+     "decreased",
+     "impairs"
+    ]
+   ],
+   "answer": "Type 2 diabetes reduced the amount of rotation of the collagen fibrils and stiffened the collagen fibrils, leading to less collagen fibril stretching in response to compression [1]. Specifically, in the diabetic rats, 20% of the applied strain was transferred to the collagen fibrils compared to 30% in the lean rats [2]."
+  }
+ ]
+}

@@ -1,0 +1,17 @@
+{
+ "description": "Hand labels for the full system's answered dev questions under the two generators compared on dev (2026-10-19), same rule as eval/qa/faithfulness_labels_test.json. Used to choose the generator; test was run once afterwards.",
+ "reviewer": "Claude (AI), not a clinician",
+ "llama3.2": {
+  "answers": "dev_llama32.json",
+  "n": 46,
+  "unfaithful": {
+   "q007": "turns '50% compliance' into '50% of children were poorly compliant'",
+   "q127": "garbled claims and an unsupported closing note"
+  }
+ },
+ "qwen2.5:7b-instruct": {
+  "answers": "dev_qwen7b.json",
+  "n": 45,
+  "unfaithful": {}
+ }
+}

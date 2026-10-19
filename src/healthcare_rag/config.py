@@ -16,7 +16,9 @@ class Settings(BaseSettings):
     # LLM Gateway (01-llm-gateway): all chat and embedding calls go through it
     gateway_base_url: str = "http://127.0.0.1:8000/v1"
     gateway_api_key: str = ""
-    chat_model: str = "llama3.2"
+    # qwen2.5:7b-instruct replaced llama3.2 (3B) on 2026-10-19: hand-labeled test faithfulness
+    # 88.6% -> 95.3%, ~1.5 s slower at p50 (docs/benchmarks/2026-10-19-generator)
+    chat_model: str = "qwen2.5:7b-instruct"
     embedding_model: str = "nomic-embed-text"
     gateway_timeout_seconds: float = 120.0
     # True sends Cache-Control: no-cache (used for evaluation so every answer is generated)

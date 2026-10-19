@@ -99,3 +99,52 @@ def test_correctness_lists_disagreements(offline, monkeypatch, tmp_path):
     assert result["summary"]["full"]["judge_accuracy"] == 0.0
     assert [d["id"] for d in result["disagreements"]] == ["q1"]
     assert result["disagreements"][0]["answer"] == "It is 42 [1]."
+
+
+def test_parse_verdict_uses_the_last_verdict_line() -> None:
+    assert judge.parse_verdict("1. claim\n   - quote\nVERDICT: YES")
+    assert not judge.parse_verdict("VERDICT: YES\n... on reflection\nVERDICT: NO")
+    assert not judge.parse_verdict("no verdict line at all")
+
+
+def test_claims_and_question_scorers(offline, monkeypatch, tmp_path):
+    chat = FakeChat("1. It is 42\n   - '42'\nVERDICT: YES", "VERDICT: NO")
+    monkeypatch.setattr(judge, "judge_client", lambda settings, model: chat)
+    out = tmp_path / "claims.json"
+    judge.cmd_faithfulness(_args(offline, scorer="claims", out=str(out)), settings=None)
+    rows = json.loads(out.read_text())["rows"]
+    assert [r["faithful"] for r in rows] == [True, False]
+    assert rows[0]["reasoning"].endswith("VERDICT: YES")  # kept for auditing
+
+    chat = FakeChat("YES", "NO")
+    monkeypatch.setattr(judge, "judge_client", lambda settings, model: chat)
+    judge.cmd_faithfulness(_args(offline, scorer="judge_q", out=str(out)), settings=None)
+    assert "Question: question q1?" in chat.calls[0][-1]["content"]
+
+
+def test_labels_compares_only_the_labeled_answer_text(offline, monkeypatch, tmp_path):
+    import hashlib
+
+    def sha(text: str) -> str:
+        return hashlib.sha1(text.encode()).hexdigest()[:12]
+
+    labels = tmp_path / "labels.json"
+    labels.write_text(json.dumps({
+        "answers": str(offline), "system": "full",
+        "items": [
+            {"id": "q1", "answer_sha1": sha("It is 42 [1]."), "faithful": True},
+            {"id": "q2", "answer_sha1": sha("a different answer"), "faithful": False},
+        ],
+    }))  # fmt: skip
+    monkeypatch.setattr(judge, "LABELS", labels)
+    run = tmp_path / "run.json"
+    run.write_text(json.dumps({"scorer": "judge", "rows": [
+        {"id": "q1", "system": "full", "faithful": False},
+        {"id": "q2", "system": "full", "faithful": True},
+    ]}))  # fmt: skip
+    printed = []
+    monkeypatch.setattr("builtins.print", lambda text: printed.append(text))
+    judge.cmd_labels(_args(run), settings=None)
+    result = json.loads(printed[0])
+    assert result["n"] == 1  # q2's answer text changed since it was labeled
+    assert result["disagreements"] == [{"id": "q1", "manual": True, "judge": False}]

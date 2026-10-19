@@ -1,0 +1,1731 @@
+{
+ "rows": [
+  {
+   "id": "q001",
+   "system": "full",
+   "answer": "According to the study, the Asthma Control Test (ACT) is more useful for ruling out exercise-induced bronchoconstriction (EIB) in children aged 12 years and older, rather than confirming it. [2]",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC4782564:2",
+    "PMC4782564:1",
+    "PMC4782564:16",
+    "PMC4782564:13",
+    "PMC4782564:15"
+   ],
+   "cited": [
+    "PMC4782564:1"
+   ],
+   "top_score": 15.8359375,
+   "latency_s": 8.835461400001805,
+   "generate_s": 8.270409100001416,
+   "timings": {
+    "retrieve": 0.3005952999992587,
+    "rerank": 0.25768260000040755,
+    "generate": 8.270409100001416,
+    "verify": 0.0031535000016447157,
+    "total": 8.835461400001805
+   },
+   "prompt_tokens": 1622,
+   "completion_tokens": 47,
+   "cost_usd": 0.0,
+   "llm_calls": 1,
+   "attributed": false
+  },
+  {
+   "id": "q004",
+   "system": "full",
+   "answer": "According to the study, in patients with asthma, the blood neutrophil count was significantly higher in obese patients than in non-obese patients (p = 0.03) [2].",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC9525285:10",
+    "PMC9525285:6",
+    "PMC9525285:2",
+    "PMC9525285:13",
+    "PMC9525285:7"
+   ],
+   "cited": [
+    "PMC9525285:6"
+   ],
+   "top_score": 14.9296875,
+   "latency_s": 3.6883207999999286,
+   "generate_s": 3.358339900001738,
+   "timings": {
+    "retrieve": 0.12276000000201748,
+    "rerank": 0.203913500001363,
+    "generate": 3.358339900001738,
+    "verify": 0.0004565999988699332,
+    "total": 3.6883207999999286
+   },
+   "prompt_tokens": 1573,
+   "completion_tokens": 40,
+   "cost_usd": 0.0,
+   "llm_calls": 1,
+   "attributed": false
+  },
+  {
+   "id": "q007",
+   "system": "full",
+   "answer": "According to the study, 50% of the children in the kHealth pediatric asthma cohort were poorly compliant with their controller medication intake [5]. However, the passage also states that among the very poorly controlled children (n=30), 30% (9/30) were highly compliant toward their controller medication intake [1].",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC6469868:1",
+    "PMC6469868:9",
+    "PMC6469868:4",
+    "PMC6469868:0",
+    "PMC6469868:17"
+   ],
+   "cited": [
+    "PMC6469868:17",
+    "PMC6469868:1"
+   ],
+   "top_score": 15.734375,
+   "latency_s": 6.390683000001445,
+   "generate_s": 3.3645053999971424,
+   "timings": {
+    "retrieve": 0.1432170000007318,
+    "rerank": 0.21036440000170842,
+    "generate": 3.3645053999971424,
+    "repair": 2.66842920000272,
+    "verify": 0.001026800000545336,
+    "total": 6.390683000001445
+   },
+   "prompt_tokens": 3642,
+   "completion_tokens": 103,
+   "cost_usd": 0.0,
+   "llm_calls": 2,
+   "attributed": false
+  },
+  {
+   "id": "q010",
+   "system": "full",
+   "answer": " reported 82.9% of asthma patients in Nigeria had inadequately controlled asthma [1].",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC8386086:8",
+    "PMC8386086:2",
+    "PMC8386086:9",
+    "PMC8386086:0",
+    "PMC8386086:3"
+   ],
+   "cited": [
+    "PMC8386086:8"
+   ],
+   "top_score": 15.671875,
+   "latency_s": 3.2271317999984603,
+   "generate_s": 2.9300363000002108,
+   "timings": {
+    "retrieve": 0.06205969999791705,
+    "rerank": 0.23167330000069342,
+    "generate": 2.9300363000002108,
+    "verify": 0.0006004000024404377,
+    "total": 3.2271317999984603
+   },
+   "prompt_tokens": 2060,
+   "completion_tokens": 22,
+   "cost_usd": 0.0,
+   "llm_calls": 1,
+   "attributed": false
+  },
+  {
+   "id": "q013",
+   "system": "full",
+   "answer": "29% of the eligible patients had uncontrolled asthma symptoms. [3]",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC5921326:6",
+    "PMC5921326:1",
+    "PMC5921326:0",
+    "PMC5921326:5",
+    "PMC5921326:8"
+   ],
+   "cited": [
+    "PMC5921326:0"
+   ],
+   "top_score": 15.9375,
+   "latency_s": 2.9951022999994166,
+   "generate_s": 2.7131034000012733,
+   "timings": {
+    "retrieve": 0.052615299999160925,
+    "rerank": 0.22596489999705227,
+    "generate": 2.7131034000012733,
+    "verify": 0.0007353000000875909,
+    "total": 2.9951022999994166
+   },
+   "prompt_tokens": 2019,
+   "completion_tokens": 16,
+   "cost_usd": 0.0,
+   "llm_calls": 1,
+   "attributed": false
+  },
+  {
+   "id": "q016",
+   "system": "full",
+   "answer": "72 of 74 patients (97.3%) were on oral anticoagulation therapy at 12-month follow-up [1]. The factor Xa inhibitors were used in most cases (83.3%) [1].",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC10069172:8",
+    "PMC10069172:3",
+    "PMC10069172:5",
+    "PMC10069172:15",
+    "PMC10069172:11"
+   ],
+   "cited": [
+    "PMC10069172:8"
+   ],
+   "top_score": 15.8046875,
+   "latency_s": 5.69336089999706,
+   "generate_s": 3.535238799999206,
+   "timings": {
+    "retrieve": 0.07255090000035125,
+    "rerank": 0.2522471999982372,
+    "generate": 3.535238799999206,
+    "repair": 1.8284080999983416,
+    "verify": 0.001168300001154421,
+    "total": 5.69336089999706
+   },
+   "prompt_tokens": 3186,
+   "completion_tokens": 90,
+   "cost_usd": 0.0,
+   "llm_calls": 2,
+   "attributed": false
+  },
+  {
+   "id": "q019",
+   "system": "full",
+   "answer": "1. The Atrial Fibrillation Better Care (ABC) pathway was associated with lower all-cause mortality in atrial fibrillation patients. [1, 4]",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC7287832:0",
+    "PMC7287832:9",
+    "PMC7287832:10",
+    "PMC7287832:7",
+    "PMC7287832:1"
+   ],
+   "cited": [
+    "PMC7287832:0",
+    "PMC7287832:7"
+   ],
+   "top_score": 15.828125,
+   "latency_s": 4.114662200001476,
+   "generate_s": 3.797062800000276,
+   "timings": {
+    "retrieve": 0.07200369999918621,
+    "rerank": 0.24145629999839002,
+    "generate": 3.797062800000276,
+    "verify": 0.0013651000008394476,
+    "total": 4.114662200001476
+   },
+   "prompt_tokens": 2310,
+   "completion_tokens": 36,
+   "cost_usd": 0.0,
+   "llm_calls": 1,
+   "attributed": false
+  },
+  {
+   "id": "q022",
+   "system": "full",
+   "answer": "Patients with mechanical heart valves should be treated with vitamin K antagonists, rather than NOACs, as stated in the 2016 ESC atrial fibrillation guidelines [1].",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC5529968:4",
+    "PMC5529968:5",
+    "PMC5529968:0",
+    "PMC5529968:1",
+    "PMC5529968:3"
+   ],
+   "cited": [
+    "PMC5529968:4"
+   ],
+   "top_score": 15.984375,
+   "latency_s": 3.679125800001202,
+   "generate_s": 3.401589299999614,
+   "timings": {
+    "retrieve": 0.06707730000198353,
+    "rerank": 0.20704330000080517,
+    "generate": 3.401589299999614,
+    "verify": 0.0014864000004308764,
+    "total": 3.679125800001202
+   },
+   "prompt_tokens": 1617,
+   "completion_tokens": 37,
+   "cost_usd": 0.0,
+   "llm_calls": 1,
+   "attributed": false
+  },
+  {
+   "id": "q025",
+   "system": "full",
+   "answer": "[1] In a large population-based cohort study conducted in Sweden, enrolling 116 184 individuals with CKD, an eGFR <30 was associated with a 1.6-fold increased risk of incident AF.",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC8707734:23",
+    "PMC8707734:24",
+    "PMC6681215:9",
+    "PMC9715884:10",
+    "PMC6681215:6"
+   ],
+   "cited": [
+    "PMC8707734:23"
+   ],
+   "top_score": 14.9921875,
+   "latency_s": 4.392289000003075,
+   "generate_s": 4.048890500002017,
+   "timings": {
+    "retrieve": 0.07343319999927189,
+    "rerank": 0.266928299999563,
+    "generate": 4.048890500002017,
+    "verify": 0.0006759999996575061,
+    "total": 4.392289000003075
+   },
+   "prompt_tokens": 2105,
+   "completion_tokens": 47,
+   "cost_usd": 0.0,
+   "llm_calls": 1,
+   "attributed": false
+  },
+  {
+   "id": "q028",
+   "system": "full",
+   "answer": "According to passage, a total of 4,861 patients without permanent AF underwent a Holter monitoring [1].",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC7156648:11",
+    "PMC7156648:6",
+    "PMC7156648:9",
+    "PMC7156648:5",
+    "PMC7156648:16"
+   ],
+   "cited": [
+    "PMC7156648:11"
+   ],
+   "top_score": 15.7265625,
+   "latency_s": 3.3506770999993023,
+   "generate_s": 3.0431291999993846,
+   "timings": {
+    "retrieve": 0.05901649999941583,
+    "rerank": 0.24563800000032643,
+    "generate": 3.0431291999993846,
+    "verify": 0.000591200001508696,
+    "total": 3.3506770999993023
+   },
+   "prompt_tokens": 2029,
+   "completion_tokens": 24,
+   "cost_usd": 0.0,
+   "llm_calls": 1,
+   "attributed": false
+  },
+  {
+   "id": "q031",
+   "system": "full",
+   "answer": "The patient group with recurrent MDD had the highest frequency of the minor C allele of BDNF rs962369, with a frequency of 0.32 [1, 4].",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC10452342:9",
+    "PMC10452342:10",
+    "PMC10452342:12",
+    "PMC10452342:0",
+    "PMC10452342:5"
+   ],
+   "cited": [
+    "PMC10452342:9",
+    "PMC10452342:0"
+   ],
+   "top_score": 15.921875,
+   "latency_s": 3.652125900000101,
+   "generate_s": 3.356396199997107,
+   "timings": {
+    "retrieve": 0.05778360000113025,
+    "rerank": 0.2349318000015046,
+    "generate": 3.356396199997107,
+    "verify": 0.00039369999649352394,
+    "total": 3.652125900000101
+   },
+   "prompt_tokens": 1418,
+   "completion_tokens": 39,
+   "cost_usd": 0.0,
+   "llm_calls": 1,
+   "attributed": false
+  },
+  {
+   "id": "q034",
+   "system": "full",
+   "answer": "According to the results section [4], six of the top 10 features were differential EDA features.",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC6242826:11",
+    "PMC6242826:19",
+    "PMC6242826:6",
+    "PMC6242826:8",
+    "PMC6242826:3"
+   ],
+   "cited": [
+    "PMC6242826:8"
+   ],
+   "top_score": 15.921875,
+   "latency_s": 2.992459199998848,
+   "generate_s": 2.703721799996856,
+   "timings": {
+    "retrieve": 0.06420299999808776,
+    "rerank": 0.2209971999982372,
+    "generate": 2.703721799996856,
+    "verify": 0.0004298000021663029,
+    "total": 2.992459199998848
+   },
+   "prompt_tokens": 1623,
+   "completion_tokens": 22,
+   "cost_usd": 0.0,
+   "llm_calls": 1,
+   "attributed": false
+  },
+  {
+   "id": "q037",
+   "system": "full",
+   "answer": "[1] According to the Cooper Clinic study, the association between hs-CRP levels and depression was thought to be more likely explained by obesity status.",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC8836046:8",
+    "PMC8836046:5",
+    "PMC8836046:6",
+    "PMC8836046:16",
+    "PMC8836046:13"
+   ],
+   "cited": [
+    "PMC8836046:8"
+   ],
+   "top_score": 15.6953125,
+   "latency_s": 3.6523110999987694,
+   "generate_s": 3.345355400000699,
+   "timings": {
+    "retrieve": 0.06485560000146506,
+    "rerank": 0.23841429999811226,
+    "generate": 3.345355400000699,
+    "verify": 0.0007939999995869584,
+    "total": 3.6523110999987694
+   },
+   "prompt_tokens": 1960,
+   "completion_tokens": 31,
+   "cost_usd": 0.0,
+   "llm_calls": 1,
+   "attributed": false
+  },
+  {
+   "id": "q040",
+   "system": "full",
+   "answer": "According to the study, parvalbumin (PVALB) promoter methylation was increased at CpG2 and decreased at CpG4 in Thai patients with major depression, as determined by pyrosequencing analysis [2].",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC6775273:7",
+    "PMC6775273:0",
+    "PMC6775273:9",
+    "PMC6775273:8",
+    "PMC6775273:11"
+   ],
+   "cited": [
+    "PMC6775273:0"
+   ],
+   "top_score": 15.875,
+   "latency_s": 4.49689220000073,
+   "generate_s": 4.155248400002165,
+   "timings": {
+    "retrieve": 0.06445850000091013,
+    "rerank": 0.27371060000223224,
+    "generate": 4.155248400002165,
+    "verify": 0.0007851000009395648,
+    "total": 4.49689220000073
+   },
+   "prompt_tokens": 1998,
+   "completion_tokens": 48,
+   "cost_usd": 0.0,
+   "llm_calls": 1,
+   "attributed": false
+  },
+  {
+   "id": "q043",
+   "system": "full",
+   "answer": "Hypertension was the most frequent comorbidity in both de novo acute heart failure and acutely decompensated chronic heart failure, observed in 79.8% and 82.7% of patients, respectively [1, 2].",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC8615401:1",
+    "PMC8615401:6",
+    "PMC8615401:10",
+    "PMC8615401:7",
+    "PMC8615401:2"
+   ],
+   "cited": [
+    "PMC8615401:1",
+    "PMC8615401:6"
+   ],
+   "top_score": 15.890625,
+   "latency_s": 4.538166199999978,
+   "generate_s": 4.192685399997572,
+   "timings": {
+    "retrieve": 0.06989849999808939,
+    "rerank": 0.27205099999991944,
+    "generate": 4.192685399997572,
+    "verify": 0.0006252000021049753,
+    "total": 4.538166199999978
+   },
+   "prompt_tokens": 1800,
+   "completion_tokens": 53,
+   "cost_usd": 0.0,
+   "llm_calls": 1,
+   "attributed": false
+  },
+  {
+   "id": "q046",
+   "system": "full",
+   "answer": "Most patients in the CHECK-HF registry have 5 or more co-morbid chronic conditions [3].",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC5910310:0",
+    "PMC5910310:8",
+    "PMC5910310:9",
+    "PMC5910310:12",
+    "PMC5910310:1"
+   ],
+   "cited": [
+    "PMC5910310:9"
+   ],
+   "top_score": 15.9765625,
+   "latency_s": 4.1721204000023135,
+   "generate_s": 2.8178967000021657,
+   "timings": {
+    "retrieve": 0.07511359999989509,
+    "rerank": 0.2457992000017839,
+    "generate": 2.8178967000021657,
+    "repair": 1.0279817000009643,
+    "verify": 0.0003992000019934494,
+    "total": 4.1721204000023135
+   },
+   "prompt_tokens": 3383,
+   "completion_tokens": 44,
+   "cost_usd": 0.0,
+   "llm_calls": 2,
+   "attributed": false
+  },
+  {
+   "id": "q049",
+   "system": "full",
+   "answer": "Adherence rates in remote patient monitoring ranged from 40% to 90% in previous eHealth heart failure studies, which is similar to our study [1].",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC9929726:14",
+    "PMC9929726:1",
+    "PMC9929726:3",
+    "PMC9929726:2",
+    "PMC9929726:16"
+   ],
+   "cited": [
+    "PMC9929726:14"
+   ],
+   "top_score": 15.5859375,
+   "latency_s": 3.5627816999985953,
+   "generate_s": 3.248682199999166,
+   "timings": {
+    "retrieve": 0.09504420000303071,
+    "rerank": 0.2150757999988855,
+    "generate": 3.248682199999166,
+    "verify": 0.00048009999954956584,
+    "total": 3.5627816999985953
+   },
+   "prompt_tokens": 1553,
+   "completion_tokens": 34,
+   "cost_usd": 0.0,
+   "llm_calls": 1,
+   "attributed": false
+  },
+  {
+   "id": "q052",
+   "system": "full",
+   "answer": "Five overarching themes emerged from health professionals' experiences of using a heart failure question prompt list [1].",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC9025789:0",
+    "PMC9025789:5",
+    "PMC9025789:7",
+    "PMC9025789:15",
+    "PMC9025789:2"
+   ],
+   "cited": [
+    "PMC9025789:0"
+   ],
+   "top_score": 15.9375,
+   "latency_s": 2.9853290999999444,
+   "generate_s": 2.7116404000007606,
+   "timings": {
+    "retrieve": 0.06536729999788804,
+    "rerank": 0.20415539999885368,
+    "generate": 2.7116404000007606,
+    "verify": 0.001586500002304092,
+    "total": 2.9853290999999444
+   },
+   "prompt_tokens": 1731,
+   "completion_tokens": 21,
+   "cost_usd": 0.0,
+   "llm_calls": 1,
+   "attributed": false
+  },
+  {
+   "id": "q055",
+   "system": "full",
+   "answer": "[1] Patients with LHFRS 2\u20134 exhibited a significantly higher risk of SCD (HR hazard ratio adjusted for AHEAD score 3.15, 95% confidence interval (CI) (1.30\u20137.65), p = 0.011) and HF death (adjusted HR for AHEAD score 1.48, 95% CI (1.04\u20132.09), p = 0.03), compared to those with LHFRS 0,1.",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC10253707:0",
+    "PMC10253707:1",
+    "PMC10253707:7",
+    "PMC10253707:5",
+    "PMC10253707:8"
+   ],
+   "cited": [
+    "PMC10253707:0"
+   ],
+   "top_score": 15.921875,
+   "latency_s": 6.836085899998579,
+   "generate_s": 6.480092500001774,
+   "timings": {
+    "retrieve": 0.06524069999795756,
+    "rerank": 0.28743439999743714,
+    "generate": 6.480092500001774,
+    "verify": 0.0006591999990632758,
+    "total": 6.836085899998579
+   },
+   "prompt_tokens": 1999,
+   "completion_tokens": 106,
+   "cost_usd": 0.0,
+   "llm_calls": 1,
+   "attributed": false
+  },
+  {
+   "id": "q058",
+   "system": "full",
+   "answer": "The ultrasound optic nerve sheath diameter (ONSD) cutoff of 5.93 mm supports the diagnosis of intracranial hypertension with high sensitivity (93%) and relatively high specificity (67%). [1]",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC4890482:13",
+    "PMC4890482:2",
+    "PMC4890482:0",
+    "PMC4890482:1",
+    "PMC4890482:15"
+   ],
+   "cited": [
+    "PMC4890482:13"
+   ],
+   "top_score": 14.6875,
+   "latency_s": 3.9266401000022597,
+   "generate_s": 3.667732800000522,
+   "timings": {
+    "retrieve": 0.061944900000526104,
+    "rerank": 0.19361750000098255,
+    "generate": 3.667732800000522,
+    "verify": 0.0008173000023816712,
+    "total": 3.9266401000022597
+   },
+   "prompt_tokens": 1626,
+   "completion_tokens": 44,
+   "cost_usd": 0.0,
+   "llm_calls": 1,
+   "attributed": false
+  },
+  {
+   "id": "q061",
+   "system": "full",
+   "answer": "The prevalence of pregnancy-induced hypertension (PIH) in the Polish cohort study was 15% [1].",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC8296897:15",
+    "PMC8296897:3",
+    "PMC8296897:6",
+    "PMC8296897:18",
+    "PMC8296897:19"
+   ],
+   "cited": [
+    "PMC8296897:15"
+   ],
+   "top_score": 15.7421875,
+   "latency_s": 3.1664666999968176,
+   "generate_s": 2.8627789999991364,
+   "timings": {
+    "retrieve": 0.06614180000178749,
+    "rerank": 0.23376229999848874,
+    "generate": 2.8627789999991364,
+    "verify": 0.001342099996691104,
+    "total": 3.1664666999968176
+   },
+   "prompt_tokens": 1792,
+   "completion_tokens": 23,
+   "cost_usd": 0.0,
+   "llm_calls": 1,
+   "attributed": false
+  },
+  {
+   "id": "q064",
+   "system": "full",
+   "answer": " In the post hoc analysis of the VALUE trial, body mass index was the second most important predictor of new-onset diabetes in hypertensive patients, after baseline blood glucose level [1].",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC6708242:9",
+    "PMC10140137:3",
+    "PMC7196231:14",
+    "PMC7196231:15",
+    "PMC7196231:2"
+   ],
+   "cited": [
+    "PMC6708242:9"
+   ],
+   "top_score": 15.7421875,
+   "latency_s": 3.881405799998902,
+   "generate_s": 3.549971299999015,
+   "timings": {
+    "retrieve": 0.06357290000232751,
+    "rerank": 0.26379499999893596,
+    "generate": 3.549971299999015,
+    "verify": 0.001491299997724127,
+    "total": 3.881405799998902
+   },
+   "prompt_tokens": 1722,
+   "completion_tokens": 39,
+   "cost_usd": 0.0,
+   "llm_calls": 1,
+   "attributed": false
+  },
+  {
+   "id": "q067",
+   "system": "full",
+   "answer": "According to passage [2], mortality was assessed at 4.5 years and 17 years after randomization.",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC6892410:8",
+    "PMC6892410:0",
+    "PMC6892410:2",
+    "PMC6892410:9",
+    "PMC6892410:5"
+   ],
+   "cited": [
+    "PMC6892410:0"
+   ],
+   "top_score": 15.859375,
+   "latency_s": 3.4727200000015728,
+   "generate_s": 3.1820568999974057,
+   "timings": {
+    "retrieve": 0.06405629999790108,
+    "rerank": 0.22314320000077714,
+    "generate": 3.1820568999974057,
+    "verify": 0.0010024000002886169,
+    "total": 3.4727200000015728
+   },
+   "prompt_tokens": 2104,
+   "completion_tokens": 24,
+   "cost_usd": 0.0,
+   "llm_calls": 1,
+   "attributed": false
+  },
+  {
+   "id": "q070",
+   "system": "full",
+   "answer": "According to passage [4], assuming a correlation r = 0.8 between BMD measurements at different sites, 21.2% (52 of 245) of patients would have all three BMD measurements that were congruent for osteopenia. Passage [1] states that 98 (40%) more patients would be diagnosed with osteopenia assuming the correlation between BMD measurements was 0.8.",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC7872343:13",
+    "PMC7872343:3",
+    "PMC7872343:0",
+    "PMC7872343:8",
+    "PMC7872343:9"
+   ],
+   "cited": [
+    "PMC7872343:8",
+    "PMC7872343:13"
+   ],
+   "top_score": 15.8046875,
+   "latency_s": 6.226176799998939,
+   "generate_s": 5.9025822000003245,
+   "timings": {
+    "retrieve": 0.07185319999916828,
+    "rerank": 0.24795740000263322,
+    "generate": 5.9025822000003245,
+    "verify": 0.0012104000015824568,
+    "total": 6.226176799998939
+   },
+   "prompt_tokens": 2056,
+   "completion_tokens": 86,
+   "cost_usd": 0.0,
+   "llm_calls": 1,
+   "attributed": false
+  },
+  {
+   "id": "q073",
+   "system": "full",
+   "answer": "The study appears to contradict the seed-and-soil hypothesis of Paget, which has been the predominant explanation of nonrandom metastatic patterns. [1]",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC6484629:11",
+    "PMC6484629:2",
+    "PMC6484629:10",
+    "PMC6484629:13",
+    "PMC6484629:12"
+   ],
+   "cited": [
+    "PMC6484629:11"
+   ],
+   "top_score": 15.6796875,
+   "latency_s": 3.60168590000103,
+   "generate_s": 3.2968052000032912,
+   "timings": {
+    "retrieve": 0.06404750000001513,
+    "rerank": 0.2376880000010715,
+    "generate": 3.2968052000032912,
+    "verify": 0.0008015000021259766,
+    "total": 3.60168590000103
+   },
+   "prompt_tokens": 1652,
+   "completion_tokens": 32,
+   "cost_usd": 0.0,
+   "llm_calls": 1,
+   "attributed": false
+  },
+  {
+   "id": "q076",
+   "system": "full",
+   "answer": "According to the study, only 25% of the women diagnosed with osteoporosis initiated osteoporosis treatment. [5]",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC4852421:2",
+    "PMC4852421:3",
+    "PMC4852421:19",
+    "PMC4852421:20",
+    "PMC4852421:0"
+   ],
+   "cited": [
+    "PMC4852421:0"
+   ],
+   "top_score": 15.9609375,
+   "latency_s": 3.080153800001426,
+   "generate_s": 2.768196799999714,
+   "timings": {
+    "retrieve": 0.0652332000026945,
+    "rerank": 0.2438479999982519,
+    "generate": 2.768196799999714,
+    "verify": 0.0004167000006418675,
+    "total": 3.080153800001426
+   },
+   "prompt_tokens": 1317,
+   "completion_tokens": 27,
+   "cost_usd": 0.0,
+   "llm_calls": 1,
+   "attributed": false
+  },
+  {
+   "id": "q079",
+   "system": "full",
+   "answer": "The Hungarian version of the Osteoporosis Knowledge Assessment Tool reached a Cronbach's alpha of 0.81, which is within the acceptability range of 0.7-0.85 [5].",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC8063278:9",
+    "PMC8063278:7",
+    "PMC8063278:0",
+    "PMC8063278:15",
+    "PMC8063278:12"
+   ],
+   "cited": [
+    "PMC8063278:12"
+   ],
+   "top_score": 15.84375,
+   "latency_s": 4.121523599998909,
+   "generate_s": 3.8359397000022,
+   "timings": {
+    "retrieve": 0.06118810000043595,
+    "rerank": 0.22054960000241408,
+    "generate": 3.8359397000022,
+    "verify": 0.0010293000013916753,
+    "total": 4.121523599998909
+   },
+   "prompt_tokens": 1781,
+   "completion_tokens": 44,
+   "cost_usd": 0.0,
+   "llm_calls": 1,
+   "attributed": false
+  },
+  {
+   "id": "q082",
+   "system": "full",
+   "answer": "The osteoporosis treatment initiation rate in fiscal year 2022 was 97.8% [1, 2].",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC10497696:0",
+    "PMC10497696:9",
+    "PMC10497696:11",
+    "PMC10497696:2",
+    "PMC10497696:8"
+   ],
+   "cited": [
+    "PMC10497696:0",
+    "PMC10497696:9"
+   ],
+   "top_score": 15.953125,
+   "latency_s": 3.5782694999979867,
+   "generate_s": 3.2621787000025506,
+   "timings": {
+    "retrieve": 0.0730148000002373,
+    "rerank": 0.23827829999936512,
+    "generate": 3.2621787000025506,
+    "verify": 0.0007624999998370185,
+    "total": 3.5782694999979867
+   },
+   "prompt_tokens": 1889,
+   "completion_tokens": 26,
+   "cost_usd": 0.0,
+   "llm_calls": 1,
+   "attributed": false
+  },
+  {
+   "id": "q085",
+   "system": "full",
+   "answer": "According to the study, the pathogen identified most often was Escherichia coli (21.8%) [1].",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC6868407:8",
+    "PMC6868407:13",
+    "PMC6868407:2",
+    "PMC6868407:5",
+    "PMC6868407:0"
+   ],
+   "cited": [
+    "PMC6868407:8"
+   ],
+   "top_score": 15.546875,
+   "latency_s": 3.424167299999681,
+   "generate_s": 3.083190299999842,
+   "timings": {
+    "retrieve": 0.083090699998138,
+    "rerank": 0.25405549999777577,
+    "generate": 3.083190299999842,
+    "verify": 0.0007153000005928334,
+    "total": 3.424167299999681
+   },
+   "prompt_tokens": 1799,
+   "completion_tokens": 26,
+   "cost_usd": 0.0,
+   "llm_calls": 1,
+   "attributed": false
+  },
+  {
+   "id": "q088",
+   "system": "full",
+   "answer": "According to study, clinical changes were observed 12\u201324 h before the clinical diagnosis of neonatal late-onset sepsis [1].",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC9964338:10",
+    "PMC9964338:1",
+    "PMC9964338:12",
+    "PMC9964338:7",
+    "PMC9964338:16"
+   ],
+   "cited": [
+    "PMC9964338:10"
+   ],
+   "top_score": 15.65625,
+   "latency_s": 3.323245499999757,
+   "generate_s": 3.066536399997858,
+   "timings": {
+    "retrieve": 0.046027100001083454,
+    "rerank": 0.2071312999978545,
+    "generate": 3.066536399997858,
+    "verify": 0.0005139000022609252,
+    "total": 3.323245499999757
+   },
+   "prompt_tokens": 1608,
+   "completion_tokens": 30,
+   "cost_usd": 0.0,
+   "llm_calls": 1,
+   "attributed": false
+  },
+  {
+   "id": "q091",
+   "system": "full",
+   "answer": "Neutropenia at ICU presentation was independently associated with a higher risk of AKI (58% vs. 28%, p <0.01) [3].",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC4950810:11",
+    "PMC4950810:2",
+    "PMC4950810:9",
+    "PMC4950810:15",
+    "PMC4950810:1"
+   ],
+   "cited": [
+    "PMC4950810:9"
+   ],
+   "top_score": 15.8125,
+   "latency_s": 3.380060200001026,
+   "generate_s": 3.046191800000088,
+   "timings": {
+    "retrieve": 0.06694419999985257,
+    "rerank": 0.2633434000017587,
+    "generate": 3.046191800000088,
+    "verify": 0.0006546000004163943,
+    "total": 3.380060200001026
+   },
+   "prompt_tokens": 1217,
+   "completion_tokens": 35,
+   "cost_usd": 0.0,
+   "llm_calls": 1,
+   "attributed": false
+  },
+  {
+   "id": "q094",
+   "system": "full",
+   "answer": "INSUFFICIENT_EVIDENCE",
+   "abstained": true,
+   "reason": "model_insufficient",
+   "passages": [
+    "PMC10253396:1",
+    "PMC10253396:2",
+    "PMC10253396:12",
+    "PMC10253396:3",
+    "PMC10253396:8"
+   ],
+   "cited": [],
+   "top_score": 16.0,
+   "latency_s": 1.7533718000013323,
+   "generate_s": 1.4666833000010229,
+   "timings": {
+    "retrieve": 0.07227309999871068,
+    "rerank": 0.21209539999836124,
+    "generate": 1.4666833000010229,
+    "total": 1.7533718000013323
+   },
+   "prompt_tokens": 1580,
+   "completion_tokens": 7,
+   "cost_usd": 0.0,
+   "llm_calls": 1,
+   "attributed": false
+  },
+  {
+   "id": "q097",
+   "system": "full",
+   "answer": "The NeoSeD score achieved an area under the curve (AUC) of 0.918 (95% CI, 0.884\u20130.952) for diagnosing sepsis in neonates with suspected sepsis [2].",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC9582514:20",
+    "PMC9582514:12",
+    "PMC9582514:13",
+    "PMC9582514:8",
+    "PMC9582514:9"
+   ],
+   "cited": [
+    "PMC9582514:12"
+   ],
+   "top_score": 16.03125,
+   "latency_s": 4.821299400002317,
+   "generate_s": 4.466173900000285,
+   "timings": {
+    "retrieve": 0.0706136000007973,
+    "rerank": 0.27929999999832944,
+    "generate": 4.466173900000285,
+    "verify": 0.0012872000006609596,
+    "total": 4.821299400002317
+   },
+   "prompt_tokens": 1991,
+   "completion_tokens": 52,
+   "cost_usd": 0.0,
+   "llm_calls": 1,
+   "attributed": false
+  },
+  {
+   "id": "q100",
+   "system": "full",
+   "answer": "According to the Florida Stroke Registry, 12% of stroke patients experienced a hospital readmission within 30 days [1].",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC12263112:9",
+    "PMC12263112:1",
+    "PMC12263112:3",
+    "PMC12263112:2",
+    "PMC12263112:7"
+   ],
+   "cited": [
+    "PMC12263112:9"
+   ],
+   "top_score": 15.984375,
+   "latency_s": 3.1773740999997244,
+   "generate_s": 2.8718819999994594,
+   "timings": {
+    "retrieve": 0.08007550000183983,
+    "rerank": 0.22146609999981592,
+    "generate": 2.8718819999994594,
+    "verify": 0.0005365999968489632,
+    "total": 3.1773740999997244
+   },
+   "prompt_tokens": 1500,
+   "completion_tokens": 26,
+   "cost_usd": 0.0,
+   "llm_calls": 1,
+   "attributed": false
+  },
+  {
+   "id": "q103",
+   "system": "full",
+   "answer": "70.1% of family caregivers were women [1].",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC8934512:7",
+    "PMC8934512:13",
+    "PMC8934512:0",
+    "PMC8934512:1",
+    "PMC8934512:15"
+   ],
+   "cited": [
+    "PMC8934512:7"
+   ],
+   "top_score": 15.8359375,
+   "latency_s": 2.6155493000005663,
+   "generate_s": 2.3103310000005877,
+   "timings": {
+    "retrieve": 0.05911560000095051,
+    "rerank": 0.24288050000177464,
+    "generate": 2.3103310000005877,
+    "verify": 0.0006479999974544626,
+    "total": 2.6155493000005663
+   },
+   "prompt_tokens": 1770,
+   "completion_tokens": 13,
+   "cost_usd": 0.0,
+   "llm_calls": 1,
+   "attributed": false
+  },
+  {
+   "id": "q106",
+   "system": "full",
+   "answer": "Monday is a risk factor for stroke onset. [1]",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC8119813:8",
+    "PMC8475904:12",
+    "PMC10456278:8",
+    "PMC8119813:9",
+    "PMC8119813:12"
+   ],
+   "cited": [
+    "PMC8119813:8"
+   ],
+   "top_score": 10.5546875,
+   "latency_s": 2.783346899999742,
+   "generate_s": 2.389459900001384,
+   "timings": {
+    "retrieve": 0.06999170000199229,
+    "rerank": 0.3207206999977643,
+    "generate": 2.389459900001384,
+    "verify": 0.0007494999990740325,
+    "total": 2.783346899999742
+   },
+   "prompt_tokens": 1859,
+   "completion_tokens": 13,
+   "cost_usd": 0.0,
+   "llm_calls": 1,
+   "attributed": false
+  },
+  {
+   "id": "q109",
+   "system": "full",
+   "answer": "According to passage [2], 795,000 people in the US experience a stroke annually.",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC10648022:20",
+    "PMC6030736:2",
+    "PMC10648022:1",
+    "PMC10648022:4",
+    "PMC9456070:1"
+   ],
+   "cited": [
+    "PMC6030736:2"
+   ],
+   "top_score": 15.484375,
+   "latency_s": 2.9316629999993893,
+   "generate_s": 2.5588690000004135,
+   "timings": {
+    "retrieve": 0.06544020000001183,
+    "rerank": 0.30361959999936516,
+    "generate": 2.5588690000004135,
+    "verify": 0.0005462999979499727,
+    "total": 2.9316629999993893
+   },
+   "prompt_tokens": 1561,
+   "completion_tokens": 20,
+   "cost_usd": 0.0,
+   "llm_calls": 1,
+   "attributed": false
+  },
+  {
+   "id": "q112",
+   "system": "full",
+   "answer": "The national prevalence of isoniazid resistance among rifampicin-sensitive tuberculosis cases in Pakistan is 7%. [1]",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC6822412:13",
+    "PMC6822412:3",
+    "PMC5964880:2",
+    "PMC5994136:1",
+    "PMC5830342:2"
+   ],
+   "cited": [
+    "PMC6822412:13"
+   ],
+   "top_score": 14.6328125,
+   "latency_s": 3.2827304000020376,
+   "generate_s": 2.9725952000007965,
+   "timings": {
+    "retrieve": 0.06308770000032382,
+    "rerank": 0.24429710000185878,
+    "generate": 2.9725952000007965,
+    "verify": 0.00042329999996582046,
+    "total": 3.2827304000020376
+   },
+   "prompt_tokens": 1673,
+   "completion_tokens": 27,
+   "cost_usd": 0.0,
+   "llm_calls": 1,
+   "attributed": false
+  },
+  {
+   "id": "q115",
+   "system": "full",
+   "answer": "A hearing loss prevalence of 20% (12/60) was found among patients receiving treatment for TB, with the intensity of impairment ranging from mild to severe [1]. This prevalence is also consistent with the finding that 48 (80%) of the participants in the treatment group presented with normal hearing thresholds, while 12 (20%) presented with varying degrees of hearing loss [3].",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC8883910:0",
+    "PMC8883910:15",
+    "PMC8883910:11",
+    "PMC8883910:5",
+    "PMC8883910:19"
+   ],
+   "cited": [
+    "PMC8883910:0",
+    "PMC8883910:11"
+   ],
+   "top_score": 15.890625,
+   "latency_s": 6.940241700001934,
+   "generate_s": 3.298873800002184,
+   "timings": {
+    "retrieve": 0.06012340000233962,
+    "rerank": 0.24380549999841605,
+    "generate": 3.298873800002184,
+    "repair": 3.3335485000025074,
+    "verify": 0.0010546999983489513,
+    "total": 6.940241700001934
+   },
+   "prompt_tokens": 3280,
+   "completion_tokens": 113,
+   "cost_usd": 0.0,
+   "llm_calls": 2,
+   "attributed": false
+  },
+  {
+   "id": "q118",
+   "system": "full",
+   "answer": "IgG against TBCM (Tuberculosis Chorismate Mutase) was an independent marker for diagnosing latent tuberculosis infection (LTBI). [1]",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC7409123:16",
+    "PMC7409123:12",
+    "PMC7409123:14",
+    "PMC7409123:19",
+    "PMC7409123:0"
+   ],
+   "cited": [
+    "PMC7409123:16"
+   ],
+   "top_score": 15.7578125,
+   "latency_s": 3.858417700001155,
+   "generate_s": 3.529388499999186,
+   "timings": {
+    "retrieve": 0.06533290000152192,
+    "rerank": 0.26076190000094357,
+    "generate": 3.529388499999186,
+    "verify": 0.0006346999980451073,
+    "total": 3.858417700001155
+   },
+   "prompt_tokens": 1796,
+   "completion_tokens": 35,
+   "cost_usd": 0.0,
+   "llm_calls": 1,
+   "attributed": false
+  },
+  {
+   "id": "q121",
+   "system": "full",
+   "answer": "The WHO discourages the use of serological tests for active TB diagnosis, [1]. However, they encourage further research to improve their quality, [2].",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC8570039:9",
+    "PMC10403504:12",
+    "PMC10403504:1",
+    "PMC10403504:2",
+    "PMC8570039:1"
+   ],
+   "cited": [
+    "PMC8570039:9",
+    "PMC10403504:12"
+   ],
+   "top_score": 9.796875,
+   "latency_s": 4.846457899999223,
+   "generate_s": 3.085642899997765,
+   "timings": {
+    "retrieve": 0.059012300000176765,
+    "rerank": 0.24108630000046105,
+    "generate": 3.085642899997765,
+    "repair": 1.4561833000007027,
+    "verify": 0.001537699998152675,
+    "total": 4.846457899999223
+   },
+   "prompt_tokens": 3969,
+   "completion_tokens": 58,
+   "cost_usd": 0.0,
+   "llm_calls": 2,
+   "attributed": false
+  },
+  {
+   "id": "q124",
+   "system": "full",
+   "answer": "Individuals with recurrent TB had decreased Mtb-antigen specific IgG3 titers, but not other IgG subclasses or IgA, compared to control individuals [1].",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC8493041:0",
+    "PMC8493041:13",
+    "PMC8493041:16",
+    "PMC8493041:12",
+    "PMC8493041:14"
+   ],
+   "cited": [
+    "PMC8493041:0"
+   ],
+   "top_score": 15.8515625,
+   "latency_s": 3.901550999999017,
+   "generate_s": 3.6454092000021774,
+   "timings": {
+    "retrieve": 0.062409100002696505,
+    "rerank": 0.1899111000020639,
+    "generate": 3.6454092000021774,
+    "verify": 0.0015867999973124824,
+    "total": 3.901550999999017
+   },
+   "prompt_tokens": 1899,
+   "completion_tokens": 37,
+   "cost_usd": 0.0,
+   "llm_calls": 1,
+   "attributed": false
+  },
+  {
+   "id": "q127",
+   "system": "full",
+   "answer": "[1] Elevated plasma BCAA levels in people with insulin resistance and type 2 diabetes, as reported in several studies, including [2] and [5], which show that plasma BCAA levels are considerably elevated in plasma and tissues in individuals with obesity and T2D, and that elevated BCAA levels strongly associate with insulin resistance in people with obesity and T2D.\n\n[2] Plasma BCAA levels are elevated in patients with T2D compared to age- and BMI-matched controls without having T2D, and that elevated plasma BCAA levels strongly associate with insulin resistance in obesity and T2D [2]. In humans with insulin resistance, the effect of insulin on reducing muscle protein breakdown is blunted, causing increased muscle wasting, and BCAA levels are reported to be elevated, with the most marked decline seen for BCAA [5]. Plasma BCAAs act as signaling molecules and contribute to the development of insulin resistance in humans, and individuals with impaired or incomplete BCAA metabolism are susceptible to develop insulin resistance. Note: The exact relationship between plasma BCAA levels and insulin resistance in people with type 2 diabetes is still not fully understood, and further research is needed to determine the underlying mechanisms.",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC9356071:1",
+    "PMC9356071:2",
+    "PMC9356071:0",
+    "PMC9356071:12",
+    "PMC9356071:4"
+   ],
+   "cited": [
+    "PMC9356071:1",
+    "PMC9356071:2",
+    "PMC9356071:4"
+   ],
+   "top_score": 16.015625,
+   "latency_s": 12.94381450000219,
+   "generate_s": 12.670097300000634,
+   "timings": {
+    "retrieve": 0.05737579999913578,
+    "rerank": 0.20727180000176304,
+    "generate": 12.670097300000634,
+    "verify": 0.0061165000006440096,
+    "total": 12.94381450000219
+   },
+   "prompt_tokens": 1855,
+   "completion_tokens": 248,
+   "cost_usd": 0.0,
+   "llm_calls": 1,
+   "attributed": false
+  },
+  {
+   "id": "q130",
+   "system": "full",
+   "answer": "The hazard ratio for colorectal cancer associated with diabetes in the mostly African American, low-income cohort was 1.47 (95% CI, 1.21-1.79) [1].",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC10646729:1",
+    "PMC10646729:0",
+    "PMC10646729:11",
+    "PMC10646729:2",
+    "PMC10646729:9"
+   ],
+   "cited": [
+    "PMC10646729:1"
+   ],
+   "top_score": 15.8203125,
+   "latency_s": 4.341476600002352,
+   "generate_s": 4.069448599999305,
+   "timings": {
+    "retrieve": 0.06299600000056671,
+    "rerank": 0.20562670000072103,
+    "generate": 4.069448599999305,
+    "verify": 0.0007068999984767288,
+    "total": 4.341476600002352
+   },
+   "prompt_tokens": 2056,
+   "completion_tokens": 42,
+   "cost_usd": 0.0,
+   "llm_calls": 1,
+   "attributed": false
+  },
+  {
+   "id": "q133",
+   "system": "full",
+   "answer": "According to the study, pancreas density was lower in patients with type 2 diabetes than in control subjects, as defined by the mean density of 3 Regions Of Interest (ROI) delineated in the head, body and tail of the pancreas, respectively [3].",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC7410152:23",
+    "PMC7410152:4",
+    "PMC7410152:10",
+    "PMC7410152:26",
+    "PMC7410152:19"
+   ],
+   "cited": [
+    "PMC7410152:10"
+   ],
+   "top_score": 15.890625,
+   "latency_s": 4.521206299999903,
+   "generate_s": 4.218377299999702,
+   "timings": {
+    "retrieve": 0.05989860000045155,
+    "rerank": 0.23961379999673227,
+    "generate": 4.218377299999702,
+    "verify": 0.0005987000004097354,
+    "total": 4.521206299999903
+   },
+   "prompt_tokens": 1642,
+   "completion_tokens": 56,
+   "cost_usd": 0.0,
+   "llm_calls": 1,
+   "attributed": false
+  },
+  {
+   "id": "q136",
+   "system": "full",
+   "answer": "[1] Type 2 diabetes is a complex disease driven by multiple pathophysiological processes resulting in a spread of clinical characteristics that to date are largely ignored when considering how we manage affected individuals. [2] In the broader sense, it is a mix of different clearly defined aetiologies, such as monogenic diabetes, that we need to be better at identifying as this has major implications for treatment and patient management [2]. Whilst monogenic diabetes is relatively rare, accounting for about 3% of diabetes cases diagnosed in individuals under 30 years of age, the implications for those affected are life changing.",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC6560016:13",
+    "PMC6560016:0",
+    "PMC9522721:15",
+    "PMC6620259:1",
+    "PMC6560016:3"
+   ],
+   "cited": [
+    "PMC6560016:13",
+    "PMC6560016:0"
+   ],
+   "top_score": 15.875,
+   "latency_s": 7.33843540000089,
+   "generate_s": 7.0169816000016,
+   "timings": {
+    "retrieve": 0.07830619999731425,
+    "rerank": 0.23668389999875217,
+    "generate": 7.0169816000016,
+    "verify": 0.002057300000160467,
+    "total": 7.33843540000089
+   },
+   "prompt_tokens": 1462,
+   "completion_tokens": 124,
+   "cost_usd": 0.0,
+   "llm_calls": 1,
+   "attributed": false
+  },
+  {
+   "id": "q139",
+   "system": "full",
+   "answer": "According to the discussion section, the net reclassification index (NRI) was calculated for pre-specified CV risk categories of (0\u201310%, 10\u201320%, and >20%) [2].",
+   "abstained": false,
+   "reason": "answered",
+   "passages": [
+    "PMC5603967:19",
+    "PMC5603967:9",
+    "PMC5603967:20",
+    "PMC5603967:21",
+    "PMC5603967:18"
+   ],
+   "cited": [
+    "PMC5603967:9"
+   ],
+   "top_score": 16.0,
+   "latency_s": 4.073869699997886,
+   "generate_s": 3.722568000001047,
+   "timings": {
+    "retrieve": 0.07187699999849428,
+    "rerank": 0.27405999999973574,
+    "generate": 3.722568000001047,
+    "verify": 0.0018111999997927342,
+    "total": 4.073869699997886
+   },
+   "prompt_tokens": 1588,
+   "completion_tokens": 42,
+   "cost_usd": 0.0,
+   "llm_calls": 1,
+   "attributed": false
+  },
+  {
+   "id": "q142",
+   "system": "full",
+   "answer": "I can't answer this from the indexed literature with enough confidence.",
+   "abstained": true,
+   "reason": "low_score",
+   "passages": [
+    "PMC5830342:15",
+    "PMC5830342:12",
+    "PMC5964880:12",
+    "PMC5830342:1",
+    "PMC10623417:1"
+   ],
+   "cited": [],
+   "top_score": -15.6640625,
+   "latency_s": 0.31007230000250274,
+   "generate_s": 0.0,
+   "timings": {
+    "retrieve": 0.07323170000017853,
+    "rerank": 0.2332998999991105,
+    "total": 0.31007230000250274
+   },
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "cost_usd": 0.0,
+   "llm_calls": 0,
+   "attributed": false
+  },
+  {
+   "id": "q145",
+   "system": "full",
+   "answer": "I can't answer this from the indexed literature with enough confidence.",
+   "abstained": true,
+   "reason": "low_score",
+   "passages": [
+    "PMC9577655:2",
+    "PMC9810820:1",
+    "PMC10718642:2",
+    "PMC10680257:3",
+    "PMC9294984:8"
+   ],
+   "cited": [],
+   "top_score": -11.75,
+   "latency_s": 0.27575770000112243,
+   "generate_s": 0.0,
+   "timings": {
+    "retrieve": 0.06269929999689339,
+    "rerank": 0.21053089999986696,
+    "total": 0.27575770000112243
+   },
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "cost_usd": 0.0,
+   "llm_calls": 0,
+   "attributed": false
+  },
+  {
+   "id": "q148",
+   "system": "full",
+   "answer": "I can't answer this from the indexed literature with enough confidence.",
+   "abstained": true,
+   "reason": "low_score",
+   "passages": [
+    "PMC7370296:23",
+    "PMC7370296:19",
+    "PMC9813417:13",
+    "PMC7491342:2",
+    "PMC10537529:22"
+   ],
+   "cited": [],
+   "top_score": -12.3671875,
+   "latency_s": 0.3014119999970717,
+   "generate_s": 0.0,
+   "timings": {
+    "retrieve": 0.05946579999726964,
+    "rerank": 0.24001819999830332,
+    "total": 0.3014119999970717
+   },
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "cost_usd": 0.0,
+   "llm_calls": 0,
+   "attributed": false
+  },
+  {
+   "id": "q151",
+   "system": "full",
+   "answer": "I can't answer this from the indexed literature with enough confidence.",
+   "abstained": true,
+   "reason": "low_score",
+   "passages": [
+    "PMC7370296:20",
+    "PMC5830342:15",
+    "PMC5830342:17",
+    "PMC5964880:4",
+    "PMC7168336:4"
+   ],
+   "cited": [],
+   "top_score": -15.1171875,
+   "latency_s": 0.335795799997868,
+   "generate_s": 0.0,
+   "timings": {
+    "retrieve": 0.06061769999723765,
+    "rerank": 0.27207049999924493,
+    "total": 0.335795799997868
+   },
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "cost_usd": 0.0,
+   "llm_calls": 0,
+   "attributed": false
+  },
+  {
+   "id": "q154",
+   "system": "full",
+   "answer": "I can't answer this from the indexed literature with enough confidence.",
+   "abstained": true,
+   "reason": "low_score",
+   "passages": [
+    "PMC8883910:3",
+    "PMC6670160:15",
+    "PMC5715530:24",
+    "PMC9615143:12",
+    "PMC8493041:14"
+   ],
+   "cited": [],
+   "top_score": -15.0234375,
+   "latency_s": 0.31620680000196444,
+   "generate_s": 0.0,
+   "timings": {
+    "retrieve": 0.05842619999748422,
+    "rerank": 0.255731500001275,
+    "total": 0.31620680000196444
+   },
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "cost_usd": 0.0,
+   "llm_calls": 0,
+   "attributed": false
+  },
+  {
+   "id": "q157",
+   "system": "full",
+   "answer": "I can't answer this from the indexed literature with enough confidence.",
+   "abstained": true,
+   "reason": "low_score",
+   "passages": [
+    "PMC6234696:11",
+    "PMC9921812:22",
+    "PMC9856300:7",
+    "PMC7716437:1",
+    "PMC9615143:2"
+   ],
+   "cited": [],
+   "top_score": 3.0703125,
+   "latency_s": 0.3150275000007241,
+   "generate_s": 0.0,
+   "timings": {
+    "retrieve": 0.05998199999885401,
+    "rerank": 0.25116070000149193,
+    "total": 0.3150275000007241
+   },
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "cost_usd": 0.0,
+   "llm_calls": 0,
+   "attributed": false
+  }
+ ],
+ "meta": {
+  "power": "ac",
+  "date": "2026-10-19 17:41 UTC",
+  "chat_model": "llama3.2",
+  "embedding_model": "nomic-embed-text",
+  "reranker_model": "ncbi/MedCPT-Cross-Encoder",
+  "reranker_device": "cuda",
+  "retrieval_top_k": 20,
+  "rerank_top_k": 5,
+  "host": "Windows 10.0.26300, Python 3.11.9",
+  "experiment": "relabel",
+  "bench": "pmc",
+  "split": "dev",
+  "overrides": {
+   "citation_check": "relabel"
+  },
+  "abstain_threshold": 6.43,
+  "wall_s": 251.8
+ },
+ "summary": {
+  "full": {
+   "n_answerable": 47,
+   "n_unanswerable": 6,
+   "answer_accuracy": 0.9361702127659575,
+   "answered_rate": 0.9787234042553191,
+   "accuracy_when_answered": 0.9565217391304348,
+   "citation_accuracy_chunk": 0.6086956521739131,
+   "citation_accuracy_doc": 0.9782608695652174,
+   "cited_rate": 1.0,
+   "faithful_rate": NaN,
+   "unanswerable_abstained": 1.0,
+   "abstention_precision": 0.8571428571428571,
+   "p50_s": 3.652125900000101,
+   "p95_s": 7.33843540000089,
+   "mean_prompt_tokens": 1729.6603773584907,
+   "mean_completion_tokens": 41.679245283018865,
+   "cost_usd_per_query": 0.0,
+   "mean_llm_calls": 0.9811320754716981,
+   "repair_rate": 0.09433962264150944,
+   "attributed_rate": 0.0
+  }
+ }
+}

@@ -1,0 +1,468 @@
+{
+ "description": "Hand labels for every answered test question of the full system in eval/results/answers.json (2026-10-03 run). faithful = every factual claim in the answer is stated in, or directly follows from, the passages shown to the model (citation numbers ignored; citation accuracy is measured separately). Labeled blind to every judge's verdicts, sentence by sentence against the passages.",
+ "reviewer": "Claude (AI), not a clinician",
+ "answers": "docs/benchmarks/2026-10-19-faithfulness/answers_llama32_2026-10-03.json",
+ "system": "full",
+ "split": "test",
+ "items": [
+  {
+   "id": "q002",
+   "answer_sha1": "52cb267b95dd",
+   "faithful": true
+  },
+  {
+   "id": "q003",
+   "answer_sha1": "9cae5ad28fd3",
+   "faithful": true
+  },
+  {
+   "id": "q005",
+   "answer_sha1": "115ae115a405",
+   "faithful": true
+  },
+  {
+   "id": "q006",
+   "answer_sha1": "f173b4d1d38d",
+   "faithful": true
+  },
+  {
+   "id": "q008",
+   "answer_sha1": "ada430ddfbe8",
+   "faithful": true,
+   "note": "copies the passage; does not answer the question"
+  },
+  {
+   "id": "q009",
+   "answer_sha1": "9a753e29d55d",
+   "faithful": true
+  },
+  {
+   "id": "q011",
+   "answer_sha1": "8c353dd8fec5",
+   "faithful": true
+  },
+  {
+   "id": "q012",
+   "answer_sha1": "b69190dcf898",
+   "faithful": true
+  },
+  {
+   "id": "q014",
+   "answer_sha1": "0d785ab39c54",
+   "faithful": false,
+   "note": "says 43.9% got ICS + LABA; the passage gives 27.8% ICS + LABA and 43.9% ICS"
+  },
+  {
+   "id": "q015",
+   "answer_sha1": "91e3f2b9aa1c",
+   "faithful": true
+  },
+  {
+   "id": "q017",
+   "answer_sha1": "c93bca7d96d9",
+   "faithful": true
+  },
+  {
+   "id": "q018",
+   "answer_sha1": "b3810d550014",
+   "faithful": true
+  },
+  {
+   "id": "q020",
+   "answer_sha1": "eeaf016eeda0",
+   "faithful": true
+  },
+  {
+   "id": "q021",
+   "answer_sha1": "d80960a14a4f",
+   "faithful": true,
+   "note": "right number, cites the wrong passage"
+  },
+  {
+   "id": "q023",
+   "answer_sha1": "b118bc133e3a",
+   "faithful": true
+  },
+  {
+   "id": "q024",
+   "answer_sha1": "bd738bc9c3a6",
+   "faithful": true
+  },
+  {
+   "id": "q026",
+   "answer_sha1": "e1ec14b43c6e",
+   "faithful": true
+  },
+  {
+   "id": "q027",
+   "answer_sha1": "b66da488eade",
+   "faithful": true
+  },
+  {
+   "id": "q029",
+   "answer_sha1": "9e8aee889511",
+   "faithful": true
+  },
+  {
+   "id": "q030",
+   "answer_sha1": "e400ea7a888a",
+   "faithful": true
+  },
+  {
+   "id": "q033",
+   "answer_sha1": "b6680c29cbec",
+   "faithful": true
+  },
+  {
+   "id": "q035",
+   "answer_sha1": "82f8723709fb",
+   "faithful": true
+  },
+  {
+   "id": "q036",
+   "answer_sha1": "6ec84f4edbdd",
+   "faithful": true
+  },
+  {
+   "id": "q038",
+   "answer_sha1": "323eb6c3a94a",
+   "faithful": true
+  },
+  {
+   "id": "q039",
+   "answer_sha1": "f461ddd344ba",
+   "faithful": true
+  },
+  {
+   "id": "q041",
+   "answer_sha1": "88200f7a0d9f",
+   "faithful": true
+  },
+  {
+   "id": "q042",
+   "answer_sha1": "54819eb25e95",
+   "faithful": true
+  },
+  {
+   "id": "q044",
+   "answer_sha1": "b15039f05838",
+   "faithful": false,
+   "note": "47.7-80.5% is the range for dual therapy (beta blocker + RAS inhibitor), not beta blockers"
+  },
+  {
+   "id": "q045",
+   "answer_sha1": "5137cf8b6caf",
+   "faithful": false,
+   "note": "no passage calls diagnostic difficulty a limitation of the study"
+  },
+  {
+   "id": "q047",
+   "answer_sha1": "21307503536c",
+   "faithful": true
+  },
+  {
+   "id": "q048",
+   "answer_sha1": "cf348e082047",
+   "faithful": true
+  },
+  {
+   "id": "q050",
+   "answer_sha1": "26744cec6b07",
+   "faithful": true
+  },
+  {
+   "id": "q051",
+   "answer_sha1": "47298cf5eb45",
+   "faithful": true
+  },
+  {
+   "id": "q053",
+   "answer_sha1": "083d05388907",
+   "faithful": true
+  },
+  {
+   "id": "q054",
+   "answer_sha1": "5a8256fabc8c",
+   "faithful": true
+  },
+  {
+   "id": "q056",
+   "answer_sha1": "ef1f327bac57",
+   "faithful": true
+  },
+  {
+   "id": "q057",
+   "answer_sha1": "adf88331d5db",
+   "faithful": true
+  },
+  {
+   "id": "q059",
+   "answer_sha1": "77cc63af703b",
+   "faithful": true
+  },
+  {
+   "id": "q060",
+   "answer_sha1": "eec31a8f182d",
+   "faithful": false,
+   "note": "says the passages have nothing on Klotho; passages 1 and 3 do"
+  },
+  {
+   "id": "q062",
+   "answer_sha1": "43fd98f629f9",
+   "faithful": true
+  },
+  {
+   "id": "q063",
+   "answer_sha1": "c524445f5b8e",
+   "faithful": true
+  },
+  {
+   "id": "q066",
+   "answer_sha1": "c02fd28a8749",
+   "faithful": true
+  },
+  {
+   "id": "q068",
+   "answer_sha1": "067f96abb955",
+   "faithful": true
+  },
+  {
+   "id": "q069",
+   "answer_sha1": "c415269b3db7",
+   "faithful": true
+  },
+  {
+   "id": "q071",
+   "answer_sha1": "125e2b28a326",
+   "faithful": true
+  },
+  {
+   "id": "q072",
+   "answer_sha1": "fc6084d9c188",
+   "faithful": false,
+   "note": "knowledge from medical professionals and 'no other sources' are not in the passages"
+  },
+  {
+   "id": "q074",
+   "answer_sha1": "9d4fd45f5aed",
+   "faithful": true
+  },
+  {
+   "id": "q075",
+   "answer_sha1": "c5268ab2b13b",
+   "faithful": true
+  },
+  {
+   "id": "q077",
+   "answer_sha1": "1416a12fecbf",
+   "faithful": true
+  },
+  {
+   "id": "q078",
+   "answer_sha1": "615f1957cc54",
+   "faithful": false,
+   "note": "says the effect was dose-dependent; the passage says it was not"
+  },
+  {
+   "id": "q080",
+   "answer_sha1": "ae50595540a5",
+   "faithful": true
+  },
+  {
+   "id": "q081",
+   "answer_sha1": "eb4ada5f4b47",
+   "faithful": true
+  },
+  {
+   "id": "q083",
+   "answer_sha1": "ab13fdf673e6",
+   "faithful": true
+  },
+  {
+   "id": "q084",
+   "answer_sha1": "2c5a25017764",
+   "faithful": true
+  },
+  {
+   "id": "q086",
+   "answer_sha1": "17cf1f3acd6b",
+   "faithful": true
+  },
+  {
+   "id": "q087",
+   "answer_sha1": "749e5838d2e2",
+   "faithful": true
+  },
+  {
+   "id": "q089",
+   "answer_sha1": "b014cf5b4d27",
+   "faithful": true
+  },
+  {
+   "id": "q090",
+   "answer_sha1": "fab3f0d9938a",
+   "faithful": true
+  },
+  {
+   "id": "q092",
+   "answer_sha1": "68668fce18d8",
+   "faithful": true
+  },
+  {
+   "id": "q093",
+   "answer_sha1": "a4269b93ed77",
+   "faithful": true
+  },
+  {
+   "id": "q095",
+   "answer_sha1": "bcfce8016963",
+   "faithful": true
+  },
+  {
+   "id": "q096",
+   "answer_sha1": "f72caa4e04cc",
+   "faithful": false,
+   "note": "gives 37.5% for the no-SAC group (passage: 11.7%) and calls a p = 0.002 difference non-significant"
+  },
+  {
+   "id": "q098",
+   "answer_sha1": "808788b8eb66",
+   "faithful": false,
+   "note": "IL-1beta is not named in any passage (outside knowledge)"
+  },
+  {
+   "id": "q099",
+   "answer_sha1": "d32944a1c57c",
+   "faithful": true
+  },
+  {
+   "id": "q101",
+   "answer_sha1": "74974fe13d6e",
+   "faithful": true,
+   "note": "faithful but does not answer the question"
+  },
+  {
+   "id": "q102",
+   "answer_sha1": "6ebff3fcd970",
+   "faithful": true
+  },
+  {
+   "id": "q104",
+   "answer_sha1": "bcfbafabeda6",
+   "faithful": true
+  },
+  {
+   "id": "q105",
+   "answer_sha1": "e681da14cf0c",
+   "faithful": true
+  },
+  {
+   "id": "q107",
+   "answer_sha1": "cac804582413",
+   "faithful": true
+  },
+  {
+   "id": "q108",
+   "answer_sha1": "3352b12c6245",
+   "faithful": true
+  },
+  {
+   "id": "q110",
+   "answer_sha1": "ad6e70d17d60",
+   "faithful": true,
+   "note": "right number, cites the wrong passage"
+  },
+  {
+   "id": "q111",
+   "answer_sha1": "acccbb8b6bc8",
+   "faithful": true
+  },
+  {
+   "id": "q113",
+   "answer_sha1": "3e90681669f1",
+   "faithful": true
+  },
+  {
+   "id": "q114",
+   "answer_sha1": "0d1f51bc7051",
+   "faithful": true
+  },
+  {
+   "id": "q116",
+   "answer_sha1": "c67b2350f6fc",
+   "faithful": true
+  },
+  {
+   "id": "q117",
+   "answer_sha1": "4d60e86edf1d",
+   "faithful": true
+  },
+  {
+   "id": "q119",
+   "answer_sha1": "44613ab96803",
+   "faithful": true
+  },
+  {
+   "id": "q120",
+   "answer_sha1": "5d15aaa1c5c1",
+   "faithful": true
+  },
+  {
+   "id": "q122",
+   "answer_sha1": "a6d063192fc3",
+   "faithful": true
+  },
+  {
+   "id": "q123",
+   "answer_sha1": "9e0c608b9163",
+   "faithful": false,
+   "note": "40 is the number of PTB-positive subjects, not a 40% prevalence"
+  },
+  {
+   "id": "q126",
+   "answer_sha1": "ba6522050990",
+   "faithful": false,
+   "note": "says the gap grows with age; the passages say it shrinks after 70"
+  },
+  {
+   "id": "q129",
+   "answer_sha1": "967169b402a8",
+   "faithful": true
+  },
+  {
+   "id": "q131",
+   "answer_sha1": "4a9eb7016446",
+   "faithful": true
+  },
+  {
+   "id": "q132",
+   "answer_sha1": "9b57623d503a",
+   "faithful": true
+  },
+  {
+   "id": "q134",
+   "answer_sha1": "31e93629ccf7",
+   "faithful": true,
+   "note": "faithful (CVD ratio) but not the CKD ratio asked for"
+  },
+  {
+   "id": "q135",
+   "answer_sha1": "cf4bc4fffa57",
+   "faithful": true
+  },
+  {
+   "id": "q137",
+   "answer_sha1": "3fb3a03a8ff1",
+   "faithful": true
+  },
+  {
+   "id": "q138",
+   "answer_sha1": "f40e76fe7ae7",
+   "faithful": true
+  }
+ ],
+ "summary": {
+  "n": 88,
+  "faithful": 78
+ }
+}
