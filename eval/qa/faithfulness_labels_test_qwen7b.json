@@ -1,0 +1,446 @@
+{
+ "description": "Hand labels for every answered test question of the full system with qwen2.5:7b-instruct as the generator (eval/results/experiments/qwen7b__pmc__all.json, 2026-10-19). Same rule as faithfulness_labels_test.json: every factual claim must be stated in, or directly follow from, the passages shown to the model; citation numbers ignored. Labeled blind to the judge's verdicts.",
+ "reviewer": "Claude (AI), not a clinician",
+ "answers": "docs/benchmarks/2026-10-19-generator/answers_qwen7b.json",
+ "system": "full",
+ "split": "test",
+ "items": [
+  {
+   "id": "q002",
+   "answer_sha1": "005b59f4a602",
+   "faithful": true
+  },
+  {
+   "id": "q003",
+   "answer_sha1": "949c76baf9af",
+   "faithful": true
+  },
+  {
+   "id": "q005",
+   "answer_sha1": "933e33c36641",
+   "faithful": true
+  },
+  {
+   "id": "q006",
+   "answer_sha1": "17a49d901de1",
+   "faithful": true
+  },
+  {
+   "id": "q008",
+   "answer_sha1": "53d5d271ed3e",
+   "faithful": false,
+   "note": "lists the five classes found for the whole study population as the subtypes among men"
+  },
+  {
+   "id": "q009",
+   "answer_sha1": "d29014f1f96a",
+   "faithful": true
+  },
+  {
+   "id": "q011",
+   "answer_sha1": "428a18d7f737",
+   "faithful": true
+  },
+  {
+   "id": "q012",
+   "answer_sha1": "f964ee0429fa",
+   "faithful": true
+  },
+  {
+   "id": "q014",
+   "answer_sha1": "1a7e978979a7",
+   "faithful": true
+  },
+  {
+   "id": "q015",
+   "answer_sha1": "d08155d8d12c",
+   "faithful": true
+  },
+  {
+   "id": "q017",
+   "answer_sha1": "3dff457aaca7",
+   "faithful": true
+  },
+  {
+   "id": "q018",
+   "answer_sha1": "31c9ea30e148",
+   "faithful": false,
+   "note": "says most hospitalizations overall were non-CVD; the passages say so only for patients 65 and older (under 65, AF itself was the largest cause)"
+  },
+  {
+   "id": "q020",
+   "answer_sha1": "f2ac6968c7a2",
+   "faithful": true
+  },
+  {
+   "id": "q021",
+   "answer_sha1": "d80960a14a4f",
+   "faithful": true
+  },
+  {
+   "id": "q023",
+   "answer_sha1": "492caf7116f7",
+   "faithful": true
+  },
+  {
+   "id": "q024",
+   "answer_sha1": "e968b17e4974",
+   "faithful": true
+  },
+  {
+   "id": "q026",
+   "answer_sha1": "6494a06ec1a8",
+   "faithful": true
+  },
+  {
+   "id": "q027",
+   "answer_sha1": "6b5dff66223f",
+   "faithful": true
+  },
+  {
+   "id": "q029",
+   "answer_sha1": "dd08ac4a6105",
+   "faithful": true
+  },
+  {
+   "id": "q030",
+   "answer_sha1": "b0d504cc8607",
+   "faithful": true
+  },
+  {
+   "id": "q033",
+   "answer_sha1": "e7f4b3547013",
+   "faithful": true
+  },
+  {
+   "id": "q035",
+   "answer_sha1": "bc3bf0bcedba",
+   "faithful": true
+  },
+  {
+   "id": "q036",
+   "answer_sha1": "3fd2daa86b0e",
+   "faithful": true
+  },
+  {
+   "id": "q038",
+   "answer_sha1": "f1f70c697cfb",
+   "faithful": true
+  },
+  {
+   "id": "q039",
+   "answer_sha1": "d49955e4c232",
+   "faithful": true
+  },
+  {
+   "id": "q041",
+   "answer_sha1": "2610f22c6678",
+   "faithful": true,
+   "note": "the BDNF/neurogenesis mechanism is in passage 3"
+  },
+  {
+   "id": "q042",
+   "answer_sha1": "ca9bfc1edfec",
+   "faithful": true
+  },
+  {
+   "id": "q044",
+   "answer_sha1": "cb616321f6a1",
+   "faithful": true
+  },
+  {
+   "id": "q047",
+   "answer_sha1": "e2974c73afc9",
+   "faithful": true
+  },
+  {
+   "id": "q048",
+   "answer_sha1": "6db015af7578",
+   "faithful": true
+  },
+  {
+   "id": "q050",
+   "answer_sha1": "f3745ca34812",
+   "faithful": true
+  },
+  {
+   "id": "q051",
+   "answer_sha1": "3a430d06b839",
+   "faithful": true
+  },
+  {
+   "id": "q053",
+   "answer_sha1": "c38f81457167",
+   "faithful": true
+  },
+  {
+   "id": "q054",
+   "answer_sha1": "eda1e1848922",
+   "faithful": true
+  },
+  {
+   "id": "q056",
+   "answer_sha1": "71f3b42bbcb2",
+   "faithful": true
+  },
+  {
+   "id": "q057",
+   "answer_sha1": "d0895bbba5c1",
+   "faithful": true
+  },
+  {
+   "id": "q059",
+   "answer_sha1": "d7afa9c4b48c",
+   "faithful": true,
+   "note": "a fragment, but faithful"
+  },
+  {
+   "id": "q060",
+   "answer_sha1": "28277f9df094",
+   "faithful": true,
+   "note": "faithful; says nothing about Klotho"
+  },
+  {
+   "id": "q062",
+   "answer_sha1": "6bbba49d9536",
+   "faithful": true
+  },
+  {
+   "id": "q063",
+   "answer_sha1": "e8d41fe4bc69",
+   "faithful": true
+  },
+  {
+   "id": "q066",
+   "answer_sha1": "a7f121c2315a",
+   "faithful": true
+  },
+  {
+   "id": "q068",
+   "answer_sha1": "f358bb965aaa",
+   "faithful": true
+  },
+  {
+   "id": "q069",
+   "answer_sha1": "e01bcd59d7fc",
+   "faithful": true
+  },
+  {
+   "id": "q071",
+   "answer_sha1": "e2dcdacbfe22",
+   "faithful": true
+  },
+  {
+   "id": "q074",
+   "answer_sha1": "a497d06422b3",
+   "faithful": true
+  },
+  {
+   "id": "q075",
+   "answer_sha1": "7805757ba91b",
+   "faithful": true
+  },
+  {
+   "id": "q077",
+   "answer_sha1": "ae81fe4942d8",
+   "faithful": true
+  },
+  {
+   "id": "q078",
+   "answer_sha1": "aef9aa8ff2ae",
+   "faithful": true
+  },
+  {
+   "id": "q080",
+   "answer_sha1": "dfe52ea022cb",
+   "faithful": true
+  },
+  {
+   "id": "q081",
+   "answer_sha1": "6029f64e25cc",
+   "faithful": true
+  },
+  {
+   "id": "q083",
+   "answer_sha1": "a21376dfa114",
+   "faithful": true
+  },
+  {
+   "id": "q084",
+   "answer_sha1": "34bed9f9d99d",
+   "faithful": true
+  },
+  {
+   "id": "q086",
+   "answer_sha1": "2159c37fa5e3",
+   "faithful": true
+  },
+  {
+   "id": "q087",
+   "answer_sha1": "74b33089debe",
+   "faithful": true
+  },
+  {
+   "id": "q089",
+   "answer_sha1": "93d4c280341b",
+   "faithful": true
+  },
+  {
+   "id": "q090",
+   "answer_sha1": "22060d0b355c",
+   "faithful": true
+  },
+  {
+   "id": "q092",
+   "answer_sha1": "df28851b3a6b",
+   "faithful": true
+  },
+  {
+   "id": "q093",
+   "answer_sha1": "7c64205a71d2",
+   "faithful": true
+  },
+  {
+   "id": "q095",
+   "answer_sha1": "2b098fe436a4",
+   "faithful": true
+  },
+  {
+   "id": "q096",
+   "answer_sha1": "acdd6611ffdd",
+   "faithful": true
+  },
+  {
+   "id": "q098",
+   "answer_sha1": "1d8accfc1071",
+   "faithful": true
+  },
+  {
+   "id": "q099",
+   "answer_sha1": "04930e7ada76",
+   "faithful": true
+  },
+  {
+   "id": "q102",
+   "answer_sha1": "c4dd292ba7d0",
+   "faithful": true
+  },
+  {
+   "id": "q104",
+   "answer_sha1": "ee324d3003d6",
+   "faithful": false,
+   "note": "adds 'proof of atherosclerotic plaque', which is the CISS definition, not TOAST"
+  },
+  {
+   "id": "q105",
+   "answer_sha1": "a2a61e5940fe",
+   "faithful": true
+  },
+  {
+   "id": "q107",
+   "answer_sha1": "22cd942a03fe",
+   "faithful": true
+  },
+  {
+   "id": "q108",
+   "answer_sha1": "4151e496fdbb",
+   "faithful": true
+  },
+  {
+   "id": "q110",
+   "answer_sha1": "296d5507de5d",
+   "faithful": true
+  },
+  {
+   "id": "q111",
+   "answer_sha1": "8a39fb7fbf10",
+   "faithful": true
+  },
+  {
+   "id": "q113",
+   "answer_sha1": "88ec9bdb36b5",
+   "faithful": true
+  },
+  {
+   "id": "q114",
+   "answer_sha1": "eeedc777c3e9",
+   "faithful": true
+  },
+  {
+   "id": "q116",
+   "answer_sha1": "b8d91f3e6b2b",
+   "faithful": true
+  },
+  {
+   "id": "q117",
+   "answer_sha1": "9fdc1a3a3f9d",
+   "faithful": true
+  },
+  {
+   "id": "q119",
+   "answer_sha1": "d45244ca14ec",
+   "faithful": true
+  },
+  {
+   "id": "q120",
+   "answer_sha1": "e6cf70a419cd",
+   "faithful": true
+  },
+  {
+   "id": "q122",
+   "answer_sha1": "4f2be39eb314",
+   "faithful": true
+  },
+  {
+   "id": "q123",
+   "answer_sha1": "dd1ef89b4223",
+   "faithful": true,
+   "note": "faithful but does not give the prevalence"
+  },
+  {
+   "id": "q126",
+   "answer_sha1": "75880a94a522",
+   "faithful": true
+  },
+  {
+   "id": "q129",
+   "answer_sha1": "0fa2c6e53dbb",
+   "faithful": true
+  },
+  {
+   "id": "q131",
+   "answer_sha1": "3f79912dda2f",
+   "faithful": false,
+   "note": "says 20% (diabetic) vs 30% (lean); the passage gives 20% (lean) vs 14% (diabetic)"
+  },
+  {
+   "id": "q132",
+   "answer_sha1": "9b57623d503a",
+   "faithful": true
+  },
+  {
+   "id": "q134",
+   "answer_sha1": "c5ff8488b11f",
+   "faithful": true
+  },
+  {
+   "id": "q135",
+   "answer_sha1": "929585824e18",
+   "faithful": true
+  },
+  {
+   "id": "q137",
+   "answer_sha1": "272bf671648d",
+   "faithful": true
+  },
+  {
+   "id": "q138",
+   "answer_sha1": "51be1c235ae9",
+   "faithful": true
+  }
+ ],
+ "summary": {
+  "n": 85,
+  "faithful": 81
+ }
+}

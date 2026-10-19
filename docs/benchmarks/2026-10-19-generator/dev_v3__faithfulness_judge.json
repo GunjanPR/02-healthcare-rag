@@ -1,0 +1,292 @@
+{
+ "scorer": "claims",
+ "split": "dev",
+ "summary": {
+  "full": {
+   "n_answered": 46,
+   "faithful_rate": 0.8260869565217391,
+   "ci95": [
+    0.6927636765607748,
+    0.9091431643111074
+   ]
+  }
+ },
+ "rows": [
+  {
+   "id": "q001",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nACT scores are more effective as a means of excluding than confirming EIB in asthmatic patients aged 12 years and older, with their predictive value decreasing in younger patients. [2]"
+  },
+  {
+   "id": "q004",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nClaim: In obese patients with asthma, neutrophil counts were significantly higher than in non-obese patients with asthma (p = 0.03).\nSource: [2] \"On laboratory testing, white blood cell counts and neutrophil counts were significantly higher in obese patients with asthma than in non-obese patients with asthma (p = 0.01, p = 0.03)\""
+  },
+  {
+   "id": "q007",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "1. 50% compliance with controller medication was seen.\n   - \"50% (15/30) were poorly compliant and candidates for a more timely intervention to improve compliance to mitigate their situation.\" [1]\n\n2. 66% compliance with the kHealth kit was achieved.\n   - \"66% compliance with kHealth kit was achieved in this cohort.\" [1]\n\n3. 30% of the very poorly controlled children were highly compliant.\n   - \"30% (9/30) were highly compliant toward their controller medication intake\u2014suggesting a re-evaluation for change in medication or dosage.\" [1]\n\n4. 50% of the very poorly controlled children were poorly compliant.\n   - \"50% (15/30) were poorly compliant and candidates for a more timely intervention to improve compliance to mitigate their situation.\" [1]\n\nVERDICT: YES"
+  },
+  {
+   "id": "q010",
+   "system": "full",
+   "faithful": false,
+   "reasoning": "VERDICT: NO\n\nExplanation:\nThe answer claims that 82.9% of the study population had inadequately controlled asthma. However, this specific percentage is NOT FOUND in the provided passages. The closest relevant information is from passage [1], which states that \"Other studies from Nigeria have reported 82.9% inadequately controlled asthma.\" But this is not the same as the claim made in the answer."
+  },
+  {
+   "id": "q013",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nClaim: 29% of the eligible patients had uncontrolled asthma symptoms.\nSource: [3] \"29% of the particiants sufferd controlled, 18% had partly controlled and 29% had uncontrolled asthma symptoms.\""
+  },
+  {
+   "id": "q016",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "Claim 1: At 12-month follow-up, 72 of 74 patients (97.3%) were on OAC therapy, with the factor Xa inhibitors used in most cases (83.3%).\n\nWords from passage: \"At 12-month follow-up 72 of 74 patients (97.3%) were on OAC therapy. The factor Xa inhibitors were used in most cases (83.3%).\" [1]\n\nVERDICT: YES"
+  },
+  {
+   "id": "q019",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "1. The Atrial Fibrillation Better Care (ABC) pathway, which includes A\u2014Avoid stroke, B\u2014Better symptom management, and C\u2014Cardiovascular and comorbidity risk management, was associated with lower all-cause mortality in atrial fibrillation patients.\n   - \"ABC pathway compliance was independently associated with reduced all-cause mortality risk at both 6-months (Odds ratio (OR) 0.31; 95% Confidence Interval (CI) 0.13\u20130.77, p = 0.013) and one-year (OR 0.46; 95% CI 0.25\u20130.86, p = 0.015) FU in comparison to non-ABC-compliant group.\" [4]\n\nVERDICT: YES"
+  },
+  {
+   "id": "q022",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES"
+  },
+  {
+   "id": "q025",
+   "system": "full",
+   "faithful": false,
+   "reasoning": "VERDICT: NO\n\nExplanation:\n1. \"In the large Swedish cohort of people with chronic kidney disease, an eGFR below 30 was associated with a 1.6-fold increased risk of incident atrial fibrillation.\"\n   - NOT FOUND: The passage mentions that \"an eGFR <30 was associated with a 1.6-fold increased risk of incident AF\" but does not specify that this was from a large Swedish cohort. The passage does mention a Swedish cohort but does not provide the exact eGFR threshold or the 1.6-fold risk."
+  },
+  {
+   "id": "q028",
+   "system": "full",
+   "faithful": false,
+   "reasoning": "VERDICT: NO\n\nExplanation:\nThe answer claims that 4,861 patients underwent a Holter monitoring. This claim is supported by the passage [3], which states: \"A total of 4,861 patients without permanent AF underwent a Holter monitoring.\""
+  },
+  {
+   "id": "q031",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "Claim 1: Patients with recurrent MDD had the highest frequency of the minor C allele of BDNF rs962369, with a frequency of 0.32.\n\nCopy from passage: \"The frequency of minor allele C varied across subgroups of patients for BDNF rs962369. The highest frequency of the allele C was observed in patients with recurrent MDD (0.32) and the lowest in patients with schizophrenia (0.20).\"\n\nVERDICT: YES"
+  },
+  {
+   "id": "q034",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nClaim: Six of the top 10 features were differential EDA features.\nSource: \"As summarized in Table 3, feature ranking performed using SVM-RFE revealed that differential features were highly informative. For example, the second and third most relevant features were differential EDA features, which were dMSCL from D2 and dSKSCL from D3, respectively. Six of the top 10 features were differential EDA features.\" [4]"
+  },
+  {
+   "id": "q037",
+   "system": "full",
+   "faithful": false,
+   "reasoning": "VERDICT: NO\n\nExplanation:\n1. The answer claims: \"The association between hs-CRP levels and depression in the Cooper Clinic study was thought to be more likely explained by obesity status.\"\n   - This claim is NOT FOUND in the passages. The passage from [1] mentions that an association between hs-CRP levels and depression was found in the Cooper Clinic study, but it suggests that this association could be more likely explained by obesity status. The passage does not explicitly state that this was the thought or conclusion of the study, only that it could be more likely explained by obesity status."
+  },
+  {
+   "id": "q040",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "1. PVALB promoter methylation was increased at CpG2 and decreased at CpG4 in Thai MDD patients.\n   - [3] \"The main finding in this study was the site-specific change in PVALB promoter methylation which was increased at CpG2 and decreased at CpG4 in Thai MDD patients.\"\n\nVERDICT: YES"
+  },
+  {
+   "id": "q043",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nClaim: Hypertension was the most frequent comorbidity in both de novo acute heart failure and acutely decompensated chronic heart failure, at 79.8% and 82.7%, respectively.\n\nSource: [2] Hypertension was the most frequent comorbidity in both de novo AHF and ADHF at 79.8% and 82.7%, respectively (Table 1)."
+  },
+  {
+   "id": "q046",
+   "system": "full",
+   "faithful": false,
+   "reasoning": "VERDICT: NO\n\nExplanation:\nThe answer claims that \"Most patients have 5 or more co-morbid chronic conditions,\" but this specific claim is not directly supported by the passages. Passage [3] states that \"The majority of patients have 5 or more co-morbid chronic conditions,\" but it does not use the exact phrase \"Most patients.\" Therefore, the claim is not fully supported by the given passages."
+  },
+  {
+   "id": "q049",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES"
+  },
+  {
+   "id": "q052",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nFive overarching themes were identified. The first theme was awareness of professional role responsibilities that described the recognition of different responsibilities in these conversations within the HF team. (Passage [3])"
+  },
+  {
+   "id": "q055",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES"
+  },
+  {
+   "id": "q058",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "Values of ONSD higher than 5.93 mm support the diagnosis of IH with high sensitivity (93 %) and relatively high specificity (67 %).  \n[1] Our results suggest that ONSD values higher than 5.93 mm support the diagnosis of increased ICP with high sensitivity (93 %) and relatively high specificity (67 %).\n\nVERDICT: YES"
+  },
+  {
+   "id": "q061",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nThe prevalence of pregnancy-induced hypertension (PIH) was 15%.\nThis result is more than twice as high as the results in other Polish studies. This may be so as the testing was performed in a highly referenced center where many women with risk factors report. However, in this study, the proportion of preeclampsia (PE) cases alone was 2.6%. This result is in line with the lower figures reported in the International Federation of Gynecology and Obstetrics (FIGO) report (2\u20135%), but risk factors such as pre-existing hypertension, other chronic diseases and multiple pregnancies were excluded in this cohort."
+  },
+  {
+   "id": "q064",
+   "system": "full",
+   "faithful": false,
+   "reasoning": "VERDICT: NO\n\nExplanation:\nThe answer claims that \"Body mass index was the second most important predictor of new-onset diabetes mellitus (n = 1298) during a mean follow-up of 4.2 years.\" However, this specific claim is NOT FOUND in the provided passages. The relevant information is found in passage [1], which states: \"body mass index was the second important predictor of new-onset diabetes mellitus (n = 1298) during a mean follow-up of 4.2 years.\" The difference in the phrasing (\"second important\" vs \"second most important\") and the source of the information (passage [1] vs [2]) means the claim is not supported by the exact wording in the passages."
+  },
+  {
+   "id": "q067",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nMortality was assessed at 4.5 years and 17 years after randomization, [2]\nMortality was assessed at 4.5 years and 17 years after randomization, [5]"
+  },
+  {
+   "id": "q070",
+   "system": "full",
+   "faithful": false,
+   "reasoning": "VERDICT: NO\n\nExplanation:\nThe answer claims that 98 (40%) more patients would be diagnosed with osteopenia, assuming the correlation between BMD measurements was 0.8. However, the passages do not provide a specific number of 98 for osteopenia. Passage [4] states that assuming a correlation r = 0.8 between BMD measurements at different sites, 21.2% (52 of 245) of patients had all three BMD measurements that were congruent for osteopenia. This is the closest to the 40% figure, but it does not state that 98 patients would be diagnosed with osteopenia. Therefore, the claim is not fully supported by the passages."
+  },
+  {
+   "id": "q073",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nClaim 1: The study appears to contradict the seed-and-soil hypothesis of Paget.\nWords from passage: \"Our findings appear to contradict the seed-and-soil hypothesis of Paget, which has been the predominant explanation of nonrandom metastatic patterns,\" [1]\n\nClaim 2: Organ microenvironments interact with disseminated cancer mostly after the specific organ has been predetermined to be the designated location.\nWords from passage: \"We therefore conceived a hypothesis that metastatic sites had been predetermined by an unknown mechanism we called the ecosystem of the body before the seed landed on the soil, then the microenvironment of the soil supported the growth of the seeds after their landing.\" [1]\n\nClaim 3: The microenvironment of the soil supports the growth of the seeds after their landing.\nWords from passage: \"We therefore conceived a hypothesis that metastatic sites had been predetermined by an unknown mechanism we called the ecosystem of the body before the seed landed on the soil, then the microenvironment of the soil supported the growth of the seeds after their landing.\" [1]"
+  },
+  {
+   "id": "q076",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES"
+  },
+  {
+   "id": "q079",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nClaim: The Hungarian version of the Osteoporosis Knowledge Assessment Tool reached a Cronbach's alpha of 0.81.\nSource: [4] The development of a reliable and valid instrument to measure the osteoporosis-related knowledge: validation of the Hungarian version of Osteoporosis Knowledge Assessment Tool (OKAT) (methods)\nThe OKAT must include very easy items as well as very difficult items, which tends to decrease the internal consistency of the scale Cronbach\u2019s alpha. The Hungarian version got excellent 0.81 that is in the acceptability range (0.7\u20130.85)."
+  },
+  {
+   "id": "q082",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nClaim: The osteoporosis treatment initiation rate in fiscal year 2022 was 97.8%.\nWords from the passage: \"The rate of treatment initiation also increased remarkably, from 21.7% in 2020, to 68.7% in 2021, reaching 97.8% in 2022.\""
+  },
+  {
+   "id": "q085",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nClaim: Among the identified microbes, Escherichia coli (21.8%) was the most common pathogen, followed by Klebsiella species (13.8%) and Staphylococcus aureus (11.6%).\n\nSource: [1] \"Among the identified microbes, Escherichia coli (21.8%) was the most common pathogen, followed by Klebsiella species (13.8%) and Staphylococcus aureus (11.6%).\""
+  },
+  {
+   "id": "q088",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES"
+  },
+  {
+   "id": "q091",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES"
+  },
+  {
+   "id": "q097",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nClaim: The NeoSeD score achieved an area under the curve (AUC) of 0.918 (95% CI, 0.884\u20130.952) for diagnosing sepsis in neonates with suspected sepsis.\nSource: [2] \"We obtained an area under curve (AUC) of 0.918 (95% CI, 0.884\u20130.952), indicating excellent discrimination capacity.\""
+  },
+  {
+   "id": "q100",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES"
+  },
+  {
+   "id": "q103",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES"
+  },
+  {
+   "id": "q106",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES"
+  },
+  {
+   "id": "q109",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "1. According to [2], 795,000 people in the US experience a stroke annually.\n2. According to [2], 55,000 more women than men experience a stroke each year.\n\nVERDICT: YES"
+  },
+  {
+   "id": "q112",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nClaim: The national prevalence of isoniazid resistance among rifampicin-sensitive tuberculosis cases in Pakistan is 7%.\nSource: [2] A drug resistance survey in Pakistan in 2016 has shown 7% INH resistance among rifampicin sensitive cases."
+  },
+  {
+   "id": "q115",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES"
+  },
+  {
+   "id": "q118",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nIgG against TBCM was an independent significant marker for LTBI diagnosis. [1, 2, 3, 4, 5]"
+  },
+  {
+   "id": "q121",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nClaim: The WHO discourages the use of serological tests for active TB diagnosis, but encourages conducting further research to improve their quality.\nWords from passage: [2] \"Based on the presented result, we deduce that combined rather than single antigen testing might be a decent diagnostic strategy for developing a serodiagnosis assay that could also predict TB progression. In the future, we plan to compare the sensitivity and specificity between serodiagnosis and IGRA in active TB, latent tuberculosis infection (LTBI) groups, and healthy people. Moreover, the serological test is also expected to support the diagnosis of other types of hard-to-diagnose TB, such as smear-negative PTB cases and extra-pulmonary TB, including TB pleuritis and TB meningitis. Thus, research about serological tests in diagnosing these types of TB could be valuable to develop. However, WHO still discourages the use of serological tests for active TB diagnosis; however, they encourage conducting further research to improve their quality.\""
+  },
+  {
+   "id": "q124",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES"
+  },
+  {
+   "id": "q127",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES"
+  },
+  {
+   "id": "q130",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nClaim: Diabetes was associated with increased CRC risk (hazard ratio [HR], 1.47; 95% CI, 1.21-1.79).\nCopy from passage: Diabetes was associated with increased CRC risk (hazard ratio [HR], 1.47; 95% CI, 1.21-1.79)."
+  },
+  {
+   "id": "q133",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES"
+  },
+  {
+   "id": "q136",
+   "system": "full",
+   "faithful": false,
+   "reasoning": "VERDICT: NO\n\nExplanation:\n1. \"Monogenic diabetes [1, 5].\"\n   - Passage [1]: NOT FOUND\n   - Passage [5]: \"whilst monogenic diabetes is relatively rare, accounting for about 3% of diabetes cases diagnosed in individuals under 30 years of age\"\n   \nThe claim is not directly supported by the passages, as passage [1] does not mention monogenic diabetes, and passage [5] only provides a brief statement about its rarity without explicitly supporting the claim that it is a factual statement."
+  },
+  {
+   "id": "q139",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES"
+  }
+ ]
+}

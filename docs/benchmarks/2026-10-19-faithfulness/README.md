@@ -74,3 +74,42 @@ counted wrong): M1 baseline **75.0%** (69/92), BM25 RAG **80.4%** (74/92), full 
 (87.0% → 82.6%), and the gain over the baseline shrinks from +9.8 to +7.6 points. The judge
 is too strict to replace keyword grading: it was wrong in 17 of the 27 disagreements and
 right in 6.
+
+## 4. Every test answer labeled by hand (added later the same day)
+
+The 20-item audit above has only 3 unfaithful answers, so it says little about how well a
+judge catches them. All 88 answered test questions of the full system were then labeled by
+hand, blind to every judge's verdicts: each answer sentence was read against the passages
+shown to the model (`eval/qa/faithfulness_labels_test.json`, reviewer Claude, not a
+clinician; citation numbers ignored, since citation accuracy is measured separately).
+
+**Hand-labeled faithfulness of the full system: 78/88 = 88.6% (95% CI 80.3-93.7).** The ten
+unfaithful answers: four attach a number to the wrong group or measure (q014, q044, q096,
+q123), four add claims the passages do not make (a study limitation, outside knowledge,
+a trend by age, unstated sources: q045, q098, q126, q072), one says the passages have no
+information they do have (q060), and one reverses a finding (q078, "dose-dependent").
+
+Each scorer against those 88 labels (`python -m healthcare_rag.judge labels <run.json>`;
+raw runs in `labels_check_*.json`):
+
+| Scorer | Rate | Agreement | Kappa | Faithful matched | Unfaithful caught |
+|---|---|---|---|---|---|
+| **qwen2.5:7b, one-word verdict (the default)** | 86.4% | **90.9%** | **0.58** | 73/78 | **7/10** |
+| qwen2.5:7b, also given the question (`judge_q`) | 85.2% | 87.5% | 0.45 | 71/78 | 6/10 |
+| qwen2.5:7b, claim by claim with quotes (`claims`) | 83.0% | 83.0% | 0.31 | 68/78 | 5/10 |
+| gemma3:4b, one-word verdict | 97.7% | 90.9% | 0.31 | 78/78 | 2/10 |
+
+- The one-word judge is still the best automatic scorer, but on the full set its kappa is
+  0.58, not the 0.83 the small audit suggested. It misses 3 of 10 unfaithful answers and
+  rejects 5 faithful ones (q089, q104, q105, q114, q134: verbatim or near-verbatim answers).
+  Its errors roughly cancel here (86.4% vs 88.6%), but it should be read as ±a few points.
+- Asking the 7B model to list claims and quote support first made it worse: it often
+  skipped the format, declared verbatim answers NOT FOUND, or quoted the right sentence and
+  still said YES to a reversed claim (q078).
+- gemma3:4b says YES to almost everything.
+
+So the faithfulness target is judged by the hand labels from here on, with the one-word
+judge as a cross-check.
+
+The generator change that followed (llama3.2 → qwen2.5:7b-instruct, 95.3% hand-labeled) is in
+[../2026-10-19-generator](../2026-10-19-generator/README.md).

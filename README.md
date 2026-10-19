@@ -17,12 +17,13 @@ the **LLM Gateway (project 01)** through its OpenAI-compatible API, so routing, 
 rate limits, and per-query cost and latency come from the gateway.
 
 **Result:** on 92 held-out questions over 500 PMC articles, the system **improved answer
-accuracy by 9.8 points (77.2% → 87.0%) and NDCG@10 by 24% (0.592 → 0.734) against the
-BM25-only baseline**. It also declined all 14 out-of-scope test questions without an LLM
-call, while keeping p95 latency at 7.6 s on a 20 W laptop GPU at $0 per query. A
-cross-family LLM judge (kappa 0.83 against hand labels) rates 86.4% of its answers as
-supported by the cited passages. Details, caveats and confidence intervals are in
-[Evaluation & Results](#evaluation--results).
+accuracy by 10.9 points (77.2% → 88.0%) and NDCG@10 by 24% (0.592 → 0.734) against the
+BM25-only baseline**, and declined all 14 out-of-scope test questions without an LLM call.
+**95.3% of its answers are faithful to the retrieved passages by blind hand labels** (81/85,
+up from 88.6% with the earlier 3B generator), with p95 latency 8.5 s on a 20 W laptop GPU at
+$0 per query. Hand labels also showed that the LLM judges overstated their own reliability
+(kappa 0.58, not 0.83) and that a same-family judge misses its generator's errors (0 of 4).
+Details, caveats and confidence intervals are in [Evaluation & Results](#evaluation--results).
 
 ## Tech Stack
 
@@ -33,7 +34,7 @@ supported by the cited passages. Details, caveats and confidence intervals are i
 | Sparse retrieval | OpenSearch 2.17 (BM25, English analyzer) |
 | Dense retrieval | Qdrant 1.19 + `nomic-embed-text` embeddings via the gateway; RRF fusion |
 | Reranking | `ncbi/MedCPT-Cross-Encoder` (PubMed-trained), fp16 on the GPU (`[rerank]` extra) |
-| LLM inference | 01-llm-gateway (OpenAI-compatible) → Ollama `llama3.2` (3B) |
+| LLM inference | 01-llm-gateway (OpenAI-compatible) → Ollama `qwen2.5:7b-instruct` (default since 2026-10-19; `llama3.2` 3B before) |
 | Data | PubMed Central Open Access (CC BY/CC0) via NCBI E-utilities + BioC API |
 | Observability | Prometheus, Grafana, OpenTelemetry → Jaeger (shared with the gateway) |
 | CI | GitHub Actions: lint, tests, compose smoke test, integration tests, retrieval gate |
@@ -72,7 +73,8 @@ supported by the cited passages. Details, caveats and confidence intervals are i
 ### Prerequisites
 - Python 3.11
 - **01-llm-gateway running**, on `http://127.0.0.1:8000` by default, with a client API
-  key. Ollama needs `llama3.2` and `nomic-embed-text` pulled.
+  key. Ollama needs `qwen2.5:7b-instruct` (or `llama3.2`, see `CHAT_MODEL`) and
+  `nomic-embed-text` pulled, and the gateway's `OLLAMA_MODELS` must list the chat model.
 - Docker Desktop, for OpenSearch 2.17 and Qdrant 1.19 (`docker compose`). OpenSearch runs
   single-node with the security plugin disabled (local dev only) and a 512 MB heap. The
   search backends idle at about 1 GB of RAM.
@@ -215,7 +217,7 @@ make index-toy && OPENSEARCH_INDEX=toy_chunks make dev
 
   | Alert | Fires when |
   |---|---|
-  | AskLatencyHigh | `/ask` p95 > 10 s for 5 min (measured test p95: 7.6 s) |
+  | AskLatencyHigh | `/ask` p95 > 10 s for 5 min (measured test p95: 8.5 s with qwen2.5:7b, 7.6 s with llama3.2) |
   | AbstentionRateHigh | more than 50% of `/ask` requests abstain over 15 min |
   | UncitedAnswersHigh | more than 20% of answers are dropped for missing citations over 15 min |
   | BackendErrors | more than 5 gateway or search failures in 5 min |
@@ -241,11 +243,12 @@ make format   # auto-fix lint and formatting
 
 ## Evaluation & Results
 
-**Headline (measured 2026-10-03, test split):** Against the BM25-only baseline, the full
-system raised **NDCG@10 from 0.592 to 0.734 (+24%)** and **answer accuracy from 77.2% to
-87.0% (+9.8 points)** on 92 held-out PubMed Central questions. Over the same test set it
-declined **14 of 14** out-of-scope questions. End-to-end p95 latency was 7.6 s on a laptop
-GPU held to 20 W.
+**Headline (test split; retrieval measured 2026-10-03, generator 2026-10-19):** Against the
+BM25-only baseline, the full system raised **NDCG@10 from 0.592 to 0.734 (+24%)** and
+**answer accuracy from 77.2% to 88.0% (+10.9 points)** on 92 held-out PubMed Central
+questions, with **95.3% of its answers faithful to the passages by blind hand labels**. Over
+the same test set it declined **14 of 14** out-of-scope questions. End-to-end p95 latency
+was 8.5 s on a laptop GPU held to 20 W.
 
 ### Method
 - **Corpus:** 500 CC BY/CC0 PMC OA articles, 8,369 chunks (see *Data* above).
@@ -266,7 +269,8 @@ GPU held to 20 W.
   1. hybrid retrieval (BM25 + `nomic-embed-text` dense, RRF), top 20
   2. MedCPT cross-encoder rerank, keep top 5
   3. abstain if the best rerank score is below 6.43 (tuned on dev)
-  4. `llama3.2` (3B) via the gateway, with numbered citations
+  4. the chat model via the gateway, with numbered citations (`llama3.2` 3B in the
+     2026-10-03 run; `qwen2.5:7b-instruct` since 2026-10-19)
   5. verify: drop uncited answers, after one citation-repair turn
 - **Reproduce:** `make eval HARDWARE="..."` writes
   [docs/evaluation_report.md](docs/evaluation_report.md).
@@ -285,40 +289,59 @@ top 50 instead of 20 gave no gain on dev at 2.4× the rerank latency.
 
 ### Answers (test)
 
-| Metric | BM25 baseline (M1) | Full system |
-|---|---|---|
-| Answer accuracy, answerable (keyword match; abstain counts as wrong) | 77.2% | **87.0%** |
-| Answered rate, answerable | 85.9% | 95.7% |
-| Cites the source chunk (when answered) | 53.2% | 63.6% |
-| Cites the source article (when answered) | 96.2% | 98.9% |
-| Answers with at least one valid citation | 96.2% | 100% |
-| Out-of-scope questions declined | 14/14 | 14/14 |
-| Abstention precision | 51.9% | 77.8% |
-| End-to-end latency p50 / p95 | 2.7 s / 3.7 s | 4.1 s / 7.6 s |
-| Mean prompt / completion tokens | 1,175 / 31 | 1,689 / 50 |
-| Cost per query (gateway-reported) | $0 | $0 |
+Two generators, same retrieval, reranking, threshold and prompt. The `llama3.2` columns are the
+2026-10-03 run; `qwen2.5:7b-instruct` was chosen on dev on 2026-10-19 and run on test once
+([details](docs/benchmarks/2026-10-19-generator/README.md)).
 
-- **Statistical strength:** answer accuracy +9.8 points, 95% paired bootstrap CI +0.0 to
-  +19.6. The gain is real on this set but at the edge of significance with N = 92.
+| Metric | M1 baseline, llama3.2 | Full, llama3.2 | M1 baseline, qwen2.5:7b | **Full, qwen2.5:7b (default)** |
+|---|---|---|---|---|
+| Answer accuracy (keyword match; abstain counts as wrong) | 77.2% | 87.0% | 77.2% | **88.0%** |
+| Answer accuracy, hand-adjudicated | 75.0% | 82.6% | 77.2% | **84.8%** |
+| **Faithful to the passages, hand-labeled** | - | 88.6% (78/88) | - | **95.3% (81/85)** |
+| Answered rate, answerable | 85.9% | 95.7% | 89.1% | 92.4% |
+| Cites the source chunk (when answered) | 53.2% | 63.6% | 56.1% | 75.3% |
+| Cites the source article (when answered) | 96.2% | 98.9% | 100% | 100% |
+| Answers with at least one valid citation | 96.2% | 100% | 100% | 100% |
+| Out-of-scope questions declined | 14/14 | 14/14 | 14/14 | 14/14 |
+| Abstention precision | 51.9% | 77.8% | 58.3% | 66.7% |
+| End-to-end latency p50 / p95 | 2.7 s / 3.7 s | 4.1 s / 7.6 s | 4.1 s / 6.4 s | 5.5 s / 8.5 s |
+| Mean prompt / completion tokens | 1,175 / 31 | 1,689 / 50 | 1,193 / 37 | 1,604 / 34 |
+| Cost per query (gateway-reported) | $0 | $0 | $0 | $0 |
+
+- **Statistical strength:** full vs M1 baseline, keyword accuracy +10.9 points with qwen
+  (paired bootstrap 95% CI +0.0 to +20.7) and +9.8 with llama (+0.0 to +19.6): real on this
+  set but at the edge of significance with N = 92.
+- **Faithfulness and the >90% target (2026-10-19):** every answered test question of the
+  full system was labeled by hand, blind to any judge (reviewer: Claude, not a clinician).
+  With llama3.2, 78/88 = **88.6%** were faithful, short of the target. With qwen2.5:7b,
+  81/85 = **95.3%** (95% CI 88.5-98.2): the target is met on the point estimate, but the
+  interval still reaches below 90%, and on the 85 questions both answered the difference
+  (77 vs 81) is not significant (McNemar p = 0.39). Two of llama's ten unfaithful answers
+  became abstentions.
+- **LLM judges were checked against those labels, and none can replace them.** The one-word
+  `qwen2.5:7b` judge agrees with the llama labels at kappa 0.58 (a 20-item audit had
+  suggested 0.83). Asking it to list and quote claims first was worse (0.31), and gemma3:4b
+  says YES to almost everything. Judging qwen's own answers, the qwen judge caught **0 of 4**
+  unfaithful ones, so a judge from the generator's family is not used for the headline.
+  Details: [faithfulness](docs/benchmarks/2026-10-19-faithfulness/README.md),
+  [generator](docs/benchmarks/2026-10-19-generator/README.md).
+- **Dev changes that did not help:** sentence-level citation relabeling (89.1% → 87.0%
+  judged faithful), dropping weakly supported sentences (-19 points accuracy), prompt v2, a
+  terse prompt (fragments like "82.9% [2]"), and `qwen2.5:3b` (declined 43% of answerable
+  questions).
+- **Keyword grading, checked:** every answer where the keywords and an LLM correctness judge
+  disagree (27 with llama, 11 with qwen) was read by hand. Corrected accuracy is in the table;
+  keywords overstate the full system by 3-4 points.
+- **Cost of the bigger generator:** about +1.5 s at p50 on this GPU, because 18% of the 7B
+  model runs on the CPU next to the embedder and the reranker. `CHAT_MODEL=llama3.2` gives
+  back the faster, less faithful configuration.
 - **How out-of-scope questions are declined:** the full system declines them **without
   calling the LLM** (rerank score gate). The baseline needs a generation call to say it
   doesn't know.
 - **Citation repair:** the first measured run (v1) discarded uncited answers, which gave
-  81.5% accuracy for the full system. Dev showed that every discarded answer was
+  81.5% accuracy for the llama full system. Dev showed that every discarded answer was
   otherwise correct, so v2 adds one follow-up turn asking for citations. Both runs are in
   the report.
-- **Faithfulness (measured 2026-10-19):** a second-pass judge from another model family,
-  `qwen2.5:7b-instruct`, agreed with 20 hand labels 95% of the time (Cohen's kappa 0.83).
-  The 3B generator judging itself managed only 0.65 (kappa 0.30), and an NLI cross-encoder
-  0.30. By that judge, **86.4%** of the full system's answers are supported by their
-  passages (95% CI 77.7-92.0, n = 88), against 81.0% for the BM25 baseline. That is short
-  of the >90% target, so the target is **not met**. Details and raw outputs:
-  [docs/benchmarks/2026-10-19-faithfulness](docs/benchmarks/2026-10-19-faithfulness/README.md).
-- **Keyword grading, checked:** the same judge graded correctness, and the 27 answers where
-  it and the keywords disagree were read by hand. Keywords were right in 17 and the judge in
-  6 (4 unclear). Corrected accuracy is **82.6%** for the full system and 75.0% for the
-  baseline (+7.6 points), so the keyword figure above overstates the full system by about
-  4 points.
 - **Cost:** $0, because the gateway prices the local Ollama backend at zero. Token counts
   are logged for pricing a hosted backend.
 - **Hardware:** Acer Nitro V 15 (i5-13420H, RTX 4050 Laptop 6 GB) on AC power over
@@ -339,7 +362,8 @@ with yes, no or maybe.
 | Latency p50 / p95 | 2.6 s / 3.8 s | 3.2 s / 4.6 s | 4.3 s / 7.5 s |
 
 Retrieval is not the bottleneck here: the gold abstract is almost always shown, and even
-the oracle that is handed it scores 61.4%. The limit is the 3B generator's yes/no/maybe
+the oracle that is handed it scores 61.4%. The limit is the 3B generator's (llama3.2; not re-run
+with qwen2.5:7b) yes/no/maybe
 reasoning (it never says "maybe" in the full system), so the full system's +0.0 points
 over the baseline (95% CI -3.2 to +3.2) is expected. Full table:
 [docs/pubmedqa_results.md](docs/pubmedqa_results.md).
@@ -414,7 +438,8 @@ Milestones follow [SHARED_STANDARDS.md](../SHARED_STANDARDS.md). Each one has a 
 ### M4: Evaluation & testing
 - [x] QA set: 159 questions (139 answerable from sampled passages + 20 out of scope), dev/test split; written by Claude, not clinician-labeled
 - [x] Retrieval eval: recall@k, NDCG@10, MRR vs the BM25-only baseline (`make eval`)
-- [x] Answer eval: accuracy, citation accuracy, abstention; faithfulness by a cross-family judge (qwen2.5 7B, kappa 0.83 against hand labels), with every judge/keyword disagreement read by hand
+- [x] Answer eval: accuracy, citation accuracy, abstention; faithfulness hand-labeled on every answered test question (blind), with LLM judges scored against those labels and every judge/keyword disagreement read by hand
+- [x] Faithfulness target (>90%): 95.3% hand-labeled with `qwen2.5:7b-instruct` (CI 88.5-98.2; was 88.6% with `llama3.2`)
 - [x] Unit + integration tests (metrics, graph, endpoints, failure paths; OpenSearch/Qdrant integration)
 
 ### M5: Observability / monitoring

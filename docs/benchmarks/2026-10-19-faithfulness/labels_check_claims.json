@@ -1,0 +1,544 @@
+{
+ "scorer": "claims",
+ "split": "test",
+ "summary": {
+  "full": {
+   "n_answered": 88,
+   "faithful_rate": 0.8295454545454546,
+   "ci95": [
+    0.7376293870111583,
+    0.893892711906979
+   ]
+  }
+ },
+ "rows": [
+  {
+   "id": "q002",
+   "system": "full",
+   "faithful": false,
+   "reasoning": "1. A multidisciplinary systematic assessment should be conducted, including the assessment of comorbid conditions, treatment-related issues, environmental exposures, and psychosocial factors.\nNOT FOUND\n\n2. Evaluating comorbidities and modifiable and non-modifiable factors associated with uncontrolled asthma in children, such as nasal disease, eczema, food allergy, obesity, etc., is essential.\n[4]\n\n3. Assessing treatment issues, such as adherence to therapy and inhaler technique, is also crucial.\n[4]\n\nVERDICT: NO"
+  },
+  {
+   "id": "q003",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES"
+  },
+  {
+   "id": "q005",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nClaim: A peripheral blood eosinophil count of >300 cells/\u00b5L was the threshold associated with the best sensitivity (72.4%) for predicting sputum eosinophils > 3%.\nSource: [3] \"The analysis of different thresholds of peripheral blood eosinophilia (200 and 300 cells/\u00b5L) and FeNO (20, 40 and 50 ppb) for predicting patients with >3% sputum eosinophils showed that an eosinophil count of >300 cells/\u00b5L was the cutpoint associated with the best sensitivity (72.4%), specificity (51.6%), and positive and negative predictive values (58% and 66%, respectively).\""
+  },
+  {
+   "id": "q006",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "1. rs12270961 was associated with uncontrolled asthma in adults with asthma, with each additional copy of the G-allele being associated with a 1.4-fold increase in the odds of uncontrolled asthma.\n> Among adults with asthma, assuming an additive genetic model, rs12270961 was associated with uncontrolled asthma (Table 3). Each additional copy of the G-allele, was associated with a 1.4-fold increase in the odds of uncontrolled asthma (95% CI 1.02,1.91; p = 0.03).\n\nVERDICT: YES"
+  },
+  {
+   "id": "q008",
+   "system": "full",
+   "faithful": false,
+   "reasoning": "VERDICT: NO\n\nExplanation: The answer claims that identifying separate predictors for \"Partly controlled, severe asthma\" and \"Uncontrolled asthma with unknown severity\" was difficult among men, as almost all factors predicted belonging to these subtypes with similar odds ratios. However, the passages do not provide specific odds ratios for these subtypes among men. The relevant information is found in [4] Subtypes of asthma based on asthma control and severity: a latent class analysis (results), which states that among men, identifying separate predictors for \"Partly controlled, severe asthma\" and \"Uncontrolled asthma with unknown severity\" was difficult, but it does not provide the specific odds ratios mentioned in the answer. Therefore, the claim is not fully supported by the passages."
+  },
+  {
+   "id": "q009",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES"
+  },
+  {
+   "id": "q011",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES"
+  },
+  {
+   "id": "q012",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "1. A past history of pulmonary tuberculosis (TB) was strongly associated with work-related asthma in South African health workers.\n[1] Health workers with current asthma were more likely to have a history of PTB (OR = 10.08; 95% CI: 3.31\u201330.64). [2] Interestingly, in the current study, a past history of pulmonary tuberculosis (TB) was strongly associated with asthma symptoms, current asthma and work-related asthma. This association persisted even after adjusting for age, gender, smoking, atopy and body mass index. [1]\n\nVERDICT: YES"
+  },
+  {
+   "id": "q014",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "1. In 2008\u20132017, 572 patients were hospitalized with the diagnosis of acute asthma exacerbation (ICD-10 code: J45).\n2. Of these patients, 205 met the definition of acute severe asthma (Figure 1).\n3. At discharge of the first hospitalization due to the severe acute asthma exacerbation, 43.9% patients received ICS + LABA, and 43.9% received ICS alone (Table 1).\n\nVERDICT: YES"
+  },
+  {
+   "id": "q015",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nClaim 1: The Purine metabolism pathway was implicated in atrial fibrillation by combined metabolomic and proteomic analyses.\n- [1]: \"The purine metabolic pathway is closely implicated and strongly related to AF progression. For example, uric acid, the end-product of purine metabolism, plays a crucial role in cardiovascular diseases, such as atrial fibrillation and cardiovascular death.\"\n- [2]: \"Reportedly, plasma uric acid level increased in AF patients and was associated with AF burden. Interestingly, uric acid is an end product of purine metabolism. Adenosine is purine metabolism-related metabolite that can induce AF.\"\n\nClaim 2: The end product of the Purine metabolism pathway is uric acid.\n- [1]: \"uric acid, the end-product of purine metabolism, plays a crucial role in cardiovascular diseases, such as atrial fibrillation and cardiovascular death.\""
+  },
+  {
+   "id": "q017",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "Complete conduction block at the LA roof was obtained in 95.7% (201/210) of patients, and LAPW was isolated in 83.3% (130/156) of patients.  \nVERDICT: YES"
+  },
+  {
+   "id": "q018",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "1. In patients aged < 65 years, due to few complicating diseases and high requirements for QoL, most young people may be hospitalized for relieving AF-caused symptoms or seeking catheter ablation to maintain sinus rhythm.\n   - The passages state: \"In patients aged < 65 years, due to few complicating diseases and high requirements for QoL, most young people may be hospitalized for relieving AF-caused symptoms or seeking catheter ablation to maintain sinus rhythm.\"\n\n2. In patients aged \u2265 75 years, hospitalizations were predominantly hospitalized for non-CVD (49.3%).\n   - The passages state: \"patients aged 65\u201374 and \u2265 75 years were predominantly hospitalized for non-CVD (43.6% and 49.3% respectively).\"\n\n3. Among patients aged < 65 years, hospitalizations attributed to AF accounted for the largest proportion, reaching 42.1% of the all-cause hospitalizations.\n   - The passages state: \"Among patients aged < 65 years, hospitalizations attributed to AF accounted for the largest proportion, reaching 42.1% of the all-cause hospitalizations.\"\n\nVERDICT: YES"
+  },
+  {
+   "id": "q020",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nClaim: The one-year success rate off antiarrhythmic drugs of single-stage hybrid AF ablation in patients with persistent AF or failed catheter ablation was 76%.\nWords from the passage: \"At 1-year 38 (76%) maintained sinus rhythm off antiarrhythmic drugs.\" [1]"
+  },
+  {
+   "id": "q021",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nThe mean time per session of 8.6 min (SD = 11.1) was stated in passage [2]: \"The mean time each participant spent on the website per session was 10 (SD 8) minutes per session during a 1-month study period.\""
+  },
+  {
+   "id": "q023",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "1. The area under the ROC curve of postoperative HMGB1 for predicting AF recurrence after cryoballoon ablation was 0.68.\n- Receiver operating characteristic analysis revealed that HMGB1post had a moderate predictive power for AF recurrence (area under the curve: 0.68; sensitivity: 72%; and specificity: 68%).\n\nVERDICT: YES"
+  },
+  {
+   "id": "q024",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES"
+  },
+  {
+   "id": "q026",
+   "system": "full",
+   "faithful": false,
+   "reasoning": "VERDICT: NO\n\nExplanation:\nThe answer states that the minimally important difference for change in the AFEQT score has been suggested as 12 units in a moderate-sized, 3-month study of patients undergoing electrophysiologic interventions for control of AF. However, this specific claim is NOT FOUND in the provided passages. The closest related information is in passage [1], which mentions that the minimally important difference for change in the AFEQT score has been suggested as 12 units, but it does not specify the context of a 3-month study of patients undergoing electrophysiologic interventions for control of AF."
+  },
+  {
+   "id": "q027",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "1. Atrial flutter\n- \"First, the score incorporates information about the history of previous electrical cardioversions, which represents the accumulation of structural atrial changes that may prevent pharmacological cardioversion.\" [3]\n\n2. Duration of AF-related symptoms\n- \"Second, fine-grained information on how long the current episode has lasted since onset is a known predictor of the success of pharmacological cardioversion.\" [3]\n\n3. History of previous electrical cardioversion\n- \"First, the score incorporates information about the history of previous electrical cardioversions, which represents the accumulation of structural atrial changes that may prevent pharmacological cardioversion.\" [3]\n\n4. Specific intravenous antiarrhythmic drug\n- \"Finally, the fourth predictor included in the SIC-AF score was the particular intravenous antiarrhythmic drug, which allows estimation of the probability of successful intravenous pharmacological cardioversion for the particular agent.\" [3]\n\nVERDICT: YES"
+  },
+  {
+   "id": "q029",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "1. For each additional 13 years of patient age, the odds of response to rTMS dropped by 42%.\n   - These findings align with previous studies indicating that age and baseline symptom severity are negatively associated with treatment outcome. Results from the whole-head model revealed that for each additional 13 years of age, there was a 42% reduction in the odds that a patient will respond to rTMS.\n   \nVERDICT: YES"
+  },
+  {
+   "id": "q030",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "1. Long-term antidepressant medication was found to lower spindle density in patients with major depressive disorder, as observed in Dataset A and Dataset C, which had a 28-day medication follow-up.\n   - In Dataset C, spindle density (per epoch) in 28-day medicated MDD patients was decreased (t(49.21) = -2.79, p =.007; Fig. 3A), as well as spindle count (t(51.94) = -2.5, p =.016) and spindle duration (t(55.98) = -2.44, p =.018) compared to controls. (Passage [3])\n2. This reduction was absent after combining Dataset A with the short-term medication (i.e. 7-day follow-up) of Dataset B and C against respective controls.\n   - No differences in spindle parameters were found when all three (medicated and control) datasets were combined (see supplementary materials for details). (Passage [3])\n\nVERDICT: YES"
+  },
+  {
+   "id": "q033",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "1. Gender made the greatest contribution in each regression model, which is consistent with our finding that female MDD patients have higher DAS scores.\n - Particularly, gender made the greatest contribution in each regression model, which is consistent with our finding that female MDD patients have higher DAS scores.\n\nVERDICT: YES"
+  },
+  {
+   "id": "q035",
+   "system": "full",
+   "faithful": false,
+   "reasoning": "1. Participants were more likely to use general state terms than emotion terms to describe neutral experiences, p < 0.001.\n   \n   - Additionally, although participants infrequently used general state terms to describe their momentary emotional experiences overall, they were significantly more likely to use positive than negative general state terms, p < 0.001, but they were equally likely to use negative and positive emotion terms, p = 0.93. [4]\n\nVERDICT: NO"
+  },
+  {
+   "id": "q036",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES"
+  },
+  {
+   "id": "q038",
+   "system": "full",
+   "faithful": false,
+   "reasoning": "VERDICT: NO\n\nExplanation:\n1. The claim states that the group differences between depressed and non-depressed people in need satisfaction for autonomy, competence, and relatedness were 4.7, 5.6, and 3.4, respectively.\n   - The passage [1] states: \"group differences between non-depressed and depressed were 4.7, 5.6, and 3.4 for autonomy, competence, and relatedness, respectively.\" \n   - However, the claim does not mention the need for frustration, which is a key part of the information provided in the passage. The passage [1] also mentions that the differences were larger for the frustration than the satisfaction dimension, but this is not reflected in the answer.\n\n2. The claim is partially supported by the passage, but it is not fully accurate as it omits the frustration dimension and the relative sizes of the differences between satisfaction and frustration. Therefore, the verdict is NO."
+  },
+  {
+   "id": "q039",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "1. ARPNet can predict the degree of antidepressant response.\n2. ARPNet can be used to prescribe the most effective antidepressants.\n3. MIRTAZAPINE with MILNACIPRAN is predicted to be more effective than MIRTAZAPINE alone.\n\nVERDICT: YES"
+  },
+  {
+   "id": "q041",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nClaim: The exercise-induced myokine described as important for gut function and preventing depressive behavior is irisin.\nWords from the passages: \"Within this scenario, physical exercise has the capability of upregulating proliferator-activated receptor gamma coactivator-1\u03b1 (PGC-1\u03b1), leading to increased expression of the downstream protein fibronectin type III domain-containing 5 (FNDC5), which can be cleaved and secreted from the muscle into the bloodstream in the form of the myokine irisin. Indeed, the antidepressant effect of irisin may be particularly dependent on BDNF through a PGC-1\u03b1-induced increase in neuronal expression of FNDC5 in the hippocampus.\""
+  },
+  {
+   "id": "q042",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "1. In unmedicated patients, flatter aperiodic slopes during non-REM sleep were observed compared to control subjects (p = .009).\n   - Unmedicated patients showed flatter aperiodic slopes during non-REM sleep than control subjects (p = .009). (Passage [3])\n\nVERDICT: YES"
+  },
+  {
+   "id": "q044",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nClaim: Beta-blocker prescription rates varied between 47.7% and 80.5% across different heart failure clinics.\nSource: [2] Dual therapy (beta blocker and RAS inhibitor) was prescribed in average 66.3% (min. 47.7 to max. 80.5) of HFrEF patients, one out of two in 28.7% (15.6\u201343.7) and none in 5.0% (0.9\u201313.5) respectively."
+  },
+  {
+   "id": "q045",
+   "system": "full",
+   "faithful": false,
+   "reasoning": "VERDICT: NO\n\nExplanation:\n1. The main limitation of the HFpEF study that developed a risk score for future heart failure events and death was the difficulty in affirming the diagnosis of HFpEF in the outpatient setting, due to misclassification of non-specific symptoms and challenges in quantifying right ventricular function and left ventricular filling pressures.\n\nThis claim is NOT FOUND in the passages. While passage [4] does mention the challenges in diagnosing HFpEF, it does not specifically state that the main limitation of the study was this difficulty. The passage [4] discusses the challenges in diagnosing HFpEF but does not explicitly state that this was the main limitation of the study."
+  },
+  {
+   "id": "q047",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nClaim: Patients with de novo heart failure (dnHF) were more responsive to diuretic therapy.\nSource: [2] \"We also showed that patients with dnHF are more responsive to diuretic therapy.\""
+  },
+  {
+   "id": "q048",
+   "system": "full",
+   "faithful": false,
+   "reasoning": "1. Serum irisin levels were found to be lower in patients with acutely decompensated heart failure (ADHF) compared to those without ADHF.\n   - [1] The average NT-proBNP and irisin in serum were 1215 pmol/mL (562\u20132155 pmol/mL) and 5.64 ng/mL (3.80\u20137.53 ng/mL), respectively. All patients received guideline-recommended therapy of HF and antidiabetic agents.\n   - NOT FOUND\n\n2. The estimated cut-off point for serum irisin levels (ADHF versus non-ADHF) was 7.85 ng/mL, with a higher area under the curve (AUC) of 0.869 (95% CI = 0.800\u20130.937).\n   - [3] The estimated cut-off point for serum irisin levels (ADHF versus non-ADHF) was 7.85 ng/mL (area under curve [AUC] = 0.869 (95% CI = 0.800\u20130.937), sensitivity = 82.7%, specificity = 73.5%; p = 0.0001).\n\n3. Multivariate logistic regression showed that serum levels of irisin < 7.85 ng/mL retained the predictor for ADHF, independent of NT-proBNP levels.\n   - [3] The multivariate logistic regression yielded that the serum levels of irisin < 7.85 ng/mL (OR = 1.20; p = 0.001) and NT-proBNP > 1215 pmol/mL (OR = 1.18; p = 0.001) retained the predictors for ADHF.\n\nVERDICT: NO"
+  },
+  {
+   "id": "q050",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "1. After adjusting for age, sex, heart rate and systolic blood pressure, the interaction between atrial fibrillation and HFpEF persisted, suggesting that these factors did not contribute substantially to the interaction.\n[1] After adjusting for age, sex, heart rate and systolic blood pressure, the interaction between atrial fibrillation and HFpEF persisted, suggesting that these factors did not contribute substantially to the interaction.\n\n2. The interaction between atrial fibrillation and HFpEF persisted after adjusting for age, sex, heart rate and systolic blood pressure.\n[1] After adjusting for age, sex, heart rate and systolic blood pressure, the interaction between atrial fibrillation and HFpEF persisted, suggesting that these factors did not contribute substantially to the interaction.\n\n3. After adjusting for age and sex, atrial fibrillation remained differentially associated with progressive HF outcomes between patients with HFpEF and HFrEF, suggesting other factors may account for this intriguing observation.\n[2] After adjustment for a number of variables including resting heart rate, sex, age and systolic blood pressure, atrial fibrillation remained differentially associated with progressive HF outcomes between patients with HFpEF and HFrEF, suggesting other factors may account for this intriguing observation.\n\nVERDICT: YES"
+  },
+  {
+   "id": "q051",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nOverall, participants were satisfied with the information and care received at the ambulatory HF clinic. However, even though the majority of the patients in our study were not at an advanced stage of their illness according to the NYHA classification, they still presented with several unmet needs. Most of these corresponded to a lack of anticipatory care planning including a lack of discussion about concurrent PC, prognosis, advance directives, and the end of life. In addition, some patients reported receiving little attention after verbalizing symptoms that had a high impact on their quality of life and perceived a lack of support during or after acute events or at other crises points, leading them to feel unheard and alone. Finally, we identified that patients had a negative perception of the term \u201cpalliative care\u201d and therefore feared a PC referral. Nonetheless, after a brief explanation about what concurrent and early PC involves, they were eager to know more about it and were more open to it.\n\nWe identified that patients feared PC referrals because they associated these referrals with death or with \"when there was nothing else to be done.\" However, while the term could generate some discomfort, participants were still able to understand the value of such an approach and seemed open to receiving PC later, especially after a brief explanation of the interviewer about what concurrent and early PC is. We identified three subthemes under this theme: (1) associating palliative care with end of life and loss of hope, (2) acknowledging the importance of palliative care, and (3) explaining concurrent palliative care has the potential for positive impact. I've heard of it, it's just the last thing, when there's nothing, no rescue, so to say. (P45, male, 71 years old, NYHA II). Associating palliative care with end of life and loss of hope: The majority of the patients associated PC with care at the end of life or thought of it as a last resort for when there were no more curative therapies to try. For some of the participants, this negative perception of PC stemmed from previous experiences with family members or acquaintances. For example, one patient associated PC with when his father with cancer was in the terminal phase. Another patient recalled hearing the term when during a hospitalization, the doctors told another patient he shared the room with, that they could no longer offer him curative therapies and therefore would move him to the PC ward. Many were thus misinformed about PC and therefore a referral to PC was associated with dying and death."
+  },
+  {
+   "id": "q053",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nClaim: 37.7% of patients in the GENERATOR heart failure DataMart are women.\nSource: [1] \"Our GENERATOR HF DataMart, consisting currently of 37.7% women, a percentage significantly higher than that of RCTs and in line with other HF registries,\""
+  },
+  {
+   "id": "q054",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "1. Among the 195 participants who completed HRQoL questionnaires, the mean age was 52 (standard deviation (SD) 21.4) years, 68% were women and 29% reported history of hypertension.\n[1] The mean age was 52 (standard deviation (SD) 21.4) years, 68% were women and 29% reported history of hypertension.\n\n2. The KCCQ had excellent internal consistency (87% Cronbach alpha) but poor reliability.\n[1] The KCCQ had excellent internal consistency (87% Cronbach alpha) but poor reliability.\n\n3. Independent predictors of all-cause mortality within 3 months included: worse overall KCCQ score (Adjusted Hazard ratio (AHR) 2.9, 95% CI 1.1, 8.1),\n[5] Independent predictors of all-cause mortality within 3 months included: worse overall KCCQ score (AHR 2.9, 95% CI 1.1, 8.1),\n\nVERDICT: YES"
+  },
+  {
+   "id": "q056",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nClaim: The multivariable fractional polynomials (MFP) regression technique performed best in all three-model specifications, i.e., had the lowest MAE value.\nWords from the passages: \"MFP regression technique performed best in all three-model specifications, i.e. had the lowest MAE.\" [4]"
+  },
+  {
+   "id": "q057",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nClaim: The prevalence of hypertension in rural Yunnan Province substantially increased from 28.4% in 2009 to 39.5% in 2016 (P < 0.01).\nWords from the passage: \"From 2009 to 2016, the prevalence of hypertension substantially increased from 28.4% to 39.5% (P < 0.01), and awareness and control rose from 42.2 and 25.8% to 53.1 (P < 0.01) and 30.6% (P < 0.05), respectively.\""
+  },
+  {
+   "id": "q059",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nClaim: Amine oxidase copper-containing 1 (AOC-1, also known as diamine oxidase; DAO) was among the most strongly downregulated placental proteins in stroke-prone spontaneously hypertensive rats (SHRSP).\n\nSource: [1] \"Amine oxidase copper-containing 1 (AOC-1, also known as diamine oxidase; DAO) is one of the lowest expressed proteins (224-fold, P < 0.001) in SHRSP.\""
+  },
+  {
+   "id": "q060",
+   "system": "full",
+   "faithful": false,
+   "reasoning": "VERDICT: NO"
+  },
+  {
+   "id": "q062",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "1. The prevalence of SDH increased from 8.64% to 25.59% under the 2017 ACC/AHA guideline.\n   - After excluding 2,578 (18.81%) subjects who were currently receiving antihypertensive treatment from a total population of 17,708 in CHARLS, we determined that the estimated prevalence of hypertension increased from 26.08% when defined by CHL to 47.32% when classified by ACC/AHA. Specifically, this dramatic increase was mostly from the increased prevalence of SDH, from 8.64% (95% CI: 7.51, 9.93) by CHL to 25.59% (23.49, 27.81) by ACC/AHA.\n\nVERDICT: YES"
+  },
+  {
+   "id": "q063",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "1. Compared to those whose BP was not under control, the prevalence of wide pulse pressure was lower in patients whose BP was under control (24.1% vs. 10.8%, P < 0.05).\n\nVERDICT: YES"
+  },
+  {
+   "id": "q066",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "1. The neutrophil to lymphocyte ratio (NLR) distinguished each Child-Turcotte-Pugh (CTP) class of cirrhosis from the other two.\n   - The NLR was lower in CTP-A (2.28 \u00b1 0.14) than both CTP-B (2.85 \u00b1 0.19, p < 0.001) and CTP-C (3.26 \u00b1 0.37, p < 0.001). Moreover, NLR was also lower in CTP-B compared to CTP-C (p = 0.030) (Figure 2). A significant positive correlation was found between NLR and CTP score (r2 = 0.345, p < 0.001) and MELD score (r2 = 0.294, p < 0.001) (Figure 3).\n\nVERDICT: YES"
+  },
+  {
+   "id": "q068",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nClaim: Patients with IDH were the youngest (54.84 \u00b1 13.21 years) among those with ISH (66.87 \u00b1 12.09 years), SDH (60.39 \u00b1 13.12 years), and Normotension (65.11 \u00b1 11.90 years).\nWords from passage: \"The average age was 63.67 \u00b1 12.78 years. Males accounted for 54.4%. 18.5% of them had a habit of smoking, and 89.4% were under antihypertensive agents. The average BMI was 24.83 \u00b1 3.85 kg/m2 (Table 2). Among them, 361(4.3%) patients had IDH, 2096 (24.7%) patients had ISH, 2584 (30.5%) patients had SDH, and 3434 (40.5%) patients had normotension. Patients with IDH were the youngest (54.84 \u00b1 13.21 years) among those with ISH (66.87 \u00b1 12.09 years), SDH (60.39 \u00b1 13.12 years), and Normotension (65.11 \u00b1 11.90 years).\"\n\nClaim: Patients with IDH had the highest BMI (26.47 \u00b1 6.53 kg/m2) among those with ISH (24.70 \u00b1 3.77 kg/m2), SDH (25.15 \u00b1 3.92 kg/m2), and normotension (24.50 \u00b1 3.38 kg/m2).\nWords from passage: \"Among them, 361(4.3%) patients had IDH, 2096 (24.7%) patients had ISH, 2584 (30.5%) patients had SDH, and 3434 (40.5%) patients had normotension. The average BMI was 24.83 \u00b1 3.85 kg/m2 (Table 2). Among them, 361(4.3%) patients had IDH, 2096 (24.7%) patients had ISH, 2584 (30.5%) patients had SDH, and 3434 (40.5%) patients had normotension. The smoking rate was also the highest in patients with IDH (27.4%) among those with ISH (17.1%), SDH (22.2%), and normotension (15.8%). While antihypertensive treatment rate was the lowest in patients with IDH (82.0%) among those with ISH (88.4%), SDH (83.5%), and normotension (95.1%). Statin treatment rate was also the lowest in patients with IDH (46.1%) among those with ISH (64.3%), SDH (5"
+  },
+  {
+   "id": "q069",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "Comparisons of microvascular and macrovascular changes in aldosteronism-related hypertension and essential hypertension (results)\n- Plasma aldosterone concentration was significantly higher and plasma renin activity levels significantly lower in patients with PA as against patients with EH. (Passage [1])\n\nResistant hypertension: consensus document from the Korean society of hypertension (introduction)\n- Plasma aldosterone and plasma renin activity should be evaluated to screen for primary aldosteronism. (Passage [2])\n\nVERDICT: YES"
+  },
+  {
+   "id": "q071",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nClaim: Bisphosphonates remain the first-line treatment option for osteoporosis in people living with HIV, as they are well-tolerated, safe, and have a BMD response similar to that of the general population.\nWords from the passages: \"In patients with osteoporosis, bisphosphonates remain first line options in PLWH because clinical data suggest that they are well tolerated, safe, and with BMD response similar to that of the general population (Table 5).\" [2]"
+  },
+  {
+   "id": "q072",
+   "system": "full",
+   "faithful": false,
+   "reasoning": "1. Participants acquired knowledge about osteoporosis through personal and vicarious experience over the lifespan.\n   - \"knowledge acquisition through personal and vicarious experience over the lifespan\" [1]\n\n2. Participants also gained knowledge through their interactions with medical professionals, including physicians and possibly dietitians, although the study did not explicitly state this as a primary source of knowledge.\n   - NOT FOUND\n\n3. No other sources of knowledge were mentioned in the study.\n   - NOT FOUND\n\nVERDICT: NO"
+  },
+  {
+   "id": "q074",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nClaim: APCO analyzed 18 extant AP CPGs to build its harmonized osteoporosis Framework.\nSource: [1] \"When APCO was launched in May 2019, our first step was to derive a shared understanding of the challenges in the diagnosis and management of osteoporosis in member countries, across various specialties. A survey that we executed in 2020 revealed that the AP region had 18 extant CPGs.\""
+  },
+  {
+   "id": "q075",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES"
+  },
+  {
+   "id": "q077",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "1. The main lifestyle-related osteoporosis risk factors among caregivers working in disability institutions were exercising for less than 30 min daily (38%).\n   - [1] A study of ethnic Chinese people indicated that the primary lifestyle-associated risk factors were exercising for less than 30 min daily (38%).\n   - [3] The results revealed that primary risk factors include <30 min of daily exercise (38%).\n\n2. The main lifestyle-related osteoporosis risk factors among caregivers working in disability institutions were insufficient dairy product or calcium tablet intake (28%).\n   - [1] A study of ethnic Chinese people indicated that the primary lifestyle-associated risk factors were insufficient dairy product or calcium tablet intake (28%).\n   - [3] The results revealed that primary risk factors include lack of dairy product or calcium tablet intake (28%).\n\n3. The main lifestyle-related osteoporosis risk factors among caregivers working in disability institutions were engaging in outdoor activities for less than 10 min daily or not taking vitamin D supplements (29.9%).\n   - [1] A study of ethnic Chinese people indicated that the primary lifestyle-associated risk factors were engaging in outdoor activities for less than 10 min daily or not taking vitamin D supplements (29.9%).\n   - [3] The results revealed that primary risk factors include engaging in outdoor activities for less than 10 min daily or not taking vitamin D supplements (29.9%).\n\nVERDICT: YES"
+  },
+  {
+   "id": "q078",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "1. Yeast hydrolysate supplementation significantly elevated serum testosterone concentration in ovariectomized rats, restoring the level to normal.\n   - \"A significant increase in serum testosterone concentration was observed after adding YH to the diet (p < 0.05; Figure 2A). The decrease in serum testosterone concentration was significantly attenuated by the YH supplementation (p < 0.05); this treatment restored the serum testosterone level in OVX rats to normal.\"\n\n2. The increase in serum testosterone concentration was observed after adding yeast hydrolysate to the diet, and the effect was dose-dependent, with no significant difference between the 0.5% and 1% yeast hydrolysate groups.\n   - \"A significant increase in serum testosterone concentration was observed after adding YH to the diet (p < 0.05; Figure 2A). Nonetheless, a dose-dependent relationship was not observed; there was no significant difference between groups YH 0.5% and YH 1%.\"\n\nVERDICT: YES"
+  },
+  {
+   "id": "q080",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nClaim: Female osteoporosis patients in Taiwan declined bone mineral density testing due to high cost, misconceptions about lifestyle management sufficient to prevent osteoporosis, and poor awareness of the disease.\nWords from the passage: \"declining bone mineral density (BMD) testing reasons were high cost, misconceptions about lifestyle management sufficient to prevent osteoporosis and poor awareness of the disease.\" [1]"
+  },
+  {
+   "id": "q081",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "Claim 1:\nThe recommended daily vitamin D maintenance dose for the general population is 1000 to 2000 IU/day, starting from 1000 to 2000 IU/day once the target level is reached.\n\nSource:\nVitamin D supplementation in the form of cholecalciferol is also recommended for all individuals with vitamin D deficiency [25(OH)D <50nmol/L)], with maintenance doses starting from 1000 to 2000IU/day once the target (>50nmol/l) is achieved for the general population, according to the recent guidelines from the GCC Vitamin D Advisory group and the SOS.\n\nVERDICT: YES"
+  },
+  {
+   "id": "q083",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nThe tibial bone mineral density (BMD) of the left tibiae in ovariectomized osteoporosis (OVX) rats was significantly reduced by 26.7% as compared with the sham-operated (Sham) rats (P<0.01, Figure 1A,B) [1]."
+  },
+  {
+   "id": "q084",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES"
+  },
+  {
+   "id": "q086",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nClaim: 33 (37.1%) women had a Sepsis Six sticker in their medical notes.\nSource: [2] \"A total of 33 (37.1%) had identifiable sepsis six sticker displayed on medical notes\""
+  },
+  {
+   "id": "q087",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nClaim: According to passage [1], 13 out of 20 mice given benzoylpaeoniflorin at 0.44 mg/kg survived 96 hours after cecal ligation and puncture.\nWords from the passage: \"While all of the control mice (treated with DMSO) died 48 h after CLP surgery, nine out of 20 BPF (0.22 mg/kg)-injected mice and 13 out of 20 BPF (0.44 mg/kg)-injected mice survived for 96 h post CLP surgery (Figure 6D).\""
+  },
+  {
+   "id": "q089",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "1. The AUC of the miR-7110-5p ROC for predicting sepsis secondary to pneumonia was 0.883 at a cutoff value of 4.41, yielding a sensitivity of 84.2% and a specificity of 90.5%.\n[1] \"The AUC of the ROC of miR-7110-5p for the prediction of sepsis secondary to pneumonia was 0.883 (Fig. 4). At a cutoff value of 4.41, miR-7110-5p yielded a sensitivity of 84.2% and a specificity of 90.5%.\"\n\n2. The AUC of the miR-223-3p ROC for predicting sepsis secondary to pneumonia was 0.964 at a cutoff value of 2.759, yielding a sensitivity of 82.9% and a specificity of 100%.\n[1] \"The AUC of the miR-223-3p ROC for the prediction of sepsis secondary to pneumonia was 0.964 (Fig. 5). At a cutoff value of 2.759, miR-223-3p yielded a sensitivity of 82.9% and a specificity of 100%.\"\n\nVERDICT: YES"
+  },
+  {
+   "id": "q090",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "1. The multifaceted intervention included an electronic alert (e-alert) system and a sepsis response team (SRT).\n   - The impact of a multifaceted intervention including sepsis electronic alert system and sepsis response team on the outcomes of patients with sepsis and septic shock (abstract)\n\n2. Implementing a multifaceted intervention including sepsis e-alert with SRT was associated with earlier identification of sepsis, increase in compliance with sepsis resuscitation bundle and reduction in the need for mechanical ventilation and reduction in hospital mortality and LOS.\n   - The impact of a multifaceted intervention including sepsis electronic alert system and sepsis response team on the outcomes of patients with sepsis and septic shock (abstract)\n\nVERDICT: YES"
+  },
+  {
+   "id": "q092",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "1. CRP levels had the highest AUC of 0.765 for predicting the development of sepsis, followed by the MHLA-DR expression rate (AUC of 0.666) and MFI of MHLA-DR (AUC of 0.654).\n\nVERDICT: YES"
+  },
+  {
+   "id": "q093",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "1. At 6 months, 39.6% of patients with sepsis reported new disability, which is similar to the proportion of patients without sepsis (35.3%).\n2. In the current study, survivors who had sepsis had increased disability at 3 months but not at 6 months, indicating that patients with sepsis may take longer to recover from critical illness. Our findings support the results of a recent propensity matched study of survivors with and without sepsis enrolled in a large, multicenter randomized trial. After matching, there were no significant differences in the proportion of survivors with and without sepsis reporting problems with mobility, self-care, usual activities, pain/discomfort and anxiety/depression. This study did not report baseline health status and could not assess for the presence of new disability. Our study found no difference in new disability and no difference between any of the domains of the EQ-5D-5L\u2122, the utility score and the visual analogue scale (EQ-VAS) for patients with and without sepsis. [3]\n\nVERDICT: YES"
+  },
+  {
+   "id": "q095",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nClaim: The two broad objectives identified for Canada's National Preclinical Sepsis Platform were: (a) understand basic mechanisms of sepsis pathophysiology, and (b) assess novel therapeutics for sepsis.\n\nSource: [2] \"Two broad categories of objectives for the NPSP were identified: (a) understand basic mechanisms of sepsis pathophysiology, and (b) assess novel therapeutics for sepsis.\""
+  },
+  {
+   "id": "q096",
+   "system": "full",
+   "faithful": false,
+   "reasoning": "VERDICT: NO\n\nExplanation:\n1. \"The in-hospital mortality of surgical ICU patients with postoperative sepsis who had sepsis-associated coagulopathy (SAC) was 37.5% (12/103) in the no SAC group and 37.5% (27/72) in the SAC group, but the difference was not statistically significant (p = 0.002)\" - NOT FOUND. The passages state that the in-hospital mortality rates were significantly higher in the SAC group compared to the No SAC group (37.5% vs. 11.7%; p < 0.001) [1, 2]. The claim about the difference not being statistically significant is incorrect."
+  },
+  {
+   "id": "q098",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nClaim: IL-1\u03b2 has shown promise as a target for preventing cardiovascular comorbidities after stroke, as demonstrated in the CANTOS study, which showed a clear benefit for patients with a high-risk cardiovascular profile.\nWords from the passage: \"particularly, targeting IL\u20101\u03b2 has shown promising results so far. The CANTOS study laid the foundation for the prevention of cardiovascular comorbidities by minimizing systemic inflammation and showed a clear benefit for patients with a high\u2010risk cardiovascular profile.\" [1]"
+  },
+  {
+   "id": "q099",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nThe five-year mortality rate after acute stroke or TIA in the Polish PROPOLIS study was 51.65%.\nThe five-year post-stroke mortality rate was 51.65%, which is comparable to previous studies in which the death rate at the same time point ranged from 35 to 71% [1]."
+  },
+  {
+   "id": "q101",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES"
+  },
+  {
+   "id": "q102",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "1. Low self-reported sports activity before stroke predicts poor one-year-functional outcome after first-ever ischemic stroke.\n   - [1] Low self-reported sports activity before stroke predicts poor one-year-functional outcome after first-ever ischemic stroke in a population-based stroke register.\n   - [2] Low self-reported sports activity before stroke predicts poor one-year-functional outcome after first-ever ischemic stroke in a population-based stroke register.\n   - [3] Low self-reported sports activity before stroke predicts poor one-year-functional outcome after first-ever ischemic stroke in a population-based stroke register.\n   - [5] According to the study, low self-reported sports activity before stroke was an independent predictor of poor one-year functional outcome after a first-ever ischemic stroke.\n\nVERDICT: YES"
+  },
+  {
+   "id": "q104",
+   "system": "full",
+   "faithful": false,
+   "reasoning": "1. According to the TOAST system, an isolated parent artery territory infarct is classified into large artery atherosclerosis (LAA) if the lesion diameter is \u2265 1.5 cm.\n\n> NOT FOUND\n\nVERDICT: NO"
+  },
+  {
+   "id": "q105",
+   "system": "full",
+   "faithful": false,
+   "reasoning": "VERDICT: NO\n\nExplanation:\nThe answer claims that the AUROCs of the SPI-II and ESRS scores in the Chinese cohort of 11,384 ischemic stroke patients were 0.59 (95% CI, 0.58\u20130.61) and 0.59 (95% CI, 0.58\u20130.60), respectively. However, this specific information is NOT FOUND in the provided passages. The passages [1], [2], and [3] do not contain the exact AUROC values for the Chinese cohort. They only mention that the study by Meng et al. evaluated the performance of both scores in 11,384 Chinese patients, but do not provide the exact AUROC values as stated in the answer."
+  },
+  {
+   "id": "q107",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES"
+  },
+  {
+   "id": "q108",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nClaim: By 12 months post-stroke, there was almost a 4-fold increase in risk of developing hypertension compared to baseline (odds ratio: 3.86, 95% CI: 1.28\u201311.66).\n\nSource: [1] \"There was, however, an effect [estimated effect (95% CI)] of time on SBP, DBP, and presence of hypertension. Compared to baseline, the post-intervention SBP increased by 4.56 (0.83\u20138.28) mmHg, the 6-month post-stroke SBP by 7.09 (3.30\u201310.88) mmHg, and the 12-month post-stroke by 10.86 (6.92\u201314.81) mmHg. By 12 months post-stroke, there was almost a 4-fold increase in risk of developing hypertension compared to baseline (odds ratio: 3.86, 95% CI: 1.28\u201311.66).\""
+  },
+  {
+   "id": "q110",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES"
+  },
+  {
+   "id": "q111",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES"
+  },
+  {
+   "id": "q113",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nClaim: According to passage [2], the slow/ultra-slow NAT2 acetylator prevalence in Koreans was 12.7%.\n\nWords from the passage: \"The prevalence of slow/ultra-slow acetylator was higher in Southeast Asian patients compared to Korean or Chinese patients. On the contrary, the prevalence of the normal SLCO1B1 phenotype was greater among Southeast Asian patients than among Korean or Chinese patients.\" \n\nThe exact prevalence for Koreans is stated as 12.7% in the passage, so the claim is supported."
+  },
+  {
+   "id": "q114",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "1. The most common gyrA mutation among ofloxacin-resistant multidrug-resistant TB strains in Morocco was D94A, reported in 10 cases.\n2. This is consistent with previous data showing that codon 94 is the most common mutated one, but the main mutation reported was D94G.\n\nClaim 1:\n- \"The most common gyrA mutation among ofloxacin-resistant multidrug-resistant TB strains in Morocco was D94A, reported in 10 cases.\"\n- \"Molecular analysis showed that 19 strains harbored mutation in the QRDR region of gyrA gene and no mutation in gyrB gene was observed. Overall, 6 point mutations were observed and the most common one was the D94A reported in 10 cases.\"\n\nClaim 2:\n- \"This is consistent with previous data showing that codon 94 is the most common mutated one, but the main mutation reported was D94G.\"\n- \"Previous data reported worldwide, showed that the codon 94 is the most common mutated one, but the main mutation reported was D94G.\"\n\nVERDICT: YES"
+  },
+  {
+   "id": "q116",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "1. The purified recombinant LppZ protein of M. tuberculosis showed a molecular weight of ~38 kDa on SDS-PAGE, as confirmed by Western blotting with human plasma.\n   - LppZ protein was expressed in E. coli BL21 (DE3) and purified by Ni-NTA His-Bind Resin. The purity was identified by using SDS-PAGE which showed the expected molecular weight of ~38 kDa (Figure 1A, Supplementary Figure 1), and further confirmed with anti-6 \u00d7 His tag antibody (Figure 1B, Supplementary Figure 1).\n\nVERDICT: YES"
+  },
+  {
+   "id": "q117",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES"
+  },
+  {
+   "id": "q119",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nClaim: The median survival time of patients whose death was TB-related was 22 days.\nSource: [1] \"The median survival time in the TB-related death group was 22 days.\""
+  },
+  {
+   "id": "q120",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nClaim: The T-cell exhaustion molecule PD-1 was significantly increased in patients with active tuberculosis in the ImmunoScore study [1].\nWords from the passage: \"Our results showed that the expression of PD-1 was significantly increased in ATB patients, which is in accordance with other studies (Jurado et al.,; Hassan et al.,).\""
+  },
+  {
+   "id": "q122",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nThirty-three proteins were increased in abundance and thirty-one proteins were decreased in abundance in active TB as compared to LTBI [5]."
+  },
+  {
+   "id": "q123",
+   "system": "full",
+   "faithful": false,
+   "reasoning": "VERDICT: NO\n\nExplanation:\n1. The claim states: \"The prevalence of pulmonary tuberculosis (PTB) among presumptive patients in the hospital-based study in northwestern Ethiopia was 40% (12.7% of the study's subjects were PTB-positive).\"\n   - This claim is NOT FOUND in the passages. The passages indicate that 12.7% of the study's subjects were PTB-positive, but they do not state that this represents 40% of the prevalence of PTB. The passage [3] states, \"PTB-positive cases were 94 (29.9%) of all study participants,\" but it does not equate this to the overall prevalence of PTB."
+  },
+  {
+   "id": "q126",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "1. The mortality in infectious inpatients with type 2 diabetes was higher than that of non-diabetic inpatients, with a mortality rate of 4.3% compared to 1.7% in the non-diabetic population.\n   - [2] The mortality was higher in patients with T2DM than patients without T2DM (T2DM 4.3% vs non-diabetes 1.7%, \u03c72 = 59.560, P < .001).\n\n2. This increased mortality was observed across all age groups, with the difference in mortality rates between T2DM and non-diabetic patients becoming more pronounced with increasing age.\n   - [2] The mortalities of patients with T2DM were 0.0% in \u223c39 years, 0.0% in 40 to 49 years, 2.7% in 50 to 59 years, 3.1% in 60 to 69 years, 4.1% in 70 to 79 years and 8.7% in 80\u223c years groups. The mortalities of patients without T2DM were 0.2% in \u223c39 years, 0.1% in 40 to 49 years, 0.6% in 50 to 59 years, 1.0% in 60 to 69 years, 3.1% in 70 to 79 years and 5.9% in 80\u223c years groups. T2DM was an independent risk factor of death only in 60 to 69 years groups (OR = 2.323, 95% CI: 1.234\u223c4.372, P = .009).\n\nVERDICT: YES"
+  },
+  {
+   "id": "q129",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES\n\nClaim: Achieving an HbA1c of 7.0% resulted in a 60% reduction in proteinuria in young Type-2 diabetic patients.\nWords from the passage: \"The Kumamoto study done by Scichiri and associates reported a 60% reduction in proteinuria in young Type-2 diabetic patients achieving an HbA1c of 7.0%.\""
+  },
+  {
+   "id": "q131",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "1. type 2 diabetes reduced the amount of collagen fibril stretching in the intervertebral disc annulus fibrosus of UCD-T2DM rats under compression, with 20% of the applied strain being transferred to the collagen fibrils in the lean group compared to only 14% in the diabetic group by 10% applied compressive strain.\n\n> We also used the SAXS data to measure collagen fibril strain, calculated from the change in d-spacing, in comparison to the applied macroscopic compressive strain. In both groups of discs, collagen fibril strain increased approximately linearly with applied compressive strain (Fig. 4C), but applied compression was accommodated by significantly more collagen stretching in the discs from the lean rats (Fig. 4H). By 10% applied compressive strain, collagen fibril stretching was 30% lower in the discs from the diabetic rats ( vs. ). In other words, 20% of the applied strain was transferred to the collagen fibrils in the lean group vs. only 14% in the diabetic group.\n\nVERDICT: YES"
+  },
+  {
+   "id": "q132",
+   "system": "full",
+   "faithful": false,
+   "reasoning": "VERDICT: NO\n\nExplanation:\nThe answer states that the DIABA adolescent health beliefs questionnaire on type 2 diabetes had 20 items when it went to construct validity testing. However, according to passage [3], the final questionnaire had 20 questions after several rounds of refinement, but the passage does not explicitly state that these 20 questions were the ones used for construct validity testing. Therefore, this claim is not directly supported by the given passages."
+  },
+  {
+   "id": "q134",
+   "system": "full",
+   "faithful": false,
+   "reasoning": "VERDICT: NO\n\nExplanation:\nThe answer claims that individuals predicted to be in the 95th percentile had an incidence risk ratio of 1.46 for CVD. However, the passage [1] states: \"For the gradient boosting model, individuals predicted to be in the 95th percentile had incidence risk ratios of 3.67 for HF, 2.66 for MI, 1.46 for CVD and 4.18 for CKD.\" The risk ratio for CVD is 1.46, but it is for the 95th percentile, which is correct. However, the answer only mentions CVD and omits the other comorbidities (HF, MI, and CKD), making the claim incomplete and thus not fully supported by the passage."
+  },
+  {
+   "id": "q135",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "1. There was no significant association between the number and percentage of NKX6.1Nuc-Ins+ and NKX6.1cytIns\u2212 cells and modest hyperglycemia, advanced age, and obesity in non-diabetic subjects.\n\n> By statistical analysis, we found that there was no association between the number and percentage of NKX6.1Nuc-Ins+ and NKX6.1cytIns\u2212 cells and modest hyperglycemia, advanced age, and obesity. Further correlation analysis between NKX6.1Nuc-Ins+ or NKX6.1cytIns\u2212 versus age/BMI/HbA1c found no significant correlation (Additional file 1: Supplementary Fig. 1\u20133).\n\nVERDICT: YES"
+  },
+  {
+   "id": "q137",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "1. The pooled odds ratio for type 2 diabetes for the highest versus the lowest selenium levels in observational studies was 2.03 (95% CI 1.51\u20132.72).\n2. As shown in Figure 2, observational study participants in the highest Se quantiles had a statistically significant increased odds of T2D compared to those in the lowest quantiles (pooled OR = 2.03, 95% CI 1.51\u20132.72).\n\nVERDICT: YES"
+  },
+  {
+   "id": "q138",
+   "system": "full",
+   "faithful": true,
+   "reasoning": "VERDICT: YES"
+  }
+ ]
+}

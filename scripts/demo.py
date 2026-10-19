@@ -12,6 +12,8 @@ from pathlib import Path
 
 import httpx
 
+from healthcare_rag.config import get_settings
+
 STEPS = [
     ("Liveness", "GET", "/health", None),
     ("Readiness: OpenSearch and Qdrant reachable, gateway reported", "GET", "/ready", None),
@@ -66,7 +68,8 @@ def main() -> None:
         "# Demo transcript",
         "",
         f"Recorded {datetime.now(UTC):%Y-%m-%d %H:%M UTC} against the full system (hybrid "
-        "retrieval, MedCPT rerank, llama3.2 via the LLM gateway) by `scripts/demo.py`. "
+        f"retrieval, MedCPT rerank, {get_settings().chat_model} via the LLM gateway) by "
+        "`scripts/demo.py`. "
         "Responses are real and only trimmed (long snippets shortened). The API uses the "
         "gateway's response cache, so repeated questions can be answered from cache.",
         "",
