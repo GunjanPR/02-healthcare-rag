@@ -9,8 +9,13 @@ Needs the optional extra: pip install -e ".[rerank]"  (torch + transformers).
 """
 
 from dataclasses import replace
+from typing import Protocol
 
 from healthcare_rag.types import Hit
+
+
+class Reranker(Protocol):
+    def rerank(self, query: str, hits: list[Hit]) -> list[Hit]: ...
 
 
 class CrossEncoderReranker:
@@ -19,6 +24,9 @@ class CrossEncoderReranker:
         model_name: str = "ncbi/MedCPT-Cross-Encoder",
         device: str = "cpu",
         max_length: int = 512,
+        # Measured on the RTX 4050 (fp16, 20 candidates, 477 reranks each, interleaved):
+        # batch 16 p50 301 ms vs batch 32 p50 324 ms, same p95 (343 ms); padding a single
+        # 20-pair batch to the longest pair costs more than the second forward pass.
         batch_size: int = 16,
     ) -> None:
         import torch
@@ -53,3 +61,41 @@ class CrossEncoderReranker:
         logits = self.scores(query, [f"{h.title}. {h.text}" for h in hits])
         scored = [replace(h, score=s) for h, s in zip(hits, logits, strict=True)]
         return sorted(scored, key=lambda h: h.score, reverse=True)
+
+
+class EnsembleReranker:
+    """Reciprocal rank fusion of several rerankers (and optionally the retriever's order).
+
+    Each member reorders the same candidates; a hit's fused score is the weighted sum of
+    1 / (rrf_k + rank) over members. The returned `score` stays the *primary* member's
+    score (the first reranker), so the abstention threshold keeps its units; only the
+    order changes.
+    """
+
+    def __init__(
+        self,
+        rerankers: list[Reranker],
+        weights: list[float] | None = None,
+        retrieval_weight: float = 0.0,
+        rrf_k: int = 60,
+    ) -> None:
+        if not rerankers:
+            raise ValueError("need at least one reranker")
+        self.rerankers = rerankers
+        self.weights = weights or [1.0] * len(rerankers)
+        if len(self.weights) != len(rerankers):
+            raise ValueError("one weight per reranker")
+        self.retrieval_weight = retrieval_weight
+        self.rrf_k = rrf_k
+
+    def rerank(self, query: str, hits: list[Hit]) -> list[Hit]:
+        rankings = [r.rerank(query, hits) for r in self.rerankers]
+        fused: dict[str, float] = {}
+        members = list(zip(rankings, self.weights, strict=True))
+        if self.retrieval_weight:
+            members.append((hits, self.retrieval_weight))
+        for ranking, weight in members:
+            for rank, h in enumerate(ranking, start=1):
+                fused[h.id] = fused.get(h.id, 0.0) + weight / (self.rrf_k + rank)
+        primary = {h.id: h for h in rankings[0]}
+        return sorted(primary.values(), key=lambda h: fused[h.id], reverse=True)

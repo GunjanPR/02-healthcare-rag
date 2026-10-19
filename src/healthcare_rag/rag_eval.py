@@ -21,9 +21,10 @@ import platform
 import random
 import re
 import statistics
+import subprocess
 import time
 from collections.abc import Callable
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
@@ -31,9 +32,9 @@ from typing import Any
 from healthcare_rag.baseline import BM25Baseline
 from healthcare_rag.config import Settings, get_settings
 from healthcare_rag.evaluation import keywords_match, percentile
-from healthcare_rag.factory import build_bm25, build_retriever, rag_config
+from healthcare_rag.factory import build_bm25, build_retriever, build_scorer, rag_config
 from healthcare_rag.gateway import GatewayClient
-from healthcare_rag.rag import RAGConfig, RAGPipeline, number_passages, parse_citations
+from healthcare_rag.rag import RAGPipeline, number_passages, parse_citations
 from healthcare_rag.types import Hit
 
 QUESTIONS = Path("eval/qa/questions.json")
@@ -219,27 +220,17 @@ def build_answer_systems(settings: Settings, threshold: float) -> dict[str, Call
     bm25 = build_bm25(settings)
     hybrid = build_retriever(settings, "hybrid")
     reranker = build_reranker(settings)
+    scorer = build_scorer(settings)
     base_cfg = rag_config(settings)
-    bm25_cfg = RAGConfig(
-        retrieval_top_k=base_cfg.rerank_top_k,
-        rerank_top_k=base_cfg.rerank_top_k,
-        require_citations=base_cfg.require_citations,
-        citation_repairs=base_cfg.citation_repairs,
-    )
-    full_cfg = RAGConfig(
-        retrieval_top_k=base_cfg.retrieval_top_k,
-        rerank_top_k=base_cfg.rerank_top_k,
-        abstain_threshold=threshold,
-        require_citations=base_cfg.require_citations,
-        citation_repairs=base_cfg.citation_repairs,
-    )
+    bm25_cfg = replace(base_cfg, retrieval_top_k=base_cfg.rerank_top_k)
+    full_cfg = replace(base_cfg, abstain_threshold=threshold)
     m1 = BM25Baseline(bm25, chat, k=3)
-    bm25_rag = RAGPipeline(bm25, chat, None, bm25_cfg)
-    full = RAGPipeline(hybrid, chat, reranker, full_cfg)
+    bm25_rag = RAGPipeline(bm25, chat, None, bm25_cfg, scorer)
+    full = RAGPipeline(hybrid, chat, reranker, full_cfg, scorer)
 
-    def run_m1(question: str) -> dict[str, Any]:
+    def run_m1(question: str, instruction: str = "") -> dict[str, Any]:
         start = time.perf_counter()
-        r = m1.answer(question)
+        r = m1.answer(question, instruction)
         n = len(r.hits)
         return {
             "answer": r.answer,
@@ -256,8 +247,8 @@ def build_answer_systems(settings: Settings, threshold: float) -> dict[str, Call
         }
 
     def runner(pipe: RAGPipeline) -> Callable[[str], dict[str, Any]]:
-        def run(question: str) -> dict[str, Any]:
-            r = pipe.ask(question)
+        def run(question: str, instruction: str = "") -> dict[str, Any]:
+            r = pipe.ask(question, instruction=instruction)
             return {
                 "answer": r.raw_answer if r.abstained and r.raw_answer else r.answer,
                 "abstained": r.abstained,
@@ -272,6 +263,10 @@ def build_answer_systems(settings: Settings, threshold: float) -> dict[str, Call
                 "prompt_tokens": r.usage.prompt_tokens,
                 "completion_tokens": r.usage.completion_tokens,
                 "cost_usd": r.usage.cost_usd,
+                "llm_calls": r.usage.llm_calls,
+                "attributed": r.attributed,
+                "relabeled": r.relabeled,
+                "support_rate": r.support_rate,
             }
 
         return run
@@ -337,7 +332,7 @@ def grade_answers(data: dict, questions: list[Question], split: str) -> dict[str
                 ]
             ),
             "cited_rate": mean([float(bool(r["cited"])) for r in all_answered]),
-            "faithful_rate": mean([float(r["faithful"]) for r in all_answered]),
+            "faithful_rate": mean([float(r["faithful"]) for r in all_answered if "faithful" in r]),
             "unanswerable_abstained": mean([float(r["abstained"]) for r in una]),
             "abstention_precision": (
                 mean([float(not qs[r["id"]].answerable) for r in abstentions])
@@ -356,8 +351,29 @@ def grade_answers(data: dict, questions: list[Question], split: str) -> dict[str
 # ---- report --------------------------------------------------------------------------------
 
 
+def power_state() -> str:
+    """ "ac", "battery" or "unknown". Latency numbers only count on AC power: on battery
+    this laptop's GPU is throttled. Windows only (Win32_Battery.BatteryStatus 2 = on AC)."""
+    if platform.system() != "Windows":
+        return "unknown"
+    cmd = "(Get-CimInstance Win32_Battery | Select-Object -First 1).BatteryStatus"
+    try:
+        out = subprocess.run(
+            ["powershell", "-NoProfile", "-Command", cmd],
+            capture_output=True,
+            text=True,
+            timeout=20,
+        ).stdout.strip()
+    except (OSError, subprocess.SubprocessError):
+        return "unknown"
+    if not out:
+        return "ac"  # no battery: a desktop
+    return "ac" if out == "2" else "battery"
+
+
 def _meta(settings: Settings) -> dict[str, Any]:
     return {
+        "power": power_state(),
         "date": datetime.now(UTC).strftime("%Y-%m-%d %H:%M UTC"),
         "chat_model": settings.chat_model,
         "embedding_model": settings.embedding_model,

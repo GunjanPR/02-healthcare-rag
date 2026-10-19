@@ -22,6 +22,14 @@ qualifiers if you shorten a bullet. Do not round the confidence-interval caveat 
   Prometheus/Grafana and OpenTelemetry. A single Jaeger trace spans the RAG API and the
   gateway, and alerts cover latency, abstention and citation failures. p95 latency is
   7.6 s on a 20 W laptop GPU at $0 per query.
+- Measured answer faithfulness with a second-pass LLM judge from another model family
+  (Qwen2.5 7B grading Llama 3.2 3B answers) after validating it against hand labels:
+  95% agreement, Cohen's kappa 0.83, against 0.30 for the generator judging itself. 86.4%
+  of answers were supported by their cited passages (95% CI 77.7-92.0%, n = 88).
+  *(docs/benchmarks/2026-10-19-faithfulness)*
+- Audited the keyword-graded accuracy metric by hand-checking all 27 answers where it and
+  the LLM judge disagreed, which showed keywords overstate accuracy by about 4 points
+  (87.0% → 82.6%) and that the judge is too strict to replace them (right in 6 of 27).
 
 ## Shorter variants
 
@@ -37,7 +45,11 @@ qualifiers if you shorten a bullet. Do not round the confidence-interval caveat 
   +0.21).
 - Questions and reference keywords were written by an AI from sampled passages, not by
   clinicians. Accuracy is keyword-graded.
-- No faithfulness or grounded-answer rate is claimed: the 3B LLM judge disagreed with a
-  manual check on 7 of 10 of its "unfaithful" verdicts.
+- Faithfulness (86.4%) is measured by an LLM judge validated on only 20 hand labels, 3 of
+  them unfaithful. It is below the project's own >90% target; say so if asked.
+- Hand-corrected accuracy is 82.6% (full) vs 75.0% (baseline). The 87.0% headline is
+  keyword-graded; quote the corrected figure if pressed.
+- PubMedQA: 61.8% for both the full system and the baseline (no gain; retrieval was not the
+  bottleneck there). Don't cite it as an improvement.
 - Latency was measured on one consumer laptop GPU at a 20 W cap with requests run one at
   a time. It is not a throughput benchmark.

@@ -49,7 +49,8 @@ The full system declines to answer when the best MedCPT score of the reranked pa
 | Citation accuracy: cites the source chunk | 53.2% | 53.5% | 63.6% |
 | Citation accuracy: cites the source article | 96.2% | 98.8% | 98.9% |
 | Answers with at least one valid citation | 96.2% | 100.0% | 100.0% |
-| Faithful (LLM judge: claims supported by passages) | 38.0% | 43.0% | 43.2% |
+| Faithful, llama3.2 self-judge (unreliable, superseded below) | 38.0% | 43.0% | 43.2% |
+| Faithful, qwen2.5:7b judge (2026-10-19; kappa 0.83 vs hand labels) | 81.0% | 90.7% | 86.4% |
 | Out-of-scope questions declined | 100.0% | 100.0% | 100.0% |
 | Abstention precision (declines that were out of scope) | 51.9% | 70.0% | 77.8% |
 | End-to-end latency p50 | 2740 ms | 3688 ms | 4065 ms |
@@ -67,5 +68,5 @@ Dev split, for reference (the threshold was tuned here): m1_baseline accuracy 87
 ## How to read this
 
 - Keyword grading: an answer is correct when every keyword group of the reference appears as a whole term. It does not catch a right answer phrased with other words, and it gives no credit for a refusal on an answerable question.
-- The faithfulness judge is the same 3B model that writes the answers. A manual check of 20 of its verdicts on the full system (`eval/qa/judge_audit.json`) confirmed 10/10 YES verdicts but only 3/10 NO verdicts: it often rejects answers that repeat the passage nearly verbatim. Its faithfulness rate is therefore a lower bound, and no faithfulness percentage is claimed from it.
+- Faithfulness: the original judge was the 3B model that writes the answers, and a manual check of 20 of its verdicts (`eval/qa/judge_audit.json`) found 7 of its 10 NO verdicts wrong. The qwen2.5:7b row comes from `python -m healthcare_rag.judge` (2026-10-19), a judge from another model family that agrees with those 20 labels 95% of the time (kappa 0.83). Audit, raw outputs and a hand check of every judge/keyword correctness disagreement: [benchmarks/2026-10-19-faithfulness](benchmarks/2026-10-19-faithfulness/README.md).
 - Latency is client-side and sequential on one laptop GPU shared by generation, embeddings and the reranker. Cost is $0 because the gateway prices the local Ollama backend at zero; token counts are recorded to price other backends.

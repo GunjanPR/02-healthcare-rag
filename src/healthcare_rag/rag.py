@@ -7,9 +7,13 @@
 - generate: one chat call through the LLM Gateway, with numbered passages to cite.
 - verify:   the answer must cite at least one passage that was actually provided, and must
             not be the model's "insufficient evidence" sentinel; otherwise abstain.
-- repair:   an answer with no citations gets one follow-up turn asking for them, then goes
-            through verify again (on the dev split, every uncited answer dropped by verify
-            was otherwise correct).
+- repair:   an answer with no citations gets citations attached, either by matching each
+            sentence to the passage that supports it (no LLM call, see citations.py) or by
+            one follow-up turn asking the model for them (on the dev split, every uncited
+            answer dropped by verify was otherwise correct).
+- check:    optionally, every sentence is checked against the passage it cites; a wrong
+            citation is pointed at the supporting passage ("relabel") and, in "drop" mode,
+            sentences no passage supports are removed (abstain if none is left).
 """
 
 import re
@@ -20,6 +24,7 @@ from typing import Any, Protocol, TypedDict
 from langgraph.graph import END, START, StateGraph
 from opentelemetry import trace
 
+from healthcare_rag import citations
 from healthcare_rag.gateway import ChatResult
 from healthcare_rag.observability import get_tracer
 from healthcare_rag.types import Filters, Hit
@@ -33,6 +38,31 @@ SYSTEM_PROMPT = (
     "2. Do not use outside knowledge. Keep the answer to 1-3 sentences.\n"
     f"3. If the passages do not contain the answer, reply with exactly {INSUFFICIENT}."
 )
+
+# v2: written after reading the v1 failures on dev. It asks for the direct answer first,
+# for numbers and names copied exactly (keyword grading and clinicians both need them),
+# and shows the citation format, since most uncited answers simply forgot the brackets.
+SYSTEM_PROMPT_V2 = (
+    "You are a biomedical research assistant. A clinician asks a question; answer it using "
+    "only the numbered context passages from PubMed Central articles. Rules:\n"
+    "1. Start with the direct answer to the question in one sentence, then add at most two "
+    "sentences of supporting detail.\n"
+    "2. Copy numbers, units, percentages, drug names, tests and outcomes exactly as the "
+    "passages write them. Do not use outside knowledge.\n"
+    "3. End every sentence with the passage number(s) that support it, for example: "
+    "'Metformin lowered HbA1c by 1.1% [2].'\n"
+    f"4. If the passages do not contain the answer, reply with exactly {INSUFFICIENT}."
+)
+
+PROMPTS = {"v1": SYSTEM_PROMPT, "v2": SYSTEM_PROMPT_V2}
+ABSTAIN_MODES = ("both", "threshold", "model")
+
+
+def system_prompt(version: str, abstain_mode: str = "both") -> str:
+    """The prompt's last rule lets the model decline; "threshold" mode drops it."""
+    prompt = PROMPTS[version]
+    return prompt.rsplit("\n", 1)[0] if abstain_mode == "threshold" else prompt
+
 
 SUMMARY_PROMPT = (
     "You are a biomedical research assistant. Summarize the article from the numbered "
@@ -75,6 +105,27 @@ class RAGConfig:
     # Follow-up turns that ask the model to add citations to an uncited answer
     citation_repairs: int = 1
     max_tokens: int = 256
+    prompt: str = "v1"  # key of PROMPTS
+    # How an uncited answer gets citations: "llm" (follow-up turn), "attribute" (match
+    # sentences to passages, no LLM call) or "attribute_then_llm"
+    citation_repair: str = "llm"
+    # Sentence-level citation check: "off", "relabel" (fix wrong citations) or "drop"
+    # (also remove sentences no passage supports)
+    citation_check: str = "off"
+    support_threshold: float = 0.6
+    # Who may decline: "both" (reranker threshold, then the model's INSUFFICIENT_EVIDENCE),
+    # "threshold" (the prompt has no decline rule) or "model" (no reranker threshold)
+    abstain_mode: str = "both"
+
+    def __post_init__(self) -> None:
+        if self.prompt not in PROMPTS:
+            raise ValueError(f"prompt must be one of {sorted(PROMPTS)}, got {self.prompt!r}")
+        if self.citation_repair not in ("llm", "attribute", "attribute_then_llm"):
+            raise ValueError(f"unknown citation_repair {self.citation_repair!r}")
+        if self.citation_check not in ("off", "relabel", "drop"):
+            raise ValueError(f"unknown citation_check {self.citation_check!r}")
+        if self.abstain_mode not in ABSTAIN_MODES:
+            raise ValueError(f"abstain_mode must be one of {ABSTAIN_MODES}")
 
 
 @dataclass
@@ -96,7 +147,8 @@ class RAGResult:
     question: str
     answer: str
     abstained: bool
-    reason: str  # "answered" | "no_hits" | "low_score" | "model_insufficient" | "uncited"
+    # "answered" | "no_hits" | "low_score" | "model_insufficient" | "uncited" | "unsupported"
+    reason: str
     passages: list[Hit]  # the passages shown to the model, numbered from 1
     cited: list[int]  # 1-based passage numbers cited in the answer
     candidates: list[Hit]  # retriever output before reranking
@@ -104,6 +156,9 @@ class RAGResult:
     usage: Usage = field(default_factory=Usage)
     raw_answer: str = ""
     top_score: float | None = None  # best reranker score, when a reranker ran
+    attributed: bool = False  # citations were attached without an LLM call
+    relabeled: int = 0  # sentences whose citation was pointed at a better passage
+    support_rate: float | None = None  # share of sentences their citations support
 
     @property
     def cited_passages(self) -> list[Hit]:
@@ -112,6 +167,7 @@ class RAGResult:
 
 class State(TypedDict, total=False):
     question: str
+    instruction: str  # appended to the question in the generation prompt only
     filters: Filters | None
     candidates: list[Hit]
     passages: list[Hit]
@@ -124,6 +180,7 @@ class State(TypedDict, total=False):
     usage: Usage
     messages: list[dict[str, str]]
     repairs: int
+    citation: citations.CitationReport
     trace_ctx: Any  # OpenTelemetry context of the request's "rag.ask" span
 
 
@@ -154,11 +211,13 @@ class RAGPipeline:
         chat: ChatClient,
         reranker: Reranker | None = None,
         config: RAGConfig | None = None,
+        scorer: citations.SupportScorer | None = None,
     ) -> None:
         self.retriever = retriever
         self.chat_client = chat
         self.reranker = reranker
         self.config = config or RAGConfig()
+        self.scorer = scorer or citations.LexicalScorer()
         self.graph = self._build()
 
     # ---- nodes -------------------------------------------------------------------------
@@ -191,16 +250,22 @@ class RAGPipeline:
         passages = state["passages"]
         if not passages:
             return "no_hits"
-        if self.reranker is not None and passages[0].score < self.config.abstain_threshold:
+        cfg = self.config
+        gated = self.reranker is not None and cfg.abstain_mode != "model"
+        if gated and passages[0].score < cfg.abstain_threshold:
             return "low_score"
         return "generate"
 
     def _generate(self, state: State) -> State:
         start = time.perf_counter()
         context = number_passages(state["passages"])
+        asked = f"{state['question']} {state.get('instruction', '')}".strip()
         messages = [
-            {"role": "system", "content": SYSTEM_PROMPT},
-            {"role": "user", "content": f"Context:\n{context}\n\nQuestion: {state['question']}"},
+            {
+                "role": "system",
+                "content": system_prompt(self.config.prompt, self.config.abstain_mode),
+            },
+            {"role": "user", "content": f"Context:\n{context}\n\nQuestion: {asked}"},
         ]
         with self._span(state, "generate") as span:
             result = self.chat_client.chat(messages, max_tokens=self.config.max_tokens)
@@ -239,18 +304,50 @@ class RAGPipeline:
         }
 
     def _after_verify(self, state: State) -> str:
-        if state["reason"] == "uncited" and state["repairs"] < self.config.citation_repairs:
+        llm_repair = self.config.citation_repair in ("llm", "attribute_then_llm")
+        if (
+            llm_repair
+            and state["reason"] == "uncited"
+            and state["repairs"] < self.config.citation_repairs
+        ):
             return "repair"
         return "done"
 
     def _verify(self, state: State) -> State:
+        start = time.perf_counter()
+        cfg = self.config
         raw = state["raw_answer"]
-        cited = parse_citations(raw, len(state["passages"]))
+        texts = [f"{h.title}. {h.text}" for h in state["passages"]]
+        cited = parse_citations(raw, len(texts))
+        timings = state["timings"]
         if INSUFFICIENT in raw:
             return {"abstained": True, "reason": "model_insufficient", "cited": []}
-        if self.config.require_citations and not cited:
+        attributed = False
+        if not cited and cfg.require_citations and cfg.citation_repair != "llm":
+            attempt = citations.attribute(raw, texts, self.scorer, cfg.support_threshold)
+            if attempt.attributed:
+                raw, attributed = attempt.answer, True
+                cited = parse_citations(raw, len(texts))
+        if cfg.require_citations and not cited:
             return {"abstained": True, "reason": "uncited", "cited": []}
-        return {"abstained": False, "reason": "answered", "answer": raw, "cited": cited}
+        report = citations.check(raw, texts, self.scorer, cfg.support_threshold)
+        report.attributed = attributed
+        if cfg.citation_check in ("relabel", "drop"):
+            report = citations.relabel(report, cfg.support_threshold)
+        if cfg.citation_check == "drop":
+            report = citations.drop_unsupported(report)
+        answer = report.answer if cfg.citation_check != "off" else raw
+        timings = {**timings, "verify": timings.get("verify", 0.0) + time.perf_counter() - start}
+        if not answer:
+            return {"abstained": True, "reason": "unsupported", "cited": [], "timings": timings}
+        return {
+            "abstained": False,
+            "reason": "answered",
+            "answer": answer,
+            "cited": parse_citations(answer, len(texts)),
+            "citation": report,
+            "timings": timings,
+        }
 
     def _abstain(self, reason: str):
         def node(state: State) -> State:
@@ -287,11 +384,21 @@ class RAGPipeline:
 
     # ---- public API --------------------------------------------------------------------
 
-    def ask(self, question: str, filters: Filters | None = None) -> RAGResult:
+    def ask(
+        self, question: str, filters: Filters | None = None, instruction: str = ""
+    ) -> RAGResult:
+        """`instruction` (e.g. an answer format) goes to the LLM only; retrieval and
+        reranking see the plain question, so the abstention scores are unaffected."""
         start = time.perf_counter()
         with get_tracer().start_as_current_span("rag.ask") as span:
             ctx = trace.set_span_in_context(span)
-            state = {"question": question, "filters": filters, "usage": Usage(), "trace_ctx": ctx}
+            state = {
+                "question": question,
+                "instruction": instruction,
+                "filters": filters,
+                "usage": Usage(),
+                "trace_ctx": ctx,
+            }
             out = self.graph.invoke(state)
             abstained = out.get("abstained", True)
             span.set_attribute("rag.abstained", abstained)
@@ -300,6 +407,7 @@ class RAGPipeline:
         timings = dict(out.get("timings", {}))
         timings["total"] = time.perf_counter() - start
         passages = out.get("passages", [])
+        report = out.get("citation")
         return RAGResult(
             question=question,
             answer=ABSTAIN_MESSAGE if abstained else out["answer"],
@@ -312,6 +420,9 @@ class RAGPipeline:
             usage=out.get("usage") or Usage(),
             raw_answer=out.get("raw_answer", ""),
             top_score=passages[0].score if self.reranker and passages else None,
+            attributed=bool(report and report.attributed),
+            relabeled=report.relabeled if report else 0,
+            support_rate=report.supported_rate if report and not abstained else None,
         )
 
     def summarize(self, title: str, chunks: list[Hit], max_passages: int = 8) -> RAGResult:

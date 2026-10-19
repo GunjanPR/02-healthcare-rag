@@ -1,0 +1,2131 @@
+{
+ "judge_model": "qwen2.5:7b-instruct",
+ "answers": "eval/results/answers.json",
+ "split": "test",
+ "summary": {
+  "m1_baseline": {
+   "keyword_accuracy": 0.7717391304347826,
+   "judge_accuracy": 0.6847826086956522,
+   "n": 92,
+   "agreement": 0.9130434782608695,
+   "kappa": 0.7823772915434652,
+   "reference_true_matched": "63/71",
+   "reference_false_matched": "21/21"
+  },
+  "bm25_rag": {
+   "keyword_accuracy": 0.8043478260869565,
+   "judge_accuracy": 0.7391304347826086,
+   "n": 92,
+   "agreement": 0.8913043478260869,
+   "kappa": 0.6933333333333331,
+   "reference_true_matched": "66/74",
+   "reference_false_matched": "16/18"
+  },
+  "full": {
+   "keyword_accuracy": 0.8695652173913043,
+   "judge_accuracy": 0.7717391304347826,
+   "n": 92,
+   "agreement": 0.9021739130434783,
+   "kappa": 0.6729857819905214,
+   "reference_true_matched": "71/80",
+   "reference_false_matched": "12/12"
+  }
+ },
+ "rows": [
+  {
+   "id": "q002",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q003",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q005",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q006",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q008",
+   "system": "m1_baseline",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q009",
+   "system": "m1_baseline",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q011",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q012",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q014",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q015",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q017",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q018",
+   "system": "m1_baseline",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q020",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": false
+  },
+  {
+   "id": "q021",
+   "system": "m1_baseline",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q023",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q024",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q026",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q027",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": false
+  },
+  {
+   "id": "q029",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q030",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q032",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q033",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q035",
+   "system": "m1_baseline",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q036",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q038",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q039",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q041",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q042",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q044",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q045",
+   "system": "m1_baseline",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q047",
+   "system": "m1_baseline",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q048",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q050",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q051",
+   "system": "m1_baseline",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q053",
+   "system": "m1_baseline",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q054",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q056",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q057",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q059",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q060",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": false
+  },
+  {
+   "id": "q062",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": false
+  },
+  {
+   "id": "q063",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q065",
+   "system": "m1_baseline",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q066",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q068",
+   "system": "m1_baseline",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q069",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q071",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q072",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": false
+  },
+  {
+   "id": "q074",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q075",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q077",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": false
+  },
+  {
+   "id": "q078",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q080",
+   "system": "m1_baseline",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q081",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q083",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q084",
+   "system": "m1_baseline",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q086",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q087",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q089",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": false
+  },
+  {
+   "id": "q090",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q092",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q093",
+   "system": "m1_baseline",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q095",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q096",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q098",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q099",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q101",
+   "system": "m1_baseline",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q102",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q104",
+   "system": "m1_baseline",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q105",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q107",
+   "system": "m1_baseline",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q108",
+   "system": "m1_baseline",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q110",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q111",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q113",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q114",
+   "system": "m1_baseline",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q116",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q117",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q119",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q120",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q122",
+   "system": "m1_baseline",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q123",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q125",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q126",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q128",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q129",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q131",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q132",
+   "system": "m1_baseline",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q134",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q135",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q137",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q138",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": false
+  },
+  {
+   "id": "q002",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q003",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q005",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q006",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q008",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": false
+  },
+  {
+   "id": "q009",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": false
+  },
+  {
+   "id": "q011",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q012",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q014",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q015",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q017",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q018",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": false
+  },
+  {
+   "id": "q020",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q021",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q023",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q024",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q026",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q027",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": false
+  },
+  {
+   "id": "q029",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q030",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q032",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q033",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q035",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q036",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q038",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q039",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q041",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q042",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q044",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q045",
+   "system": "bm25_rag",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q047",
+   "system": "bm25_rag",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q048",
+   "system": "bm25_rag",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q050",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q051",
+   "system": "bm25_rag",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q053",
+   "system": "bm25_rag",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q054",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q056",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q057",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q059",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q060",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": false
+  },
+  {
+   "id": "q062",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q063",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q065",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q066",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q068",
+   "system": "bm25_rag",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q069",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q071",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q072",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": false
+  },
+  {
+   "id": "q074",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q075",
+   "system": "bm25_rag",
+   "keyword": false,
+   "judge": true
+  },
+  {
+   "id": "q077",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q078",
+   "system": "bm25_rag",
+   "keyword": false,
+   "judge": true
+  },
+  {
+   "id": "q080",
+   "system": "bm25_rag",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q081",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q083",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q084",
+   "system": "bm25_rag",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q086",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q087",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q089",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q090",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q092",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q093",
+   "system": "bm25_rag",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q095",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q096",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q098",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q099",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q101",
+   "system": "bm25_rag",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q102",
+   "system": "bm25_rag",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q104",
+   "system": "bm25_rag",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q105",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q107",
+   "system": "bm25_rag",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q108",
+   "system": "bm25_rag",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q110",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q111",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q113",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q114",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q116",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q117",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q119",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q120",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q122",
+   "system": "bm25_rag",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q123",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": false
+  },
+  {
+   "id": "q125",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q126",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q128",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q129",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q131",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": false
+  },
+  {
+   "id": "q132",
+   "system": "bm25_rag",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q134",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q135",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q137",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q138",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q002",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q003",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q005",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q006",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q008",
+   "system": "full",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q009",
+   "system": "full",
+   "keyword": true,
+   "judge": false
+  },
+  {
+   "id": "q011",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q012",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q014",
+   "system": "full",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q015",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q017",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q018",
+   "system": "full",
+   "keyword": true,
+   "judge": false
+  },
+  {
+   "id": "q020",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q021",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q023",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q024",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q026",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q027",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q029",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q030",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q032",
+   "system": "full",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q033",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q035",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q036",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q038",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q039",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q041",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q042",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q044",
+   "system": "full",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q045",
+   "system": "full",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q047",
+   "system": "full",
+   "keyword": true,
+   "judge": false
+  },
+  {
+   "id": "q048",
+   "system": "full",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q050",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q051",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q053",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q054",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q056",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q057",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q059",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q060",
+   "system": "full",
+   "keyword": true,
+   "judge": false
+  },
+  {
+   "id": "q062",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q063",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q065",
+   "system": "full",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q066",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q068",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q069",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q071",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q072",
+   "system": "full",
+   "keyword": true,
+   "judge": false
+  },
+  {
+   "id": "q074",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q075",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q077",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q078",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q080",
+   "system": "full",
+   "keyword": true,
+   "judge": false
+  },
+  {
+   "id": "q081",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q083",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q084",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q086",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q087",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q089",
+   "system": "full",
+   "keyword": true,
+   "judge": false
+  },
+  {
+   "id": "q090",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q092",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q093",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q095",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q096",
+   "system": "full",
+   "keyword": true,
+   "judge": false
+  },
+  {
+   "id": "q098",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q099",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q101",
+   "system": "full",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q102",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q104",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q105",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q107",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q108",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q110",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q111",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q113",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q114",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q116",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q117",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q119",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q120",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q122",
+   "system": "full",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q123",
+   "system": "full",
+   "keyword": true,
+   "judge": false
+  },
+  {
+   "id": "q125",
+   "system": "full",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q126",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q128",
+   "system": "full",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q129",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q131",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q132",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q134",
+   "system": "full",
+   "keyword": false,
+   "judge": false
+  },
+  {
+   "id": "q135",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q137",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  },
+  {
+   "id": "q138",
+   "system": "full",
+   "keyword": true,
+   "judge": true
+  }
+ ],
+ "disagreements": [
+  {
+   "id": "q020",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": false,
+   "question": "What was the one-year success rate off antiarrhythmic drugs of single-stage hybrid AF ablation in patients with persistent AF or failed catheter ablation?",
+   "keywords": [
+    [
+     "76%",
+     "76 percent"
+    ]
+   ],
+   "answer": "The one-year success rate off antiarrhythmic drugs of single-stage hybrid AF ablation in patients with persistent AF or failed catheter ablation was 38% (76% maintained sinus rhythm off antiarrhythmic drugs) [1]."
+  },
+  {
+   "id": "q027",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": false,
+   "question": "What are the four predictors in the SIC-AF score for successful pharmacological cardioversion of atrial fibrillation?",
+   "keywords": [
+    [
+     "flutter"
+    ],
+    [
+     "duration"
+    ],
+    [
+     "electrical cardioversion"
+    ],
+    [
+     "antiarrhythmic"
+    ]
+   ],
+   "answer": "The four predictors in the SIC-AF score for successful pharmacological cardioversion of atrial fibrillation are:\n\n1. Atrial flutter\n2. Duration of AF-related symptoms\n3. Absence of previous electrical cardioversion history\n4. Specific intravenous antiarrhythmic drug used (with different points assigned to each drug: amiodarone 10 points, vernakalant 11 points, ibutilide 13 points) [1], [2]"
+  },
+  {
+   "id": "q060",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": false,
+   "question": "How do serum SIRT1 and Klotho levels behave in pre-hypertensive individuals before hypertension sets in?",
+   "keywords": [
+    [
+     "increase",
+     "increased",
+     "rise",
+     "higher",
+     "elevated"
+    ]
+   ],
+   "answer": "According to passage [2], serum levels of SIRT1 and Klotho increase in pre-hypertensive individuals before they decrease with the onset of hypertension and progression of the disease."
+  },
+  {
+   "id": "q062",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": false,
+   "question": "In the CHARLS cohort, which hypertension subtype accounted for most of the rise in prevalence under the 2017 ACC/AHA guideline?",
+   "keywords": [
+    [
+     "sdh",
+     "systolic-diastolic",
+     "systolic and diastolic",
+     "systolic diastolic"
+    ]
+   ],
+   "answer": "According to the context passages, the most marked change in hypertension prevalence under the 2017 ACC/AHA guideline was an increase in SDH, followed by IDH, which contrasted with a relative decrease in ISH. [1], [2]"
+  },
+  {
+   "id": "q072",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": false,
+   "question": "Where did people with osteoporosis get much of their knowledge about the disease, according to the interpretive descriptive interview study?",
+   "keywords": [
+    [
+     "experience",
+     "family",
+     "parental",
+     "parents",
+     "close to them"
+    ]
+   ],
+   "answer": "According to the study, participants gained knowledge about osteoporosis through personal and vicarious experience over their lifespan. [2]"
+  },
+  {
+   "id": "q077",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": false,
+   "question": "What were the main lifestyle-related osteoporosis risk factors among caregivers working in disability institutions?",
+   "keywords": [
+    [
+     "exercise",
+     "exercising"
+    ],
+    [
+     "dairy",
+     "calcium"
+    ]
+   ],
+   "answer": "According to the study, the main lifestyle-related osteoporosis risk factors among caregivers working in disability institutions were: <30 min of daily exercise (38%), lack of dairy product or calcium tablet intake (28%), and <10 min of daily outdoor activity or not taking vitamin D supplements (29.9%). [3]"
+  },
+  {
+   "id": "q089",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": false,
+   "question": "What were the AUCs of miR-7110-5p and miR-223-3p for predicting sepsis secondary to pneumonia?",
+   "keywords": [
+    [
+     "0.883"
+    ],
+    [
+     "0.964"
+    ]
+   ],
+   "answer": "The AUC of miR-7110-5p for predicting sepsis secondary to pneumonia was 0.883 at a cutoff value of 4.41, yielding a sensitivity of 84.2% and a specificity of 90.5%. The AUC of miR-223-3p for predicting sepsis secondary to pneumonia was 0.964 at a cutoff value of 2.759, yielding a sensitivity of 82.9% and a specificity of 100%."
+  },
+  {
+   "id": "q138",
+   "system": "m1_baseline",
+   "keyword": true,
+   "judge": false,
+   "question": "In the Rio de Janeiro Type 2 Diabetes Cohort, which glycemic variability measure more strongly predicted all-cause and cardiovascular mortality?",
+   "keywords": [
+    [
+     "fasting glucose",
+     "fg"
+    ]
+   ],
+   "answer": "[3] states that 24-month visit-to-visit HbAC and FG variabilities are better risk predictors than mean HbA1c levels for all micro- and macrovascular complications and all-cause mortality outcomes."
+  },
+  {
+   "id": "q008",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": false,
+   "question": "Which asthma subtypes did the latent class analysis identify among men?",
+   "keywords": [
+    [
+     "mild"
+    ],
+    [
+     "unknown severity"
+    ],
+    [
+     "partly controlled"
+    ]
+   ],
+   "answer": "The latent class analysis identified three asthma subtypes among men: Controlled, mild asthma (31% of participants), Poorly controlled asthma, unknown severity (53%), and Partly controlled, severe asthma (17%). [2]"
+  },
+  {
+   "id": "q009",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": false,
+   "question": "What were the most common triggers of asthma aggravation among adults with self-reported asthma in Karachi?",
+   "keywords": [
+    [
+     "smoke"
+    ],
+    [
+     "dust"
+    ]
+   ],
+   "answer": "According to the study, the most common triggers of asthma aggravation among adults with self-reported asthma in Karachi were exposure to smoke (83%), strong smell (53%), and dust (83%). [5]"
+  },
+  {
+   "id": "q018",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": false,
+   "question": "In the Chinese atrial fibrillation registry, what kind of conditions caused most hospitalizations of AF patients?",
+   "keywords": [
+    [
+     "non-cvd",
+     "non-cardiovascular",
+     "noncardiovascular"
+    ]
+   ],
+   "answer": "According to the abstract of [5], patients aged < 65 years were predominantly hospitalized for AF (42.1% of the total hospitalizations), while patients aged 65\u201374 and \u2265 75 years were mainly hospitalized for non-cardiovascular diseases (43.6% and 49.3%, respectively)."
+  },
+  {
+   "id": "q027",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": false,
+   "question": "What are the four predictors in the SIC-AF score for successful pharmacological cardioversion of atrial fibrillation?",
+   "keywords": [
+    [
+     "flutter"
+    ],
+    [
+     "duration"
+    ],
+    [
+     "electrical cardioversion"
+    ],
+    [
+     "antiarrhythmic"
+    ]
+   ],
+   "answer": "1. The SIC-AF score includes four independent predictors of successful cardioversion: \n   a. Atrial flutter (8 points)\n   b. Duration of AF-related symptoms (<24 h; 8 points)\n   c. Absence of previous electrical cardioversion history (10 points)\n   d. The specific intravenous antiarrhythmic drug (amiodarone 10 points, vernakalant 11 points, ibutilide 13 points) [1, 2, 3, 4]"
+  },
+  {
+   "id": "q060",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": false,
+   "question": "How do serum SIRT1 and Klotho levels behave in pre-hypertensive individuals before hypertension sets in?",
+   "keywords": [
+    [
+     "increase",
+     "increased",
+     "rise",
+     "higher",
+     "elevated"
+    ]
+   ],
+   "answer": "According to passage [3], serum SIRT1 levels increase in pre-hypertensive individuals before they decrease with the onset of hypertension and progression of the disease."
+  },
+  {
+   "id": "q072",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": false,
+   "question": "Where did people with osteoporosis get much of their knowledge about the disease, according to the interpretive descriptive interview study?",
+   "keywords": [
+    [
+     "experience",
+     "family",
+     "parental",
+     "parents",
+     "close to them"
+    ]
+   ],
+   "answer": "According to the study, participants with osteoporosis obtained much of their knowledge about the disease through personal and vicarious experience over their lifespan [2]."
+  },
+  {
+   "id": "q075",
+   "system": "bm25_rag",
+   "keyword": false,
+   "judge": true,
+   "question": "In Australian general practice, what share of patients who stopped denosumab received no subsequent bisphosphonate prescription?",
+   "keywords": [
+    [
+     "80%",
+     "80 percent"
+    ]
+   ],
+   "answer": "According to the study, 80.6% of patients who stopped denosumab treatment had no record of a subsequent prescription for a bisphosphonate. [1]"
+  },
+  {
+   "id": "q078",
+   "system": "bm25_rag",
+   "keyword": false,
+   "judge": true,
+   "question": "How did yeast hydrolysate supplementation affect serum testosterone in ovariectomized rats?",
+   "keywords": [
+    [
+     "increase",
+     "increased",
+     "restored",
+     "higher",
+     "raised"
+    ]
+   ],
+   "answer": "Yeast hydrolysate supplementation significantly elevated serum testosterone concentration in ovariectomized rats, restoring it to the normal level [1]."
+  },
+  {
+   "id": "q123",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": false,
+   "question": "What was the prevalence of pulmonary tuberculosis among presumptive patients in the hospital-based study in northwestern Ethiopia?",
+   "keywords": [
+    [
+     "12.7"
+    ]
+   ],
+   "answer": "According to the study, 56.69% of the total 314 PTB presumptive patients were men, and 52.5% were from 25 to 50 years of age. Among all patients, 12.7% had PTB by Gene Xpert [3]."
+  },
+  {
+   "id": "q131",
+   "system": "bm25_rag",
+   "keyword": true,
+   "judge": false,
+   "question": "How did type 2 diabetes affect collagen fibril stretching in the intervertebral disc annulus fibrosus of UCD-T2DM rats under compression?",
+   "keywords": [
+    [
+     "less",
+     "lower",
+     "reduced",
+     "impaired",
+     "decreased",
+     "impairs"
+    ]
+   ],
+   "answer": "According to passage [2], type 2 diabetes reduced collagen fibril stretching by 30% in the discs from diabetic rats compared to lean discs."
+  },
+  {
+   "id": "q009",
+   "system": "full",
+   "keyword": true,
+   "judge": false,
+   "question": "What were the most common triggers of asthma aggravation among adults with self-reported asthma in Karachi?",
+   "keywords": [
+    [
+     "smoke"
+    ],
+    [
+     "dust"
+    ]
+   ],
+   "answer": "According to the study, the most common triggers of asthma aggravation among adults with self-reported asthma in Karachi were exposure to smoke (83%), strong smell (53%), and dust (83%). [1]"
+  },
+  {
+   "id": "q018",
+   "system": "full",
+   "keyword": true,
+   "judge": false,
+   "question": "In the Chinese atrial fibrillation registry, what kind of conditions caused most hospitalizations of AF patients?",
+   "keywords": [
+    [
+     "non-cvd",
+     "non-cardiovascular",
+     "noncardiovascular"
+    ]
+   ],
+   "answer": "[1] In patients aged < 65 years, due to few complicating diseases and high requirements for QoL, most young people may be hospitalized for relieving AF-caused symptoms or seeking catheter ablation to maintain sinus rhythm. [2] In patients aged \u2265 75 years, hospitalizations were predominantly hospitalized for non-CVD (49.3%). [4] Among patients aged < 65 years, hospitalizations attributed to AF accounted for the largest proportion, reaching 42.1% of the all-cause hospitalizations."
+  },
+  {
+   "id": "q047",
+   "system": "full",
+   "keyword": true,
+   "judge": false,
+   "question": "Which group was more responsive to diuretic therapy: patients with de novo heart failure or with acutely decompensated chronic heart failure?",
+   "keywords": [
+    [
+     "de novo",
+     "dnhf"
+    ]
+   ],
+   "answer": "Patients with de novo heart failure (dnHF) were more responsive to diuretic therapy. [2]"
+  },
+  {
+   "id": "q060",
+   "system": "full",
+   "keyword": true,
+   "judge": false,
+   "question": "How do serum SIRT1 and Klotho levels behave in pre-hypertensive individuals before hypertension sets in?",
+   "keywords": [
+    [
+     "increase",
+     "increased",
+     "rise",
+     "higher",
+     "elevated"
+    ]
+   ],
+   "answer": "According to passage [3], SIRT1 levels are significantly higher in pre-hypertensive individuals compared to the control group. However, there is no information provided about the behavior of serum Klotho levels in pre-hypertensive individuals."
+  },
+  {
+   "id": "q072",
+   "system": "full",
+   "keyword": true,
+   "judge": false,
+   "question": "Where did people with osteoporosis get much of their knowledge about the disease, according to the interpretive descriptive interview study?",
+   "keywords": [
+    [
+     "experience",
+     "family",
+     "parental",
+     "parents",
+     "close to them"
+    ]
+   ],
+   "answer": "1. Participants acquired knowledge about osteoporosis through personal and vicarious experience over the lifespan [1].\n2. Participants also gained knowledge through their interactions with medical professionals, including physicians and possibly dietitians, although the study did not explicitly state this as a primary source of knowledge [2].\n3. No other sources of knowledge were mentioned in the study."
+  },
+  {
+   "id": "q080",
+   "system": "full",
+   "keyword": true,
+   "judge": false,
+   "question": "Why did female osteoporosis patients in Taiwan decline bone mineral density testing?",
+   "keywords": [
+    [
+     "cost",
+     "costs"
+    ]
+   ],
+   "answer": "According to the context passages, female osteoporosis patients in Taiwan declined bone mineral density testing due to high cost, misconceptions about lifestyle management sufficient to prevent osteoporosis, and poor awareness of the disease [1]."
+  },
+  {
+   "id": "q089",
+   "system": "full",
+   "keyword": true,
+   "judge": false,
+   "question": "What were the AUCs of miR-7110-5p and miR-223-3p for predicting sepsis secondary to pneumonia?",
+   "keywords": [
+    [
+     "0.883"
+    ],
+    [
+     "0.964"
+    ]
+   ],
+   "answer": "The AUC of the miR-7110-5p ROC for predicting sepsis secondary to pneumonia was 0.883 at a cutoff value of 4.41, yielding a sensitivity of 84.2% and a specificity of 90.5%. [1] The AUC of the miR-223-3p ROC for predicting sepsis secondary to pneumonia was 0.964 at a cutoff value of 2.759, yielding a sensitivity of 82.9% and a specificity of 100%. [1]"
+  },
+  {
+   "id": "q096",
+   "system": "full",
+   "keyword": true,
+   "judge": false,
+   "question": "What was the in-hospital mortality of surgical ICU patients with postoperative sepsis who had sepsis-associated coagulopathy?",
+   "keywords": [
+    [
+     "37.5"
+    ]
+   ],
+   "answer": "The in-hospital mortality of surgical ICU patients with postoperative sepsis who had sepsis-associated coagulopathy (SAC) was 37.5% (12/103) in the no SAC group and 37.5% (27/72) in the SAC group, but the difference was not statistically significant (p = 0.002) [1, 2]."
+  },
+  {
+   "id": "q123",
+   "system": "full",
+   "keyword": true,
+   "judge": false,
+   "question": "What was the prevalence of pulmonary tuberculosis among presumptive patients in the hospital-based study in northwestern Ethiopia?",
+   "keywords": [
+    [
+     "12.7"
+    ]
+   ],
+   "answer": "The prevalence of pulmonary tuberculosis (PTB) among presumptive patients in the hospital-based study in northwestern Ethiopia was 40% (12.7% of the study's subjects were PTB-positive). [3]"
+  }
+ ]
+}
